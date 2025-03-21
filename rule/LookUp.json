@@ -1,0 +1,12 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "e16991.b.akamaiedge.net",
+        "lookup-api.apple.com",
+        "lookup-api.apple.com.edgekey.net"
+      ]
+    }
+  ],
+  "version": 2
+}
