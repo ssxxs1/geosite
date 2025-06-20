@@ -9,6 +9,13 @@
 !
 !
 !
+||xadsmark.com^
+||hchaonldccb.com^
+||buoydeparturediscontent.com^$all
+||vazdatbfutc.com^
+||app.189tutors.com^$third-party
+||tiz-cc95ue-309.com^
+||wgkulhwedxlpq.website^
 ||tinyadz.com^$third-party
 ||ghqzwlbuizbw.com^
 ||hurarwjrirti.com^
@@ -42,7 +49,6 @@
 ||catoixeam.click^$all
 ||trgfx.b-cdn.net^$all
 ||westfile-dl.click^$all
-||adedtotime.store^$all
 ||worshippers.store^$all
 ||gusoclji.com^
 ||lolostan.com^$all
@@ -100,7 +106,6 @@
 ||glugherg.net^$all
 ||feckurteg.net^$all
 ||speedybytes.cfd^$all
-||sikoip.cfd^$all
 ||directsnap.click^$all
 ||land.izuchai.dance^$all
 ||wobbly-birth.com^$all
@@ -129,7 +134,6 @@
 ||cdn2.sales-frontier.com^
 ||cdn.xpln.tech^
 ||countabledawdlerunaudited.com^$all
-||worthwhile-wash.com^$all
 ||iv.hautboyhellen.com^
 ||cfusion-internet.com^$third-party
 ||js.trendmd.com^$third-party
@@ -139,13 +143,11 @@
 185.149.120.173$network
 /^139\.45\.197\.2(4[0-9]|5[0-4]):/$network
 /^139\.45\.197\.2(4[0-9]|5[0-4])/
-||vg876yuj.click^$all
 ||lmj8i.pro^$all
 ||ytru4.pro^$all
 ||at.adtech.redventures.io^
 ||get.stoplocker.com^$all
 ||globalwoldsinc.com^$all
-||i98jio988ui.world^$all
 ||subag.freexxxbase.com^
 157.90.183.248$network
 ||randomadsrv.com^$all
@@ -320,7 +322,6 @@
 ||slotscity.g2afse.com^$all
 ||quitzon.net^$all
 ||member.javtvnow.xyz^
-||1ts11.top^$all
 ||spadelack.com^
 ||movies-flix.club^$all
 ||centent.slreamplay.cc^
@@ -347,7 +348,6 @@
 ||z.cdn.adpool.bet^$all
 ||refpakrtsb.top^$all
 ||melredirnxt.top^$all
-||yomaza.net^$third-party
 ||b0f1d2.com^$third-party
 ||getadfinity.com^$third-party
 ||air2s.com^$third-party
@@ -424,7 +424,6 @@
 ||milk.supertool.stunnermedia.com^$third-party
 ||adtol.com^$third-party
 ||poptival.com^$third-party
-||whitehalfabrr.club^$all
 ||prltmz.com^
 ||viralltopics.com^$third-party
 ||max-adserv.com^
@@ -667,7 +666,6 @@
 ||tizermedias.com^$third-party
 ||track.bcvc.mobi^
 ||tracking.cirrusinsight.com^
-||traforet.com^$third-party
 ||tubecontext.com^$third-party
 ||voluumtrk2.com^
 ||wrmcfyzl.com^$third-party
@@ -703,17 +701,10 @@
 !
 ! Fake KMS activators
 ||kms-full.com^$all
-||Kmspico.io^$all
 ||kms-tool.com^$all
-||Kmsauto.info^$all
 ||officialkmspico.com^$all
-||Ultrasonica.info^$all
-||Kms-pc.com^$all
-||Thewindowsactivator.com^$all
-||Get-kmspico.com^$all
 ||getkmspico.com^$all
 ||heukmsactivator.com^$all
-||Furykms.com^$all
 ||getintopc.today^$all
 !
 ! Trillion
@@ -923,12 +914,10 @@
 ||adtube.media^
 ||outpush.net^
 ||flurryad.com^
-||resugovex-2.co^
 ||icyads.com^
 ||jambojar.com^
 ||flairads.com^
 ||infinity-info.com^
-||plarimocl.com^
 ||demandzoo.com^
 ||relevanceads.com^
 ||reachableads.com^
@@ -954,7 +943,6 @@
 ||bliss91.com^
 ||80xmedia.com^
 ||topsolutionsmedia.com^
-||iforcircles-1.online^
 ||adpalladium.com^
 ||clixvista.com^
 ||rtbdemand.com^
