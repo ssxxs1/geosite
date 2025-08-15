@@ -9,6 +9,11 @@
 !
 !
 !
+||update-macosx.com^$all
+||gjxmcla.pro^
+||adactive.cz^
+||ads01.pages.dev^
+||nexx360.io^$third-party
 ||ppcent.org^
 ||warp.media.net^
 ||flustered-beer.com^
