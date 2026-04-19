@@ -1,0 +1,81 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "ai.google.dev",
+        "aida.googleapis.com",
+        "aistudio.google.com",
+        "alkalicore-pa.clients6.google.com",
+        "alkalimakersuite-pa.clients6.google.com",
+        "api.githubcopilot.com",
+        "api.x.ai",
+        "bard.google.com",
+        "chat.mistral.ai",
+        "chatgpt.livekit.cloud",
+        "console.mistral.ai",
+        "copilot-proxy.githubusercontent.com",
+        "copilot.microsoft.com",
+        "deepmind.com",
+        "deepmind.google",
+        "geller-pa.googleapis.com",
+        "gemini.google.com",
+        "generativeai.google",
+        "generativelanguage.googleapis.com",
+        "host.livekit.cloud",
+        "imagine.meta.com",
+        "makersuite.google.com",
+        "openai.com.cdn.cloudflare.net",
+        "openaiapi-site.azureedge.net",
+        "openaicomproductionae4b.blob.core.windows.net",
+        "proactivebackend-pa.googleapis.com",
+        "production-openaicom-storage.azureedge.net",
+        "sydney.bing.com",
+        "trae-api-sg.mchost.guru"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "anthropic.com",
+        "apple-relay.akamaized.net",
+        "apple-relay.apple.com",
+        "apple-relay.cloudflare.com",
+        "apple-relay.fastly-edge.com",
+        "apps.mzstatic.com",
+        "chat.com",
+        "chatgpt.com",
+        "clau.de",
+        "claude.ai",
+        "claude.com",
+        "claudeusercontent.com",
+        "cp4.cloudflare.com",
+        "gateway.icloud.com",
+        "githubcopilot.com",
+        "grazie.ai",
+        "grazie.aws.intellij.net",
+        "grok.com",
+        "gspe1-ssl.ls.apple.com",
+        "guzzoni.apple.com",
+        "jetbrains.ai",
+        "meta.ai",
+        "mistral.ai",
+        "oaistatic.com",
+        "oaiusercontent.com",
+        "openai.com",
+        "perplexity.ai",
+        "perplexity.com",
+        "pplx.ai",
+        "sora.com",
+        "trae.ai",
+        "turn.livekit.cloud",
+        "x.ai"
+      ]
+    },
+    {
+      "ip_cidr": [
+        "160.79.104.0/23",
+        "2607:6bc0::/48"
+      ]
+    }
+  ],
+  "version": 2
+}
