@@ -1,0 +1,18 @@
+# NAME: AppleIntelligence
+# AUTHOR: ssxxs1
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-08-05 09:55:15
+# DOMAIN-SUFFIX: 10
+# TOTAL: 10
+
+payload:
+- DOMAIN-SUFFIX,apple-relay.akamaized.net
+- DOMAIN-SUFFIX,apple-relay.apple.com
+- DOMAIN-SUFFIX,apple-relay.cloudflare.com
+- DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+- DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
+- DOMAIN-SUFFIX,cp4.cloudflare.com
+- DOMAIN-SUFFIX,gateway.icloud.com
+- DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
+- DOMAIN-SUFFIX,guzzoni.apple.com
+- DOMAIN-SUFFIX,smoot.apple.com

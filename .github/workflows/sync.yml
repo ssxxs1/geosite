@@ -1,0 +1,74 @@
+name: Config Update
+
+permissions:
+  contents: write
+
+concurrency:
+  group: geosite-sync-${{ github.ref }}
+  cancel-in-progress: false
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update (allow large rule reduction)'
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 14 * * 5'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python3
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas requests pyyaml urllib3
+    - name: Install sing-box
+      run: |
+        VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | jq -r .tag_name | sed 's/v//')
+        curl -Lo sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/download/v${VERSION}/sing-box-${VERSION}-linux-amd64.tar.gz
+        tar -xzf sing-box.tar.gz
+        sudo mv sing-box-${VERSION}-linux-amd64/sing-box /usr/local/bin/
+        rm -rf sing-box-${VERSION}-linux-amd64 sing-box.tar.gz
+
+
+    - name: Generate rules
+      run: |
+        FLAGS=""
+        if [ "${{ inputs.force_update }}" = "true" ]; then
+          FLAGS="--allow-large-shrink"
+        fi
+        python script/generate_ai.py $FLAGS
+        python main.py
+        test -s Private/AI.list
+        test -s rule/AI.json
+        test -s rule/AI.srs
+        test -s rule/AI_clash.yaml
+    - name: Commit and push
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+
+        # Use a more robust way to add files, avoid pathspec errors
+        git add rule/*.json 2>/dev/null || echo "No json files"
+        git add rule/*.srs 2>/dev/null || echo "No srs files"
+        git add rule/*_clash.yaml 2>/dev/null || echo "No clash yaml files"
+        git add Private/*.list 2>/dev/null || echo "No private list files"
+
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update rules"
+          git push
+        fi

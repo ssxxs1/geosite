@@ -1,0 +1,64 @@
+# https://github.com/Accademia/Additional_Rule_For_Clash/tree/main/Bank
+# 2026-06-12
+# 渣打香港
+HOST-SUFFIX,sc.com.hk, BankHK                            
+HOST-SUFFIX,sc.com, BankHK                                
+HOST-KEYWORD,standchartbank, BankHK                 
+HOST-SUFFIX,omtrdc.net, BankHK                            
+HOST-SUFFIX,yvn1g4-cdn-settings.appsflyersdk.com, BankHK    
+HOST-SUFFIX,yvn1g4-launches.appsflyersdk.com, BankHK        
+
+ # 华侨永亨
+HOST-SUFFIX,ocbcwhhk.com, BankHK      
+ # 恒生银行                   
+HOST-SUFFIX,hangseng.com, BankHK 
+# 招商永隆                        
+HOST-SUFFIX,cmbwinglungbank.com, BankHK                   
+# 中信国际
+HOST-SUFFIX,cncbinternational.com, BankHK      
+# 花旗香港           
+HOST-SUFFIX,citibank.com.hk, BankHK    
+# 星展香港                   
+HOST-SUFFIX,dbs.com.hk, BankHK       
+# 南洋银行                     
+HOST-SUFFIX,ncb.com.hk, BankHK              
+
+HOST-SUFFIX, za.group, BankHK
+HOST-SUFFIX, zafinsvc.com, BankHK
+HOST-SUFFIX, zajourney.com, BankHK
+HOST-SUFFIX, zaticdn.com, BankHK
+HOST-SUFFIX, zainvest.group, BankHK
+
+HOST-SUFFIX, airstarbank.com, BankHK
+HOST-SUFFIX, elebank.com, BankHK
+
+HOST-SUFFIX, antbank.hk, BankHK
+HOST-SUFFIX, hsbc.com.hk, BankHK
+HOST-SUFFIX, mds1a.trkd-hs.com, BankHK
+HOST-KEYWORD, hsbchk, BankHK
+HOST-KEYWORD, hsbc., BankHK
+HOST-SUFFIX, optimizely.com, BankHK
+HOST-SUFFIX, lpsnmedia.net, BankHK
+
+#Reward+
+HOST-SUFFIX, openrice.com, BankHK  
+HOST-SUFFIX, liveperson.net, BankHK 
+HOST-SUFFIX, lpsnmedia.com, BankHK 
+HOST-SUFFIX, tealiumiq.com, BankHK 
+HOST-SUFFIX, vam-hk.cloud1.vv1865.com, BankHK
+HOST-SUFFIX, cdnhsbcrhostorage.azureedge.net, BankHK
+HOST-SUFFIX, siteintercept.qualtrics.com, BankHK
+HOST-SUFFIX, tiqcdn.com, BankHK
+HOST-SUFFIX, digicert.com, BankHK
+HOST-SUFFIX, we-stats.com, BankHK
+HOST-SUFFIX, online-metrix.net, BankHK
+HOST-SUFFIX, eum-appdynamics.com, BankHK
+
+HOST-SUFFIX, bochk.com, BankHK
+HOST-SUFFIX, boccc.com.hk, BankHK
+HOST-SUFFIX, etnet.com.hk, BankHK 
+HOST-SUFFIX, systemweb.com.hk, BankHK
+HOST-KEYWORD, bochk, BankHK
+
+HOST-SUFFIX, wise.com, BankHK
+

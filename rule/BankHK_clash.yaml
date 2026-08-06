@@ -1,0 +1,54 @@
+# NAME: BankHK
+# AUTHOR: ssxxs1
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-08-05 09:55:18
+# DOMAIN-KEYWORD: 4
+# DOMAIN-SUFFIX: 41
+# TOTAL: 45
+
+payload:
+- DOMAIN-KEYWORD,bochk
+- DOMAIN-KEYWORD,hsbc.
+- DOMAIN-KEYWORD,hsbchk
+- DOMAIN-KEYWORD,standchartbank
+- DOMAIN-SUFFIX,airstarbank.com
+- DOMAIN-SUFFIX,antbank.hk
+- DOMAIN-SUFFIX,boccc.com.hk
+- DOMAIN-SUFFIX,bochk.com
+- DOMAIN-SUFFIX,cdnhsbcrhostorage.azureedge.net
+- DOMAIN-SUFFIX,citibank.com.hk
+- DOMAIN-SUFFIX,cmbwinglungbank.com
+- DOMAIN-SUFFIX,cncbinternational.com
+- DOMAIN-SUFFIX,dbs.com.hk
+- DOMAIN-SUFFIX,digicert.com
+- DOMAIN-SUFFIX,elebank.com
+- DOMAIN-SUFFIX,etnet.com.hk
+- DOMAIN-SUFFIX,eum-appdynamics.com
+- DOMAIN-SUFFIX,hangseng.com
+- DOMAIN-SUFFIX,hsbc.com.hk
+- DOMAIN-SUFFIX,liveperson.net
+- DOMAIN-SUFFIX,lpsnmedia.com
+- DOMAIN-SUFFIX,lpsnmedia.net
+- DOMAIN-SUFFIX,mds1a.trkd-hs.com
+- DOMAIN-SUFFIX,ncb.com.hk
+- DOMAIN-SUFFIX,ocbcwhhk.com
+- DOMAIN-SUFFIX,omtrdc.net
+- DOMAIN-SUFFIX,online-metrix.net
+- DOMAIN-SUFFIX,openrice.com
+- DOMAIN-SUFFIX,optimizely.com
+- DOMAIN-SUFFIX,sc.com
+- DOMAIN-SUFFIX,sc.com.hk
+- DOMAIN-SUFFIX,siteintercept.qualtrics.com
+- DOMAIN-SUFFIX,systemweb.com.hk
+- DOMAIN-SUFFIX,tealiumiq.com
+- DOMAIN-SUFFIX,tiqcdn.com
+- DOMAIN-SUFFIX,vam-hk.cloud1.vv1865.com
+- DOMAIN-SUFFIX,we-stats.com
+- DOMAIN-SUFFIX,wise.com
+- DOMAIN-SUFFIX,yvn1g4-cdn-settings.appsflyersdk.com
+- DOMAIN-SUFFIX,yvn1g4-launches.appsflyersdk.com
+- DOMAIN-SUFFIX,za.group
+- DOMAIN-SUFFIX,zafinsvc.com
+- DOMAIN-SUFFIX,zainvest.group
+- DOMAIN-SUFFIX,zajourney.com
+- DOMAIN-SUFFIX,zaticdn.com

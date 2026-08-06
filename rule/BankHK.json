@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "domain_keyword": [
+        "bochk",
+        "hsbc.",
+        "hsbchk",
+        "standchartbank"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "airstarbank.com",
+        "antbank.hk",
+        "boccc.com.hk",
+        "bochk.com",
+        "cdnhsbcrhostorage.azureedge.net",
+        "citibank.com.hk",
+        "cmbwinglungbank.com",
+        "cncbinternational.com",
+        "dbs.com.hk",
+        "digicert.com",
+        "elebank.com",
+        "etnet.com.hk",
+        "eum-appdynamics.com",
+        "hangseng.com",
+        "hsbc.com.hk",
+        "liveperson.net",
+        "lpsnmedia.com",
+        "lpsnmedia.net",
+        "mds1a.trkd-hs.com",
+        "ncb.com.hk",
+        "ocbcwhhk.com",
+        "omtrdc.net",
+        "online-metrix.net",
+        "openrice.com",
+        "optimizely.com",
+        "sc.com",
+        "sc.com.hk",
+        "siteintercept.qualtrics.com",
+        "systemweb.com.hk",
+        "tealiumiq.com",
+        "tiqcdn.com",
+        "vam-hk.cloud1.vv1865.com",
+        "we-stats.com",
+        "wise.com",
+        "yvn1g4-cdn-settings.appsflyersdk.com",
+        "yvn1g4-launches.appsflyersdk.com",
+        "za.group",
+        "zafinsvc.com",
+        "zainvest.group",
+        "zajourney.com",
+        "zaticdn.com"
+      ]
+    }
+  ],
+  "version": 2
+}
