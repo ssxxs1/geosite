@@ -44,6 +44,10 @@
         "izattime.qcomgeo2.com",
         "location.microsoft.com",
         "m365copilot.com",
+        "mask-api.fe.apple-dns.net",
+        "mask-api.icloud.com",
+        "mask-t.apple-dns.net",
+        "mask.apple-dns.net",
         "mcs-sg.coze.com",
         "mcs-va.coze.com",
         "mds-cdn.infra.adobesensei.io",
@@ -116,7 +120,8 @@
         "openaiapi",
         "openaicom",
         "openaicom-api",
-        "sift"
+        "sift",
+        "siri"
       ]
     },
     {
@@ -324,10 +329,13 @@
         "livekit.cloud",
         "llama.com",
         "lovart.ai",
+        "ls.apple.com",
         "lumalabs.ai",
         "makersuite.google.com",
         "maps.googleapis.com",
         "maps.gstatic.com",
+        "mask-h2.icloud.com",
+        "mask.icloud.com",
         "mem.ai",
         "meta.ai",
         "meta.com",

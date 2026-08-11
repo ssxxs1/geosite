@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-07 14:45:02
-# DOMAIN: 99
-# DOMAIN-KEYWORD: 12
-# DOMAIN-SUFFIX: 301
+# UPDATED: 2026-08-11 02:02:46
+# DOMAIN: 103
+# DOMAIN-KEYWORD: 13
+# DOMAIN-SUFFIX: 304
 # DOMAIN-WILDCARD: 13
 # IP-ASN: 3
 # IP-CIDR: 11
 # IP-CIDR6: 4
-# TOTAL: 443
+# TOTAL: 451
 
 payload:
 - DOMAIN,account.diabrowser.engineering
@@ -54,6 +54,10 @@ payload:
 - DOMAIN,izattime.qcomgeo2.com
 - DOMAIN,location.microsoft.com
 - DOMAIN,m365copilot.com
+- DOMAIN,mask-api.fe.apple-dns.net
+- DOMAIN,mask-api.icloud.com
+- DOMAIN,mask-t.apple-dns.net
+- DOMAIN,mask.apple-dns.net
 - DOMAIN,mcs-sg.coze.com
 - DOMAIN,mcs-va.coze.com
 - DOMAIN,mds-cdn.infra.adobesensei.io
@@ -123,6 +127,7 @@ payload:
 - DOMAIN-KEYWORD,openaicom
 - DOMAIN-KEYWORD,openaicom-api
 - DOMAIN-KEYWORD,sift
+- DOMAIN-KEYWORD,siri
 - DOMAIN-SUFFIX,ai.com
 - DOMAIN-SUFFIX,ai.google
 - DOMAIN-SUFFIX,ai.google.dev
@@ -309,10 +314,13 @@ payload:
 - DOMAIN-SUFFIX,livekit.cloud
 - DOMAIN-SUFFIX,llama.com
 - DOMAIN-SUFFIX,lovart.ai
+- DOMAIN-SUFFIX,ls.apple.com
 - DOMAIN-SUFFIX,lumalabs.ai
 - DOMAIN-SUFFIX,makersuite.google.com
 - DOMAIN-SUFFIX,maps.googleapis.com
 - DOMAIN-SUFFIX,maps.gstatic.com
+- DOMAIN-SUFFIX,mask-h2.icloud.com
+- DOMAIN-SUFFIX,mask.icloud.com
 - DOMAIN-SUFFIX,mem.ai
 - DOMAIN-SUFFIX,meta.ai
 - DOMAIN-SUFFIX,meta.com

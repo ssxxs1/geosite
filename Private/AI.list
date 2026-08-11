@@ -1,16 +1,16 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-05 09:45:13
-# HOST: 99
-# HOST-SUFFIX: 301
-# HOST-KEYWORD: 12
+# UPDATED: 2026-08-11 02:02:41
+# HOST: 103
+# HOST-SUFFIX: 304
+# HOST-KEYWORD: 13
 # HOST-WILDCARD: 13
 # URL-REGEX: 1
 # IP-CIDR: 11
 # IP6-CIDR: 4
 # IP-ASN: 3
-# TOTAL: 444
+# TOTAL: 452
 
 HOST,account.diabrowser.engineering
 HOST,ai-service.diabrowser.engineering
@@ -54,6 +54,10 @@ HOST,in.appcenter.ms
 HOST,izattime.qcomgeo2.com
 HOST,location.microsoft.com
 HOST,m365copilot.com
+HOST,mask-api.fe.apple-dns.net
+HOST,mask-api.icloud.com
+HOST,mask-t.apple-dns.net
+HOST,mask.apple-dns.net
 HOST,mcs-sg.coze.com
 HOST,mcs-va.coze.com
 HOST,mds-cdn.infra.adobesensei.io
@@ -297,10 +301,13 @@ HOST-SUFFIX,lh5.googleusercontent.com
 HOST-SUFFIX,livekit.cloud
 HOST-SUFFIX,llama.com
 HOST-SUFFIX,lovart.ai
+HOST-SUFFIX,ls.apple.com
 HOST-SUFFIX,lumalabs.ai
 HOST-SUFFIX,makersuite.google.com
 HOST-SUFFIX,maps.googleapis.com
 HOST-SUFFIX,maps.gstatic.com
+HOST-SUFFIX,mask-h2.icloud.com
+HOST-SUFFIX,mask.icloud.com
 HOST-SUFFIX,mem.ai
 HOST-SUFFIX,meta.ai
 HOST-SUFFIX,meta.com
@@ -424,6 +431,7 @@ HOST-KEYWORD,openaiapi
 HOST-KEYWORD,openaicom
 HOST-KEYWORD,openaicom-api
 HOST-KEYWORD,sift
+HOST-KEYWORD,siri
 HOST-WILDCARD,*-datadoghq.com
 HOST-WILDCARD,*-pa.clients*.google.com
 HOST-WILDCARD,*-pa.googleapis.com
