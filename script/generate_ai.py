@@ -77,6 +77,10 @@ SOURCES = [
         authoritative=True,
     ),
     Source(
+        "RocM301",
+        "https://raw.githubusercontent.com/RocM301/Apple-Rule/refs/heads/main/Apple-AI.list",
+    ),
+    Source(
         "shangrenxi",
         "https://raw.githubusercontent.com/shangrenxi/Rules/refs/heads/master/rules/AI.list",
     ),
