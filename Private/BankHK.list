@@ -36,7 +36,7 @@ HOST-SUFFIX, antbank.hk, BankHK
 HOST-SUFFIX, hsbc.com.hk, BankHK
 HOST-SUFFIX, mds1a.trkd-hs.com, BankHK
 HOST-KEYWORD, hsbchk, BankHK
-HOST-KEYWORD, hsbc., BankHK
+#HOST-KEYWORD, hsbc., BankHK
 HOST-SUFFIX, optimizely.com, BankHK
 HOST-SUFFIX, lpsnmedia.net, BankHK
 
