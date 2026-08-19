@@ -1,14 +1,13 @@
 # NAME: BankHK
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-14 14:44:28
-# DOMAIN-KEYWORD: 4
+# UPDATED: 2026-08-19 07:20:52
+# DOMAIN-KEYWORD: 3
 # DOMAIN-SUFFIX: 41
-# TOTAL: 45
+# TOTAL: 44
 
 payload:
 - DOMAIN-KEYWORD,bochk
-- DOMAIN-KEYWORD,hsbc.
 - DOMAIN-KEYWORD,hsbchk
 - DOMAIN-KEYWORD,standchartbank
 - DOMAIN-SUFFIX,airstarbank.com
