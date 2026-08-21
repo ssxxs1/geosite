@@ -8,8 +8,6 @@
     },
     {
       "domain_suffix": [
-        "amazon.com",
-        "amazonaws.com",
         "appsflyer.com",
         "byabcde.com",
         "byapis.com",
@@ -21,20 +19,7 @@
         "bycsi.com",
         "byd3c3.com",
         "bymj.io",
-        "bytick.com",
-        "ffbbbdc6d3c353211fe2ba39c9f744cd.com",
-        "ffe390afd658c19dcbf707e0597b846d.de"
-      ]
-    },
-    {
-      "ip_cidr": [
-        "13.32.121.6/32",
-        "13.33.187.108/32",
-        "142.251.215.234/32",
-        "150.109.230.182/32",
-        "3.160.150.37/32",
-        "43.133.238.145/32",
-        "43.133.241.84/32"
+        "bytick.com"
       ]
     }
   ],
