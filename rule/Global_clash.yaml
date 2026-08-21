@@ -1,14 +1,14 @@
 # NAME: Global
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-14 14:44:26
+# UPDATED: 2026-08-19 07:20:50
 # DOMAIN: 128
 # DOMAIN-KEYWORD: 36
-# DOMAIN-SUFFIX: 34719
+# DOMAIN-SUFFIX: 34723
 # IP-CIDR: 112
 # IP-CIDR6: 4
 # PROCESS-NAME: 1
-# TOTAL: 35000
+# TOTAL: 35004
 
 payload:
 - DOMAIN,1password.drift.click
@@ -26020,6 +26020,7 @@ payload:
 - DOMAIN-SUFFIX,rse.ac.uk
 - DOMAIN-SUFFIX,rsf-chinese.org
 - DOMAIN-SUFFIX,rsf.org
+- DOMAIN-SUFFIX,rsg.ms
 - DOMAIN-SUFFIX,rsg.sc
 - DOMAIN-SUFFIX,rsgamen.org
 - DOMAIN-SUFFIX,rshb.ru
@@ -26176,6 +26177,7 @@ payload:
 - DOMAIN-SUFFIX,rutracker.net
 - DOMAIN-SUFFIX,rutracker.nl
 - DOMAIN-SUFFIX,rutracker.org
+- DOMAIN-SUFFIX,rutracker.wiki
 - DOMAIN-SUFFIX,rutrecker.net
 - DOMAIN-SUFFIX,rutube.ru
 - DOMAIN-SUFFIX,rutube.sport
@@ -26452,6 +26454,8 @@ payload:
 - DOMAIN-SUFFIX,sbux.com.my
 - DOMAIN-SUFFIX,sbuxcard.com
 - DOMAIN-SUFFIX,sc-cdn.net
+- DOMAIN-SUFFIX,sc-gw.com
+- DOMAIN-SUFFIX,sc-static.net
 - DOMAIN-SUFFIX,sc-toolkit.ac.uk
 - DOMAIN-SUFFIX,sc.com
 - DOMAIN-SUFFIX,sc1.ac.uk
