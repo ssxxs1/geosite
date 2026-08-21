@@ -1,28 +1,23 @@
 # https://www.nodeseek.com, Bybit/post-258950-1
-# 2026-06-12
-HOST,bybit-exchange.github.io, Bybit
-HOST,app-measurement.com, Bybit    
-HOST-SUFFIX,ffbbbdc6d3c353211fe2ba39c9f744cd.com, Bybit    
-HOST-SUFFIX,ffe390afd658c19dcbf707e0597b846d.de, Bybit
-HOST-SUFFIX,amazon.com, Bybit   
-HOST-SUFFIX,amazonaws.com, Bybit 
-HOST-SUFFIX,bybit.biz, Bybit   
-HOST-SUFFIX,bybit.com, Bybit   
-HOST-SUFFIX,bycsi.com, Bybit   
-HOST-SUFFIX,bytick.com, Bybit  
-HOST-SUFFIX,byapis.com, Bybit  
-HOST-SUFFIX,bycbe.com, Bybit   
-HOST-SUFFIX,bymj.io, Bybit     
-HOST-SUFFIX,byabcde.com, Bybit 
-HOST-SUFFIX,byapps.net, Bybit  
-HOST-SUFFIX,byd3c3.com, Bybit  
-HOST-SUFFIX,bybdc6.com, Bybit  
-HOST-SUFFIX,appsflyer.com, Bybit
-IP-CIDR,13.32.121.6/32, Bybit      
-IP-CIDR,43.133.238.145/32, Bybit   
-IP-CIDR,13.33.187.108/32, Bybit    
-IP-CIDR,150.109.230.182/32, Bybit  
-IP-CIDR,142.251.215.234/32, Bybit  
-IP-CIDR,43.133.241.84/32, Bybit    
-IP-CIDR,3.160.150.37/32, Bybit     
+# 2026-08-21
 
+
+HOST,bybit-exchange.github.io,Bybit
+
+HOST-SUFFIX,bybit.biz,Bybit
+HOST-SUFFIX,bybit.com,Bybit
+HOST-SUFFIX,bycsi.com,Bybit
+HOST-SUFFIX,bytick.com,Bybit
+HOST-SUFFIX,byapis.com,Bybit
+HOST-SUFFIX,bycbe.com,Bybit
+HOST-SUFFIX,bymj.io,Bybit
+HOST-SUFFIX,byabcde.com,Bybit
+HOST-SUFFIX,byapps.net,Bybit
+HOST-SUFFIX,byd3c3.com,Bybit
+HOST-SUFFIX,bybdc6.com,Bybit
+
+
+# Bybit 第三方依赖
+
+HOST,app-measurement.com,Bybit
+HOST-SUFFIX,appsflyer.com,Bybit
