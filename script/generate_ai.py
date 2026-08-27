@@ -96,6 +96,10 @@ SOURCES = [
         "rulego-ai",
         "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
     ),
+    Source(
+        "blackmatrix7-AppleProxy",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleProxy/AppleProxy.list",
+    ),
     # Kelee8's former raw GitHub URL returns 404 and kelee.one blocks CI-style clients.
     # Keep it disabled until a stable, directly downloadable URL is available.
     Source(
