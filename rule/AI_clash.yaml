@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-21 14:24:35
-# DOMAIN: 103
+# UPDATED: 2026-08-27 07:15:40
+# DOMAIN: 127
 # DOMAIN-KEYWORD: 13
-# DOMAIN-SUFFIX: 304
+# DOMAIN-SUFFIX: 316
 # DOMAIN-WILDCARD: 13
 # IP-ASN: 3
 # IP-CIDR: 11
 # IP-CIDR6: 4
-# TOTAL: 451
+# TOTAL: 487
 
 payload:
 - DOMAIN,account.diabrowser.engineering
@@ -17,6 +17,7 @@ payload:
 - DOMAIN,anthropic-com.ghost.io
 - DOMAIN,anthropic.auth0.com
 - DOMAIN,anthropic.com.cdn.cloudflare.net
+- DOMAIN,api-glb-sea.smoot.apple.com
 - DOMAIN,api.elevenlabs.io
 - DOMAIN,api.github.com
 - DOMAIN,api.githubcopilot.com
@@ -24,7 +25,10 @@ payload:
 - DOMAIN,api.jetbrains.ai
 - DOMAIN,api.msn.com
 - DOMAIN,api.x.ai
+- DOMAIN,apple.comscoreresearch.com
 - DOMAIN,assets.msn.com
+- DOMAIN,books.itunes.apple.com
+- DOMAIN,cdn.apple-cloudkit.com
 - DOMAIN,cdn.openaimerge.com
 - DOMAIN,cdn.workos.com
 - DOMAIN,chat.mistral.ai
@@ -34,12 +38,18 @@ payload:
 - DOMAIN,copilot-proxy.githubusercontent.com
 - DOMAIN,copilot.cloud.microsoft
 - DOMAIN,copilotstudio.microsoft.com
+- DOMAIN,cp2.cloudflare.com
+- DOMAIN,cvws.icloud-content.com
 - DOMAIN,daily-cloudcode-pa.googleapis.com
 - DOMAIN,dc-genai-access-provisioning-api.adobe.io
 - DOMAIN,dc-genai-content-platform.adobe.io
 - DOMAIN,dc-genai-persistence.adobe.io
+- DOMAIN,developer.apple.com
+- DOMAIN,devimages-cdn.apple.com
+- DOMAIN,devstreaming-cdn.apple.com
 - DOMAIN,devv.featurebase.app
 - DOMAIN,dia-blocklists-release.diabrowser.engineering
+- DOMAIN,docs-assets.developer.apple.com
 - DOMAIN,firefly-ai.adobe.io
 - DOMAIN,firefly-cliov2.adobe.com
 - DOMAIN,firefly-ps.adobe.io
@@ -47,12 +57,16 @@ payload:
 - DOMAIN,forwarder.workos.com
 - DOMAIN,gateway.bingviz.microsoft.net
 - DOMAIN,gateway.bingviz.microsoftapp.net
+- DOMAIN,hls-svod.itunes.apple.com
 - DOMAIN,humb.apple.com
 - DOMAIN,images.workoscdn.com
 - DOMAIN,imagine.meta.com
 - DOMAIN,in.appcenter.ms
+- DOMAIN,itunes.apple.com
 - DOMAIN,izattime.qcomgeo2.com
+- DOMAIN,js-cdn.music.apple.com
 - DOMAIN,location.microsoft.com
+- DOMAIN,lookup-api.apple.com
 - DOMAIN,m365copilot.com
 - DOMAIN,mask-api.fe.apple-dns.net
 - DOMAIN,mask-api.icloud.com
@@ -63,12 +77,18 @@ payload:
 - DOMAIN,mds-cdn.infra.adobesensei.io
 - DOMAIN,mssdk-i18n-sg.coze.com
 - DOMAIN,mssdk-i18n-va.coze.com
+- DOMAIN,news-assets.apple.com
+- DOMAIN,news-client.apple.com
+- DOMAIN,news-edge.apple.com
+- DOMAIN,news-events.apple.com
+- DOMAIN,np-edge.itunes.apple.com
 - DOMAIN,odc.officeapps.live.com
 - DOMAIN,openai-api.arkoselabs.com
 - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 - DOMAIN,openaicomproductionae4b.blob.core.windows.net
 - DOMAIN,opt-i18n.coze.com
 - DOMAIN,perplexity-ai.cloudflareaccess.com
+- DOMAIN,play-edge.itunes.apple.com
 - DOMAIN,portal.customtranslator.azure.us
 - DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
 - DOMAIN,pplx-res.cloudinary.com
@@ -76,6 +96,7 @@ payload:
 - DOMAIN,pre-signed-firefly-prod.s3.amazonaws.com
 - DOMAIN,production-openaicom-storage.azureedge.net
 - DOMAIN,r.bing.com
+- DOMAIN,sandbox.itunes.apple.com
 - DOMAIN,self.events.data.microsoft.com
 - DOMAIN,senseimds.adobe.io
 - DOMAIN,servd-anthropic-website.b-cdn.net
@@ -85,6 +106,7 @@ payload:
 - DOMAIN,static.cloudflareinsights.com
 - DOMAIN,survey.coze.com
 - DOMAIN,sydney.bing.com
+- DOMAIN,testflight.apple.com
 - DOMAIN,time-a-b.nist.gov
 - DOMAIN,time-a-wwv.nist.gov
 - DOMAIN,time-b-b.nist.gov
@@ -107,11 +129,13 @@ payload:
 - DOMAIN,time4.google.com
 - DOMAIN,time5.facebook.com
 - DOMAIN,trae-api-sg.mchost.guru
+- DOMAIN,tv.applemusic.com
 - DOMAIN,ut1-time.colorado.edu
 - DOMAIN,ut1-wwv.nist.gov
 - DOMAIN,utcnist.colorado.edu
 - DOMAIN,utcnist2.colorado.edu
 - DOMAIN,utcnist3.colorado.edu
+- DOMAIN,uts-api.itunes.apple.com
 - DOMAIN,workos.imgix.net
 - DOMAIN,www.bing.com
 - DOMAIN,xtratime.qcomgeo2.com
@@ -153,17 +177,22 @@ payload:
 - DOMAIN-SUFFIX,api.microsoftapp.net
 - DOMAIN-SUFFIX,api.statsig.com
 - DOMAIN-SUFFIX,apis.google.com
+- DOMAIN-SUFFIX,apple-dns.net
 - DOMAIN-SUFFIX,apple-relay.apple.com
 - DOMAIN-SUFFIX,apple-relay.cloudflare.com
 - DOMAIN-SUFFIX,apple-relay.fastly-edge.com
 - DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
+- DOMAIN-SUFFIX,apple.news
+- DOMAIN-SUFFIX,apps.apple.com
 - DOMAIN-SUFFIX,apps.mzstatic.com
 - DOMAIN-SUFFIX,appsflyersdk.com
+- DOMAIN-SUFFIX,appsto.re
 - DOMAIN-SUFFIX,arc.net
 - DOMAIN-SUFFIX,arkoselabs.com
 - DOMAIN-SUFFIX,asana.biz
 - DOMAIN-SUFFIX,asana.com
 - DOMAIN-SUFFIX,ats1.e-timing.ne.jp
+- DOMAIN-SUFFIX,audio-ssl.itunes.apple.com
 - DOMAIN-SUFFIX,augment.com
 - DOMAIN-SUFFIX,augmentcode.com
 - DOMAIN-SUFFIX,auth0.com
@@ -175,6 +204,7 @@ payload:
 - DOMAIN-SUFFIX,beedone.co
 - DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
 - DOMAIN-SUFFIX,bingapis.com
+- DOMAIN-SUFFIX,blobstore.apple.com
 - DOMAIN-SUFFIX,buffer.com
 - DOMAIN-SUFFIX,bufferapp.com
 - DOMAIN-SUFFIX,bytedapm.com
@@ -183,6 +213,7 @@ payload:
 - DOMAIN-SUFFIX,canva.com
 - DOMAIN-SUFFIX,canva.dev
 - DOMAIN-SUFFIX,canva.site
+- DOMAIN-SUFFIX,cdn-apple.com
 - DOMAIN-SUFFIX,cerebras.ai
 - DOMAIN-SUFFIX,challenges.cloudflare.com
 - DOMAIN-SUFFIX,character.ai
@@ -223,7 +254,6 @@ payload:
 - DOMAIN-SUFFIX,copilot.microsoft.com
 - DOMAIN-SUFFIX,cortana.ai
 - DOMAIN-SUFFIX,coze.com
-- DOMAIN-SUFFIX,cp2.cloudflare.com
 - DOMAIN-SUFFIX,cp4.cloudflare.com
 - DOMAIN-SUFFIX,csp.withgoogle.com
 - DOMAIN-SUFFIX,ct.sendgrid.net
@@ -242,6 +272,7 @@ payload:
 - DOMAIN-SUFFIX,diabrowser.com
 - DOMAIN-SUFFIX,diabrowser.engineering
 - DOMAIN-SUFFIX,dify.ai
+- DOMAIN-SUFFIX,digicert.com
 - DOMAIN-SUFFIX,dola.com
 - DOMAIN-SUFFIX,edgeservices.bing.com
 - DOMAIN-SUFFIX,elevenlabs.io
@@ -287,6 +318,8 @@ payload:
 - DOMAIN-SUFFIX,h3.google.com
 - DOMAIN-SUFFIX,heygen.com
 - DOMAIN-SUFFIX,hf.co
+- DOMAIN-SUFFIX,hls-amt.itunes.apple.com
+- DOMAIN-SUFFIX,hls.itunes.apple.com
 - DOMAIN-SUFFIX,honeycomb.io
 - DOMAIN-SUFFIX,host.livekit.cloud
 - DOMAIN-SUFFIX,huggingface.co
@@ -338,6 +371,7 @@ payload:
 - DOMAIN-SUFFIX,oauth2.googleapis.com
 - DOMAIN-SUFFIX,observeit.net
 - DOMAIN-SUFFIX,oceanapi-i18n.com
+- DOMAIN-SUFFIX,ocsp.apple.com
 - DOMAIN-SUFFIX,ogads-pa.clients6.google.com
 - DOMAIN-SUFFIX,ogs.google.com
 - DOMAIN-SUFFIX,opal.google
@@ -406,9 +440,11 @@ payload:
 - DOMAIN-SUFFIX,traeapi.us
 - DOMAIN-SUFFIX,ttwstatic.com
 - DOMAIN-SUFFIX,turn.livekit.cloud
+- DOMAIN-SUFFIX,tv.apple.com
 - DOMAIN-SUFFIX,udio.com
 - DOMAIN-SUFFIX,updates.cdn-apple.com
 - DOMAIN-SUFFIX,usemotion.com
+- DOMAIN-SUFFIX,userlocations.googleapis.com
 - DOMAIN-SUFFIX,v0.dev
 - DOMAIN-SUFFIX,vercel.com
 - DOMAIN-SUFFIX,vercel.sh

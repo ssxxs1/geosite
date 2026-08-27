@@ -1,14 +1,14 @@
 # NAME: Global
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-21 14:24:34
+# UPDATED: 2026-08-27 07:15:38
 # DOMAIN: 128
 # DOMAIN-KEYWORD: 36
-# DOMAIN-SUFFIX: 34724
+# DOMAIN-SUFFIX: 34739
 # IP-CIDR: 112
 # IP-CIDR6: 4
 # PROCESS-NAME: 1
-# TOTAL: 35005
+# TOTAL: 35020
 
 payload:
 - DOMAIN,1password.drift.click
@@ -661,6 +661,7 @@ payload:
 - DOMAIN-SUFFIX,5aimiku.com
 - DOMAIN-SUFFIX,5axis-machining.com
 - DOMAIN-SUFFIX,5beatsbydre.com
+- DOMAIN-SUFFIX,5ch.io
 - DOMAIN-SUFFIX,5ch.net
 - DOMAIN-SUFFIX,5fang.cc
 - DOMAIN-SUFFIX,5i01.com
@@ -2083,6 +2084,7 @@ payload:
 - DOMAIN-SUFFIX,amazonvideo.cc
 - DOMAIN-SUFFIX,amazonvideo.com
 - DOMAIN-SUFFIX,amazonvideodirect.com
+- DOMAIN-SUFFIX,amazonwebservices.com
 - DOMAIN-SUFFIX,amazonworkdocs.com
 - DOMAIN-SUFFIX,ambs.ac.uk
 - DOMAIN-SUFFIX,amc.com
@@ -2375,6 +2377,7 @@ payload:
 - DOMAIN-SUFFIX,api.moomoobull.com
 - DOMAIN-SUFFIX,api.nebula-emby.com
 - DOMAIN-SUFFIX,api.news
+- DOMAIN-SUFFIX,api.shuaiapi.com
 - DOMAIN-SUFFIX,apiary.io
 - DOMAIN-SUFFIX,apiauto.ru
 - DOMAIN-SUFFIX,apibay.org
@@ -5522,6 +5525,7 @@ payload:
 - DOMAIN-SUFFIX,brewmp.com
 - DOMAIN-SUFFIX,briantreepayments.net
 - DOMAIN-SUFFIX,briantreepayments.tv
+- DOMAIN-SUFFIX,briarproject.org
 - DOMAIN-SUFFIX,bricoltech.ac.uk
 - DOMAIN-SUFFIX,bridgce.ac.uk
 - DOMAIN-SUFFIX,bridge-studio.co.uk
@@ -9298,6 +9302,7 @@ payload:
 - DOMAIN-SUFFIX,dreamamateurs.com
 - DOMAIN-SUFFIX,dreambmw.ca
 - DOMAIN-SUFFIX,dreamforce.com
+- DOMAIN-SUFFIX,dreamgen.com
 - DOMAIN-SUFFIX,dreammovies.com
 - DOMAIN-SUFFIX,dreamorder.com
 - DOMAIN-SUFFIX,dreamteamfc.com
@@ -11187,6 +11192,7 @@ payload:
 - DOMAIN-SUFFIX,fans17.com
 - DOMAIN-SUFFIX,fans66.tw
 - DOMAIN-SUFFIX,fansking.tw
+- DOMAIN-SUFFIX,fansly.com
 - DOMAIN-SUFFIX,fansnudes.com
 - DOMAIN-SUFFIX,fansone.co
 - DOMAIN-SUFFIX,fanspot.jp
@@ -14592,6 +14598,7 @@ payload:
 - DOMAIN-SUFFIX,historicbooks.ac.uk
 - DOMAIN-SUFFIX,history-uk.ac.uk
 - DOMAIN-SUFFIX,history.ac.uk
+- DOMAIN-SUFFIX,historylines.net
 - DOMAIN-SUFFIX,historyofdota.com
 - DOMAIN-SUFFIX,historyofdota.net
 - DOMAIN-SUFFIX,historyofdota.org
@@ -14930,7 +14937,6 @@ payload:
 - DOMAIN-SUFFIX,hp-mns.com
 - DOMAIN-SUFFIX,hp-printing.com
 - DOMAIN-SUFFIX,hp-webplatform.com
-- DOMAIN-SUFFIX,hp-ww.com
 - DOMAIN-SUFFIX,hp.company
 - DOMAIN-SUFFIX,hp.io
 - DOMAIN-SUFFIX,hp3d.com
@@ -17746,6 +17752,7 @@ payload:
 - DOMAIN-SUFFIX,kiwi.jp
 - DOMAIN-SUFFIX,kiwi.kz
 - DOMAIN-SUFFIX,kiwibrowser.com
+- DOMAIN-SUFFIX,kiwix.org
 - DOMAIN-SUFFIX,kiyobank.co.jp
 - DOMAIN-SUFFIX,kk-whys.co.jp
 - DOMAIN-SUFFIX,kk.stream
@@ -19466,6 +19473,7 @@ payload:
 - DOMAIN-SUFFIX,mcdonaldsarabia.com
 - DOMAIN-SUFFIX,mcdonaldsparties.co.nz
 - DOMAIN-SUFFIX,mcdonaldsparties.com.au
+- DOMAIN-SUFFIX,mceindex.com
 - DOMAIN-SUFFIX,mcfog.com
 - DOMAIN-SUFFIX,mcisco.com
 - DOMAIN-SUFFIX,mcls.ac.uk
@@ -21829,6 +21837,8 @@ payload:
 - DOMAIN-SUFFIX,nicis.ac.uk
 - DOMAIN-SUFFIX,nickscipio.com
 - DOMAIN-SUFFIX,nicky.xxx
+- DOMAIN-SUFFIX,nico.ms
+- DOMAIN-SUFFIX,nicochannel.jp
 - DOMAIN-SUFFIX,nicodic.jp
 - DOMAIN-SUFFIX,nicolepeters.com
 - DOMAIN-SUFFIX,nicomanga.jp
@@ -22207,6 +22217,7 @@ payload:
 - DOMAIN-SUFFIX,norton.com
 - DOMAIN-SUFFIX,norwichresearchpark.ac.uk
 - DOMAIN-SUFFIX,nos.nl
+- DOMAIN-SUFFIX,notegpt.io
 - DOMAIN-SUFFIX,notepad-plus-plus.org
 - DOMAIN-SUFFIX,noticias-rt.com
 - DOMAIN-SUFFIX,notimundo.press
@@ -22234,6 +22245,7 @@ payload:
 - DOMAIN-SUFFIX,nottm-coll.ac.uk
 - DOMAIN-SUFFIX,nottsmaternity.ac.uk
 - DOMAIN-SUFFIX,novafile.com
+- DOMAIN-SUFFIX,novelai.net
 - DOMAIN-SUFFIX,novelasia.com
 - DOMAIN-SUFFIX,novella.ac.uk
 - DOMAIN-SUFFIX,noveltrove.com
@@ -22791,6 +22803,7 @@ payload:
 - DOMAIN-SUFFIX,oldham.ac.uk
 - DOMAIN-SUFFIX,oldhornymilfs.com
 - DOMAIN-SUFFIX,oldje.com
+- DOMAIN-SUFFIX,oldmapsonline.org
 - DOMAIN-SUFFIX,oldroyd.ac.uk
 - DOMAIN-SUFFIX,olds.ac.uk
 - DOMAIN-SUFFIX,oldvic.ac.uk
@@ -29035,6 +29048,7 @@ payload:
 - DOMAIN-SUFFIX,talentlens.com
 - DOMAIN-SUFFIX,taleofthenight.com
 - DOMAIN-SUFFIX,talk853.com
+- DOMAIN-SUFFIX,talkai.info
 - DOMAIN-SUFFIX,talkatone.com
 - DOMAIN-SUFFIX,talkboxapp.com
 - DOMAIN-SUFFIX,talkcc.com
@@ -33266,6 +33280,7 @@ payload:
 - DOMAIN-SUFFIX,x3guide.com
 - DOMAIN-SUFFIX,x3vid.com
 - DOMAIN-SUFFIX,x6av.com
+- DOMAIN-SUFFIX,x86.fr
 - DOMAIN-SUFFIX,x99av.com
 - DOMAIN-SUFFIX,x9wang.com
 - DOMAIN-SUFFIX,xacmbq.xyz
