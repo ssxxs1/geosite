@@ -1,14 +1,14 @@
 # NAME: Global
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-27 07:15:38
+# UPDATED: 2026-08-28 23:17:02
 # DOMAIN: 128
 # DOMAIN-KEYWORD: 36
-# DOMAIN-SUFFIX: 34739
+# DOMAIN-SUFFIX: 34743
 # IP-CIDR: 112
 # IP-CIDR6: 4
 # PROCESS-NAME: 1
-# TOTAL: 35020
+# TOTAL: 35024
 
 payload:
 - DOMAIN,1password.drift.click
@@ -1128,6 +1128,7 @@ payload:
 - DOMAIN-SUFFIX,adguard.io
 - DOMAIN-SUFFIX,adguard.org
 - DOMAIN-SUFFIX,adguardaccount.com
+- DOMAIN-SUFFIX,adguardaccount.net
 - DOMAIN-SUFFIX,adguardcdn.com
 - DOMAIN-SUFFIX,adguardvpn.com
 - DOMAIN-SUFFIX,adhelpnews.com
@@ -13872,6 +13873,7 @@ payload:
 - DOMAIN-SUFFIX,h0930.com
 - DOMAIN-SUFFIX,h18ani1.vip
 - DOMAIN-SUFFIX,h1n1china.org
+- DOMAIN-SUFFIX,h264.io
 - DOMAIN-SUFFIX,h2o.ai
 - DOMAIN-SUFFIX,h2porn.com
 - DOMAIN-SUFFIX,h528.com
@@ -23173,6 +23175,7 @@ payload:
 - DOMAIN-SUFFIX,oursteps.com.au
 - DOMAIN-SUFFIX,oursweb.net
 - DOMAIN-SUFFIX,ourtv.hk
+- DOMAIN-SUFFIX,ouryahoo.com
 - DOMAIN-SUFFIX,oustudios.ac.uk
 - DOMAIN-SUFFIX,out-app-purchase.com
 - DOMAIN-SUFFIX,outbound.io
@@ -34077,6 +34080,7 @@ payload:
 - DOMAIN-SUFFIX,yahoodns.net
 - DOMAIN-SUFFIX,yahoofinance.com
 - DOMAIN-SUFFIX,yahoohealth.com
+- DOMAIN-SUFFIX,yahooinc.com
 - DOMAIN-SUFFIX,yahoomusic.com
 - DOMAIN-SUFFIX,yahoosandbox.com
 - DOMAIN-SUFFIX,yahoosportsbook.com

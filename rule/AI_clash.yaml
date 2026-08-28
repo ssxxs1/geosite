@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-27 07:15:40
+# UPDATED: 2026-08-28 23:17:03
 # DOMAIN: 127
 # DOMAIN-KEYWORD: 13
-# DOMAIN-SUFFIX: 316
+# DOMAIN-SUFFIX: 317
 # DOMAIN-WILDCARD: 13
 # IP-ASN: 3
 # IP-CIDR: 11
 # IP-CIDR6: 4
-# TOTAL: 487
+# TOTAL: 488
 
 payload:
 - DOMAIN,account.diabrowser.engineering
@@ -367,6 +367,7 @@ payload:
 - DOMAIN-SUFFIX,notebooklm.googleapis.com
 - DOMAIN-SUFFIX,novita.ai
 - DOMAIN-SUFFIX,oaistatic.com
+- DOMAIN-SUFFIX,oaistatsig.com
 - DOMAIN-SUFFIX,oaiusercontent.com
 - DOMAIN-SUFFIX,oauth2.googleapis.com
 - DOMAIN-SUFFIX,observeit.net

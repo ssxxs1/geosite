@@ -1,9 +1,9 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-27 07:15:33
+# UPDATED: 2026-08-28 23:16:56
 # HOST: 127
-# HOST-SUFFIX: 316
+# HOST-SUFFIX: 317
 # HOST-KEYWORD: 13
 # HOST-WILDCARD: 13
 # URL-REGEX: 1
@@ -11,7 +11,7 @@
 # IP6-CIDR: 4
 # IP-ASN: 3
 # USER-AGENT: 5
-# TOTAL: 493
+# TOTAL: 494
 
 HOST,account.diabrowser.engineering
 HOST,ai-service.diabrowser.engineering
@@ -355,6 +355,7 @@ HOST-SUFFIX,notebooklm.google.com
 HOST-SUFFIX,notebooklm.googleapis.com
 HOST-SUFFIX,novita.ai
 HOST-SUFFIX,oaistatic.com
+HOST-SUFFIX,oaistatsig.com
 HOST-SUFFIX,oaiusercontent.com
 HOST-SUFFIX,oauth2.googleapis.com
 HOST-SUFFIX,observeit.net
