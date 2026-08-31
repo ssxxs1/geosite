@@ -74,13 +74,19 @@ jobs:
             git commit -m "Update rules"
             git push
           fi
+      - name: Set version
+        id: ver
+        run: echo "tag=v1.1.1.$(date -u +%y%m%d%H%M)" >> "$GITHUB_OUTPUT"
+
 
       - name: Create GitHub Release
         if: success()
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: geosite-${{ github.run_id }}
-          name: Geosite ${{ github.run_id }}
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: ${{ steps.ver.outputs.tag }}
+          draft: false
+          prerelease: false
           files: |
             rule/*.json
             rule/*.srs
