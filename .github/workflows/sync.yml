@@ -85,6 +85,7 @@ jobs:
             rule/*.json
             rule/*.srs
             rule/*_clash.yaml
+            Private/*.list
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
