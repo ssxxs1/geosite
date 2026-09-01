@@ -1,6 +1,11 @@
 {
   "rules": [
     {
+      "domain": [
+        "hsbc.edge.sdk.awswaf.com"
+      ]
+    },
+    {
       "domain_keyword": [
         "bochk",
         "hsbchk",
