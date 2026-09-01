@@ -2,6 +2,7 @@
   "rules": [
     {
       "domain": [
+        "c-hsbc.lytics.io",
         "hsbc.edge.sdk.awswaf.com"
       ]
     },
