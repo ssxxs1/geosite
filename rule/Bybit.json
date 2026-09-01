@@ -2,13 +2,11 @@
   "rules": [
     {
       "domain": [
-        "app-measurement.com",
         "bybit-exchange.github.io"
       ]
     },
     {
       "domain_suffix": [
-        "appsflyer.com",
         "byabcde.com",
         "byapis.com",
         "byapps.net",
