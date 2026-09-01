@@ -13,12 +13,12 @@ on:
   workflow_dispatch:
     inputs:
       force_update:
-        description: 'Force update (allow large rule reduction)'
+        description: "Force update (allow large rule reduction)"
         required: false
         type: boolean
         default: false
   schedule:
-    - cron: '0 14 * * 5'
+    - cron: "0 14 * * 5"
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
       - name: Set up Python3
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
@@ -74,10 +74,14 @@ jobs:
             git commit -m "Update rules"
             git push
           fi
+
+      - name: Remove empty files
+        run: |
+          find rule -type f -size 0 -delete
+          find Private -type f -size 0 -delete
       - name: Set version
         id: ver
         run: echo "tag=v1.1.1.$(date -u +%y%m%d%H%M)" >> "$GITHUB_OUTPUT"
-
 
       - name: Create GitHub Release
         if: success()
