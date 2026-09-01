@@ -1,65 +1,121 @@
 # https://github.com/Accademia/Additional_Rule_For_Clash/tree/main/Bank
 # 2026-06-12
 # 渣打香港
-HOST-SUFFIX,sc.com.hk, BankHK                            
-HOST-SUFFIX,sc.com, BankHK                                
-HOST-KEYWORD,standchartbank, BankHK                 
-HOST-SUFFIX,omtrdc.net, BankHK                            
-HOST-SUFFIX,yvn1g4-cdn-settings.appsflyersdk.com, BankHK    
-HOST-SUFFIX,yvn1g4-launches.appsflyersdk.com, BankHK        
+HOST-SUFFIX, sc.com.hk, BankHK                            
+HOST-SUFFIX, sc.com, BankHK                                
+HOST-SUFFIX, standardchartered.com.hk, BankHK                                
+HOST-SUFFIX, standardchartered.com, BankHK                                
+HOST-KEYWORD, standchartbank, BankHK                 
+HOST-SUFFIX, yvn1g4-cdn-settings.appsflyersdk.com, BankHK    
+HOST-SUFFIX, yvn1g4-launches.appsflyersdk.com, BankHK        
+HOST-SUFFIX, mox.com, BankHK
+HOST-SUFFIX, moxbank.com, BankHK
 
  # 华侨永亨
 HOST-SUFFIX,ocbcwhhk.com, BankHK      
  # 恒生银行                   
-HOST-SUFFIX,hangseng.com, BankHK 
+HOST-SUFFIX, hangseng.com, BankHK 
+HOST-SUFFIX, hangseng.com.hk, BankHK
 # 招商永隆                        
 HOST-SUFFIX,cmbwinglungbank.com, BankHK                   
+HOST-SUFFIX,winglungbank.com, BankHK                   
 # 中信国际
 HOST-SUFFIX,cncbinternational.com, BankHK      
 # 花旗香港           
 HOST-SUFFIX,citibank.com.hk, BankHK    
 # 星展香港                   
-HOST-SUFFIX,dbs.com.hk, BankHK       
+HOST-SUFFIX, dbs.com.hk, BankHK   
+HOST-SUFFIX, dbs.com, BankHK    
 # 南洋银行                     
-HOST-SUFFIX,ncb.com.hk, BankHK              
+HOST-SUFFIX,ncb.com.hk, BankHK  
+# Fusion Bank (富融银行 / 腾讯+工银亚洲)
+HOST-SUFFIX, fusionbank.com, BankHK 
+HOST-SUFFIX, icbcasia.com, BankHK
+
+ # 东亚银行 (BEA Bank)
+HOST-SUFFIX, hkbea.com, BankHK
+HOST-SUFFIX, hkbea-invest.com, BankHK
+HOST-SUFFIX, bea-union.com, BankHK
+
+# WeLab Bank (匯立銀行)
+HOST-SUFFIX, welab.bank, BankHK
+HOST-SUFFIX, welab.co, BankHK
+
+# 建行亚洲 (CCB Asia)
+HOST-SUFFIX, asia.ccb.com, BankHK
+HOST-SUFFIX, ccb.com.hk, BankHK
 
 HOST-SUFFIX, za.group, BankHK
 HOST-SUFFIX, zafinsvc.com, BankHK
 HOST-SUFFIX, zajourney.com, BankHK
 HOST-SUFFIX, zaticdn.com, BankHK
 HOST-SUFFIX, zainvest.group, BankHK
+HOST-SUFFIX, zatech.com, BankHK
+HOST-SUFFIX, zhongan.io, BankHK
 
 HOST-SUFFIX, airstarbank.com, BankHK
 HOST-SUFFIX, elebank.com, BankHK
 
 HOST-SUFFIX, antbank.hk, BankHK
+
 HOST-SUFFIX, hsbc.com.hk, BankHK
+HOST-SUFFIX, hsbc.com, BankHK
 HOST-SUFFIX, mds1a.trkd-hs.com, BankHK
+HOST-SUFFIX, hsbcnet.com, BankHK
+HOST-SUFFIX, payme.hsbc, BankHK
 HOST-KEYWORD, hsbchk, BankHK
-HOST-SUFFIX, optimizely.com, BankHK
-HOST-SUFFIX, lpsnmedia.net, BankHK
-HOST, hsbc.edge.sdk.awswaf.com, BankHK
-HOST, c-hsbc.lytics.io, BankHK
 
 #Reward+
 HOST-SUFFIX, openrice.com, BankHK  
-HOST-SUFFIX, liveperson.net, BankHK 
-HOST-SUFFIX, lpsnmedia.com, BankHK 
-HOST-SUFFIX, tealiumiq.com, BankHK 
 HOST-SUFFIX, vam-hk.cloud1.vv1865.com, BankHK
 HOST-SUFFIX, cdnhsbcrhostorage.azureedge.net, BankHK
-HOST-SUFFIX, siteintercept.qualtrics.com, BankHK
-HOST-SUFFIX, tiqcdn.com, BankHK
 HOST-SUFFIX, digicert.com, BankHK
-HOST-SUFFIX, we-stats.com, BankHK
-HOST-SUFFIX, online-metrix.net, BankHK
-HOST-SUFFIX, eum-appdynamics.com, BankHK
 
 HOST-SUFFIX, bochk.com, BankHK
+HOST-SUFFIX, bochk.com.hk, BankHK
 HOST-SUFFIX, boccc.com.hk, BankHK
 HOST-SUFFIX, etnet.com.hk, BankHK 
 HOST-SUFFIX, systemweb.com.hk, BankHK
+HOST-SUFFIX, livibank.com, BankHK
+HOST-SUFFIX, bocservices.com.hk, BankHK
+HOST-SUFFIX, boclife.com.hk, BankHK
 HOST-KEYWORD, bochk, BankHK
 
-HOST-SUFFIX, wise.com, BankHK
 
+HOST-SUFFIX, wise.com, BankHK
+HOST-SUFFIX, wiseassets.com, BankHK
+HOST-SUFFIX, transferwise.com, BankHK
+HOST-SUFFIX, tw-assets.com, BankHK
+HOST-SUFFIX, transferwise.cloud, BankHK
+
+# ==========================================
+# 🛡️ 银行 App 核心风控/设备指纹/WAF/遥测 (极易被去广告拦截)
+# ==========================================
+# ThreatMetrix (设备指纹风控底层)
+HOST-SUFFIX, online-metrix.net, BankHK
+HOST-SUFFIX, threatmetrix.com, BankHK
+
+# Tealium (Tag 与数据流转)
+HOST-SUFFIX, tiqcdn.com, BankHK
+HOST-SUFFIX, tealiumiq.com, BankHK
+
+# Lytics (汇丰等客户行为分析)
+#HOST-SUFFIX, lytics.io, BankHK
+HOST, c-hsbc.lytics.io, BankHK
+
+
+# AWS WAF 防护组件 (汇丰、渣打等使用，建议直接后缀匹配)
+#HOST-SUFFIX, sdk.awswaf.com, BankHK
+HOST, hsbc.edge.sdk.awswaf.com, BankHK
+
+# 数据统计与 APM 监控
+HOST-SUFFIX, we-stats.com, BankHK
+HOST-SUFFIX, eum-appdynamics.com, BankHK
+HOST-SUFFIX, omtrdc.net, BankHK
+HOST-SUFFIX, optimizely.com, BankHK
+HOST-SUFFIX, siteintercept.qualtrics.com, BankHK
+
+# 在线客服系统 (LivePerson)
+HOST-SUFFIX, liveperson.net, BankHK
+HOST-SUFFIX, lpsnmedia.com, BankHK
+HOST-SUFFIX, lpsnmedia.net, BankHK
