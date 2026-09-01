@@ -39,6 +39,7 @@ HOST-KEYWORD, hsbchk, BankHK
 HOST-SUFFIX, optimizely.com, BankHK
 HOST-SUFFIX, lpsnmedia.net, BankHK
 HOST, hsbc.edge.sdk.awswaf.com, BankHK
+HOST, c-hsbc.lytics.io, BankHK
 
 #Reward+
 HOST-SUFFIX, openrice.com, BankHK  
