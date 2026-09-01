@@ -16,8 +16,3 @@ HOST-SUFFIX,byapps.net,Bybit
 HOST-SUFFIX,byd3c3.com,Bybit
 HOST-SUFFIX,bybdc6.com,Bybit
 
-
-# Bybit 第三方依赖
-
-HOST,app-measurement.com,Bybit
-HOST-SUFFIX,appsflyer.com,Bybit
