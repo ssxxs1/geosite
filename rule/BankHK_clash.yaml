@@ -1,11 +1,11 @@
 # NAME: BankHK
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-01 10:09:15
+# UPDATED: 2026-09-03 03:57:05
 # DOMAIN: 2
 # DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 71
-# TOTAL: 76
+# DOMAIN-SUFFIX: 76
+# TOTAL: 81
 
 payload:
 - DOMAIN,c-hsbc.lytics.io
@@ -16,6 +16,7 @@ payload:
 - DOMAIN-SUFFIX,airstarbank.com
 - DOMAIN-SUFFIX,antbank.hk
 - DOMAIN-SUFFIX,asia.ccb.com
+- DOMAIN-SUFFIX,bankcomm.com.hk
 - DOMAIN-SUFFIX,bea-union.com
 - DOMAIN-SUFFIX,boccc.com.hk
 - DOMAIN-SUFFIX,bochk.com
@@ -23,19 +24,22 @@ payload:
 - DOMAIN-SUFFIX,boclife.com.hk
 - DOMAIN-SUFFIX,bocservices.com.hk
 - DOMAIN-SUFFIX,ccb.com.hk
+- DOMAIN-SUFFIX,ccbasia.com
 - DOMAIN-SUFFIX,cdnhsbcrhostorage.azureedge.net
+- DOMAIN-SUFFIX,chbank.com
 - DOMAIN-SUFFIX,citibank.com.hk
 - DOMAIN-SUFFIX,cmbwinglungbank.com
 - DOMAIN-SUFFIX,cncbinternational.com
+- DOMAIN-SUFFIX,dahsing.com
 - DOMAIN-SUFFIX,dbs.com
 - DOMAIN-SUFFIX,dbs.com.hk
-- DOMAIN-SUFFIX,digicert.com
 - DOMAIN-SUFFIX,elebank.com
 - DOMAIN-SUFFIX,etnet.com.hk
 - DOMAIN-SUFFIX,eum-appdynamics.com
 - DOMAIN-SUFFIX,fusionbank.com
 - DOMAIN-SUFFIX,hangseng.com
 - DOMAIN-SUFFIX,hangseng.com.hk
+- DOMAIN-SUFFIX,hk.cmbchina.com
 - DOMAIN-SUFFIX,hkbea-invest.com
 - DOMAIN-SUFFIX,hkbea.com
 - DOMAIN-SUFFIX,hsbc.com
@@ -50,11 +54,12 @@ payload:
 - DOMAIN-SUFFIX,mox.com
 - DOMAIN-SUFFIX,moxbank.com
 - DOMAIN-SUFFIX,ncb.com.hk
+- DOMAIN-SUFFIX,ocbc.com.hk
 - DOMAIN-SUFFIX,ocbcwhhk.com
 - DOMAIN-SUFFIX,omtrdc.net
 - DOMAIN-SUFFIX,online-metrix.net
-- DOMAIN-SUFFIX,openrice.com
 - DOMAIN-SUFFIX,optimizely.com
+- DOMAIN-SUFFIX,paob.com.hk
 - DOMAIN-SUFFIX,payme.hsbc
 - DOMAIN-SUFFIX,sc.com
 - DOMAIN-SUFFIX,sc.com.hk

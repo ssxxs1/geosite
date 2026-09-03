@@ -4,8 +4,15 @@
 
 HOST,bybit-exchange.github.io,Bybit
 
+HOST-KEYWORD,bybit,Bybit
+
 HOST-SUFFIX,bybit.biz,Bybit
+HOST-SUFFIX,bybit.cloud,Bybit
 HOST-SUFFIX,bybit.com,Bybit
+HOST-SUFFIX,bybit-aws.com,Bybit
+HOST-SUFFIX,bybit-global.com,Bybit
+HOST-SUFFIX,bybitglobal.com,Bybit
+HOST-SUFFIX,bitverse.zone,Bybit
 HOST-SUFFIX,bycsi.com,Bybit
 HOST-SUFFIX,bytick.com,Bybit
 HOST-SUFFIX,byapis.com,Bybit

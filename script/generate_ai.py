@@ -20,7 +20,7 @@ from urllib3.util.retry import Retry
 
 OUTPUT_PATH = Path("Private/AI.list")
 MINIMUM_RULES = 100
-MAX_SHRINK_RATIO = 0.20
+MAX_SHRINK_RATIO = 0.35
 
 
 @dataclass(frozen=True)
@@ -81,6 +81,10 @@ SOURCES = [
         "https://raw.githubusercontent.com/RocM301/Apple-Rule/refs/heads/main/Apple-AI.list",
     ),
     Source(
+        "ddgksf2013-apple-intelligence",
+        "https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/AppleIntelligence.list",
+    ),
+    Source(
         "shangrenxi",
         "https://raw.githubusercontent.com/shangrenxi/Rules/refs/heads/master/rules/AI.list",
     ),
@@ -96,10 +100,6 @@ SOURCES = [
         "rulego-ai",
         "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list",
     ),
-    Source(
-        "blackmatrix7-AppleProxy",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AppleProxy/AppleProxy.list",
-    ),
     # Kelee8's former raw GitHub URL returns 404 and kelee.one blocks CI-style clients.
     # Keep it disabled until a stable, directly downloadable URL is available.
     Source(
@@ -110,13 +110,30 @@ SOURCES = [
 ]
 
 SUPPLEMENTAL_AI_DOMAINS = [
+    # Top AI Chat, Search & LLM APIs
+    "phind.com",
+    "cohere.com",
+    "fireworks.ai",
+    "replicate.com",
+    "replicate.delivery",
+    "gamma.app",
+    # Coding & Fullstack Agentic Builders
+    "bolt.new",
+    "lovable.dev",
+    # Generative Video & Audio
     "lumalabs.ai",
     "pika.art",
     "heygen.com",
     "udio.com",
-    "gamma.app",
-    "phind.com",
-    "cohere.com",
+    "klingai.com",
+    "hailuoai.com",
+    "haiper.ai",
+    "runway.com",
+    # Generative Image & Models
+    "ideogram.ai",
+    "krea.ai",
+    "blackforestlabs.ai",
+    "civitai.com",
 ]
 
 PROVIDER_ANCHORS = {
@@ -185,15 +202,33 @@ HEADER_TYPE_NAMES = {
 UPDATED_PATTERN = re.compile(r"^# UPDATED: (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})$")
 
 BLOCKED_EXACT_DOMAINS = {
+    # Analytics & Telemetry
     "www.google-analytics.com",
-    "time.nist.gov",
-    "time-a-g.nist.gov",
-    "time-b-g.nist.gov",
-    "time-c-g.nist.gov",
+    "static.cloudflareinsights.com",
+    "digicert.com",
+    "identrust.com",
+    # Git & General Dev (Keep copilot subdomains safe while not hijacking git CLI)
+    "api.github.com",
+    # Google general non-AI CDN / Maps / Video (Explicitly NOT touching Gemini APIs)
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "maps.googleapis.com",
+    "maps.gstatic.com",
+    "streetviewpixels-pa.googleapis.com",
+    "i.ytimg.com",
+    "yt3.ggpht.com",
+    "ipv4.google.com",
+    "h3.google.com",
+    "developerprofiles.google.com",
+    # Specific Time/NTP hosts
+    "clock.isc.org",
+    "ats1.e-timing.ne.jp",
 }
 
 BLOCKED_DOMAIN_SUFFIXES = {
+    # Ads, Analytics & Telemetry
     "appsflyer.com",
+    "appsflyersdk.com",
     "browser-intake-datadoghq.com",
     "cdn.usefathom.com",
     "datadoghq.com",
@@ -204,13 +239,61 @@ BLOCKED_DOMAIN_SUFFIXES = {
     "intercomcdn.com",
     "sentry.io",
     "segment.io",
+    "segment.com",
+    "segmentify.com",
     "stripe.com",
+    "stripecdn.com",
+    "stripe.network",
+    "statsig.com",
+    "statsigapi.net",
+    "launchdarkly.com",
+    "observeit.net",
+    "honeycomb.io",
+    # ByteDance / TikTok Tracking & Payments
+    "pipopay.com",
+    "bytedapm.com",
+    "byteintlapi.com",
+    "byteoversea.com",
+    "itobsnssdk.com",
+    "ttwstatic.com",
+    # General Non-AI Platforms & Web Hosts (Prevent traffic hijacking)
+    "canva.com",
+    "canva.dev",
+    "canva.site",
+    "asana.com",
+    "asana.biz",
+    "buffer.com",
+    "bufferapp.com",
+    "zapier.com",
+    "wp.com",
+    "playwright.azureedge.net",
+    "open-vsx.org",
+    "zed.dev",
+    "vercel.com",
+    "vercel.sh",
+    "wondershare.com",
+    "zeetings.com",
+    "slidesgo.com",
+    "smartmockups.com",
+    "enhancv.com",
+    "kickresume.com",
+    # Apple Non-AI Media, Store & News (AppleProxy leak cleanup)
+    "itunes.apple.com",
+    "apple.news",
+    "tv.apple.com",
+    "applemusic.com",
+    "developer.apple.com",
+    "devimages-cdn.apple.com",
+    "devstreaming-cdn.apple.com",
+    "docs-assets.developer.apple.com",
+    "testflight.apple.com",
+    "apple.comscoreresearch.com",
+    "blobstore.apple.com",
+    "cdn.apple-cloudkit.com",
+    "cvws.icloud-content.com",
+    "appsto.re",
+    "apps.apple.com",
 }
-
-BLOCKED_LABEL_PREFIXES = (
-    "ntp",
-    "timeserver",
-)
 
 
 class GenerationError(RuntimeError):
@@ -366,18 +449,58 @@ def parse_source_text(text: str, source: Source) -> tuple[list[Rule], Counter]:
     return rules, stats
 
 
+def is_time_or_ntp(domain: str) -> bool:
+    if domain.endswith((
+        ".nist.gov",
+        ".colorado.edu",
+        ".qcomgeo2.com",
+        ".miz.nao.ac.jp",
+        ".ntp-servers.net",
+        ".ring.gr.jp",
+        ".time.nl",
+        ".e-timing.ne.jp",
+    )):
+        return True
+    labels = domain.split(".")
+    for label in labels:
+        if re.fullmatch(r"(?:.*ntp.*|.*time[0-9a-z\-]*|timeserver.*)", label):
+            if label not in {"realtime", "runtime", "airtime", "primetime", "uptime"}:
+                return True
+    return False
+
+
 def domain_is_blocked(rule: Rule) -> str | None:
+    # Block unwanted non-AI Apple media user agents (Apple News, Apple TV)
+    if rule.kind == "user-agent":
+        val = rule.value.lower()
+        if any(val.startswith(p) for p in ("applenews", "appletv", "com.apple.news", "com.apple.tv")):
+            return "blocked-apple-media-ua"
+        return None
+
+    # Block broad VPS datacenter ASNs (DigitalOcean 14061, Vultr 20473)
+    if rule.kind == "ip-asn":
+        if rule.value in {"14061", "20473"}:
+            return "blocked-vps-asn"
+        return None
+
+    # Block telemetry wildcards & keywords
+    if rule.kind in {"host-keyword", "host-wildcard"}:
+        val = rule.value.lower()
+        if "datadog" in val or val == "sift":
+            return "blocked-telemetry-keyword"
+        return None
+
     if rule.kind not in {"host", "host-suffix"}:
         return None
+
     domain = rule.value.lower().rstrip(".")
     if domain in BLOCKED_EXACT_DOMAINS:
         return "exact-domain"
     for suffix in BLOCKED_DOMAIN_SUFFIXES:
         if domain == suffix or domain.endswith("." + suffix):
             return "blocked-suffix"
-    labels = domain.split(".")
-    if any(label == "time" or label.startswith(BLOCKED_LABEL_PREFIXES) for label in labels):
-        return "time-or-ntp-label"
+    if is_time_or_ntp(domain):
+        return "time-or-ntp"
     return None
 
 

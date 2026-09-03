@@ -1,35 +1,29 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-08-28 23:16:56
-# HOST: 127
-# HOST-SUFFIX: 317
-# HOST-KEYWORD: 13
-# HOST-WILDCARD: 13
+# UPDATED: 2026-09-03 03:54:30
+# HOST: 74
+# HOST-SUFFIX: 267
+# HOST-KEYWORD: 11
+# HOST-WILDCARD: 12
 # URL-REGEX: 1
 # IP-CIDR: 11
 # IP6-CIDR: 4
-# IP-ASN: 3
-# USER-AGENT: 5
-# TOTAL: 494
+# IP-ASN: 1
+# TOTAL: 381
 
 HOST,account.diabrowser.engineering
 HOST,ai-service.diabrowser.engineering
 HOST,anthropic-com.ghost.io
 HOST,anthropic.auth0.com
 HOST,anthropic.com.cdn.cloudflare.net
-HOST,api-glb-sea.smoot.apple.com,AppleProxy
 HOST,api.elevenlabs.io
-HOST,api.github.com
 HOST,api.githubcopilot.com
 HOST,api.hyperbolic.xyz
 HOST,api.jetbrains.ai
 HOST,api.msn.com
 HOST,api.x.ai
-HOST,apple.comscoreresearch.com,AppleProxy
 HOST,assets.msn.com
-HOST,books.itunes.apple.com,AppleProxy
-HOST,cdn.apple-cloudkit.com,AppleProxy
 HOST,cdn.openaimerge.com
 HOST,cdn.workos.com
 HOST,chat.mistral.ai
@@ -40,17 +34,12 @@ HOST,copilot-proxy.githubusercontent.com
 HOST,copilot.cloud.microsoft
 HOST,copilotstudio.microsoft.com
 HOST,cp2.cloudflare.com
-HOST,cvws.icloud-content.com,AppleProxy
 HOST,daily-cloudcode-pa.googleapis.com
 HOST,dc-genai-access-provisioning-api.adobe.io
 HOST,dc-genai-content-platform.adobe.io
 HOST,dc-genai-persistence.adobe.io
-HOST,developer.apple.com,AppleProxy
-HOST,devimages-cdn.apple.com,AppleProxy
-HOST,devstreaming-cdn.apple.com,AppleProxy
 HOST,devv.featurebase.app
 HOST,dia-blocklists-release.diabrowser.engineering
-HOST,docs-assets.developer.apple.com,AppleProxy
 HOST,firefly-ai.adobe.io
 HOST,firefly-cliov2.adobe.com
 HOST,firefly-ps.adobe.io
@@ -58,16 +47,11 @@ HOST,firefly.adobe.com
 HOST,forwarder.workos.com
 HOST,gateway.bingviz.microsoft.net
 HOST,gateway.bingviz.microsoftapp.net
-HOST,hls-svod.itunes.apple.com,AppleProxy
 HOST,humb.apple.com
 HOST,images.workoscdn.com
 HOST,imagine.meta.com
 HOST,in.appcenter.ms
-HOST,itunes.apple.com,AppleProxy
-HOST,izattime.qcomgeo2.com
-HOST,js-cdn.music.apple.com,AppleProxy
 HOST,location.microsoft.com
-HOST,lookup-api.apple.com,AppleProxy
 HOST,m365copilot.com
 HOST,mask-api.fe.apple-dns.net
 HOST,mask-api.icloud.com
@@ -78,18 +62,12 @@ HOST,mcs-va.coze.com
 HOST,mds-cdn.infra.adobesensei.io
 HOST,mssdk-i18n-sg.coze.com
 HOST,mssdk-i18n-va.coze.com
-HOST,news-assets.apple.com,AppleProxy
-HOST,news-client.apple.com,AppleProxy
-HOST,news-edge.apple.com,AppleProxy
-HOST,news-events.apple.com,AppleProxy
-HOST,np-edge.itunes.apple.com,AppleProxy
 HOST,odc.officeapps.live.com
 HOST,openai-api.arkoselabs.com
 HOST,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 HOST,openaicomproductionae4b.blob.core.windows.net
 HOST,opt-i18n.coze.com
 HOST,perplexity-ai.cloudflareaccess.com
-HOST,play-edge.itunes.apple.com,AppleProxy
 HOST,portal.customtranslator.azure.us
 HOST,ppl-ai-file-upload.s3.amazonaws.com
 HOST,pplx-res.cloudinary.com
@@ -97,49 +75,17 @@ HOST,pre-signed-firefly-prod.s3-accelerate.amazonaws.com
 HOST,pre-signed-firefly-prod.s3.amazonaws.com
 HOST,production-openaicom-storage.azureedge.net
 HOST,r.bing.com
-HOST,sandbox.itunes.apple.com,AppleProxy
 HOST,self.events.data.microsoft.com
 HOST,senseimds.adobe.io
 HOST,servd-anthropic-website.b-cdn.net
 HOST,services.bingapis.com
 HOST,setup.workos.com
 HOST,sf-coze-web-cdn.coze.com
-HOST,static.cloudflareinsights.com
 HOST,survey.coze.com
 HOST,sydney.bing.com
-HOST,testflight.apple.com,AppleProxy
-HOST,time-a-b.nist.gov
-HOST,time-a-wwv.nist.gov
-HOST,time-b-b.nist.gov
-HOST,time-b-wwv.nist.gov
-HOST,time-c-b.nist.gov
-HOST,time-c-wwv.nist.gov
-HOST,time-d-b.nist.gov
-HOST,time-d-g.nist.gov
-HOST,time-d-wwv.nist.gov
-HOST,time-e-b.nist.gov
-HOST,time-e-g.nist.gov
-HOST,time-e-wwv.nist.gov
-HOST,time1.facebook.com
-HOST,time1.google.com
-HOST,time2.facebook.com
-HOST,time2.google.com
-HOST,time3.facebook.com
-HOST,time3.google.com
-HOST,time4.facebook.com
-HOST,time4.google.com
-HOST,time5.facebook.com
 HOST,trae-api-sg.mchost.guru
-HOST,tv.applemusic.com,AppleProxy
-HOST,ut1-time.colorado.edu
-HOST,ut1-wwv.nist.gov
-HOST,utcnist.colorado.edu
-HOST,utcnist2.colorado.edu
-HOST,utcnist3.colorado.edu
-HOST,uts-api.itunes.apple.com,AppleProxy
 HOST,workos.imgix.net
 HOST,www.bing.com
-HOST,xtratime.qcomgeo2.com
 HOST-SUFFIX,ai.com
 HOST-SUFFIX,ai.google
 HOST-SUFFIX,ai.google.dev
@@ -153,7 +99,6 @@ HOST-SUFFIX,aiva.ai
 HOST-SUFFIX,algolia.net
 HOST-SUFFIX,alkalicore-pa.clients6.google.com
 HOST-SUFFIX,alkalimakersuite-pa.clients6.google.com
-HOST-SUFFIX,amp-api.apps.apple.com
 HOST-SUFFIX,anthropic.com
 HOST-SUFFIX,antigravity-unleash.goog
 HOST-SUFFIX,antigravity.google
@@ -163,24 +108,16 @@ HOST-SUFFIX,anyword.com
 HOST-SUFFIX,api.cognitive.azure.cn
 HOST-SUFFIX,api.cognitive.microsoft.us
 HOST-SUFFIX,api.microsoftapp.net
-HOST-SUFFIX,api.statsig.com
 HOST-SUFFIX,apis.google.com
 HOST-SUFFIX,apple-dns.net
+HOST-SUFFIX,apple-relay.akamaized.net
 HOST-SUFFIX,apple-relay.apple.com
 HOST-SUFFIX,apple-relay.cloudflare.com
 HOST-SUFFIX,apple-relay.fastly-edge.com
 HOST-SUFFIX,apple-relay.mask.apple-dns.net
-HOST-SUFFIX,apple.news,AppleProxy
-HOST-SUFFIX,apps.apple.com,AppleProxy
 HOST-SUFFIX,apps.mzstatic.com
-HOST-SUFFIX,appsflyersdk.com
-HOST-SUFFIX,appsto.re,AppleProxy
 HOST-SUFFIX,arc.net
 HOST-SUFFIX,arkoselabs.com
-HOST-SUFFIX,asana.biz
-HOST-SUFFIX,asana.com
-HOST-SUFFIX,ats1.e-timing.ne.jp
-HOST-SUFFIX,audio-ssl.itunes.apple.com,AppleProxy
 HOST-SUFFIX,augment.com
 HOST-SUFFIX,augmentcode.com
 HOST-SUFFIX,auth0.com
@@ -192,16 +129,8 @@ HOST-SUFFIX,beautiful.ai
 HOST-SUFFIX,beedone.co
 HOST-SUFFIX,bing-shopping.microsoft-falcon.io
 HOST-SUFFIX,bingapis.com
-HOST-SUFFIX,blobstore.apple.com,AppleProxy
-HOST-SUFFIX,buffer.com
-HOST-SUFFIX,bufferapp.com
-HOST-SUFFIX,bytedapm.com
-HOST-SUFFIX,byteintlapi.com
-HOST-SUFFIX,byteoversea.com
-HOST-SUFFIX,canva.com
-HOST-SUFFIX,canva.dev
-HOST-SUFFIX,canva.site
-HOST-SUFFIX,cdn-apple.com,AppleProxy
+HOST-SUFFIX,blackforestlabs.ai
+HOST-SUFFIX,bolt.new
 HOST-SUFFIX,cerebras.ai
 HOST-SUFFIX,challenges.cloudflare.com
 HOST-SUFFIX,character.ai
@@ -215,6 +144,7 @@ HOST-SUFFIX,chroniclehq.com
 HOST-SUFFIX,cici.com
 HOST-SUFFIX,ciciai.com
 HOST-SUFFIX,ciciaicdn.com
+HOST-SUFFIX,civitai.com
 HOST-SUFFIX,clau.de
 HOST-SUFFIX,claude.ai
 HOST-SUFFIX,claude.com
@@ -225,7 +155,6 @@ HOST-SUFFIX,client-api.arkoselabs.com
 HOST-SUFFIX,clients4.google.com
 HOST-SUFFIX,clients6.google.com
 HOST-SUFFIX,clipdrop.co
-HOST-SUFFIX,clock.isc.org
 HOST-SUFFIX,clockwise.ai
 HOST-SUFFIX,cloudaicompanion.googleapis.com
 HOST-SUFFIX,cloudcode-pa.googleapis.com
@@ -255,12 +184,10 @@ HOST-SUFFIX,deepmind.google
 HOST-SUFFIX,default.exp-tas.com
 HOST-SUFFIX,deta.space
 HOST-SUFFIX,deta.surf
-HOST-SUFFIX,developerprofiles.google.com
 HOST-SUFFIX,devv.ai
 HOST-SUFFIX,diabrowser.com
 HOST-SUFFIX,diabrowser.engineering
 HOST-SUFFIX,dify.ai
-HOST-SUFFIX,digicert.com,AppleProxy
 HOST-SUFFIX,dola.com
 HOST-SUFFIX,edgeservices.bing.com
 HOST-SUFFIX,elevenlabs.io
@@ -268,9 +195,7 @@ HOST-SUFFIX,encrypted-tbn0.gstatic.com
 HOST-SUFFIX,encrypted-tbn1.gstatic.com
 HOST-SUFFIX,encrypted-tbn2.gstatic.com
 HOST-SUFFIX,encrypted-tbn3.gstatic.com
-HOST-SUFFIX,enhancv.com
 HOST-SUFFIX,ethyca.com
-HOST-SUFFIX,events.statsigapi.net
 HOST-SUFFIX,factory.ai
 HOST-SUFFIX,fal.ai
 HOST-SUFFIX,featureassets.org
@@ -279,8 +204,7 @@ HOST-SUFFIX,feedhive.com
 HOST-SUFFIX,feedhive.io
 HOST-SUFFIX,firebase.studio
 HOST-SUFFIX,fireflies.ai
-HOST-SUFFIX,fonts.googleapis.com
-HOST-SUFFIX,fonts.gstatic.com
+HOST-SUFFIX,fireworks.ai
 HOST-SUFFIX,g.ai
 HOST-SUFFIX,gamma.app
 HOST-SUFFIX,gateway.ai.cloudflare.com
@@ -303,30 +227,25 @@ HOST-SUFFIX,grok.com
 HOST-SUFFIX,groq.com
 HOST-SUFFIX,gspe1-ssl.ls.apple.com
 HOST-SUFFIX,guzzoni.apple.com
-HOST-SUFFIX,h3.google.com
+HOST-SUFFIX,hailuoai.com
+HOST-SUFFIX,haiper.ai
 HOST-SUFFIX,heygen.com
 HOST-SUFFIX,hf.co
-HOST-SUFFIX,hls-amt.itunes.apple.com,AppleProxy
-HOST-SUFFIX,hls.itunes.apple.com,AppleProxy
-HOST-SUFFIX,honeycomb.io
 HOST-SUFFIX,host.livekit.cloud
 HOST-SUFFIX,huggingface.co
 HOST-SUFFIX,hyperbolic.ai
-HOST-SUFFIX,i.ytimg.com
-HOST-SUFFIX,identrust.com
+HOST-SUFFIX,ideogram.ai
 HOST-SUFFIX,inference.ml.azure.com
-HOST-SUFFIX,ipv4.google.com
-HOST-SUFFIX,itobsnssdk.com
 HOST-SUFFIX,jasper.ai
 HOST-SUFFIX,jetbrains.ai
 HOST-SUFFIX,jina.ai
 HOST-SUFFIX,jnn-pa.googleapis.com
 HOST-SUFFIX,jules.google.com
-HOST-SUFFIX,kickresume.com
 HOST-SUFFIX,kiro.dev
+HOST-SUFFIX,klingai.com
+HOST-SUFFIX,krea.ai
 HOST-SUFFIX,labs.google
 HOST-SUFFIX,labs.google.com
-HOST-SUFFIX,launchdarkly.com
 HOST-SUFFIX,learnyourway.withgoogle.com
 HOST-SUFFIX,leonardo.ai
 HOST-SUFFIX,lh3.google.com
@@ -334,12 +253,11 @@ HOST-SUFFIX,lh3.googleusercontent.com
 HOST-SUFFIX,lh5.googleusercontent.com
 HOST-SUFFIX,livekit.cloud
 HOST-SUFFIX,llama.com
+HOST-SUFFIX,lovable.dev
 HOST-SUFFIX,lovart.ai
 HOST-SUFFIX,ls.apple.com
 HOST-SUFFIX,lumalabs.ai
 HOST-SUFFIX,makersuite.google.com
-HOST-SUFFIX,maps.googleapis.com
-HOST-SUFFIX,maps.gstatic.com
 HOST-SUFFIX,mask-h2.icloud.com
 HOST-SUFFIX,mask.icloud.com
 HOST-SUFFIX,mem.ai
@@ -358,15 +276,12 @@ HOST-SUFFIX,oaistatic.com
 HOST-SUFFIX,oaistatsig.com
 HOST-SUFFIX,oaiusercontent.com
 HOST-SUFFIX,oauth2.googleapis.com
-HOST-SUFFIX,observeit.net
 HOST-SUFFIX,oceanapi-i18n.com
-HOST-SUFFIX,ocsp.apple.com,AppleProxy
 HOST-SUFFIX,ogads-pa.clients6.google.com
 HOST-SUFFIX,ogs.google.com
 HOST-SUFFIX,opal.google
 HOST-SUFFIX,opal.google.com
 HOST-SUFFIX,opal.withgoogle.com
-HOST-SUFFIX,open-vsx.org
 HOST-SUFFIX,openai.com
 HOST-SUFFIX,openai.com.cdn.cloudflare.net
 HOST-SUFFIX,openaiapi-site.azureedge.net
@@ -379,8 +294,6 @@ HOST-SUFFIX,perplexity.ai
 HOST-SUFFIX,perplexity.com
 HOST-SUFFIX,phind.com
 HOST-SUFFIX,pika.art
-HOST-SUFFIX,pipopay.com
-HOST-SUFFIX,playwright.azureedge.net
 HOST-SUFFIX,poe.com
 HOST-SUFFIX,poecdn.net
 HOST-SUFFIX,pplx.ai
@@ -388,32 +301,25 @@ HOST-SUFFIX,proactivebackend-pa.googleapis.com
 HOST-SUFFIX,prodregistryv2.org
 HOST-SUFFIX,prowritingaid.com
 HOST-SUFFIX,reclaim.ai
+HOST-SUFFIX,replicate.com
+HOST-SUFFIX,replicate.delivery
 HOST-SUFFIX,robinfrontend-pa.googleapis.com
+HOST-SUFFIX,runway.com
 HOST-SUFFIX,runwayml.com
-HOST-SUFFIX,s2csntp.miz.nao.ac.jp
 HOST-SUFFIX,search.windows.net
 HOST-SUFFIX,secretmanager.googleapis.com
-HOST-SUFFIX,segment.com
-HOST-SUFFIX,segmentify.com
 HOST-SUFFIX,sensei.adobe.io
 HOST-SUFFIX,senseicore.adobe.io
 HOST-SUFFIX,shortwave.app
 HOST-SUFFIX,shortwave.com
-HOST-SUFFIX,slidesgo.com
-HOST-SUFFIX,smartmockups.com
 HOST-SUFFIX,smoot.apple.com
 HOST-SUFFIX,sora.com
 HOST-SUFFIX,speech.googleapis.com
 HOST-SUFFIX,ssl.gstatic.com
-HOST-SUFFIX,statsig.com
-HOST-SUFFIX,statsigapi.net
 HOST-SUFFIX,stax.withgoogle.com
 HOST-SUFFIX,stitch.withgoogle.com
 HOST-SUFFIX,strawberrybrowserapi.xyz
 HOST-SUFFIX,strawberrybucket.xyz
-HOST-SUFFIX,streetviewpixels-pa.googleapis.com
-HOST-SUFFIX,stripe.network
-HOST-SUFFIX,stripecdn.com
 HOST-SUFFIX,stt.speech.azure.cn
 HOST-SUFFIX,stt.speech.azure.us
 HOST-SUFFIX,studio.firebase.google.com
@@ -427,25 +333,19 @@ HOST-SUFFIX,tokenflux.ai
 HOST-SUFFIX,tome.app
 HOST-SUFFIX,trae.ai
 HOST-SUFFIX,traeapi.us
-HOST-SUFFIX,ttwstatic.com
 HOST-SUFFIX,turn.livekit.cloud
-HOST-SUFFIX,tv.apple.com,AppleProxy
 HOST-SUFFIX,udio.com
 HOST-SUFFIX,updates.cdn-apple.com
 HOST-SUFFIX,usemotion.com
 HOST-SUFFIX,userlocations.googleapis.com
 HOST-SUFFIX,v0.dev
-HOST-SUFFIX,vercel.com
-HOST-SUFFIX,vercel.sh
 HOST-SUFFIX,voyageai.com
 HOST-SUFFIX,waa-pa.clients6.google.com
 HOST-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com
 HOST-SUFFIX,windsurf.com
 HOST-SUFFIX,withgoogle.com
-HOST-SUFFIX,wondershare.com
 HOST-SUFFIX,wordtune.com
 HOST-SUFFIX,workos.com
-HOST-SUFFIX,wp.com
 HOST-SUFFIX,writer.com
 HOST-SUFFIX,www.googleapis.com
 HOST-SUFFIX,www.gstatic.com
@@ -453,13 +353,8 @@ HOST-SUFFIX,x.ai
 HOST-SUFFIX,xai.chronosphere.io
 HOST-SUFFIX,yhgfb-static.com
 HOST-SUFFIX,you.com
-HOST-SUFFIX,yt3.ggpht.com
-HOST-SUFFIX,zapier.com
-HOST-SUFFIX,zed.dev
-HOST-SUFFIX,zeetings.com
 HOST-KEYWORD,alkalimakersuite-pa.clients6.google.com
 HOST-KEYWORD,colab
-HOST-KEYWORD,datadog
 HOST-KEYWORD,developerprofiles
 HOST-KEYWORD,generativelanguage
 HOST-KEYWORD,labs.google
@@ -468,9 +363,7 @@ HOST-KEYWORD,openai
 HOST-KEYWORD,openaiapi
 HOST-KEYWORD,openaicom
 HOST-KEYWORD,openaicom-api
-HOST-KEYWORD,sift
 HOST-KEYWORD,siri
-HOST-WILDCARD,*-datadoghq.com
 HOST-WILDCARD,*-pa.clients*.google.com
 HOST-WILDCARD,*-pa.googleapis.com
 HOST-WILDCARD,antigravity*.us-central*.run.app
@@ -499,11 +392,4 @@ IP6-CIDR,2001:67c:21bc:1e::123/128,no-resolve
 IP6-CIDR,2606:4700:f1::123/128,no-resolve
 IP6-CIDR,2607:6bc0::/32,no-resolve
 IP6-CIDR,2a03:8600::cc/128,no-resolve
-IP-ASN,14061,no-resolve
-IP-ASN,20473,no-resolve
 IP-ASN,399358,no-resolve
-USER-AGENT,AppleNews*,AppleProxy
-USER-AGENT,AppleTV*,AppleProxy
-USER-AGENT,com.apple.news*,AppleProxy
-USER-AGENT,com.apple.trustd*,AppleProxy
-USER-AGENT,com.apple.tv*,AppleProxy

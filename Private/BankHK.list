@@ -11,23 +11,25 @@ HOST-SUFFIX, yvn1g4-launches.appsflyersdk.com, BankHK
 HOST-SUFFIX, mox.com, BankHK
 HOST-SUFFIX, moxbank.com, BankHK
 
- # 华侨永亨
-HOST-SUFFIX,ocbcwhhk.com, BankHK      
+ # 华侨银行 (OCBC Hong Kong)
+HOST-SUFFIX, ocbc.com.hk, BankHK
+HOST-SUFFIX, ocbcwhhk.com, BankHK      
  # 恒生银行                   
 HOST-SUFFIX, hangseng.com, BankHK 
 HOST-SUFFIX, hangseng.com.hk, BankHK
-# 招商永隆                        
-HOST-SUFFIX,cmbwinglungbank.com, BankHK                   
-HOST-SUFFIX,winglungbank.com, BankHK                   
+# 招商永隆 / 招商银行香港分行
+HOST-SUFFIX, cmbwinglungbank.com, BankHK                   
+HOST-SUFFIX, winglungbank.com, BankHK
+HOST-SUFFIX, hk.cmbchina.com, BankHK
 # 中信国际
-HOST-SUFFIX,cncbinternational.com, BankHK      
+HOST-SUFFIX, cncbinternational.com, BankHK      
 # 花旗香港           
-HOST-SUFFIX,citibank.com.hk, BankHK    
+HOST-SUFFIX, citibank.com.hk, BankHK    
 # 星展香港                   
 HOST-SUFFIX, dbs.com.hk, BankHK   
 HOST-SUFFIX, dbs.com, BankHK    
 # 南洋银行                     
-HOST-SUFFIX,ncb.com.hk, BankHK  
+HOST-SUFFIX, ncb.com.hk, BankHK  
 # Fusion Bank (富融银行 / 腾讯+工银亚洲)
 HOST-SUFFIX, fusionbank.com, BankHK 
 HOST-SUFFIX, icbcasia.com, BankHK
@@ -44,7 +46,18 @@ HOST-SUFFIX, welab.co, BankHK
 # 建行亚洲 (CCB Asia)
 HOST-SUFFIX, asia.ccb.com, BankHK
 HOST-SUFFIX, ccb.com.hk, BankHK
+HOST-SUFFIX, ccbasia.com, BankHK
 
+# 交通银行香港
+HOST-SUFFIX, bankcomm.com.hk, BankHK
+
+# 大新银行
+HOST-SUFFIX, dahsing.com, BankHK
+
+# 创兴银行
+HOST-SUFFIX, chbank.com, BankHK
+
+# 众安银行 (ZA Bank)
 HOST-SUFFIX, za.group, BankHK
 HOST-SUFFIX, zafinsvc.com, BankHK
 HOST-SUFFIX, zajourney.com, BankHK
@@ -53,11 +66,17 @@ HOST-SUFFIX, zainvest.group, BankHK
 HOST-SUFFIX, zatech.com, BankHK
 HOST-SUFFIX, zhongan.io, BankHK
 
+# 天星银行 (Airstar Bank)
 HOST-SUFFIX, airstarbank.com, BankHK
 HOST-SUFFIX, elebank.com, BankHK
 
+# 蚂蚁银行 (Ant Bank)
 HOST-SUFFIX, antbank.hk, BankHK
 
+# 平安壹账通银行 (PAO Bank)
+HOST-SUFFIX, paob.com.hk, BankHK
+
+# 汇丰银行 (HSBC)
 HOST-SUFFIX, hsbc.com.hk, BankHK
 HOST-SUFFIX, hsbc.com, BankHK
 HOST-SUFFIX, mds1a.trkd-hs.com, BankHK
@@ -65,11 +84,9 @@ HOST-SUFFIX, hsbcnet.com, BankHK
 HOST-SUFFIX, payme.hsbc, BankHK
 HOST-KEYWORD, hsbchk, BankHK
 
-#Reward+
-HOST-SUFFIX, openrice.com, BankHK  
+# Reward+ 相关专属静态资源
 HOST-SUFFIX, vam-hk.cloud1.vv1865.com, BankHK
 HOST-SUFFIX, cdnhsbcrhostorage.azureedge.net, BankHK
-HOST-SUFFIX, digicert.com, BankHK
 
 HOST-SUFFIX, bochk.com, BankHK
 HOST-SUFFIX, bochk.com.hk, BankHK

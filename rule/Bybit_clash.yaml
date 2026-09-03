@@ -1,19 +1,26 @@
 # NAME: Bybit
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-01 10:09:15
+# UPDATED: 2026-09-03 03:57:05
 # DOMAIN: 1
-# DOMAIN-SUFFIX: 11
-# TOTAL: 12
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 16
+# TOTAL: 18
 
 payload:
 - DOMAIN,bybit-exchange.github.io
+- DOMAIN-KEYWORD,bybit
+- DOMAIN-SUFFIX,bitverse.zone
 - DOMAIN-SUFFIX,byabcde.com
 - DOMAIN-SUFFIX,byapis.com
 - DOMAIN-SUFFIX,byapps.net
 - DOMAIN-SUFFIX,bybdc6.com
+- DOMAIN-SUFFIX,bybit-aws.com
+- DOMAIN-SUFFIX,bybit-global.com
 - DOMAIN-SUFFIX,bybit.biz
+- DOMAIN-SUFFIX,bybit.cloud
 - DOMAIN-SUFFIX,bybit.com
+- DOMAIN-SUFFIX,bybitglobal.com
 - DOMAIN-SUFFIX,bycbe.com
 - DOMAIN-SUFFIX,bycsi.com
 - DOMAIN-SUFFIX,byd3c3.com
