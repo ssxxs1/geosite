@@ -67,6 +67,7 @@ jobs:
           git add rule/*.srs 2>/dev/null || echo "No srs files"
           git add rule/*_clash.yaml 2>/dev/null || echo "No clash yaml files"
           git add Private/*.list 2>/dev/null || echo "No private list files"
+          git add Private/*.snippet 2>/dev/null || echo "No private snippet files"
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
@@ -96,6 +97,7 @@ jobs:
             rule/*.srs
             rule/*_clash.yaml
             Private/*.list
+            Private/*.snippet
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
