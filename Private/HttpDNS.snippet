@@ -14,35 +14,28 @@
 # =============================================================
 #
 # -------------------------------------------------------------
-# 【架构原理指南】什么时候用 reject、reject-200、reject-dict？
+# 【架构原理指南】什么时候用 reject vs reject-dict？
 # -------------------------------------------------------------
 #
-# 1. 什么时候用 url reject (HTTP 404 / TCP RST)？
-#    - 【适用场景】：纯统计上报、遥测打点 (Telemetry)、纯广告追踪接口。
-#    - 【机制特征】：客户端即使请求失败，也不影响核心业务流程，或者该业务本身没有降级重试逻辑。
-#    - 【避坑禁忌】：绝不可用于核心网络库、初始化配置或 HTTPDNS 接口！一旦对 HTTPDNS 返回 404，
-#      移动端网络引擎（OkHttp/Cronet/Mars/AMDC）会判定为“偶发网络故障 (Transient Network Failure)”，
-#      立即启动指数退避高频重试（每隔数秒唤醒基带发热、打满日志），甚至弹窗警告“网络不稳定”。
+# 1. 什么时候用 url reject (HTTP 404 / 快速失败 Fail-Fast)？
+#    - 【适用场景 1 - 微信 (Weixin) 接口】：必须使用 reject 快速失败！
+#      若错误返回 reject-200 (200 空包)，微信 Mars 引擎会误以为拉取到了空服务器列表，
+#      长连接缓存被清空，陷入 10~15 秒的长连接超时转圈（显示"收取中..."）！
+#      使用 reject 返回 404，微信底层立即判定 HTTPDNS 故障，零延迟 Fail-Fast 走本地系统 DNS 秒收消息。
+#    - 【适用场景 2 - 纯文本/IP 列表接口】：如腾讯云/DNSPod 开放规范的 /d 接口 (拼多多、企微等)，
+#      直接拒绝连接让客户端快速切入 LocalDNS，避免空 200 引起悬挂。
 #
-# 2. 什么时候用 url reject-200 (HTTP 200 + 0 字节空 Body)？
-#    - 【适用场景 1 - 纯文本/IP 列表】：如腾讯云/DNSPod 开放规范的 /d 接口 (119.29.29.29/d、拼多多、企微等)。
-#      官方规范明确定义：/d 接口为纯文本传输，无记录或异常时返回空字符串，SDK 读取到空字符串后
-#      自动触发官方兜底逻辑回退 LocalDNS。若误用 reject-dict，SDK 会将 "{}" 当作非法 IP 抛出校验异常。
-#    - 【适用场景 2 - Protobuf 二进制协议】：如微信 micromsg-bin/newgetdns。
-#      对于 Protobuf 类协议，空 Body 比注入 JSON 文本更安全（"{}" 可能因 Wire-Type 错误导致解码异常）；
-#      如实测客户端将 200+空 Body 视为无 DNS 结果并回退 LocalDNS，则使用 reject-200。
+# 2. 什么时候用 url reject-dict (HTTP 200 + 空 JSON 对象 {})？
+#    - 【适用场景 - RESTful / JSON 调度接口】：如阿里 AMDC、京东、百度、B 站 P2P、美团、微博、知乎等。
+#    - 【机制特征】：App 在收到响应后强制调用 JSON 解析器 (如 Android new JSONObject 或 iOS NSJSONSerialization)。
+#      - 若返回 reject (404)，阿里 AMDC 等 SDK 会判定为网络崩溃，强行启动备用 IP 轮询降级队列，
+#        且在 App 顶部弹出醒目报错黄条“当前网络环境不稳定”！
+#      - 若返回 reject-dict ({})，JSON 反序列化顺利完成，SDK 判定“服务端下发了空策略”，
+#        更新本地缓存时间戳并进入正常休眠周期，彻底消除重试风暴与大黄条报错。
 #
-# 3. 什么时候用 url reject-dict (HTTP 200 + 空 JSON 对象 {})？
-#    - 【适用场景 - RESTful / JSON 响应】：如阿里 AMDC、字节 TTNet、京东、百度、B 站 P2P、美团、微博、知乎等。
-#    - 【机制特征】：App 在收到 200 状态码后，会强制调用 JSON 解析器 (如 Android new JSONObject 或 iOS NSJSONSerialization)。
-#      - 若返回 reject-200 (空字节)，会抛出 JSONException: End of input，SDK 视作“数据截断/报文损坏”，
-#        从而继续轮询剩余的十几个备用 IP，重试风暴依然无法停止！
-#      - 若返回 reject-dict ({})，JSON 反序列化顺利完成，SDK 读取到空结果后预期判定"无调度策略下发"，
-#        进入正常休眠周期，不再发起重试，从而回退 LocalDNS。
-#
-# 4. (附) 什么时候用 url reject-array 与 reject-img？
-#    - reject-array：接口期望返回 JSON 列表 (形如 [])，如某些广告列表、推荐流 API。
-#    - reject-img：接口期望返回图片文件，返回 1x1 像素透明 GIF/PNG，防止 UI 渲染破图。
+# 3. (附) 关于 snippet 中的 [rewrite_local] 声明：
+#    原版 VirgilClyne 将 #[rewrite_local] 注释是提示用户将其合并入配置。
+#    本独立 snippet 显式保留 [rewrite_local]，以便在 Quantumult X 远程订阅中作为完整模块直接加载生效。
 # -------------------------------------------------------------
 
 [rewrite_local]
@@ -111,41 +104,41 @@
 ^http:\/\/103\.41\.167\.237\/v2\/resolv url reject-dict
 
 # =============================================================
-# 分类 2: 纯文本 / IP 列表类接口 (/d 规范，返回空 200 符合官方回退标准)
+# 分类 2: 纯文本 / IP 列表类接口 (/d 规范，使用 reject 触发快速失败 Fail-Fast)
 # =============================================================
 
 # > QCloud (腾讯云移动解析 HTTPDNS)
 # refer: https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
 # refer: https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
 # refer: https://cloud.tencent.com/document/product/379/61200
-^https?:\/\/119\.29\.29\.29\/d url reject-200
+^https?:\/\/119\.29\.29\.29\/d url reject
 
 # > QQmusic (QQ 音乐专属调度，原版 182.256 系笔误，实测腾讯存活真实节点为 182.254.116.116)
-^http:\/\/182\.25[46]\.116\.116\/d url reject-200
+^http:\/\/182\.25[46]\.116\.116\/d url reject
 
 # > Wework (企业微信专属调度)
 # refer: https://res.mail.qq.com/zh_CN/wework_ip/latest.html
-^http:\/\/182\.254\.116\.117\/d url reject-200
-^http:\/\/182\.254\.118\.119\/d url reject-200
+^http:\/\/182\.254\.116\.117\/d url reject
+^http:\/\/182\.254\.118\.119\/d url reject
 
 # > Pinduoduo (拼多多采用腾讯云 HTTPDNS /d 协议)
-^http:\/\/101\.35\.204\.35\/d url reject-200
-^http:\/\/101\.35\.212\.35\/d url reject-200
-^http:\/\/114\.110\.96\.26\/d url reject-200
-^http:\/\/114\.110\.97\.97\/d url reject-200
-^http:\/\/\[?240c:409f::3:0:163\]?\/d url reject-200
-^http:\/\/\[?240c:409f::3:0:359\]?\/d url reject-200
-^http:\/\/\[?2402:4e00:1411:201:0:9964:ba21:5a41\]?\/d url reject-200
+^http:\/\/101\.35\.204\.35\/d url reject
+^http:\/\/101\.35\.212\.35\/d url reject
+^http:\/\/114\.110\.96\.26\/d url reject
+^http:\/\/114\.110\.97\.97\/d url reject
+^http:\/\/\[?240c:409f::3:0:163\]?\/d url reject
+^http:\/\/\[?240c:409f::3:0:359\]?\/d url reject
+^http:\/\/\[?2402:4e00:1411:201:0:9964:ba21:5a41\]?\/d url reject
 
 # =============================================================
-# 分类 3: Protobuf 二进制类接口 (微信，使用 reject-200 且严禁 MitM)
+# 分类 3: 微信接口 (使用 reject 明确报错，避免 200 空包毒化长连接导致转圈)
 # =============================================================
 
 # > Weixin (微信 HTTPDNS & CDN 调度，仅针对可能降级的 HTTP 请求进行静默拦截)
-^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns url reject-200
-^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns url reject-200
-^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject-200
-^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject-200
+^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns url reject
+^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns url reject
+^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
+^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
 
 [mitm]
 # 严格遵循原版定义，严禁加入泛域名（如 *.zijieapi.com 避免穿山甲广告 SDK 引发全局开屏阻塞）与 SSL Pinning 域名
