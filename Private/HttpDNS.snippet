@@ -148,5 +148,5 @@
 ^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject-200
 
 [mitm]
-# 仅对支持标准 CA 证书解密的域名开启 MitM（严禁加入微信等自带 SSL Pinning 的域名）
-hostname = amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.zijieapi.com
+# 严格遵循原版定义，严禁加入泛域名（如 *.zijieapi.com 避免穿山甲广告 SDK 引发全局开屏阻塞）与 SSL Pinning 域名
+hostname = 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com
