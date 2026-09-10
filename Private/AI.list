@@ -1,16 +1,16 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-10 03:32:13
+# UPDATED: 2026-09-10 04:58:42
 # HOST: 70
-# HOST-SUFFIX: 253
+# HOST-SUFFIX: 256
 # HOST-KEYWORD: 11
 # HOST-WILDCARD: 12
 # URL-REGEX: 1
 # IP-CIDR: 11
 # IP6-CIDR: 4
 # IP-ASN: 1
-# TOTAL: 363
+# TOTAL: 366
 
 HOST,account.diabrowser.engineering
 HOST,ai-service.diabrowser.engineering
@@ -109,6 +109,7 @@ HOST-SUFFIX,apple-relay.apple.com
 HOST-SUFFIX,apple-relay.cloudflare.com
 HOST-SUFFIX,apple-relay.fastly-edge.com
 HOST-SUFFIX,apple-relay.mask.apple-dns.net
+HOST-SUFFIX,apps.mzstatic.com
 HOST-SUFFIX,arc.net
 HOST-SUFFIX,arkoselabs.com
 HOST-SUFFIX,augment.com
@@ -213,6 +214,7 @@ HOST-SUFFIX,grazie.ai
 HOST-SUFFIX,grazie.aws.intellij.net
 HOST-SUFFIX,grok.com
 HOST-SUFFIX,groq.com
+HOST-SUFFIX,gspe1-ssl.ls.apple.com
 HOST-SUFFIX,guzzoni.apple.com
 HOST-SUFFIX,hailuoai.com
 HOST-SUFFIX,haiper.ai
@@ -242,6 +244,7 @@ HOST-SUFFIX,livekit.cloud
 HOST-SUFFIX,llama.com
 HOST-SUFFIX,lovable.dev
 HOST-SUFFIX,lovart.ai
+HOST-SUFFIX,ls.apple.com
 HOST-SUFFIX,lumalabs.ai
 HOST-SUFFIX,makersuite.google.com
 HOST-SUFFIX,mask-h2.icloud.com

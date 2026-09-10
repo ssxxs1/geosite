@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-10 03:55:21
+# UPDATED: 2026-09-10 04:58:50
 # DOMAIN: 70
 # DOMAIN-KEYWORD: 11
-# DOMAIN-SUFFIX: 253
+# DOMAIN-SUFFIX: 256
 # DOMAIN-WILDCARD: 12
 # IP-ASN: 1
 # IP-CIDR: 11
 # IP-CIDR6: 4
-# TOTAL: 362
+# TOTAL: 365
 
 payload:
 - DOMAIN,account.diabrowser.engineering
@@ -120,6 +120,7 @@ payload:
 - DOMAIN-SUFFIX,apple-relay.cloudflare.com
 - DOMAIN-SUFFIX,apple-relay.fastly-edge.com
 - DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
+- DOMAIN-SUFFIX,apps.mzstatic.com
 - DOMAIN-SUFFIX,arc.net
 - DOMAIN-SUFFIX,arkoselabs.com
 - DOMAIN-SUFFIX,augment.com
@@ -224,6 +225,7 @@ payload:
 - DOMAIN-SUFFIX,grazie.aws.intellij.net
 - DOMAIN-SUFFIX,grok.com
 - DOMAIN-SUFFIX,groq.com
+- DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
 - DOMAIN-SUFFIX,guzzoni.apple.com
 - DOMAIN-SUFFIX,hailuoai.com
 - DOMAIN-SUFFIX,haiper.ai
@@ -253,6 +255,7 @@ payload:
 - DOMAIN-SUFFIX,llama.com
 - DOMAIN-SUFFIX,lovable.dev
 - DOMAIN-SUFFIX,lovart.ai
+- DOMAIN-SUFFIX,ls.apple.com
 - DOMAIN-SUFFIX,lumalabs.ai
 - DOMAIN-SUFFIX,makersuite.google.com
 - DOMAIN-SUFFIX,mask-h2.icloud.com
