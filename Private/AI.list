@@ -1,21 +1,20 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-03 03:54:30
-# HOST: 74
-# HOST-SUFFIX: 267
+# UPDATED: 2026-09-10 03:32:13
+# HOST: 70
+# HOST-SUFFIX: 253
 # HOST-KEYWORD: 11
 # HOST-WILDCARD: 12
 # URL-REGEX: 1
 # IP-CIDR: 11
 # IP6-CIDR: 4
 # IP-ASN: 1
-# TOTAL: 381
+# TOTAL: 363
 
 HOST,account.diabrowser.engineering
 HOST,ai-service.diabrowser.engineering
 HOST,anthropic-com.ghost.io
-HOST,anthropic.auth0.com
 HOST,anthropic.com.cdn.cloudflare.net
 HOST,api.elevenlabs.io
 HOST,api.githubcopilot.com
@@ -33,7 +32,6 @@ HOST,console.mistral.ai
 HOST,copilot-proxy.githubusercontent.com
 HOST,copilot.cloud.microsoft
 HOST,copilotstudio.microsoft.com
-HOST,cp2.cloudflare.com
 HOST,daily-cloudcode-pa.googleapis.com
 HOST,dc-genai-access-provisioning-api.adobe.io
 HOST,dc-genai-content-platform.adobe.io
@@ -78,14 +76,12 @@ HOST,r.bing.com
 HOST,self.events.data.microsoft.com
 HOST,senseimds.adobe.io
 HOST,servd-anthropic-website.b-cdn.net
-HOST,services.bingapis.com
 HOST,setup.workos.com
 HOST,sf-coze-web-cdn.coze.com
 HOST,survey.coze.com
 HOST,sydney.bing.com
 HOST,trae-api-sg.mchost.guru
 HOST,workos.imgix.net
-HOST,www.bing.com
 HOST-SUFFIX,ai.com
 HOST-SUFFIX,ai.google
 HOST-SUFFIX,ai.google.dev
@@ -96,7 +92,6 @@ HOST-SUFFIX,aiplatform.googleapis.com
 HOST-SUFFIX,aisandbox-pa.googleapis.com
 HOST-SUFFIX,aistudio.google.com
 HOST-SUFFIX,aiva.ai
-HOST-SUFFIX,algolia.net
 HOST-SUFFIX,alkalicore-pa.clients6.google.com
 HOST-SUFFIX,alkalimakersuite-pa.clients6.google.com
 HOST-SUFFIX,anthropic.com
@@ -108,19 +103,16 @@ HOST-SUFFIX,anyword.com
 HOST-SUFFIX,api.cognitive.azure.cn
 HOST-SUFFIX,api.cognitive.microsoft.us
 HOST-SUFFIX,api.microsoftapp.net
-HOST-SUFFIX,apis.google.com
 HOST-SUFFIX,apple-dns.net
 HOST-SUFFIX,apple-relay.akamaized.net
 HOST-SUFFIX,apple-relay.apple.com
 HOST-SUFFIX,apple-relay.cloudflare.com
 HOST-SUFFIX,apple-relay.fastly-edge.com
 HOST-SUFFIX,apple-relay.mask.apple-dns.net
-HOST-SUFFIX,apps.mzstatic.com
 HOST-SUFFIX,arc.net
 HOST-SUFFIX,arkoselabs.com
 HOST-SUFFIX,augment.com
 HOST-SUFFIX,augmentcode.com
-HOST-SUFFIX,auth0.com
 HOST-SUFFIX,autodraw.com
 HOST-SUFFIX,avoma.com
 HOST-SUFFIX,azureml.ms
@@ -128,11 +120,9 @@ HOST-SUFFIX,bard.google.com
 HOST-SUFFIX,beautiful.ai
 HOST-SUFFIX,beedone.co
 HOST-SUFFIX,bing-shopping.microsoft-falcon.io
-HOST-SUFFIX,bingapis.com
 HOST-SUFFIX,blackforestlabs.ai
 HOST-SUFFIX,bolt.new
 HOST-SUFFIX,cerebras.ai
-HOST-SUFFIX,challenges.cloudflare.com
 HOST-SUFFIX,character.ai
 HOST-SUFFIX,characterai.io
 HOST-SUFFIX,chat.com
@@ -171,9 +161,7 @@ HOST-SUFFIX,content-autofill.googleapis.com
 HOST-SUFFIX,copilot.microsoft.com
 HOST-SUFFIX,cortana.ai
 HOST-SUFFIX,coze.com
-HOST-SUFFIX,cp4.cloudflare.com
 HOST-SUFFIX,csp.withgoogle.com
-HOST-SUFFIX,ct.sendgrid.net
 HOST-SUFFIX,cursor-cdn.com
 HOST-SUFFIX,cursor.com
 HOST-SUFFIX,cursor.sh
@@ -225,7 +213,6 @@ HOST-SUFFIX,grazie.ai
 HOST-SUFFIX,grazie.aws.intellij.net
 HOST-SUFFIX,grok.com
 HOST-SUFFIX,groq.com
-HOST-SUFFIX,gspe1-ssl.ls.apple.com
 HOST-SUFFIX,guzzoni.apple.com
 HOST-SUFFIX,hailuoai.com
 HOST-SUFFIX,haiper.ai
@@ -255,7 +242,6 @@ HOST-SUFFIX,livekit.cloud
 HOST-SUFFIX,llama.com
 HOST-SUFFIX,lovable.dev
 HOST-SUFFIX,lovart.ai
-HOST-SUFFIX,ls.apple.com
 HOST-SUFFIX,lumalabs.ai
 HOST-SUFFIX,makersuite.google.com
 HOST-SUFFIX,mask-h2.icloud.com
@@ -264,7 +250,6 @@ HOST-SUFFIX,mem.ai
 HOST-SUFFIX,meta.ai
 HOST-SUFFIX,meta.com
 HOST-SUFFIX,microsoftcloudsummit.com
-HOST-SUFFIX,microsoftonline.com
 HOST-SUFFIX,midjourney.com
 HOST-SUFFIX,mistral.ai
 HOST-SUFFIX,msunlimitedcloudsummit.com
@@ -315,7 +300,6 @@ HOST-SUFFIX,shortwave.com
 HOST-SUFFIX,smoot.apple.com
 HOST-SUFFIX,sora.com
 HOST-SUFFIX,speech.googleapis.com
-HOST-SUFFIX,ssl.gstatic.com
 HOST-SUFFIX,stax.withgoogle.com
 HOST-SUFFIX,stitch.withgoogle.com
 HOST-SUFFIX,strawberrybrowserapi.xyz
@@ -335,7 +319,6 @@ HOST-SUFFIX,trae.ai
 HOST-SUFFIX,traeapi.us
 HOST-SUFFIX,turn.livekit.cloud
 HOST-SUFFIX,udio.com
-HOST-SUFFIX,updates.cdn-apple.com
 HOST-SUFFIX,usemotion.com
 HOST-SUFFIX,userlocations.googleapis.com
 HOST-SUFFIX,v0.dev
@@ -348,7 +331,6 @@ HOST-SUFFIX,wordtune.com
 HOST-SUFFIX,workos.com
 HOST-SUFFIX,writer.com
 HOST-SUFFIX,www.googleapis.com
-HOST-SUFFIX,www.gstatic.com
 HOST-SUFFIX,x.ai
 HOST-SUFFIX,xai.chronosphere.io
 HOST-SUFFIX,yhgfb-static.com

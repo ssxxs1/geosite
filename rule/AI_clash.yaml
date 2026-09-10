@@ -1,21 +1,20 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-06 02:31:34
-# DOMAIN: 74
+# UPDATED: 2026-09-10 03:41:29
+# DOMAIN: 70
 # DOMAIN-KEYWORD: 11
-# DOMAIN-SUFFIX: 267
+# DOMAIN-SUFFIX: 253
 # DOMAIN-WILDCARD: 12
 # IP-ASN: 1
 # IP-CIDR: 11
 # IP-CIDR6: 4
-# TOTAL: 380
+# TOTAL: 362
 
 payload:
 - DOMAIN,account.diabrowser.engineering
 - DOMAIN,ai-service.diabrowser.engineering
 - DOMAIN,anthropic-com.ghost.io
-- DOMAIN,anthropic.auth0.com
 - DOMAIN,anthropic.com.cdn.cloudflare.net
 - DOMAIN,api.elevenlabs.io
 - DOMAIN,api.githubcopilot.com
@@ -33,7 +32,6 @@ payload:
 - DOMAIN,copilot-proxy.githubusercontent.com
 - DOMAIN,copilot.cloud.microsoft
 - DOMAIN,copilotstudio.microsoft.com
-- DOMAIN,cp2.cloudflare.com
 - DOMAIN,daily-cloudcode-pa.googleapis.com
 - DOMAIN,dc-genai-access-provisioning-api.adobe.io
 - DOMAIN,dc-genai-content-platform.adobe.io
@@ -78,14 +76,12 @@ payload:
 - DOMAIN,self.events.data.microsoft.com
 - DOMAIN,senseimds.adobe.io
 - DOMAIN,servd-anthropic-website.b-cdn.net
-- DOMAIN,services.bingapis.com
 - DOMAIN,setup.workos.com
 - DOMAIN,sf-coze-web-cdn.coze.com
 - DOMAIN,survey.coze.com
 - DOMAIN,sydney.bing.com
 - DOMAIN,trae-api-sg.mchost.guru
 - DOMAIN,workos.imgix.net
-- DOMAIN,www.bing.com
 - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
 - DOMAIN-KEYWORD,colab
 - DOMAIN-KEYWORD,developerprofiles
@@ -107,7 +103,6 @@ payload:
 - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
 - DOMAIN-SUFFIX,aistudio.google.com
 - DOMAIN-SUFFIX,aiva.ai
-- DOMAIN-SUFFIX,algolia.net
 - DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
 - DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
 - DOMAIN-SUFFIX,anthropic.com
@@ -119,19 +114,16 @@ payload:
 - DOMAIN-SUFFIX,api.cognitive.azure.cn
 - DOMAIN-SUFFIX,api.cognitive.microsoft.us
 - DOMAIN-SUFFIX,api.microsoftapp.net
-- DOMAIN-SUFFIX,apis.google.com
 - DOMAIN-SUFFIX,apple-dns.net
 - DOMAIN-SUFFIX,apple-relay.akamaized.net
 - DOMAIN-SUFFIX,apple-relay.apple.com
 - DOMAIN-SUFFIX,apple-relay.cloudflare.com
 - DOMAIN-SUFFIX,apple-relay.fastly-edge.com
 - DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
-- DOMAIN-SUFFIX,apps.mzstatic.com
 - DOMAIN-SUFFIX,arc.net
 - DOMAIN-SUFFIX,arkoselabs.com
 - DOMAIN-SUFFIX,augment.com
 - DOMAIN-SUFFIX,augmentcode.com
-- DOMAIN-SUFFIX,auth0.com
 - DOMAIN-SUFFIX,autodraw.com
 - DOMAIN-SUFFIX,avoma.com
 - DOMAIN-SUFFIX,azureml.ms
@@ -139,11 +131,9 @@ payload:
 - DOMAIN-SUFFIX,beautiful.ai
 - DOMAIN-SUFFIX,beedone.co
 - DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
-- DOMAIN-SUFFIX,bingapis.com
 - DOMAIN-SUFFIX,blackforestlabs.ai
 - DOMAIN-SUFFIX,bolt.new
 - DOMAIN-SUFFIX,cerebras.ai
-- DOMAIN-SUFFIX,challenges.cloudflare.com
 - DOMAIN-SUFFIX,character.ai
 - DOMAIN-SUFFIX,characterai.io
 - DOMAIN-SUFFIX,chat.com
@@ -182,9 +172,7 @@ payload:
 - DOMAIN-SUFFIX,copilot.microsoft.com
 - DOMAIN-SUFFIX,cortana.ai
 - DOMAIN-SUFFIX,coze.com
-- DOMAIN-SUFFIX,cp4.cloudflare.com
 - DOMAIN-SUFFIX,csp.withgoogle.com
-- DOMAIN-SUFFIX,ct.sendgrid.net
 - DOMAIN-SUFFIX,cursor-cdn.com
 - DOMAIN-SUFFIX,cursor.com
 - DOMAIN-SUFFIX,cursor.sh
@@ -236,7 +224,6 @@ payload:
 - DOMAIN-SUFFIX,grazie.aws.intellij.net
 - DOMAIN-SUFFIX,grok.com
 - DOMAIN-SUFFIX,groq.com
-- DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
 - DOMAIN-SUFFIX,guzzoni.apple.com
 - DOMAIN-SUFFIX,hailuoai.com
 - DOMAIN-SUFFIX,haiper.ai
@@ -266,7 +253,6 @@ payload:
 - DOMAIN-SUFFIX,llama.com
 - DOMAIN-SUFFIX,lovable.dev
 - DOMAIN-SUFFIX,lovart.ai
-- DOMAIN-SUFFIX,ls.apple.com
 - DOMAIN-SUFFIX,lumalabs.ai
 - DOMAIN-SUFFIX,makersuite.google.com
 - DOMAIN-SUFFIX,mask-h2.icloud.com
@@ -275,7 +261,6 @@ payload:
 - DOMAIN-SUFFIX,meta.ai
 - DOMAIN-SUFFIX,meta.com
 - DOMAIN-SUFFIX,microsoftcloudsummit.com
-- DOMAIN-SUFFIX,microsoftonline.com
 - DOMAIN-SUFFIX,midjourney.com
 - DOMAIN-SUFFIX,mistral.ai
 - DOMAIN-SUFFIX,msunlimitedcloudsummit.com
@@ -326,7 +311,6 @@ payload:
 - DOMAIN-SUFFIX,smoot.apple.com
 - DOMAIN-SUFFIX,sora.com
 - DOMAIN-SUFFIX,speech.googleapis.com
-- DOMAIN-SUFFIX,ssl.gstatic.com
 - DOMAIN-SUFFIX,stax.withgoogle.com
 - DOMAIN-SUFFIX,stitch.withgoogle.com
 - DOMAIN-SUFFIX,strawberrybrowserapi.xyz
@@ -346,7 +330,6 @@ payload:
 - DOMAIN-SUFFIX,traeapi.us
 - DOMAIN-SUFFIX,turn.livekit.cloud
 - DOMAIN-SUFFIX,udio.com
-- DOMAIN-SUFFIX,updates.cdn-apple.com
 - DOMAIN-SUFFIX,usemotion.com
 - DOMAIN-SUFFIX,userlocations.googleapis.com
 - DOMAIN-SUFFIX,v0.dev
@@ -359,7 +342,6 @@ payload:
 - DOMAIN-SUFFIX,workos.com
 - DOMAIN-SUFFIX,writer.com
 - DOMAIN-SUFFIX,www.googleapis.com
-- DOMAIN-SUFFIX,www.gstatic.com
 - DOMAIN-SUFFIX,x.ai
 - DOMAIN-SUFFIX,xai.chronosphere.io
 - DOMAIN-SUFFIX,yhgfb-static.com
