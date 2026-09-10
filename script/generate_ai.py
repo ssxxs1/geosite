@@ -309,14 +309,14 @@ BLOCKED_DOMAIN_SUFFIXES = {
     "cvws.icloud-content.com",  # iCloud 照片图库与大吞吐量同步内容服务器
     "appsto.re",  # App Store 应用分享与下载官方短链接
     "apps.apple.com",  # App Store 网页版全球应用详情与展示页
-    "mzstatic.com",  # App Store 核心分发 CDN (全量应用包与游戏资源下载，天量带宽)
+    # "mzstatic.com",  # App Store 核心分发 CDN (全量应用包与游戏资源下载，天量带宽)
     "updates.cdn-apple.com",  # Apple iOS/iPadOS/macOS 系统 OTA 完整固件升级包下载 CDN (天量带宽)
     "updates-http.cdn-apple.com",  # Apple 系统 OTA 固件 HTTP 明文回退分发节点
     "gdmf.apple.com",  # Apple 全球下载管理服务 (Global Download Management Facility 固件版本校验)
     "appldnld.apple.com",  # 早期 iOS 及特定系统组件固件下载源
     "swcdn.apple.com",  # macOS 软件更新核心分发 CDN (Software Update CDN)
     "gg.apple.com",  # Apple 设备激活与固件签名握手通信端点
-    "ls.apple.com",  # Apple Location Services (苹果位置服务基准与地图缓存，需直连保证就近高精度)
+    # "ls.apple.com",  # Apple Location Services (苹果位置服务基准与地图缓存，需直连保证就近高精度)
 }
 
 
