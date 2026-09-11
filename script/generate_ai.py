@@ -316,7 +316,6 @@ BLOCKED_DOMAIN_SUFFIXES = {
     "appldnld.apple.com",  # 早期 iOS 及特定系统组件固件下载源
     "swcdn.apple.com",  # macOS 软件更新核心分发 CDN (Software Update CDN)
     "gg.apple.com",  # Apple 设备激活与固件签名握手通信端点
-    # "ls.apple.com",  # Apple Location Services (苹果位置服务基准与地图缓存，需直连保证就近高精度)
 }
 
 
