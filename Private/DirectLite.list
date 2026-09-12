@@ -1,0 +1,142 @@
+# NAME: Direct_Lite
+# AUTHOR: Antigravity & User
+# DESCRIPTION: 精简纯净版直连规则（仅保留 PT下载、NAS远程、公共静态CDN、学术数据库，剔除有害Apple/Google定位拦截）
+# UPDATED: 2026-09-12
+
+# === Private Tracker (PT 下载站 Tracker) ===
+HOST-SUFFIX, 52pt.site, DIRECT
+HOST-SUFFIX, acg.rip, DIRECT
+HOST-SUFFIX, aidoru-online.me, DIRECT
+HOST-SUFFIX, alpharatio.cc, DIRECT
+HOST-SUFFIX, animebytes.tv, DIRECT
+HOST-SUFFIX, anthelion.me, DIRECT
+HOST-SUFFIX, asiancinema.me, DIRECT
+HOST-SUFFIX, avgv.cc, DIRECT
+HOST-SUFFIX, avistaz.to, DIRECT
+HOST-SUFFIX, awesome-hd.me, DIRECT
+HOST-SUFFIX, beitai.pt, DIRECT
+HOST-SUFFIX, beyond-hd.me, DIRECT
+HOST-SUFFIX, bibliotik.me, DIRECT
+HOST-SUFFIX, blutopia.xyz, DIRECT
+HOST-SUFFIX, broadcasthe.net, DIRECT
+HOST-SUFFIX, bt.byr.cn, DIRECT
+HOST-SUFFIX, bt.neu6.edu.cn, DIRECT
+HOST-SUFFIX, btschool.club, DIRECT
+HOST-SUFFIX, ccfbits.org, DIRECT
+HOST-SUFFIX, cgpeers.com, DIRECT
+HOST-SUFFIX, chdbits.co, DIRECT
+HOST-SUFFIX, cinemageddon.net, DIRECT
+HOST-SUFFIX, cinematik.net, DIRECT
+HOST-SUFFIX, cinemaz.to, DIRECT
+HOST-SUFFIX, classix-unlimited.co.uk, DIRECT
+HOST-SUFFIX, comicat.org, DIRECT
+HOST-SUFFIX, concertos.live, DIRECT
+HOST-SUFFIX, dicmusic.club, DIRECT
+HOST-SUFFIX, discfan.net, DIRECT
+HOST-SUFFIX, dxdhd.com, DIRECT
+HOST-SUFFIX, eastgame.org, DIRECT
+HOST-SUFFIX, empornium.me, DIRECT
+HOST-SUFFIX, et8.org, DIRECT
+HOST-SUFFIX, exoticaz.to, DIRECT
+HOST-SUFFIX, filelist.io, DIRECT
+HOST-SUFFIX, gazellegames.net, DIRECT
+HOST-SUFFIX, gfxpeers.net, DIRECT
+HOST-SUFFIX, hd-space.org, DIRECT
+HOST-SUFFIX, hd4.xyz, DIRECT
+HOST-SUFFIX, hd4fans.org, DIRECT
+HOST-SUFFIX, hdarea.co, DIRECT
+HOST-SUFFIX, hdatmos.club, DIRECT
+HOST-SUFFIX, hdbd.us, DIRECT
+HOST-SUFFIX, hdbits.org, DIRECT
+HOST-SUFFIX, hdchina.org, DIRECT
+HOST-SUFFIX, hdcity.city, DIRECT
+HOST-SUFFIX, hddolby.com, DIRECT
+HOST-SUFFIX, hdfans.org, DIRECT
+HOST-SUFFIX, hdhome.org, DIRECT
+HOST-SUFFIX, hdpost.top, DIRECT
+HOST-SUFFIX, hdroute.org, DIRECT
+HOST-SUFFIX, hdsky.me, DIRECT
+HOST-SUFFIX, hdtime.org, DIRECT
+HOST-SUFFIX, hdupt.com, DIRECT
+HOST-SUFFIX, hdzone.me, DIRECT
+HOST-SUFFIX, hitpt.com, DIRECT
+HOST-SUFFIX, hudbt.hust.edu.cn, DIRECT
+HOST-SUFFIX, icetorrent.org, DIRECT
+HOST-SUFFIX, j99.info, DIRECT
+HOST-SUFFIX, joyhd.net, DIRECT
+HOST-SUFFIX, jpopsuki.eu, DIRECT
+HOST-SUFFIX, karagarga.in, DIRECT
+HOST-SUFFIX, keepfrds.com, DIRECT
+HOST-SUFFIX, leaguehd.com, DIRECT
+HOST-SUFFIX, lztr.me, DIRECT
+HOST-SUFFIX, m-team.cc, DIRECT
+HOST-SUFFIX, madsrevolution.net, DIRECT
+HOST-SUFFIX, moecat.best, DIRECT
+HOST-SUFFIX, myanonamouse.net, DIRECT
+HOST-SUFFIX, nanyangpt.com, DIRECT
+HOST-SUFFIX, ncore.cc, DIRECT
+HOST-SUFFIX, nebulance.io, DIRECT
+HOST-SUFFIX, nicept.net, DIRECT
+HOST-SUFFIX, npupt.com, DIRECT
+HOST-SUFFIX, open.cd, DIRECT
+HOST-SUFFIX, oppaiti.me, DIRECT
+HOST-SUFFIX, orpheus.network, DIRECT
+HOST-SUFFIX, ourbits.club, DIRECT
+HOST-SUFFIX, passthepopcorn.me, DIRECT
+HOST-SUFFIX, pornbits.net, DIRECT
+HOST-SUFFIX, privatehd.to, DIRECT
+HOST-SUFFIX, pterclub.com, DIRECT
+HOST-SUFFIX, pthome.net, DIRECT
+HOST-SUFFIX, ptsbao.club, DIRECT
+HOST-SUFFIX, redacted.ch, DIRECT
+HOST-SUFFIX, sdbits.org, DIRECT
+HOST-SUFFIX, skyey2.com, DIRECT
+HOST-SUFFIX, soulvoice.club, DIRECT
+HOST-SUFFIX, springsunday.net, DIRECT
+HOST-SUFFIX, tjupt.org, DIRECT
+HOST-SUFFIX, totheglory.im, DIRECT
+HOST-SUFFIX, uhdbits.org, DIRECT
+
+# === NAS / 私有云远程访问与穿透 ===
+HOST-SUFFIX, synology.me, DIRECT
+HOST-SUFFIX, myds.me, DIRECT
+HOST-SUFFIX, diskstation.me, DIRECT
+HOST-SUFFIX, dsmynas.com, DIRECT
+HOST-SUFFIX, dsmynas.net, DIRECT
+HOST-SUFFIX, dsmynas.org, DIRECT
+HOST-SUFFIX, familyds.com, DIRECT
+HOST-SUFFIX, familyds.net, DIRECT
+HOST-SUFFIX, familyds.org, DIRECT
+HOST-SUFFIX, dscloud.biz, DIRECT
+HOST-SUFFIX, dscloud.me, DIRECT
+HOST-SUFFIX, dscloud.mobi, DIRECT
+HOST-SUFFIX, i234.me, DIRECT
+HOST-SUFFIX, myqnapcloud.com, DIRECT
+
+# === 国内公共静态库与 CDN ===
+HOST, cdn.jsdelivr.net, DIRECT
+HOST-SUFFIX, staticfile.org, DIRECT
+HOST-SUFFIX, baomitu.com, DIRECT
+HOST-SUFFIX, bootcss.com, DIRECT
+HOST-SUFFIX, upaiyun.com, DIRECT
+HOST-SUFFIX, jiasule.com, DIRECT
+
+# === 国内学术科研数据库 ===
+HOST-SUFFIX, cnki.net, DIRECT
+HOST-SUFFIX, wanfangdata.com.cn, DIRECT
+HOST-SUFFIX, cqvip.com, DIRECT
+HOST-SUFFIX, doi.org, DIRECT
+HOST-SUFFIX, sciencedirect.com, DIRECT
+HOST-SUFFIX, nature.com, DIRECT
+HOST-SUFFIX, ieee.org, DIRECT
+HOST-SUFFIX, jstor.org, DIRECT
+HOST-SUFFIX, springer.com, DIRECT
+HOST-SUFFIX, wiley.com, DIRECT
+HOST-SUFFIX, researchgate.net, DIRECT
+
+# === P2P 下载与网络加速 ===
+HOST-SUFFIX, xunlei.com, DIRECT
+HOST-SUFFIX, sandai.net, DIRECT
+
+# === Apple 纯净国内安全时间服务 (严禁放入任何定位/AI/私有云网关) ===
+HOST, time.apple.com, DIRECT

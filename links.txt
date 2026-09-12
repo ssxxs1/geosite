@@ -29,9 +29,9 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/IPTVMainland/IPTVMainland.list
 
 Private/AI.list
-
 Private/Bybit.list
 Private/BankHK.list
+Private/DirectLite.list
 
 https://github.com/ssxxs1/test-a/raw/refs/heads/main/dist/QX_Universal.list
 
