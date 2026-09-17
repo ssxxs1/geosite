@@ -137,8 +137,8 @@
 # > Weixin (微信 HTTPDNS & CDN 调度，仅针对可能降级的 HTTP 请求进行静默拦截)
 ^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns url reject
 ^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns url reject
-^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
-^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
+# ^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
+# ^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
 
 [mitm]
 # 严格遵循原版定义，严禁加入泛域名（如 *.zijieapi.com 避免穿山甲广告 SDK 引发全局开屏阻塞）与 SSL Pinning 域名
