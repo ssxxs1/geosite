@@ -362,7 +362,6 @@ HOST-WILDCARD,lh*.google.com
 HOST-WILDCARD,lh*.googleusercontent.com
 HOST-WILDCARD,openaicom*.azurefd.net
 HOST-WILDCARD,openaicom-api-*.*.windows.net
-URL-REGEX,https://www\.google\.com/.*continue=https://gemini\.google\.com.+
 IP-CIDR,108.59.2.24/32,no-resolve
 IP-CIDR,116.203.151.74/32,no-resolve
 IP-CIDR,160.79.104.0/21,no-resolve
