@@ -1,7 +1,7 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-17 08:06:12
+# UPDATED: 2026-09-17 08:40:41
 # HOST: 70
 # HOST-SUFFIX: 257
 # HOST-KEYWORD: 11
@@ -362,6 +362,7 @@ HOST-WILDCARD,lh*.google.com
 HOST-WILDCARD,lh*.googleusercontent.com
 HOST-WILDCARD,openaicom*.azurefd.net
 HOST-WILDCARD,openaicom-api-*.*.windows.net
+URL-REGEX,https://www\.google\.com/.*continue=https://gemini\.google\.com.+
 IP-CIDR,108.59.2.24/32,no-resolve
 IP-CIDR,116.203.151.74/32,no-resolve
 IP-CIDR,160.79.104.0/21,no-resolve
