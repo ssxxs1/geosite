@@ -152,7 +152,8 @@ TYPE_ALIASES = {
     "host-keyword": "host-keyword",
     "domain-wildcard": "host-wildcard",
     "host-wildcard": "host-wildcard",
-    "url-regex": "url-regex",
+    # Note: URL-REGEX is intentionally omitted: Quantumult X filter grammar does NOT support URL-REGEX.
+    # URL-REGEX is a rewrite (L7) syntax in QX and cannot be used in filter lists.
     "domain-regex": "host-regex",
     "host-regex": "host-regex",
     "ip-cidr": "ip-cidr",
@@ -177,12 +178,11 @@ TYPE_ORDER = {
     "host-keyword": 2,
     "host-wildcard": 3,
     "host-regex": 4,
-    "url-regex": 5,
-    "ip-cidr": 6,
-    "ip6-cidr": 7,
-    "ip-asn": 8,
-    "geoip": 9,
-    "user-agent": 10,
+    "ip-cidr": 5,
+    "ip6-cidr": 6,
+    "ip-asn": 7,
+    "geoip": 8,
+    "user-agent": 9,
 }
 
 HEADER_TYPE_NAMES = {
@@ -191,7 +191,6 @@ HEADER_TYPE_NAMES = {
     "host-keyword": "HOST-KEYWORD",
     "host-wildcard": "HOST-WILDCARD",
     "host-regex": "HOST-REGEX",
-    "url-regex": "URL-REGEX",
     "ip-cidr": "IP-CIDR",
     "ip6-cidr": "IP6-CIDR",
     "ip-asn": "IP-ASN",
@@ -359,7 +358,7 @@ def normalize_value(kind: str, raw_value: str) -> str:
     if kind in {"host-keyword"}:
         return value.lower()
 
-    if kind in {"host-wildcard", "host-regex", "url-regex", "user-agent"}:
+    if kind in {"host-wildcard", "host-regex", "user-agent"}:
         return value
 
     if kind in {"ip-cidr", "ip6-cidr"}:
@@ -405,7 +404,7 @@ def parse_rule_text(text: str, source: Source) -> tuple[Rule | None, str | None]
         fields = [line]
     else:
         normalized_type = normalize_kind(raw_type)
-        if normalized_type in {"host-regex", "url-regex", "user-agent"}:
+        if normalized_type in {"host-regex", "user-agent"}:
             fields = [raw_type.strip(), remainder.strip().strip("'\"")]
         else:
             fields = [raw_type.strip()] + [
