@@ -43,6 +43,17 @@ def fetch_release_file(
     return False
 
 
+def is_valid_mrs_wildcard(pattern: str) -> bool:
+    """
+    Mihomo MRS (DomainSet) requires that '*' wildcard must occupy the entire label
+    (e.g., '*.google.com' or '*.*.azurefd.net'). Partial wildcards like 'lh*.google.com'
+    or '*-pa.googleapis.com' are rejected by Mihomo's Domain Trie and must remain in
+    Classical Clash YAML.
+    """
+    labels = pattern.split(".")
+    return all("*" not in label or label == "*" for label in labels)
+
+
 def parse_clash_yaml(yaml_path: Path) -> tuple[list[str], list[str], list[str]]:
     """
     Parse a Clash classical YAML file into domain rules, IP CIDRs, and other rules.
@@ -67,8 +78,14 @@ def parse_clash_yaml(yaml_path: Path) -> tuple[list[str], list[str], list[str]]:
     for entry in payload:
         parts = entry.split(",")
         kind = parts[0].strip().upper()
-        if kind in {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-WILDCARD", "DOMAIN-REGEX"}:
+        if kind in {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-REGEX"}:
             domain_rules.append(f"{kind},{parts[1].strip()}")
+        elif kind == "DOMAIN-WILDCARD":
+            pattern = parts[1].strip()
+            if is_valid_mrs_wildcard(pattern):
+                domain_rules.append(f"DOMAIN-WILDCARD,{pattern}")
+            else:
+                other_rules.append(entry)
         elif kind == "DOMAIN-KEYWORD":
             clean_kw = parts[1].strip().strip(".")
             domain_rules.append(f"DOMAIN-KEYWORD,{clean_kw}")
