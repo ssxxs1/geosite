@@ -27,6 +27,9 @@ geosite/
 # 运行转换（需本地安装 pandas / requests / pyyaml）
 python main.py
 
+# 单独将已有 YAML 批量转换为 .mrs 并进行全量双向反编译校验
+python script/convert_to_mrs.py
+
 # 安装依赖（如无虚拟环境）
 pip install pandas requests pyyaml
 ```
@@ -41,6 +44,7 @@ pip install pandas requests pyyaml
 | `.json` | sing-box | sing-box Source Format 规则集 |
 | `.srs` | sing-box rule-set compile | sing-box 二进制规则集 |
 | `_clash.yaml` | 内置转换器 | mihomo/Clash classical rule-provider |
+| `.mrs` | mihomo convert-ruleset | Mihomo 二进制规则集（自动拆分为 behavior: domain / ipcidr） |
 
 ## 注意事项
 - `links.txt` 中以 `#` 开头的行为注释，会自动跳过

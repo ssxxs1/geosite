@@ -16,6 +16,8 @@ from urllib.parse import urlparse
 import requests
 import yaml
 
+from script.convert_to_mrs import convert_yaml_to_mrs, fetch_release_file
+
 
 SING_BOX_MAP = {
     "domain-suffix": "domain_suffix",
@@ -338,12 +340,72 @@ def build_mihomo_yaml(converted: Iterable[tuple[str, str]], base_name: str = "",
     return header + yaml_content
 
 
+def fallback_recover_source(
+    base_name: str,
+    output_directory: Path,
+    session: requests.Session,
+    repo: str = "ssxxs1/geosite",
+    mihomo_command: str = "mihomo",
+    compile_mrs: bool = True,
+) -> bool:
+    """
+    CI / GitHub Actions 冗余兜底恢复策略：
+    当上游源拉取失败或解析异常时，直接从上一次打包发布的 GitHub Release 中拉取备份：
+    1. 优先从 GitHub Latest Release 下载 _clash.yaml、.json、.srs
+    2. 若成功拉回 _clash.yaml，基于此 YAML 尝试转换/校验 .mrs
+    3. 若无法转换，则直接从 Release 把上一次打包好的 .mrs 复制下载过来
+    """
+    clash_path = output_directory / f"{base_name}_clash.yaml"
+    json_path = output_directory / f"{base_name}.json"
+    srs_path = output_directory / f"{base_name}.srs"
+
+    print(f"[Release兜底] 源规则不可用，正在从 GitHub Release ({repo}) 拉取 {base_name} 上次发布的规则备份...")
+
+    recovered = False
+    for fname, fpath in [
+        (f"{base_name}_clash.yaml", clash_path),
+        (f"{base_name}.json", json_path),
+        (f"{base_name}.srs", srs_path),
+    ]:
+        if fetch_release_file(fname, fpath, session=session, repo=repo):
+            recovered = True
+
+    # 针对 MRS：若有了 YAML 则尝试重新编译出 MRS；若失败则直接从 Release 拉取 .mrs
+    mrs_ready = False
+    if compile_mrs and clash_path.exists() and clash_path.stat().st_size > 0:
+        try:
+            mrs_stat = convert_yaml_to_mrs(
+                clash_path,
+                output_directory,
+                mihomo_cmd=mihomo_command,
+                verify=True,
+                session=session,
+                repo=repo,
+            )
+            print(f"[Release兜底] 基于 Release YAML 成功生成 MRS: {', '.join(mrs_stat['files'])}")
+            mrs_ready = True
+            recovered = True
+        except Exception as exc:
+            print(f"[Release兜底] MRS 转换失败 ({exc})，直接从 Release 拉取上次发布的 .mrs 文件...", file=sys.stderr)
+
+    if not mrs_ready:
+        for target_mrs in [f"{base_name}.mrs", f"{base_name}_domain.mrs", f"{base_name}_ip.mrs"]:
+            dest = output_directory / target_mrs
+            if fetch_release_file(target_mrs, dest, session=session, repo=repo):
+                recovered = True
+
+    return recovered
+
+
 def convert_source(
     source: str,
     output_directory: Path,
     session: requests.Session,
     sing_box_command: str = "sing-box",
     compile_srs: bool = True,
+    mihomo_command: str = "mihomo",
+    compile_mrs: bool = True,
+    repo: str = "ssxxs1/geosite",
 ) -> Path:
     rules = deduplicate_rules(parse_source(source, session))
     sing_box_rules, sing_box_stats = convert_for_target(rules, "sing-box")
@@ -360,19 +422,30 @@ def convert_source(
     clash_temp = write_temp_text(clash_path, build_mihomo_yaml(mihomo_rules, base_name, updated_at))
     srs_temp = srs_path.with_name(f".{srs_path.name}.{os.getpid()}.tmp")
 
-    try:
-        if compile_srs:
+    srs_compiled = False
+    if compile_srs:
+        try:
             subprocess.run(
                 [sing_box_command, "rule-set", "compile", "--output", str(srs_temp), str(json_temp)],
                 check=True,
                 capture_output=True,
                 text=True,
             )
-            if not srs_temp.exists() or srs_temp.stat().st_size == 0:
-                raise ConversionError(f"sing-box did not create {srs_temp}")
-        staged = [(json_temp, json_path), (clash_temp, clash_path)]
-        if compile_srs:
-            staged.append((srs_temp, srs_path))
+            if srs_temp.exists() and srs_temp.stat().st_size > 0:
+                srs_compiled = True
+            else:
+                print(f"[警告] sing-box 未生成有效 .srs，保留现有版本", file=sys.stderr)
+        except Exception as exc:
+            print(f"[警告] sing-box 编译 .srs 失败 ({exc})，不阻断 Clash 与 MRS 生成", file=sys.stderr)
+
+    staged = [(json_temp, json_path), (clash_temp, clash_path)]
+    if srs_compiled:
+        staged.append((srs_temp, srs_path))
+    elif not srs_path.exists():
+        # 如果 sing-box 编译失败且本地无旧版 .srs，尝试从 Release 兜底拉取旧版 .srs
+        fetch_release_file(srs_path.name, srs_path, session=session, repo=repo)
+
+    try:
         publish_outputs(staged)
     except Exception:
         for temporary in (json_temp, clash_temp, srs_temp):
@@ -392,11 +465,31 @@ def convert_source(
         raise ConversionError(f"unaccounted rules while converting {source}")
 
     print(f"[生成] sing-box JSON : {json_path}")
-    if compile_srs:
+    if srs_compiled:
         print(f"[生成] sing-box SRS  : {srs_path}")
+    elif srs_path.exists() and srs_path.stat().st_size > 0:
+        print(f"[保底] sing-box SRS  : {srs_path}（保留历史/Release版本）")
     else:
-        print(f"[跳过] sing-box SRS  : {srs_path}（--skip-srs）")
+        print(f"[跳过] sing-box SRS  : {srs_path}（--skip-srs 或编译失败）")
+
     print(f"[生成] Clash YAML    : {clash_path}")
+
+    if compile_mrs:
+        try:
+            mrs_stat = convert_yaml_to_mrs(
+                clash_path,
+                output_directory,
+                mihomo_cmd=mihomo_command,
+                verify=True,
+                session=session,
+                repo=repo,
+            )
+            print(f"[生成] Mihomo MRS    : {', '.join(mrs_stat['files'])}")
+        except Exception as exc:
+            print(f"[跳过] Mihomo MRS    : {exc}（未能编译 .mrs）", file=sys.stderr)
+    else:
+        print(f"[跳过] Mihomo MRS    : （--skip-mrs）")
+
     print(
         f"[统计] {base_name}: input={len(rules)} "
         f"sing-box={dict(sorted(sing_box_stats.items()))} "
@@ -418,10 +511,21 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--links", default="links.txt")
     parser.add_argument("--output", default="rule")
     parser.add_argument("--sing-box", default="sing-box")
+    parser.add_argument("--mihomo", default="mihomo")
+    parser.add_argument(
+        "--repo",
+        default=os.environ.get("GITHUB_REPOSITORY", "ssxxs1/geosite"),
+        help="GitHub repository for release fallback",
+    )
     parser.add_argument(
         "--skip-srs",
         action="store_true",
         help="skip SRS compilation (intended for local development only)",
+    )
+    parser.add_argument(
+        "--skip-mrs",
+        action="store_true",
+        help="skip MRS compilation",
     )
     parser.add_argument(
         "--insecure",
@@ -434,18 +538,52 @@ def main(argv: list[str] | None = None) -> int:
     session.verify = not args.insecure
     session.headers["User-Agent"] = "geosite-rule-converter/2.0"
 
-    try:
-        for source in load_links(Path(args.links)):
+    output_dir = Path(args.output)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    sources = load_links(Path(args.links))
+    success_sources = []
+    recovered_sources = []
+    failed_sources = []
+
+    for source in sources:
+        base_name = Path(urlparse(source).path).stem.replace(".", "_").replace("-", "_")
+        try:
             convert_source(
                 source,
-                Path(args.output),
+                output_dir,
                 session,
                 args.sing_box,
                 compile_srs=not args.skip_srs,
+                mihomo_command=args.mihomo,
+                compile_mrs=not args.skip_mrs,
+                repo=args.repo,
             )
-    except (requests.RequestException, OSError, ConversionError, subprocess.CalledProcessError) as exc:
-        print(f"conversion failed: {exc}", file=sys.stderr)
+            success_sources.append(base_name)
+        except Exception as exc:
+            print(f"[错误] 源规则处理失败 [{base_name}] ({source}): {exc}", file=sys.stderr)
+            recovered = fallback_recover_source(
+                base_name,
+                output_dir,
+                session,
+                repo=args.repo,
+                mihomo_command=args.mihomo,
+                compile_mrs=not args.skip_mrs,
+            )
+            if recovered:
+                recovered_sources.append(base_name)
+            else:
+                failed_sources.append(base_name)
+
+    print("\n" + "=" * 70)
+    print("规则处理总览 (Processing Summary):")
+    print(f"  成功拉取并更新   : {len(success_sources)}")
+    print(f"  拉取失败但保底成功: {len(recovered_sources)} ({', '.join(recovered_sources) if recovered_sources else '无'})")
+    if failed_sources:
+        print(f"  完全失败且无保底 : {len(failed_sources)} ({', '.join(failed_sources)})", file=sys.stderr)
         return 1
+
+    print("所有规则集均已就绪（含正常更新与冗余保底）！")
     return 0
 
 

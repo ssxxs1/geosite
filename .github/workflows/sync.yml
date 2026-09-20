@@ -45,6 +45,14 @@ jobs:
           sudo mv sing-box-${VERSION}-linux-amd64/sing-box /usr/local/bin/
           rm -rf sing-box-${VERSION}-linux-amd64 sing-box.tar.gz
 
+      - name: Install mihomo
+        run: |
+          VERSION=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | jq -r .tag_name)
+          curl -Lo mihomo.gz https://github.com/MetaCubeX/mihomo/releases/download/${VERSION}/mihomo-linux-amd64-${VERSION}.gz
+          gzip -d mihomo.gz
+          chmod +x mihomo
+          sudo mv mihomo /usr/local/bin/mihomo
+
       - name: Generate rules
         run: |
           FLAGS=""
@@ -53,10 +61,19 @@ jobs:
           fi
           python script/generate_ai.py $FLAGS
           python main.py
+          python script/convert_to_mrs.py
           test -s Private/AI.list
           test -s rule/AI.json
           test -s rule/AI.srs
+          test -s rule/AI.mrs
+          test -s rule/AI_domain.mrs
+          test -s rule/AI_ip.mrs
           test -s rule/AI_clash.yaml
+
+      - name: Remove empty files
+        run: |
+          find rule -type f -size 0 -delete
+          find Private -type f -size 0 -delete
 
       - name: Commit and push
         run: |
@@ -65,6 +82,7 @@ jobs:
 
           git add rule/*.json 2>/dev/null || echo "No json files"
           git add rule/*.srs 2>/dev/null || echo "No srs files"
+          git add rule/*.mrs 2>/dev/null || echo "No mrs files"
           git add rule/*_clash.yaml 2>/dev/null || echo "No clash yaml files"
           git add Private/*.list 2>/dev/null || echo "No private list files"
           git add Private/*.snippet 2>/dev/null || echo "No private snippet files"
@@ -75,11 +93,6 @@ jobs:
             git commit -m "Update rules"
             git push
           fi
-
-      - name: Remove empty files
-        run: |
-          find rule -type f -size 0 -delete
-          find Private -type f -size 0 -delete
       - name: Set version
         id: ver
         run: echo "tag=v1.1.1.$(date -u +%y%m%d%H%M)" >> "$GITHUB_OUTPUT"
@@ -95,6 +108,7 @@ jobs:
           files: |
             rule/*.json
             rule/*.srs
+            rule/*.mrs
             rule/*_clash.yaml
             Private/*.list
             Private/*.snippet

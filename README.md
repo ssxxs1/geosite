@@ -1,6 +1,6 @@
 # sing-box-geosite
 
-在 `links.txt` 添加规则集，自动生成 sing-box Source Format（`.json` / `.srs`）和 Mihomo/Clash classical provider（`_clash.yaml`）。fork 后可以添加需要转换的规则集。
+在 `links.txt` 添加规则集，自动生成 sing-box Source Format（`.json` / `.srs`）、Mihomo 二进制规则集（`.mrs`）和 Mihomo/Clash classical provider（`_clash.yaml`）。内置多级容错与冗余机制：单源拉取异常自动回退复用本地历史版本或从 GitHub Release 兜底恢复；sing-box 编译异常不阻断 Clash 与 MRS 生成。fork 后可以添加需要转换的规则集。
 
 AI 总表由 `script/generate_ai.py` 先聚合生成到 `Private/AI.list`。Blackmatrix7 的 OpenAI、Gemini、Claude、Copilot 四个列表作为必需且正向的数据源；任一必需源、核心规则校验或输出安全检查失败时，脚本保留现有文件并退出失败。
 
