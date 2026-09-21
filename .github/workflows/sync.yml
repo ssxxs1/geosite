@@ -65,7 +65,6 @@ jobs:
           test -s Private/AI.list
           test -s rule/AI.json
           test -s rule/AI.srs
-          test -s rule/AI.mrs
           test -s rule/AI_domain.mrs
           test -s rule/AI_ip.mrs
           test -s rule/AI_clash.yaml
