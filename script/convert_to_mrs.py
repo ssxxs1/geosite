@@ -78,17 +78,18 @@ def parse_clash_yaml(yaml_path: Path) -> tuple[list[str], list[str], list[str]]:
     for entry in payload:
         parts = entry.split(",")
         kind = parts[0].strip().upper()
-        if kind in {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-REGEX"}:
-            domain_rules.append(f"{kind},{parts[1].strip()}")
+        if kind == "DOMAIN":
+            domain_rules.append(parts[1].strip())
+        elif kind == "DOMAIN-SUFFIX":
+            domain_rules.append(f"+.{parts[1].strip()}")
+        elif kind in {"DOMAIN-REGEX", "DOMAIN-KEYWORD"}:
+            other_rules.append(entry)
         elif kind == "DOMAIN-WILDCARD":
             pattern = parts[1].strip()
             if is_valid_mrs_wildcard(pattern):
-                domain_rules.append(f"DOMAIN-WILDCARD,{pattern}")
+                domain_rules.append(pattern)
             else:
                 other_rules.append(entry)
-        elif kind == "DOMAIN-KEYWORD":
-            clean_kw = parts[1].strip().strip(".")
-            domain_rules.append(f"DOMAIN-KEYWORD,{clean_kw}")
         elif kind in {"IP-CIDR", "IP-CIDR6"}:
             ip_rules.append(parts[1].strip())
         else:
@@ -286,17 +287,12 @@ def convert_yaml_to_mrs(
 
         elif has_domains and has_ips:
             # Mixed ruleset:
-            # 1. Primary domain MRS: {base_name}.mrs
-            primary_mrs = output_dir / f"{base_name}.mrs"
-            compile_and_verify_domain_mrs(domain_rules, primary_mrs, mihomo_cmd, verify)
-            generated_files.append(primary_mrs.name)
-
-            # 2. Explicit domain MRS: {base_name}_domain.mrs
+            # 1. Domain MRS: {base_name}_domain.mrs  (no {base_name}.mrs to avoid ambiguity)
             domain_mrs = output_dir / f"{base_name}_domain.mrs"
-            shutil.copyfile(primary_mrs, domain_mrs)
+            compile_and_verify_domain_mrs(domain_rules, domain_mrs, mihomo_cmd, verify)
             generated_files.append(domain_mrs.name)
 
-            # 3. IP MRS: {base_name}_ip.mrs
+            # 2. IP MRS: {base_name}_ip.mrs
             ip_mrs = output_dir / f"{base_name}_ip.mrs"
             _, collapsed = compile_and_verify_ip_mrs(ip_rules, ip_mrs, mihomo_cmd, verify)
             stats["ips_collapsed"] = collapsed
@@ -305,7 +301,7 @@ def convert_yaml_to_mrs(
     except Exception as exc:
         print(f"[警告] {base_name} 编译 MRS 失败 ({exc})，尝试从 Release 兜底恢复...", file=sys.stderr)
         recovered_any = False
-        for target_name in [f"{base_name}.mrs", f"{base_name}_domain.mrs", f"{base_name}_ip.mrs"]:
+        for target_name in [f"{base_name}_domain.mrs", f"{base_name}_ip.mrs", f"{base_name}.mrs"]:
             target_path = output_dir / target_name
             if fetch_release_file(target_name, target_path, session=session, repo=repo):
                 generated_files.append(target_name)
