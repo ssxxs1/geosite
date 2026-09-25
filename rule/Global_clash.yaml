@@ -1,14 +1,14 @@
 # NAME: Global
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-21 01:58:21
+# UPDATED: 2026-09-25 18:08:31
 # DOMAIN: 128
 # DOMAIN-KEYWORD: 36
-# DOMAIN-SUFFIX: 34767
+# DOMAIN-SUFFIX: 34774
 # IP-CIDR: 112
 # IP-CIDR6: 4
 # PROCESS-NAME: 1
-# TOTAL: 35048
+# TOTAL: 35055
 
 payload:
 - DOMAIN,1password.drift.click
@@ -6920,6 +6920,7 @@ payload:
 - DOMAIN-SUFFIX,chinesen.de
 - DOMAIN-SUFFIX,chinesenews.net.au
 - DOMAIN-SUFFIX,chinesepen.org
+- DOMAIN-SUFFIX,chineseposters.net
 - DOMAIN-SUFFIX,chineseradioseattle.com
 - DOMAIN-SUFFIX,chinesespanking.com
 - DOMAIN-SUFFIX,chinesetalks.net
@@ -7373,6 +7374,7 @@ payload:
 - DOMAIN-SUFFIX,code1984.com
 - DOMAIN-SUFFIX,codeberg.org
 - DOMAIN-SUFFIX,codeberg.page
+- DOMAIN-SUFFIX,codebuff.com
 - DOMAIN-SUFFIX,codecademy.com
 - DOMAIN-SUFFIX,codeforaliving.io
 - DOMAIN-SUFFIX,codeforces.com
@@ -11604,12 +11606,14 @@ payload:
 - DOMAIN-SUFFIX,firearmsworld.net
 - DOMAIN-SUFFIX,firebase-settings.crashlytics.com
 - DOMAIN-SUFFIX,firebase.com
+- DOMAIN-SUFFIX,firebase.dev
 - DOMAIN-SUFFIX,firebase.io
 - DOMAIN-SUFFIX,firebaseapp.com
 - DOMAIN-SUFFIX,firebaseio.com
 - DOMAIN-SUFFIX,firech.at
 - DOMAIN-SUFFIX,fireemblemawakening.com
 - DOMAIN-SUFFIX,fireflyresearch.ac.uk
+- DOMAIN-SUFFIX,firefox-portal-detection.com
 - DOMAIN-SUFFIX,firefox.com
 - DOMAIN-SUFFIX,firefox.hu
 - DOMAIN-SUFFIX,firefoxtweetmachine.com
@@ -12090,6 +12094,7 @@ payload:
 - DOMAIN-SUFFIX,freebrowser.org
 - DOMAIN-SUFFIX,freebs.com
 - DOMAIN-SUFFIX,freebsd.org
+- DOMAIN-SUFFIX,freebuff.com
 - DOMAIN-SUFFIX,freecamsfan.com
 - DOMAIN-SUFFIX,freecamstars.com
 - DOMAIN-SUFFIX,freecartoons.biz
@@ -22229,6 +22234,7 @@ payload:
 - DOMAIN-SUFFIX,norton.com
 - DOMAIN-SUFFIX,norwichresearchpark.ac.uk
 - DOMAIN-SUFFIX,nos.nl
+- DOMAIN-SUFFIX,note.com
 - DOMAIN-SUFFIX,notegpt.io
 - DOMAIN-SUFFIX,notepad-plus-plus.org
 - DOMAIN-SUFFIX,noticias-rt.com
@@ -29396,6 +29402,7 @@ payload:
 - DOMAIN-SUFFIX,textnow.me
 - DOMAIN-SUFFIX,texttobuy.org
 - DOMAIN-SUFFIX,texture.com
+- DOMAIN-SUFFIX,tfbnw.net
 - DOMAIN-SUFFIX,tfc-taiwan.org.tw
 - DOMAIN-SUFFIX,tferwq.com
 - DOMAIN-SUFFIX,tfhub.dev
