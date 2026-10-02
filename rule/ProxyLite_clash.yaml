@@ -1,13 +1,13 @@
 # NAME: ProxyLite
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-25 18:08:33
-# DOMAIN: 23
+# UPDATED: 2026-10-02 18:48:16
+# DOMAIN: 24
 # DOMAIN-KEYWORD: 20
-# DOMAIN-SUFFIX: 843
-# IP-CIDR: 86
+# DOMAIN-SUFFIX: 848
+# IP-CIDR: 89
 # IP-CIDR6: 4
-# TOTAL: 976
+# TOTAL: 985
 
 payload:
 - DOMAIN,addons.mozilla.org
@@ -25,6 +25,7 @@ payload:
 - DOMAIN,cdp.cloud.unity3d.com
 - DOMAIN,clubhouse.pubnubapi.com
 - DOMAIN,copilot.microsoft.com
+- DOMAIN,github-api.arkoselabs.com
 - DOMAIN,lab.skk.moe
 - DOMAIN,location.microsoft.com
 - DOMAIN,login.microsoftonline.com
@@ -318,6 +319,9 @@ payload:
 - DOMAIN-SUFFIX,ghostnoteapp.com
 - DOMAIN-SUFFIX,gitbook.com
 - DOMAIN-SUFFIX,githack.com
+- DOMAIN-SUFFIX,github.ai
+- DOMAIN-SUFFIX,github.career
+- DOMAIN-SUFFIX,githubsupport.com
 - DOMAIN-SUFFIX,gitlab.com
 - DOMAIN-SUFFIX,gitlab.io
 - DOMAIN-SUFFIX,globalsign.com
@@ -328,6 +332,8 @@ payload:
 - DOMAIN-SUFFIX,gongm.in
 - DOMAIN-SUFFIX,goodreaders.com
 - DOMAIN-SUFFIX,goodreads.com
+- DOMAIN-SUFFIX,google
+- DOMAIN-SUFFIX,googlezip.net
 - DOMAIN-SUFFIX,gosetsuden.jp
 - DOMAIN-SUFFIX,graphql.org
 - DOMAIN-SUFFIX,gravatar.com
@@ -919,6 +925,8 @@ payload:
 - IP-CIDR,125.6.149.0/24,no-resolve
 - IP-CIDR,125.6.190.0/24,no-resolve
 - IP-CIDR,129.134.0.0/17,no-resolve
+- IP-CIDR,13.251.24.0/24,no-resolve
+- IP-CIDR,13.251.41.0/24,no-resolve
 - IP-CIDR,13.32.0.0/15,no-resolve
 - IP-CIDR,13.35.0.0/17,no-resolve
 - IP-CIDR,147.92.128.0/17,no-resolve
@@ -927,6 +935,7 @@ payload:
 - IP-CIDR,158.85.224.160/27,no-resolve
 - IP-CIDR,158.85.46.128/27,no-resolve
 - IP-CIDR,158.85.5.192/27,no-resolve
+- IP-CIDR,17.252.156.0/23,no-resolve
 - IP-CIDR,173.192.222.160/27,no-resolve
 - IP-CIDR,173.192.231.32/27,no-resolve
 - IP-CIDR,173.194.0.0/16,no-resolve

@@ -1,13 +1,13 @@
 # NAME: Proxy
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-25 18:08:33
+# UPDATED: 2026-10-02 18:48:15
 # DOMAIN: 9
 # DOMAIN-KEYWORD: 26
-# DOMAIN-SUFFIX: 6786
-# IP-CIDR: 93
+# DOMAIN-SUFFIX: 6791
+# IP-CIDR: 96
 # IP-CIDR6: 4
-# TOTAL: 6918
+# TOTAL: 6926
 
 payload:
 - DOMAIN,api.waqi.info
@@ -909,6 +909,7 @@ payload:
 - DOMAIN-SUFFIX,c-span.org
 - DOMAIN-SUFFIX,c-spanvideo.org
 - DOMAIN-SUFFIX,c.gle
+- DOMAIN-SUFFIX,c.go-mpulse.net
 - DOMAIN-SUFFIX,c.mi.com
 - DOMAIN-SUFFIX,c100tibet.org
 - DOMAIN-SUFFIX,c2cx.com
@@ -2203,6 +2204,7 @@ payload:
 - DOMAIN-SUFFIX,fututrustee.com
 - DOMAIN-SUFFIX,fux.com
 - DOMAIN-SUFFIX,fuyin.net
+- DOMAIN-SUFFIX,fuyin116.com
 - DOMAIN-SUFFIX,fuyindiantai.org
 - DOMAIN-SUFFIX,fuyu.org.tw
 - DOMAIN-SUFFIX,fw.cm
@@ -3820,6 +3822,7 @@ payload:
 - DOMAIN-SUFFIX,mummysgold.com
 - DOMAIN-SUFFIX,murmur.tw
 - DOMAIN-SUFFIX,muscdn.com
+- DOMAIN-SUFFIX,muse.ai
 - DOMAIN-SUFFIX,musicade.net
 - DOMAIN-SUFFIX,musical.ly
 - DOMAIN-SUFFIX,musixmatch.com
@@ -4643,6 +4646,7 @@ payload:
 - DOMAIN-SUFFIX,qiwen.lu
 - DOMAIN-SUFFIX,qkshare.com
 - DOMAIN-SUFFIX,qmp4.com
+- DOMAIN-SUFFIX,qobuz.com
 - DOMAIN-SUFFIX,qoos.com
 - DOMAIN-SUFFIX,qpoe.com
 - DOMAIN-SUFFIX,qq.co.za
@@ -6125,6 +6129,7 @@ payload:
 - DOMAIN-SUFFIX,vansky.com
 - DOMAIN-SUFFIX,vaticannews.va
 - DOMAIN-SUFFIX,vatn.org
+- DOMAIN-SUFFIX,vava8.com
 - DOMAIN-SUFFIX,vbstatic.co
 - DOMAIN-SUFFIX,vcf-online.org
 - DOMAIN-SUFFIX,vcfbuilder.org
@@ -6854,6 +6859,8 @@ payload:
 - IP-CIDR,125.6.149.0/24,no-resolve
 - IP-CIDR,125.6.190.0/24,no-resolve
 - IP-CIDR,129.134.0.0/17,no-resolve
+- IP-CIDR,13.251.24.0/24,no-resolve
+- IP-CIDR,13.251.41.0/24,no-resolve
 - IP-CIDR,13.32.0.0/15,no-resolve
 - IP-CIDR,13.35.0.0/17,no-resolve
 - IP-CIDR,14.102.250.18/31,no-resolve
@@ -6863,6 +6870,7 @@ payload:
 - IP-CIDR,158.85.224.160/27,no-resolve
 - IP-CIDR,158.85.46.128/27,no-resolve
 - IP-CIDR,158.85.5.192/27,no-resolve
+- IP-CIDR,17.252.156.0/23,no-resolve
 - IP-CIDR,173.192.222.160/27,no-resolve
 - IP-CIDR,173.192.231.32/27,no-resolve
 - IP-CIDR,173.194.0.0/16,no-resolve

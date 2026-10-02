@@ -1,28 +1,39 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-25 18:08:35
-# DOMAIN: 70
+# UPDATED: 2026-10-02 18:48:17
+# DOMAIN: 86
 # DOMAIN-KEYWORD: 11
-# DOMAIN-SUFFIX: 257
+# DOMAIN-SUFFIX: 266
 # DOMAIN-WILDCARD: 12
 # IP-ASN: 1
-# IP-CIDR: 11
+# IP-CIDR: 34
 # IP-CIDR6: 4
-# TOTAL: 366
+# TOTAL: 414
 
 payload:
 - DOMAIN,account.diabrowser.engineering
+- DOMAIN,account.jetbrains.com
+- DOMAIN,accounts.spacex.ai
+- DOMAIN,accounts.x.ai
 - DOMAIN,ai-service.diabrowser.engineering
 - DOMAIN,anthropic-com.ghost.io
 - DOMAIN,anthropic.com.cdn.cloudflare.net
+- DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
+- DOMAIN,api.app.prod.grazie.aws.intellij.net
 - DOMAIN,api.elevenlabs.io
 - DOMAIN,api.githubcopilot.com
 - DOMAIN,api.hyperbolic.xyz
 - DOMAIN,api.jetbrains.ai
+- DOMAIN,api.jetbrains.cloud
 - DOMAIN,api.msn.com
 - DOMAIN,api.x.ai
+- DOMAIN,appcatalyst.pa.googleapis.com
 - DOMAIN,assets.msn.com
+- DOMAIN,auth.grok.com
+- DOMAIN,auth.grokipedia.com
+- DOMAIN,auth.grokusercontent.com
+- DOMAIN,auth.x.ai
 - DOMAIN,cdn.openaimerge.com
 - DOMAIN,cdn.workos.com
 - DOMAIN,chat.mistral.ai
@@ -30,7 +41,8 @@ payload:
 - DOMAIN,clio-assets.adobe.com
 - DOMAIN,console.mistral.ai
 - DOMAIN,copilot-proxy.githubusercontent.com
-- DOMAIN,copilot.cloud.microsoft
+- DOMAIN,copilot-reports.github.com
+- DOMAIN,copilot-telemetry.githubusercontent.com
 - DOMAIN,copilotstudio.microsoft.com
 - DOMAIN,daily-cloudcode-pa.googleapis.com
 - DOMAIN,dc-genai-access-provisioning-api.adobe.io
@@ -49,7 +61,9 @@ payload:
 - DOMAIN,images.workoscdn.com
 - DOMAIN,imagine.meta.com
 - DOMAIN,in.appcenter.ms
+- DOMAIN,jules.googleapis.com
 - DOMAIN,location.microsoft.com
+- DOMAIN,login.live.com
 - DOMAIN,m365copilot.com
 - DOMAIN,mask-api.fe.apple-dns.net
 - DOMAIN,mask-api.icloud.com
@@ -60,11 +74,13 @@ payload:
 - DOMAIN,mds-cdn.infra.adobesensei.io
 - DOMAIN,mssdk-i18n-sg.coze.com
 - DOMAIN,mssdk-i18n-va.coze.com
+- DOMAIN,oauth.account.jetbrains.com
 - DOMAIN,odc.officeapps.live.com
 - DOMAIN,openai-api.arkoselabs.com
 - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 - DOMAIN,openaicomproductionae4b.blob.core.windows.net
 - DOMAIN,opt-i18n.coze.com
+- DOMAIN,origin-tracker.githubusercontent.com
 - DOMAIN,perplexity-ai.cloudflareaccess.com
 - DOMAIN,portal.customtranslator.azure.us
 - DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
@@ -108,6 +124,7 @@ payload:
 - DOMAIN-SUFFIX,anthropic.com
 - DOMAIN-SUFFIX,antigravity-unleash.goog
 - DOMAIN-SUFFIX,antigravity.google
+- DOMAIN-SUFFIX,antigravity.google.com
 - DOMAIN-SUFFIX,antigravity.googleapis.com
 - DOMAIN-SUFFIX,any.do
 - DOMAIN-SUFFIX,anyword.com
@@ -171,6 +188,8 @@ payload:
 - DOMAIN-SUFFIX,colab.google.com
 - DOMAIN-SUFFIX,colab.research.google.com
 - DOMAIN-SUFFIX,content-autofill.googleapis.com
+- DOMAIN-SUFFIX,copilot.cloud.microsoft
+- DOMAIN-SUFFIX,copilot.com
 - DOMAIN-SUFFIX,copilot.microsoft.com
 - DOMAIN-SUFFIX,cortana.ai
 - DOMAIN-SUFFIX,coze.com
@@ -179,6 +198,7 @@ payload:
 - DOMAIN-SUFFIX,cursor.com
 - DOMAIN-SUFFIX,cursor.sh
 - DOMAIN-SUFFIX,cursorapi.com
+- DOMAIN-SUFFIX,cursorvm.com
 - DOMAIN-SUFFIX,daily-cloudcode-pa.sandbox.googleapis.com
 - DOMAIN-SUFFIX,deepmind.com
 - DOMAIN-SUFFIX,deepmind.google
@@ -241,6 +261,7 @@ payload:
 - DOMAIN-SUFFIX,jetbrains.ai
 - DOMAIN-SUFFIX,jina.ai
 - DOMAIN-SUFFIX,jnn-pa.googleapis.com
+- DOMAIN-SUFFIX,jules.google
 - DOMAIN-SUFFIX,jules.google.com
 - DOMAIN-SUFFIX,kiro.dev
 - DOMAIN-SUFFIX,klingai.com
@@ -263,11 +284,13 @@ payload:
 - DOMAIN-SUFFIX,mask.icloud.com
 - DOMAIN-SUFFIX,mem.ai
 - DOMAIN-SUFFIX,meta.ai
-- DOMAIN-SUFFIX,meta.com
 - DOMAIN-SUFFIX,microsoftcloudsummit.com
 - DOMAIN-SUFFIX,midjourney.com
 - DOMAIN-SUFFIX,mistral.ai
 - DOMAIN-SUFFIX,msunlimitedcloudsummit.com
+- DOMAIN-SUFFIX,notebook.google
+- DOMAIN-SUFFIX,notebook.google.com
+- DOMAIN-SUFFIX,notebooklm.cloud.google.com
 - DOMAIN-SUFFIX,notebooklm.google
 - DOMAIN-SUFFIX,notebooklm.google.com
 - DOMAIN-SUFFIX,notebooklm.googleapis.com
@@ -279,6 +302,7 @@ payload:
 - DOMAIN-SUFFIX,oceanapi-i18n.com
 - DOMAIN-SUFFIX,ogads-pa.clients6.google.com
 - DOMAIN-SUFFIX,ogs.google.com
+- DOMAIN-SUFFIX,opal.goog
 - DOMAIN-SUFFIX,opal.google
 - DOMAIN-SUFFIX,opal.google.com
 - DOMAIN-SUFFIX,opal.withgoogle.com
@@ -333,6 +357,7 @@ payload:
 - DOMAIN-SUFFIX,trae.ai
 - DOMAIN-SUFFIX,traeapi.us
 - DOMAIN-SUFFIX,turn.livekit.cloud
+- DOMAIN-SUFFIX,udify.app
 - DOMAIN-SUFFIX,udio.com
 - DOMAIN-SUFFIX,usemotion.com
 - DOMAIN-SUFFIX,userlocations.googleapis.com
@@ -363,15 +388,38 @@ payload:
 - DOMAIN-WILDCARD,openaicom*.azurefd.net
 - DOMAIN-WILDCARD,openaicom-api-*.*.windows.net
 - IP-ASN,399358
+- IP-CIDR,102.37.57.54/32,no-resolve
 - IP-CIDR,108.59.2.24/32,no-resolve
 - IP-CIDR,116.203.151.74/32,no-resolve
+- IP-CIDR,13.71.25.29/32,no-resolve
+- IP-CIDR,135.220.40.201/32,no-resolve
 - IP-CIDR,160.79.104.0/21,no-resolve
 - IP-CIDR,162.159.200.0/24,no-resolve
 - IP-CIDR,17.253.4.125/32,no-resolve
+- IP-CIDR,172.203.39.49/32,no-resolve
+- IP-CIDR,172.207.173.200/32,no-resolve
+- IP-CIDR,172.214.226.198/32,no-resolve
+- IP-CIDR,191.233.251.27/32,no-resolve
 - IP-CIDR,193.182.111.0/24,no-resolve
+- IP-CIDR,20.162.96.163/32,no-resolve
+- IP-CIDR,20.168.48.117/32,no-resolve
+- IP-CIDR,20.184.36.134/32,no-resolve
+- IP-CIDR,20.203.144.245/32,no-resolve
+- IP-CIDR,20.74.221.21/32,no-resolve
 - IP-CIDR,24.199.123.28/32,no-resolve
+- IP-CIDR,4.151.200.38/32,no-resolve
+- IP-CIDR,4.155.146.196/32,no-resolve
+- IP-CIDR,4.197.172.116/32,no-resolve
+- IP-CIDR,4.217.235.100/32,no-resolve
+- IP-CIDR,4.245.198.13/32,no-resolve
+- IP-CIDR,40.118.236.137/32,no-resolve
 - IP-CIDR,45.76.221.157/32,no-resolve
+- IP-CIDR,51.4.112.173/32,no-resolve
+- IP-CIDR,52.143.181.161/32,no-resolve
 - IP-CIDR,64.23.132.171/32,no-resolve
+- IP-CIDR,68.155.152.41/32,no-resolve
+- IP-CIDR,72.146.20.246/32,no-resolve
+- IP-CIDR,74.248.148.7/32,no-resolve
 - IP-CIDR,81.168.83.93/32,no-resolve
 - IP-CIDR,95.111.202.5/32,no-resolve
 - IP-CIDR6,2001:67c:21bc:1e::123/128,no-resolve

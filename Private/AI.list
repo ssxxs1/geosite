@@ -1,27 +1,38 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-09-17 09:04:17
-# HOST: 70
-# HOST-SUFFIX: 257
+# UPDATED: 2026-10-02 18:48:06
+# HOST: 86
+# HOST-SUFFIX: 266
 # HOST-KEYWORD: 11
 # HOST-WILDCARD: 12
-# IP-CIDR: 11
+# IP-CIDR: 34
 # IP6-CIDR: 4
 # IP-ASN: 1
-# TOTAL: 366
+# TOTAL: 414
 
 HOST,account.diabrowser.engineering
+HOST,account.jetbrains.com
+HOST,accounts.spacex.ai
+HOST,accounts.x.ai
 HOST,ai-service.diabrowser.engineering
 HOST,anthropic-com.ghost.io
 HOST,anthropic.com.cdn.cloudflare.net
+HOST,anysphere-binaries.s3.us-east-1.amazonaws.com
+HOST,api.app.prod.grazie.aws.intellij.net
 HOST,api.elevenlabs.io
 HOST,api.githubcopilot.com
 HOST,api.hyperbolic.xyz
 HOST,api.jetbrains.ai
+HOST,api.jetbrains.cloud
 HOST,api.msn.com
 HOST,api.x.ai
+HOST,appcatalyst.pa.googleapis.com
 HOST,assets.msn.com
+HOST,auth.grok.com
+HOST,auth.grokipedia.com
+HOST,auth.grokusercontent.com
+HOST,auth.x.ai
 HOST,cdn.openaimerge.com
 HOST,cdn.workos.com
 HOST,chat.mistral.ai
@@ -29,7 +40,8 @@ HOST,chat.openai.com.cdn.cloudflare.net
 HOST,clio-assets.adobe.com
 HOST,console.mistral.ai
 HOST,copilot-proxy.githubusercontent.com
-HOST,copilot.cloud.microsoft
+HOST,copilot-reports.github.com
+HOST,copilot-telemetry.githubusercontent.com
 HOST,copilotstudio.microsoft.com
 HOST,daily-cloudcode-pa.googleapis.com
 HOST,dc-genai-access-provisioning-api.adobe.io
@@ -48,7 +60,9 @@ HOST,humb.apple.com
 HOST,images.workoscdn.com
 HOST,imagine.meta.com
 HOST,in.appcenter.ms
+HOST,jules.googleapis.com
 HOST,location.microsoft.com
+HOST,login.live.com
 HOST,m365copilot.com
 HOST,mask-api.fe.apple-dns.net
 HOST,mask-api.icloud.com
@@ -59,11 +73,13 @@ HOST,mcs-va.coze.com
 HOST,mds-cdn.infra.adobesensei.io
 HOST,mssdk-i18n-sg.coze.com
 HOST,mssdk-i18n-va.coze.com
+HOST,oauth.account.jetbrains.com
 HOST,odc.officeapps.live.com
 HOST,openai-api.arkoselabs.com
 HOST,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 HOST,openaicomproductionae4b.blob.core.windows.net
 HOST,opt-i18n.coze.com
+HOST,origin-tracker.githubusercontent.com
 HOST,perplexity-ai.cloudflareaccess.com
 HOST,portal.customtranslator.azure.us
 HOST,ppl-ai-file-upload.s3.amazonaws.com
@@ -96,6 +112,7 @@ HOST-SUFFIX,alkalimakersuite-pa.clients6.google.com
 HOST-SUFFIX,anthropic.com
 HOST-SUFFIX,antigravity-unleash.goog
 HOST-SUFFIX,antigravity.google
+HOST-SUFFIX,antigravity.google.com
 HOST-SUFFIX,antigravity.googleapis.com
 HOST-SUFFIX,any.do
 HOST-SUFFIX,anyword.com
@@ -159,6 +176,8 @@ HOST-SUFFIX,cohere.com
 HOST-SUFFIX,colab.google.com
 HOST-SUFFIX,colab.research.google.com
 HOST-SUFFIX,content-autofill.googleapis.com
+HOST-SUFFIX,copilot.cloud.microsoft
+HOST-SUFFIX,copilot.com
 HOST-SUFFIX,copilot.microsoft.com
 HOST-SUFFIX,cortana.ai
 HOST-SUFFIX,coze.com
@@ -167,6 +186,7 @@ HOST-SUFFIX,cursor-cdn.com
 HOST-SUFFIX,cursor.com
 HOST-SUFFIX,cursor.sh
 HOST-SUFFIX,cursorapi.com
+HOST-SUFFIX,cursorvm.com
 HOST-SUFFIX,daily-cloudcode-pa.sandbox.googleapis.com
 HOST-SUFFIX,deepmind.com
 HOST-SUFFIX,deepmind.google
@@ -229,6 +249,7 @@ HOST-SUFFIX,jasper.ai
 HOST-SUFFIX,jetbrains.ai
 HOST-SUFFIX,jina.ai
 HOST-SUFFIX,jnn-pa.googleapis.com
+HOST-SUFFIX,jules.google
 HOST-SUFFIX,jules.google.com
 HOST-SUFFIX,kiro.dev
 HOST-SUFFIX,klingai.com
@@ -251,11 +272,13 @@ HOST-SUFFIX,mask-h2.icloud.com
 HOST-SUFFIX,mask.icloud.com
 HOST-SUFFIX,mem.ai
 HOST-SUFFIX,meta.ai
-HOST-SUFFIX,meta.com
 HOST-SUFFIX,microsoftcloudsummit.com
 HOST-SUFFIX,midjourney.com
 HOST-SUFFIX,mistral.ai
 HOST-SUFFIX,msunlimitedcloudsummit.com
+HOST-SUFFIX,notebook.google
+HOST-SUFFIX,notebook.google.com
+HOST-SUFFIX,notebooklm.cloud.google.com
 HOST-SUFFIX,notebooklm.google
 HOST-SUFFIX,notebooklm.google.com
 HOST-SUFFIX,notebooklm.googleapis.com
@@ -267,6 +290,7 @@ HOST-SUFFIX,oauth2.googleapis.com
 HOST-SUFFIX,oceanapi-i18n.com
 HOST-SUFFIX,ogads-pa.clients6.google.com
 HOST-SUFFIX,ogs.google.com
+HOST-SUFFIX,opal.goog
 HOST-SUFFIX,opal.google
 HOST-SUFFIX,opal.google.com
 HOST-SUFFIX,opal.withgoogle.com
@@ -321,6 +345,7 @@ HOST-SUFFIX,tome.app
 HOST-SUFFIX,trae.ai
 HOST-SUFFIX,traeapi.us
 HOST-SUFFIX,turn.livekit.cloud
+HOST-SUFFIX,udify.app
 HOST-SUFFIX,udio.com
 HOST-SUFFIX,usemotion.com
 HOST-SUFFIX,userlocations.googleapis.com
@@ -361,15 +386,38 @@ HOST-WILDCARD,lh*.google.com
 HOST-WILDCARD,lh*.googleusercontent.com
 HOST-WILDCARD,openaicom*.azurefd.net
 HOST-WILDCARD,openaicom-api-*.*.windows.net
+IP-CIDR,102.37.57.54/32,no-resolve
 IP-CIDR,108.59.2.24/32,no-resolve
 IP-CIDR,116.203.151.74/32,no-resolve
+IP-CIDR,13.71.25.29/32,no-resolve
+IP-CIDR,135.220.40.201/32,no-resolve
 IP-CIDR,160.79.104.0/21,no-resolve
 IP-CIDR,162.159.200.0/24,no-resolve
 IP-CIDR,17.253.4.125/32,no-resolve
+IP-CIDR,172.203.39.49/32,no-resolve
+IP-CIDR,172.207.173.200/32,no-resolve
+IP-CIDR,172.214.226.198/32,no-resolve
+IP-CIDR,191.233.251.27/32,no-resolve
 IP-CIDR,193.182.111.0/24,no-resolve
+IP-CIDR,20.162.96.163/32,no-resolve
+IP-CIDR,20.168.48.117/32,no-resolve
+IP-CIDR,20.184.36.134/32,no-resolve
+IP-CIDR,20.203.144.245/32,no-resolve
+IP-CIDR,20.74.221.21/32,no-resolve
 IP-CIDR,24.199.123.28/32,no-resolve
+IP-CIDR,4.151.200.38/32,no-resolve
+IP-CIDR,4.155.146.196/32,no-resolve
+IP-CIDR,4.197.172.116/32,no-resolve
+IP-CIDR,4.217.235.100/32,no-resolve
+IP-CIDR,4.245.198.13/32,no-resolve
+IP-CIDR,40.118.236.137/32,no-resolve
 IP-CIDR,45.76.221.157/32,no-resolve
+IP-CIDR,51.4.112.173/32,no-resolve
+IP-CIDR,52.143.181.161/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
+IP-CIDR,68.155.152.41/32,no-resolve
+IP-CIDR,72.146.20.246/32,no-resolve
+IP-CIDR,74.248.148.7/32,no-resolve
 IP-CIDR,81.168.83.93/32,no-resolve
 IP-CIDR,95.111.202.5/32,no-resolve
 IP6-CIDR,2001:67c:21bc:1e::123/128,no-resolve
