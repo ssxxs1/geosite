@@ -1,13 +1,13 @@
 # NAME: ProxyLite
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-02 18:48:16
+# UPDATED: 2026-10-09 19:08:45
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 20
-# DOMAIN-SUFFIX: 848
+# DOMAIN-SUFFIX: 850
 # IP-CIDR: 89
 # IP-CIDR6: 4
-# TOTAL: 985
+# TOTAL: 987
 
 payload:
 - DOMAIN,addons.mozilla.org
@@ -828,6 +828,7 @@ payload:
 - DOMAIN-SUFFIX,whoer.net
 - DOMAIN-SUFFIX,wikibooks.org
 - DOMAIN-SUFFIX,wikidata.org
+- DOMAIN-SUFFIX,wikifunctions.org
 - DOMAIN-SUFFIX,wikileaks-forum.com
 - DOMAIN-SUFFIX,wikileaks.info
 - DOMAIN-SUFFIX,wikileaks.org
@@ -839,6 +840,7 @@ payload:
 - DOMAIN-SUFFIX,wikipedia.org
 - DOMAIN-SUFFIX,wikiquote.org
 - DOMAIN-SUFFIX,wikisource.org
+- DOMAIN-SUFFIX,wikispecies.org
 - DOMAIN-SUFFIX,wikiversity.org
 - DOMAIN-SUFFIX,wikivoyage.org
 - DOMAIN-SUFFIX,wikiwand.com
