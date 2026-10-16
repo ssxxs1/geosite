@@ -1,12 +1,12 @@
 # NAME: TikTok
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-09 19:08:43
+# UPDATED: 2026-10-16 17:44:42
 # DOMAIN: 4
 # DOMAIN-KEYWORD: 2
-# DOMAIN-SUFFIX: 25
+# DOMAIN-SUFFIX: 28
 # PROCESS-NAME: 1
-# TOTAL: 32
+# TOTAL: 35
 
 payload:
 - DOMAIN,lf16-effectcdn.byteeffecttos-g.com
@@ -20,6 +20,9 @@ payload:
 - DOMAIN-SUFFIX,byteintlapi.com
 - DOMAIN-SUFFIX,byteoversea.com
 - DOMAIN-SUFFIX,capcut.com
+- DOMAIN-SUFFIX,capcutapi.com
+- DOMAIN-SUFFIX,capcutapi.us
+- DOMAIN-SUFFIX,capcutstatic.com
 - DOMAIN-SUFFIX,ibytedtos.com
 - DOMAIN-SUFFIX,ibyteimg.com
 - DOMAIN-SUFFIX,ipstatp.com

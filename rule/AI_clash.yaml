@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-09 19:08:46
-# DOMAIN: 86
+# UPDATED: 2026-10-16 17:44:46
+# DOMAIN: 93
 # DOMAIN-KEYWORD: 11
-# DOMAIN-SUFFIX: 266
+# DOMAIN-SUFFIX: 267
 # DOMAIN-WILDCARD: 12
 # IP-ASN: 1
 # IP-CIDR: 34
 # IP-CIDR6: 4
-# TOTAL: 414
+# TOTAL: 422
 
 payload:
 - DOMAIN,account.diabrowser.engineering
@@ -61,6 +61,7 @@ payload:
 - DOMAIN,images.workoscdn.com
 - DOMAIN,imagine.meta.com
 - DOMAIN,in.appcenter.ms
+- DOMAIN,inference.codeium.com
 - DOMAIN,jules.googleapis.com
 - DOMAIN,location.microsoft.com
 - DOMAIN,login.live.com
@@ -82,21 +83,27 @@ payload:
 - DOMAIN,opt-i18n.coze.com
 - DOMAIN,origin-tracker.githubusercontent.com
 - DOMAIN,perplexity-ai.cloudflareaccess.com
+- DOMAIN,play.google.com
 - DOMAIN,portal.customtranslator.azure.us
 - DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
 - DOMAIN,pplx-res.cloudinary.com
 - DOMAIN,pre-signed-firefly-prod.s3-accelerate.amazonaws.com
 - DOMAIN,pre-signed-firefly-prod.s3.amazonaws.com
 - DOMAIN,production-openaicom-storage.azureedge.net
+- DOMAIN,q.eu-central-1.amazonaws.com
+- DOMAIN,q.us-east-1.amazonaws.com
 - DOMAIN,r.bing.com
 - DOMAIN,self.events.data.microsoft.com
 - DOMAIN,senseimds.adobe.io
 - DOMAIN,servd-anthropic-website.b-cdn.net
+- DOMAIN,server.codeium.com
+- DOMAIN,server.self-serve.windsurf.com
 - DOMAIN,setup.workos.com
 - DOMAIN,sf-coze-web-cdn.coze.com
 - DOMAIN,survey.coze.com
 - DOMAIN,sydney.bing.com
 - DOMAIN,trae-api-sg.mchost.guru
+- DOMAIN,trae-api-us.mchost.guru
 - DOMAIN,workos.imgix.net
 - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
 - DOMAIN-KEYWORD,colab
@@ -184,6 +191,7 @@ payload:
 - DOMAIN-SUFFIX,cognitiveservices.azure.cn
 - DOMAIN-SUFFIX,cognitiveservices.azure.com
 - DOMAIN-SUFFIX,cognitiveservices.azure.us
+- DOMAIN-SUFFIX,cohere.ai
 - DOMAIN-SUFFIX,cohere.com
 - DOMAIN-SUFFIX,colab.google.com
 - DOMAIN-SUFFIX,colab.research.google.com

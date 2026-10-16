@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-02 18:48:06
-# HOST: 86
-# HOST-SUFFIX: 266
+# UPDATED: 2026-10-16 17:44:34
+# HOST: 93
+# HOST-SUFFIX: 267
 # HOST-KEYWORD: 11
 # HOST-WILDCARD: 12
 # IP-CIDR: 34
 # IP6-CIDR: 4
 # IP-ASN: 1
-# TOTAL: 414
+# TOTAL: 422
 
 HOST,account.diabrowser.engineering
 HOST,account.jetbrains.com
@@ -60,6 +60,7 @@ HOST,humb.apple.com
 HOST,images.workoscdn.com
 HOST,imagine.meta.com
 HOST,in.appcenter.ms
+HOST,inference.codeium.com
 HOST,jules.googleapis.com
 HOST,location.microsoft.com
 HOST,login.live.com
@@ -81,21 +82,27 @@ HOST,openaicomproductionae4b.blob.core.windows.net
 HOST,opt-i18n.coze.com
 HOST,origin-tracker.githubusercontent.com
 HOST,perplexity-ai.cloudflareaccess.com
+HOST,play.google.com
 HOST,portal.customtranslator.azure.us
 HOST,ppl-ai-file-upload.s3.amazonaws.com
 HOST,pplx-res.cloudinary.com
 HOST,pre-signed-firefly-prod.s3-accelerate.amazonaws.com
 HOST,pre-signed-firefly-prod.s3.amazonaws.com
 HOST,production-openaicom-storage.azureedge.net
+HOST,q.eu-central-1.amazonaws.com
+HOST,q.us-east-1.amazonaws.com
 HOST,r.bing.com
 HOST,self.events.data.microsoft.com
 HOST,senseimds.adobe.io
 HOST,servd-anthropic-website.b-cdn.net
+HOST,server.codeium.com
+HOST,server.self-serve.windsurf.com
 HOST,setup.workos.com
 HOST,sf-coze-web-cdn.coze.com
 HOST,survey.coze.com
 HOST,sydney.bing.com
 HOST,trae-api-sg.mchost.guru
+HOST,trae-api-us.mchost.guru
 HOST,workos.imgix.net
 HOST-SUFFIX,ai.com
 HOST-SUFFIX,ai.google
@@ -172,6 +179,7 @@ HOST-SUFFIX,codeiumdata.com
 HOST-SUFFIX,cognitiveservices.azure.cn
 HOST-SUFFIX,cognitiveservices.azure.com
 HOST-SUFFIX,cognitiveservices.azure.us
+HOST-SUFFIX,cohere.ai
 HOST-SUFFIX,cohere.com
 HOST-SUFFIX,colab.google.com
 HOST-SUFFIX,colab.research.google.com
