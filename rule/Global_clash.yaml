@@ -1,14 +1,14 @@
 # NAME: Global
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-16 17:44:41
+# UPDATED: 2026-10-18 02:10:18
 # DOMAIN: 127
 # DOMAIN-KEYWORD: 36
-# DOMAIN-SUFFIX: 34901
+# DOMAIN-SUFFIX: 34907
 # IP-CIDR: 115
 # IP-CIDR6: 4
 # PROCESS-NAME: 1
-# TOTAL: 35184
+# TOTAL: 35190
 
 payload:
 - DOMAIN,1password.drift.click
@@ -745,6 +745,7 @@ payload:
 - DOMAIN-SUFFIX,7tb.cc
 - DOMAIN-SUFFIX,7tv.app
 - DOMAIN-SUFFIX,7tv.io
+- DOMAIN-SUFFIX,7x24hrs.com
 - DOMAIN-SUFFIX,8-d.com
 - DOMAIN-SUFFIX,8008206616.com
 - DOMAIN-SUFFIX,8111y.top
@@ -5703,6 +5704,7 @@ payload:
 - DOMAIN-SUFFIX,bsappapi.com
 - DOMAIN-SUFFIX,bsaw.ac.uk
 - DOMAIN-SUFFIX,bsbec.ac.uk
+- DOMAIN-SUFFIX,bscdnweb.com
 - DOMAIN-SUFFIX,bsdc.ac.uk
 - DOMAIN-SUFFIX,bsersd.xyz
 - DOMAIN-SUFFIX,bsfc.ac.uk
@@ -26610,6 +26612,7 @@ payload:
 - DOMAIN-SUFFIX,scct.ac.uk
 - DOMAIN-SUFFIX,scde.ac.uk
 - DOMAIN-SUFFIX,scdn.co
+- DOMAIN-SUFFIX,scea.com
 - DOMAIN-SUFFIX,scene7.com
 - DOMAIN-SUFFIX,scenesource.me
 - DOMAIN-SUFFIX,scentro.ac.uk
@@ -27963,6 +27966,7 @@ payload:
 - DOMAIN-SUFFIX,sony.com.pa
 - DOMAIN-SUFFIX,sony.com.pe
 - DOMAIN-SUFFIX,sony.com.ph
+- DOMAIN-SUFFIX,sony.com.py
 - DOMAIN-SUFFIX,sony.com.sg
 - DOMAIN-SUFFIX,sony.com.sv
 - DOMAIN-SUFFIX,sony.com.tr
@@ -28005,8 +28009,10 @@ payload:
 - DOMAIN-SUFFIX,sonydesign.com
 - DOMAIN-SUFFIX,sonydna.com
 - DOMAIN-SUFFIX,sonyglobalsolutions.jp
+- DOMAIN-SUFFIX,sonyinteractive.com
 - DOMAIN-SUFFIX,sonykigyo.jp
 - DOMAIN-SUFFIX,sonylatvija.com
+- DOMAIN-SUFFIX,sonymusic.com.hk
 - DOMAIN-SUFFIX,sonynetwork.co.jp
 - DOMAIN-SUFFIX,sonypcl.jp
 - DOMAIN-SUFFIX,sonypictures.com

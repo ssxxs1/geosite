@@ -1,13 +1,13 @@
 # NAME: Proxy
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-16 17:44:43
+# UPDATED: 2026-10-18 02:10:20
 # DOMAIN: 9
 # DOMAIN-KEYWORD: 26
-# DOMAIN-SUFFIX: 6827
+# DOMAIN-SUFFIX: 6830
 # IP-CIDR: 96
 # IP-CIDR6: 4
-# TOTAL: 6962
+# TOTAL: 6965
 
 payload:
 - DOMAIN,api.waqi.info
@@ -175,6 +175,7 @@ payload:
 - DOMAIN-SUFFIX,7capture.com
 - DOMAIN-SUFFIX,7cow.com
 - DOMAIN-SUFFIX,7mmtv.tv
+- DOMAIN-SUFFIX,7x24hrs.com
 - DOMAIN-SUFFIX,8-d.com
 - DOMAIN-SUFFIX,85cc.net
 - DOMAIN-SUFFIX,85cc.us
@@ -3654,7 +3655,9 @@ payload:
 - DOMAIN-SUFFIX,meshrep.com
 - DOMAIN-SUFFIX,mesotw.com
 - DOMAIN-SUFFIX,messenger.com
+- DOMAIN-SUFFIX,meta.ai
 - DOMAIN-SUFFIX,meta.com
+- DOMAIN-SUFFIX,metaaivm.com
 - DOMAIN-SUFFIX,metacafe.com
 - DOMAIN-SUFFIX,metacubex.one
 - DOMAIN-SUFFIX,metafilter.com

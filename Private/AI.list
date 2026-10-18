@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-16 17:44:34
-# HOST: 93
+# UPDATED: 2026-10-18 02:10:06
+# HOST: 94
 # HOST-SUFFIX: 267
 # HOST-KEYWORD: 11
 # HOST-WILDCARD: 12
 # IP-CIDR: 34
 # IP6-CIDR: 4
 # IP-ASN: 1
-# TOTAL: 422
+# TOTAL: 423
 
 HOST,account.diabrowser.engineering
 HOST,account.jetbrains.com
@@ -104,6 +104,7 @@ HOST,sydney.bing.com
 HOST,trae-api-sg.mchost.guru
 HOST,trae-api-us.mchost.guru
 HOST,workos.imgix.net
+HOST,wps.apple.com
 HOST-SUFFIX,ai.com
 HOST-SUFFIX,ai.google
 HOST-SUFFIX,ai.google.dev
