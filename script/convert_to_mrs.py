@@ -164,6 +164,13 @@ def compile_and_verify_domain_mrs(
                     f"decompiled {decompiled_count} != expected {len(domain_rules)}"
                 )
 
+        if output_path.exists():
+            try:
+                if output_path.read_bytes() == temp_mrs.read_bytes():
+                    return len(domain_rules)
+            except Exception:
+                pass
+
         os.replace(temp_mrs, output_path)
         return len(domain_rules)
     finally:
@@ -215,6 +222,13 @@ def compile_and_verify_ip_mrs(
                     f"IP rule count mismatch for {output_path.name}: "
                     f"decompiled {decompiled_count} != expected collapsed {expected_collapsed} (raw {len(ip_rules)})"
                 )
+
+        if output_path.exists():
+            try:
+                if output_path.read_bytes() == temp_mrs.read_bytes():
+                    return len(ip_rules), expected_collapsed
+            except Exception:
+                pass
 
         os.replace(temp_mrs, output_path)
         return len(ip_rules), expected_collapsed

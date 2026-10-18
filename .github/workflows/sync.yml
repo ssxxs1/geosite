@@ -18,7 +18,7 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: "0 14 * * 5"
+    - cron: "0 14 1,15 *"
 
 jobs:
   build:
@@ -75,6 +75,7 @@ jobs:
           find Private -type f -size 0 -delete
 
       - name: Commit and push
+        id: git_commit
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
@@ -87,17 +88,21 @@ jobs:
           git add Private/*.snippet 2>/dev/null || echo "No private snippet files"
 
           if git diff --staged --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
             echo "No changes to commit"
           else
             git commit -m "Update rules"
             git push
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
+
       - name: Set version
+        if: steps.git_commit.outputs.has_changes == 'true' || github.event_name == 'workflow_dispatch'
         id: ver
         run: echo "tag=v1.1.1.$(date -u +%y%m%d%H%M)" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
-        if: success()
+        if: success() && (steps.git_commit.outputs.has_changes == 'true' || github.event_name == 'workflow_dispatch')
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.ver.outputs.tag }}

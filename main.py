@@ -268,15 +268,30 @@ def write_temp_text(destination: Path, content: str) -> Path:
 
 
 def publish_outputs(staged: list[tuple[Path, Path]]) -> None:
+    # 过滤掉内容未发生任何改变的文件，保留原始 mtime 并避免触发任何文件系统/Git 变动事件
+    effective_staged: list[tuple[Path, Path]] = []
+    for temporary, destination in staged:
+        if destination.exists():
+            try:
+                if destination.read_bytes() == temporary.read_bytes():
+                    temporary.unlink(missing_ok=True)
+                    continue
+            except Exception:
+                pass
+        effective_staged.append((temporary, destination))
+
+    if not effective_staged:
+        return
+
     backups: list[tuple[Path, Path]] = []
     published: list[Path] = []
     try:
-        for _temporary, destination in staged:
+        for _temporary, destination in effective_staged:
             if destination.exists():
                 backup = destination.with_name(f".{destination.name}.{os.getpid()}.bak")
                 os.replace(destination, backup)
                 backups.append((backup, destination))
-        for temporary, destination in staged:
+        for temporary, destination in effective_staged:
             os.replace(temporary, destination)
             published.append(destination)
     except Exception:
@@ -310,7 +325,12 @@ def build_sing_box_json(converted: Iterable[tuple[str, str]]) -> str:
 
 from datetime import datetime, timezone
 
-def build_mihomo_yaml(converted: Iterable[tuple[str, str]], base_name: str = "", updated_at: str = "") -> str:
+def build_mihomo_yaml(
+    converted: Iterable[tuple[str, str]],
+    base_name: str = "",
+    updated_at: str = "",
+    existing_path: Path | None = None,
+) -> str:
     entries = []
     for kind, value in converted:
         entry = f"{kind},{value}"
@@ -324,6 +344,22 @@ def build_mihomo_yaml(converted: Iterable[tuple[str, str]], base_name: str = "",
         sort_keys=False,
         default_flow_style=False,
     )
+
+    # 若未显式传入 updated_at，且已有文件内容 payload 与新生成的内容完全一致，沿用旧时间戳
+    if not updated_at and existing_path and existing_path.exists():
+        try:
+            content = existing_path.read_text(encoding="utf-8")
+            match = re.search(r"^# UPDATED: (.*)$", content, re.MULTILINE)
+            if match:
+                old_data = yaml.safe_load(content)
+                if isinstance(old_data, dict) and old_data.get("payload") == unique_entries:
+                    updated_at = match.group(1).strip()
+        except Exception:
+            pass
+
+    if not updated_at:
+        updated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+
     header = ""
     if base_name:
         type_counts = Counter(entry.split(",")[0] for entry in unique_entries)
@@ -416,10 +452,8 @@ def convert_source(
     srs_path = output_directory / f"{base_name}.srs"
     clash_path = output_directory / f"{base_name}_clash.yaml"
 
-    updated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
-
     json_temp = write_temp_text(json_path, build_sing_box_json(sing_box_rules))
-    clash_temp = write_temp_text(clash_path, build_mihomo_yaml(mihomo_rules, base_name, updated_at))
+    clash_temp = write_temp_text(clash_path, build_mihomo_yaml(mihomo_rules, base_name, existing_path=clash_path))
     srs_temp = srs_path.with_name(f".{srs_path.name}.{os.getpid()}.tmp")
 
     srs_compiled = False
