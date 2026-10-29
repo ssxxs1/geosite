@@ -1,13 +1,13 @@
 # NAME: ProxyLite
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-16 17:44:44
+# UPDATED: 2026-10-29 09:23:36
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 20
-# DOMAIN-SUFFIX: 850
+# DOMAIN-SUFFIX: 861
 # IP-CIDR: 89
 # IP-CIDR6: 4
-# TOTAL: 987
+# TOTAL: 998
 
 payload:
 - DOMAIN,addons.mozilla.org
@@ -132,7 +132,10 @@ payload:
 - DOMAIN-SUFFIX,bet365.com
 - DOMAIN-SUFFIX,betvictor.com
 - DOMAIN-SUFFIX,bibox.com
+- DOMAIN-SUFFIX,bidobido.xyz
 - DOMAIN-SUFFIX,bigsound.org
+- DOMAIN-SUFFIX,bikaios.xyz
+- DOMAIN-SUFFIX,bikawebapp.com
 - DOMAIN-SUFFIX,binance.cc
 - DOMAIN-SUFFIX,binance.com
 - DOMAIN-SUFFIX,binance.me
@@ -238,6 +241,7 @@ payload:
 - DOMAIN-SUFFIX,disq.us
 - DOMAIN-SUFFIX,disqus.com
 - DOMAIN-SUFFIX,disquscdn.com
+- DOMAIN-SUFFIX,diwodiwo.xyz
 - DOMAIN-SUFFIX,dler.io
 - DOMAIN-SUFFIX,dlive.tv
 - DOMAIN-SUFFIX,dmm.co.jp
@@ -253,6 +257,7 @@ payload:
 - DOMAIN-SUFFIX,duckduckgo.com
 - DOMAIN-SUFFIX,dueapp.com
 - DOMAIN-SUFFIX,dw.com
+- DOMAIN-SUFFIX,e-hentai.org
 - DOMAIN-SUFFIX,earthcam.com
 - DOMAIN-SUFFIX,easybib.com
 - DOMAIN-SUFFIX,economist.com
@@ -267,6 +272,7 @@ payload:
 - DOMAIN-SUFFIX,etherscan.io
 - DOMAIN-SUFFIX,eurekavpt.com
 - DOMAIN-SUFFIX,evernote.com
+- DOMAIN-SUFFIX,exhentai.org
 - DOMAIN-SUFFIX,extmatrix.com
 - DOMAIN-SUFFIX,eyny.com
 - DOMAIN-SUFFIX,f8.com
@@ -348,6 +354,7 @@ payload:
 - DOMAIN-SUFFIX,howtoforge.com
 - DOMAIN-SUFFIX,hoyolab.com
 - DOMAIN-SUFFIX,hoyoverse.com
+- DOMAIN-SUFFIX,huakacomic.com
 - DOMAIN-SUFFIX,huffpost.com
 - DOMAIN-SUFFIX,hulu.com
 - DOMAIN-SUFFIX,humblebundle.com
@@ -431,6 +438,7 @@ payload:
 - DOMAIN-SUFFIX,macrumors.com
 - DOMAIN-SUFFIX,mailchimp.com
 - DOMAIN-SUFFIX,mangaup.jp
+- DOMAIN-SUFFIX,manhuabika.com
 - DOMAIN-SUFFIX,manhuaren.com
 - DOMAIN-SUFFIX,marketwatch.com
 - DOMAIN-SUFFIX,mashable.com
@@ -530,6 +538,7 @@ payload:
 - DOMAIN-SUFFIX,phncdn.com
 - DOMAIN-SUFFIX,phprcdn.com
 - DOMAIN-SUFFIX,piaotian.net
+- DOMAIN-SUFFIX,pica-id.com
 - DOMAIN-SUFFIX,picacomic.com
 - DOMAIN-SUFFIX,picjs.xyz
 - DOMAIN-SUFFIX,pinboard.in
@@ -707,6 +716,7 @@ payload:
 - DOMAIN-SUFFIX,tiny.cc
 - DOMAIN-SUFFIX,tinychat.com
 - DOMAIN-SUFFIX,tinypic.com
+- DOMAIN-SUFFIX,tipatipa.xyz
 - DOMAIN-SUFFIX,tmagazine.com
 - DOMAIN-SUFFIX,tmblr.co
 - DOMAIN-SUFFIX,todoist.com
@@ -826,6 +836,7 @@ payload:
 - DOMAIN-SUFFIX,westca.com
 - DOMAIN-SUFFIX,westpoint.edu
 - DOMAIN-SUFFIX,whoer.net
+- DOMAIN-SUFFIX,wikawika.xyz
 - DOMAIN-SUFFIX,wikibooks.org
 - DOMAIN-SUFFIX,wikidata.org
 - DOMAIN-SUFFIX,wikifunctions.org

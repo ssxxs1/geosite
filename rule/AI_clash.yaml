@@ -1,22 +1,24 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-18 02:10:22
-# DOMAIN: 94
+# UPDATED: 2026-10-29 09:23:38
+# DOMAIN: 102
 # DOMAIN-KEYWORD: 11
-# DOMAIN-SUFFIX: 267
+# DOMAIN-SUFFIX: 270
 # DOMAIN-WILDCARD: 12
 # IP-ASN: 1
 # IP-CIDR: 34
 # IP-CIDR6: 4
-# TOTAL: 423
+# TOTAL: 434
 
 payload:
 - DOMAIN,account.diabrowser.engineering
 - DOMAIN,account.jetbrains.com
 - DOMAIN,accounts.spacex.ai
-- DOMAIN,accounts.x.ai
 - DOMAIN,ai-service.diabrowser.engineering
+- DOMAIN,aiplatform.eu.rep.googleapis.com
+- DOMAIN,aiplatform.mtls.googleapis.com
+- DOMAIN,aiplatform.us.rep.googleapis.com
 - DOMAIN,anthropic-com.ghost.io
 - DOMAIN,anthropic.com.cdn.cloudflare.net
 - DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
@@ -30,10 +32,10 @@ payload:
 - DOMAIN,api.x.ai
 - DOMAIN,appcatalyst.pa.googleapis.com
 - DOMAIN,assets.msn.com
-- DOMAIN,auth.grok.com
-- DOMAIN,auth.grokipedia.com
-- DOMAIN,auth.grokusercontent.com
-- DOMAIN,auth.x.ai
+- DOMAIN,businessaicode.eu.rep.googleapis.com
+- DOMAIN,businessaicode.googleapis.com
+- DOMAIN,businessaicode.mtls.googleapis.com
+- DOMAIN,businessaicode.us.rep.googleapis.com
 - DOMAIN,cdn.openaimerge.com
 - DOMAIN,cdn.workos.com
 - DOMAIN,chat.mistral.ai
@@ -50,6 +52,10 @@ payload:
 - DOMAIN,dc-genai-persistence.adobe.io
 - DOMAIN,devv.featurebase.app
 - DOMAIN,dia-blocklists-release.diabrowser.engineering
+- DOMAIN,discoveryengine.googleapis.com
+- DOMAIN,discoveryengine.mtls.googleapis.com
+- DOMAIN,eu-discoveryengine.googleapis.com
+- DOMAIN,eu-discoveryengine.mtls.googleapis.com
 - DOMAIN,firefly-ai.adobe.io
 - DOMAIN,firefly-cliov2.adobe.com
 - DOMAIN,firefly-ps.adobe.io
@@ -104,6 +110,8 @@ payload:
 - DOMAIN,sydney.bing.com
 - DOMAIN,trae-api-sg.mchost.guru
 - DOMAIN,trae-api-us.mchost.guru
+- DOMAIN,us-discoveryengine.googleapis.com
+- DOMAIN,us-discoveryengine.mtls.googleapis.com
 - DOMAIN,workos.imgix.net
 - DOMAIN,wps.apple.com
 - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
@@ -254,6 +262,8 @@ payload:
 - DOMAIN-SUFFIX,grazie.ai
 - DOMAIN-SUFFIX,grazie.aws.intellij.net
 - DOMAIN-SUFFIX,grok.com
+- DOMAIN-SUFFIX,grokipedia.com
+- DOMAIN-SUFFIX,grokusercontent.com
 - DOMAIN-SUFFIX,groq.com
 - DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
 - DOMAIN-SUFFIX,guzzoni.apple.com
@@ -297,6 +307,7 @@ payload:
 - DOMAIN-SUFFIX,midjourney.com
 - DOMAIN-SUFFIX,mistral.ai
 - DOMAIN-SUFFIX,msunlimitedcloudsummit.com
+- DOMAIN-SUFFIX,muse.ai
 - DOMAIN-SUFFIX,notebook.google
 - DOMAIN-SUFFIX,notebook.google.com
 - DOMAIN-SUFFIX,notebooklm.cloud.google.com
