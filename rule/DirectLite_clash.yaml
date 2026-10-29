@@ -1,20 +1,28 @@
 # NAME: DirectLite
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-16 17:44:46
-# DOMAIN: 2
-# DOMAIN-SUFFIX: 124
-# TOTAL: 126
+# UPDATED: 2026-10-29 09:17:08
+# DOMAIN: 6
+# DOMAIN-SUFFIX: 138
+# TOTAL: 144
 
 payload:
 - DOMAIN,cdn.jsdelivr.net
+- DOMAIN,download.developer.apple.com
+- DOMAIN,iosapps.itunes.apple.com
+- DOMAIN,osxapps.itunes.apple.com
+- DOMAIN,play-edge.itunes.apple.com
 - DOMAIN,time.apple.com
+- DOMAIN-SUFFIX,115.com
+- DOMAIN-SUFFIX,115cdn.com
 - DOMAIN-SUFFIX,52pt.site
 - DOMAIN-SUFFIX,acg.rip
 - DOMAIN-SUFFIX,aidoru-online.me
 - DOMAIN-SUFFIX,alpharatio.cc
 - DOMAIN-SUFFIX,animebytes.tv
+- DOMAIN-SUFFIX,anquan.org
 - DOMAIN-SUFFIX,anthelion.me
+- DOMAIN-SUFFIX,appldnld.apple.com
 - DOMAIN-SUFFIX,asiancinema.me
 - DOMAIN-SUFFIX,avgv.cc
 - DOMAIN-SUFFIX,avistaz.to
@@ -43,6 +51,7 @@ payload:
 - DOMAIN-SUFFIX,dicmusic.club
 - DOMAIN-SUFFIX,discfan.net
 - DOMAIN-SUFFIX,diskstation.me
+- DOMAIN-SUFFIX,dl.delivery.apple.com
 - DOMAIN-SUFFIX,doi.org
 - DOMAIN-SUFFIX,dscloud.biz
 - DOMAIN-SUFFIX,dscloud.me
@@ -61,6 +70,9 @@ payload:
 - DOMAIN-SUFFIX,filelist.io
 - DOMAIN-SUFFIX,gazellegames.net
 - DOMAIN-SUFFIX,gfxpeers.net
+- DOMAIN-SUFFIX,gg.apple.com
+- DOMAIN-SUFFIX,gnf-mdn.apple.com
+- DOMAIN-SUFFIX,gnf-mr.apple.com
 - DOMAIN-SUFFIX,hd-space.org
 - DOMAIN-SUFFIX,hd4.xyz
 - DOMAIN-SUFFIX,hd4fans.org
@@ -99,6 +111,7 @@ payload:
 - DOMAIN-SUFFIX,myanonamouse.net
 - DOMAIN-SUFFIX,myds.me
 - DOMAIN-SUFFIX,myqnapcloud.com
+- DOMAIN-SUFFIX,mzstatic.com
 - DOMAIN-SUFFIX,nanyangpt.com
 - DOMAIN-SUFFIX,nature.com
 - DOMAIN-SUFFIX,ncore.cc
@@ -115,6 +128,7 @@ payload:
 - DOMAIN-SUFFIX,pterclub.com
 - DOMAIN-SUFFIX,pthome.net
 - DOMAIN-SUFFIX,ptsbao.club
+- DOMAIN-SUFFIX,qbittorrent.org
 - DOMAIN-SUFFIX,redacted.ch
 - DOMAIN-SUFFIX,researchgate.net
 - DOMAIN-SUFFIX,sandai.net
@@ -125,11 +139,15 @@ payload:
 - DOMAIN-SUFFIX,springer.com
 - DOMAIN-SUFFIX,springsunday.net
 - DOMAIN-SUFFIX,staticfile.org
+- DOMAIN-SUFFIX,swcdn.apple.com
 - DOMAIN-SUFFIX,synology.me
 - DOMAIN-SUFFIX,tjupt.org
 - DOMAIN-SUFFIX,totheglory.im
 - DOMAIN-SUFFIX,uhdbits.org
 - DOMAIN-SUFFIX,upaiyun.com
+- DOMAIN-SUFFIX,updates-http.cdn-apple.com
+- DOMAIN-SUFFIX,updates.cdn-apple.com
 - DOMAIN-SUFFIX,wanfangdata.com.cn
 - DOMAIN-SUFFIX,wiley.com
+- DOMAIN-SUFFIX,xlliveud.com
 - DOMAIN-SUFFIX,xunlei.com

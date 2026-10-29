@@ -1,7 +1,7 @@
 # NAME: Direct_Lite
 # AUTHOR: Antigravity & User
 # DESCRIPTION: 精简纯净版直连规则（仅保留 PT下载、NAS远程、公共静态CDN、学术数据库，剔除有害Apple/Google定位拦截）
-# UPDATED: 2026-09-12
+# UPDATED: 2026-10-29
 
 # === Private Tracker (PT 下载站 Tracker) ===
 HOST-SUFFIX, 52pt.site, DIRECT
@@ -134,9 +134,34 @@ HOST-SUFFIX, springer.com, DIRECT
 HOST-SUFFIX, wiley.com, DIRECT
 HOST-SUFFIX, researchgate.net, DIRECT
 
-# === P2P 下载与网络加速 ===
+# === P2P、离线下载与网盘工具 ===
+HOST-SUFFIX, qbittorrent.org, DIRECT
 HOST-SUFFIX, xunlei.com, DIRECT
 HOST-SUFFIX, sandai.net, DIRECT
+HOST-SUFFIX, xlliveud.com, DIRECT
+HOST-SUFFIX, 115.com, DIRECT
+HOST-SUFFIX, 115cdn.com, DIRECT
+HOST-SUFFIX, anquan.org, DIRECT
+
+# === Apple 大流量系统更新与下载直连 ===
+# 1. iOS / iPadOS / macOS 系统 OTA 与固件更新
+HOST-SUFFIX, swcdn.apple.com, DIRECT
+HOST-SUFFIX, updates.cdn-apple.com, DIRECT
+HOST-SUFFIX, updates-http.cdn-apple.com, DIRECT
+HOST-SUFFIX, appldnld.apple.com, DIRECT
+HOST-SUFFIX, gg.apple.com, DIRECT
+HOST-SUFFIX, gnf-mdn.apple.com, DIRECT
+HOST-SUFFIX, gnf-mr.apple.com, DIRECT
+
+# 2. App Store 应用安装包与二进制 CDN
+HOST-SUFFIX, mzstatic.com, DIRECT
+HOST, osxapps.itunes.apple.com, DIRECT
+HOST, iosapps.itunes.apple.com, DIRECT
+HOST, play-edge.itunes.apple.com, DIRECT
+
+# 3. 开发者大文件资源 (Xcode/SDK) 与全球大文件分发
+HOST, download.developer.apple.com, DIRECT
+HOST-SUFFIX, dl.delivery.apple.com, DIRECT
 
 # === Apple 纯净国内安全时间服务 (严禁放入任何定位/AI/私有云网关) ===
 HOST, time.apple.com, DIRECT

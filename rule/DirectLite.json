@@ -3,17 +3,25 @@
     {
       "domain": [
         "cdn.jsdelivr.net",
+        "download.developer.apple.com",
+        "iosapps.itunes.apple.com",
+        "osxapps.itunes.apple.com",
+        "play-edge.itunes.apple.com",
         "time.apple.com"
       ]
     },
     {
       "domain_suffix": [
+        "115.com",
+        "115cdn.com",
         "52pt.site",
         "acg.rip",
         "aidoru-online.me",
         "alpharatio.cc",
         "animebytes.tv",
+        "anquan.org",
         "anthelion.me",
+        "appldnld.apple.com",
         "asiancinema.me",
         "avgv.cc",
         "avistaz.to",
@@ -42,6 +50,7 @@
         "dicmusic.club",
         "discfan.net",
         "diskstation.me",
+        "dl.delivery.apple.com",
         "doi.org",
         "dscloud.biz",
         "dscloud.me",
@@ -60,6 +69,9 @@
         "filelist.io",
         "gazellegames.net",
         "gfxpeers.net",
+        "gg.apple.com",
+        "gnf-mdn.apple.com",
+        "gnf-mr.apple.com",
         "hd-space.org",
         "hd4.xyz",
         "hd4fans.org",
@@ -98,6 +110,7 @@
         "myanonamouse.net",
         "myds.me",
         "myqnapcloud.com",
+        "mzstatic.com",
         "nanyangpt.com",
         "nature.com",
         "ncore.cc",
@@ -114,6 +127,7 @@
         "pterclub.com",
         "pthome.net",
         "ptsbao.club",
+        "qbittorrent.org",
         "redacted.ch",
         "researchgate.net",
         "sandai.net",
@@ -124,13 +138,17 @@
         "springer.com",
         "springsunday.net",
         "staticfile.org",
+        "swcdn.apple.com",
         "synology.me",
         "tjupt.org",
         "totheglory.im",
         "uhdbits.org",
         "upaiyun.com",
+        "updates-http.cdn-apple.com",
+        "updates.cdn-apple.com",
         "wanfangdata.com.cn",
         "wiley.com",
+        "xlliveud.com",
         "xunlei.com"
       ]
     }
