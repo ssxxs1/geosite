@@ -1,10 +1,10 @@
 # NAME: DirectLite
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-05 02:27:24
+# UPDATED: 2026-11-05 02:43:07
 # DOMAIN: 10
-# DOMAIN-SUFFIX: 154
-# TOTAL: 164
+# DOMAIN-SUFFIX: 158
+# TOTAL: 168
 
 payload:
 - DOMAIN,cdn.jsdelivr.net
@@ -35,6 +35,8 @@ payload:
 - DOMAIN-SUFFIX,awesome-hd.me
 - DOMAIN-SUFFIX,aws
 - DOMAIN-SUFFIX,aws.amazon.com
+- DOMAIN-SUFFIX,awsapps.com
+- DOMAIN-SUFFIX,awsstatic.com
 - DOMAIN-SUFFIX,baomitu.com
 - DOMAIN-SUFFIX,beitai.pt
 - DOMAIN-SUFFIX,beyond-hd.me
@@ -133,7 +135,9 @@ payload:
 - DOMAIN-SUFFIX,npupt.com
 - DOMAIN-SUFFIX,open.cd
 - DOMAIN-SUFFIX,oppaiti.me
+- DOMAIN-SUFFIX,oracle.com
 - DOMAIN-SUFFIX,oraclecloud.com
+- DOMAIN-SUFFIX,oracleimg.com
 - DOMAIN-SUFFIX,orpheus.network
 - DOMAIN-SUFFIX,ourbits.club
 - DOMAIN-SUFFIX,passthepopcorn.me

@@ -185,11 +185,17 @@ HOST-SUFFIX, ttyzz.com, DIRECT
 HOST-SUFFIX, asiamiles.com, DIRECT
 HOST-SUFFIX, cathaypacific.com, DIRECT
 
-# === 小红书海外版与公共云服务 ===
+# === 小红书海外版 ===
 HOST-SUFFIX, rednote.com, DIRECT
 HOST-SUFFIX, rnote.com, DIRECT
 HOST-SUFFIX, rednotecdn.com, DIRECT
+
+# === 公有云服务控制台与节点 (Oracle Cloud / AWS) ===
+HOST-SUFFIX, oracle.com, DIRECT
 HOST-SUFFIX, oraclecloud.com, DIRECT
+HOST-SUFFIX, oracleimg.com, DIRECT
 HOST-SUFFIX, aws.amazon.com, DIRECT
 HOST-SUFFIX, amazonaws.com, DIRECT
+HOST-SUFFIX, awsstatic.com, DIRECT
+HOST-SUFFIX, awsapps.com, DIRECT
 HOST-SUFFIX, aws, DIRECT
