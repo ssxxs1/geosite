@@ -1,7 +1,7 @@
 # NAME: Direct_Lite
 # AUTHOR: Antigravity & User
 # DESCRIPTION: 精简纯净版直连规则（仅保留 PT下载、NAS远程、公共静态CDN、学术数据库，剔除有害Apple/Google定位拦截）
-# UPDATED: 2026-10-29
+# UPDATED: 2026-11-05
 
 # === Private Tracker (PT 下载站 Tracker) ===
 HOST-SUFFIX, 52pt.site, DIRECT
@@ -165,3 +165,6 @@ HOST-SUFFIX, dl.delivery.apple.com, DIRECT
 
 # === Apple 纯净国内安全时间服务 (严禁放入任何定位/AI/私有云网关) ===
 HOST, time.apple.com, DIRECT
+
+# === 公共 CA 证书吊销与 OCSP/CRL 快速验证 ===
+HOST-SUFFIX, digicert.com, DIRECT
