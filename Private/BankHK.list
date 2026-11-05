@@ -105,6 +105,11 @@ HOST-SUFFIX, transferwise.com, BankHK
 HOST-SUFFIX, tw-assets.com, BankHK
 HOST-SUFFIX, transferwise.cloud, BankHK
 
+# 八达通 (Octopus Cards / Octopus Wallet)
+HOST-SUFFIX, octopus.com.hk, BankHK
+HOST-SUFFIX, octopus-cards.com, BankHK
+HOST-SUFFIX, octopuscards.com, BankHK
+
 # ==========================================
 # 🛡️ 银行 App 核心风控/设备指纹/WAF/遥测 (极易被去广告拦截)
 # ==========================================

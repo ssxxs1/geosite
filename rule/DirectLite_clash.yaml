@@ -1,32 +1,40 @@
 # NAME: DirectLite
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-05 02:08:54
-# DOMAIN: 6
-# DOMAIN-SUFFIX: 139
-# TOTAL: 145
+# UPDATED: 2026-11-05 02:27:24
+# DOMAIN: 10
+# DOMAIN-SUFFIX: 154
+# TOTAL: 164
 
 payload:
 - DOMAIN,cdn.jsdelivr.net
+- DOMAIN,dns.weixin.qq.com.cn
 - DOMAIN,download.developer.apple.com
 - DOMAIN,iosapps.itunes.apple.com
+- DOMAIN,lanhu-axure-file.oss-cn-beijing.aliyuncs.com
+- DOMAIN,myip.ipip.net
 - DOMAIN,osxapps.itunes.apple.com
 - DOMAIN,play-edge.itunes.apple.com
 - DOMAIN,time.apple.com
+- DOMAIN,tysdk.95516.com
 - DOMAIN-SUFFIX,115.com
 - DOMAIN-SUFFIX,115cdn.com
 - DOMAIN-SUFFIX,52pt.site
 - DOMAIN-SUFFIX,acg.rip
 - DOMAIN-SUFFIX,aidoru-online.me
 - DOMAIN-SUFFIX,alpharatio.cc
+- DOMAIN-SUFFIX,amazonaws.com
 - DOMAIN-SUFFIX,animebytes.tv
 - DOMAIN-SUFFIX,anquan.org
 - DOMAIN-SUFFIX,anthelion.me
 - DOMAIN-SUFFIX,appldnld.apple.com
+- DOMAIN-SUFFIX,asiamiles.com
 - DOMAIN-SUFFIX,asiancinema.me
 - DOMAIN-SUFFIX,avgv.cc
 - DOMAIN-SUFFIX,avistaz.to
 - DOMAIN-SUFFIX,awesome-hd.me
+- DOMAIN-SUFFIX,aws
+- DOMAIN-SUFFIX,aws.amazon.com
 - DOMAIN-SUFFIX,baomitu.com
 - DOMAIN-SUFFIX,beitai.pt
 - DOMAIN-SUFFIX,beyond-hd.me
@@ -37,7 +45,9 @@ payload:
 - DOMAIN-SUFFIX,bt.byr.cn
 - DOMAIN-SUFFIX,bt.neu6.edu.cn
 - DOMAIN-SUFFIX,btschool.club
+- DOMAIN-SUFFIX,cathaypacific.com
 - DOMAIN-SUFFIX,ccfbits.org
+- DOMAIN-SUFFIX,cdn.kineticbloom.org
 - DOMAIN-SUFFIX,cgpeers.com
 - DOMAIN-SUFFIX,chdbits.co
 - DOMAIN-SUFFIX,cinemageddon.net
@@ -48,12 +58,14 @@ payload:
 - DOMAIN-SUFFIX,comicat.org
 - DOMAIN-SUFFIX,concertos.live
 - DOMAIN-SUFFIX,cqvip.com
+- DOMAIN-SUFFIX,ddgksf2013.top
 - DOMAIN-SUFFIX,dicmusic.club
 - DOMAIN-SUFFIX,digicert.com
 - DOMAIN-SUFFIX,discfan.net
 - DOMAIN-SUFFIX,diskstation.me
 - DOMAIN-SUFFIX,dl.delivery.apple.com
 - DOMAIN-SUFFIX,doi.org
+- DOMAIN-SUFFIX,download.maxmind.com
 - DOMAIN-SUFFIX,dscloud.biz
 - DOMAIN-SUFFIX,dscloud.me
 - DOMAIN-SUFFIX,dscloud.mobi
@@ -121,6 +133,7 @@ payload:
 - DOMAIN-SUFFIX,npupt.com
 - DOMAIN-SUFFIX,open.cd
 - DOMAIN-SUFFIX,oppaiti.me
+- DOMAIN-SUFFIX,oraclecloud.com
 - DOMAIN-SUFFIX,orpheus.network
 - DOMAIN-SUFFIX,ourbits.club
 - DOMAIN-SUFFIX,passthepopcorn.me
@@ -131,7 +144,11 @@ payload:
 - DOMAIN-SUFFIX,ptsbao.club
 - DOMAIN-SUFFIX,qbittorrent.org
 - DOMAIN-SUFFIX,redacted.ch
+- DOMAIN-SUFFIX,rednote.com
+- DOMAIN-SUFFIX,rednotecdn.com
 - DOMAIN-SUFFIX,researchgate.net
+- DOMAIN-SUFFIX,rnote.com
+- DOMAIN-SUFFIX,runningman-fan.com
 - DOMAIN-SUFFIX,sandai.net
 - DOMAIN-SUFFIX,sciencedirect.com
 - DOMAIN-SUFFIX,sdbits.org
@@ -144,10 +161,12 @@ payload:
 - DOMAIN-SUFFIX,synology.me
 - DOMAIN-SUFFIX,tjupt.org
 - DOMAIN-SUFFIX,totheglory.im
+- DOMAIN-SUFFIX,ttyzz.com
 - DOMAIN-SUFFIX,uhdbits.org
 - DOMAIN-SUFFIX,upaiyun.com
 - DOMAIN-SUFFIX,updates-http.cdn-apple.com
 - DOMAIN-SUFFIX,updates.cdn-apple.com
+- DOMAIN-SUFFIX,vcards.metowolf.com
 - DOMAIN-SUFFIX,wanfangdata.com.cn
 - DOMAIN-SUFFIX,wiley.com
 - DOMAIN-SUFFIX,xlliveud.com

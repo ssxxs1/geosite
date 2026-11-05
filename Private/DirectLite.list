@@ -168,3 +168,28 @@ HOST, time.apple.com, DIRECT
 
 # === 公共 CA 证书吊销与 OCSP/CRL 快速验证 ===
 HOST-SUFFIX, digicert.com, DIRECT
+
+# === 国内公共互联网与常用服务 ===
+HOST, dns.weixin.qq.com.cn, DIRECT
+HOST, tysdk.95516.com, DIRECT
+HOST, lanhu-axure-file.oss-cn-beijing.aliyuncs.com, DIRECT
+HOST, myip.ipip.net, DIRECT
+HOST-SUFFIX, download.maxmind.com, DIRECT
+HOST-SUFFIX, vcards.metowolf.com, DIRECT
+HOST-SUFFIX, ddgksf2013.top, DIRECT
+HOST-SUFFIX, cdn.kineticbloom.org, DIRECT
+HOST-SUFFIX, runningman-fan.com, DIRECT
+HOST-SUFFIX, ttyzz.com, DIRECT
+
+# === 差旅出行与公共交通 ===
+HOST-SUFFIX, asiamiles.com, DIRECT
+HOST-SUFFIX, cathaypacific.com, DIRECT
+
+# === 小红书海外版与公共云服务 ===
+HOST-SUFFIX, rednote.com, DIRECT
+HOST-SUFFIX, rnote.com, DIRECT
+HOST-SUFFIX, rednotecdn.com, DIRECT
+HOST-SUFFIX, oraclecloud.com, DIRECT
+HOST-SUFFIX, aws.amazon.com, DIRECT
+HOST-SUFFIX, amazonaws.com, DIRECT
+HOST-SUFFIX, aws, DIRECT
