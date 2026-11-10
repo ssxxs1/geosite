@@ -1,20 +1,21 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-29 09:23:38
-# DOMAIN: 102
+# UPDATED: 2026-11-10 10:07:37
+# DOMAIN: 114
 # DOMAIN-KEYWORD: 11
-# DOMAIN-SUFFIX: 270
-# DOMAIN-WILDCARD: 12
+# DOMAIN-SUFFIX: 290
+# DOMAIN-WILDCARD: 13
 # IP-ASN: 1
 # IP-CIDR: 34
 # IP-CIDR6: 4
-# TOTAL: 434
+# TOTAL: 467
 
 payload:
 - DOMAIN,account.diabrowser.engineering
 - DOMAIN,account.jetbrains.com
 - DOMAIN,accounts.spacex.ai
+- DOMAIN,accounts.x.ai
 - DOMAIN,ai-service.diabrowser.engineering
 - DOMAIN,aiplatform.eu.rep.googleapis.com
 - DOMAIN,aiplatform.mtls.googleapis.com
@@ -32,6 +33,10 @@ payload:
 - DOMAIN,api.x.ai
 - DOMAIN,appcatalyst.pa.googleapis.com
 - DOMAIN,assets.msn.com
+- DOMAIN,auth.grok.com
+- DOMAIN,auth.grokipedia.com
+- DOMAIN,auth.grokusercontent.com
+- DOMAIN,auth.x.ai
 - DOMAIN,businessaicode.eu.rep.googleapis.com
 - DOMAIN,businessaicode.googleapis.com
 - DOMAIN,businessaicode.mtls.googleapis.com
@@ -41,6 +46,7 @@ payload:
 - DOMAIN,chat.mistral.ai
 - DOMAIN,chat.openai.com.cdn.cloudflare.net
 - DOMAIN,clio-assets.adobe.com
+- DOMAIN,connect.facebook.net
 - DOMAIN,console.mistral.ai
 - DOMAIN,copilot-proxy.githubusercontent.com
 - DOMAIN,copilot-reports.github.com
@@ -71,6 +77,7 @@ payload:
 - DOMAIN,jules.googleapis.com
 - DOMAIN,location.microsoft.com
 - DOMAIN,login.live.com
+- DOMAIN,login.microsoftonline.com
 - DOMAIN,m365copilot.com
 - DOMAIN,mask-api.fe.apple-dns.net
 - DOMAIN,mask-api.icloud.com
@@ -79,6 +86,8 @@ payload:
 - DOMAIN,mcs-sg.coze.com
 - DOMAIN,mcs-va.coze.com
 - DOMAIN,mds-cdn.infra.adobesensei.io
+- DOMAIN,meta-ohttp-config-prod.fastly-edge.com
+- DOMAIN,meta-ohttp-relay-prod.fastly-edge.com
 - DOMAIN,mssdk-i18n-sg.coze.com
 - DOMAIN,mssdk-i18n-va.coze.com
 - DOMAIN,oauth.account.jetbrains.com
@@ -89,6 +98,7 @@ payload:
 - DOMAIN,opt-i18n.coze.com
 - DOMAIN,origin-tracker.githubusercontent.com
 - DOMAIN,perplexity-ai.cloudflareaccess.com
+- DOMAIN,pics.new
 - DOMAIN,play.google.com
 - DOMAIN,portal.customtranslator.azure.us
 - DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
@@ -96,6 +106,7 @@ payload:
 - DOMAIN,pre-signed-firefly-prod.s3-accelerate.amazonaws.com
 - DOMAIN,pre-signed-firefly-prod.s3.amazonaws.com
 - DOMAIN,production-openaicom-storage.azureedge.net
+- DOMAIN,production.museai.com
 - DOMAIN,q.eu-central-1.amazonaws.com
 - DOMAIN,q.us-east-1.amazonaws.com
 - DOMAIN,r.bing.com
@@ -104,6 +115,7 @@ payload:
 - DOMAIN,servd-anthropic-website.b-cdn.net
 - DOMAIN,server.codeium.com
 - DOMAIN,server.self-serve.windsurf.com
+- DOMAIN,services.bingapis.com
 - DOMAIN,setup.workos.com
 - DOMAIN,sf-coze-web-cdn.coze.com
 - DOMAIN,survey.coze.com
@@ -148,15 +160,15 @@ payload:
 - DOMAIN-SUFFIX,api.cognitive.azure.cn
 - DOMAIN-SUFFIX,api.cognitive.microsoft.us
 - DOMAIN-SUFFIX,api.microsoftapp.net
-- DOMAIN-SUFFIX,apple-dns.net
 - DOMAIN-SUFFIX,apple-relay.akamaized.net
 - DOMAIN-SUFFIX,apple-relay.apple.com
 - DOMAIN-SUFFIX,apple-relay.cloudflare.com
 - DOMAIN-SUFFIX,apple-relay.fastly-edge.com
 - DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
-- DOMAIN-SUFFIX,apps.mzstatic.com
 - DOMAIN-SUFFIX,arc.net
 - DOMAIN-SUFFIX,arkoselabs.com
+- DOMAIN-SUFFIX,asana.biz
+- DOMAIN-SUFFIX,atmeta.com
 - DOMAIN-SUFFIX,augment.com
 - DOMAIN-SUFFIX,augmentcode.com
 - DOMAIN-SUFFIX,autodraw.com
@@ -166,8 +178,11 @@ payload:
 - DOMAIN-SUFFIX,beautiful.ai
 - DOMAIN-SUFFIX,beedone.co
 - DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
+- DOMAIN-SUFFIX,bingapis.com
 - DOMAIN-SUFFIX,blackforestlabs.ai
 - DOMAIN-SUFFIX,bolt.new
+- DOMAIN-SUFFIX,buffer.com
+- DOMAIN-SUFFIX,bufferapp.com
 - DOMAIN-SUFFIX,cerebras.ai
 - DOMAIN-SUFFIX,character.ai
 - DOMAIN-SUFFIX,characterai.io
@@ -233,9 +248,12 @@ payload:
 - DOMAIN-SUFFIX,encrypted-tbn1.gstatic.com
 - DOMAIN-SUFFIX,encrypted-tbn2.gstatic.com
 - DOMAIN-SUFFIX,encrypted-tbn3.gstatic.com
+- DOMAIN-SUFFIX,enhancv.com
 - DOMAIN-SUFFIX,ethyca.com
+- DOMAIN-SUFFIX,facebook.com
 - DOMAIN-SUFFIX,factory.ai
 - DOMAIN-SUFFIX,fal.ai
+- DOMAIN-SUFFIX,fbcdn.net
 - DOMAIN-SUFFIX,featureassets.org
 - DOMAIN-SUFFIX,featuregates.org
 - DOMAIN-SUFFIX,feedhive.com
@@ -282,6 +300,7 @@ payload:
 - DOMAIN-SUFFIX,jnn-pa.googleapis.com
 - DOMAIN-SUFFIX,jules.google
 - DOMAIN-SUFFIX,jules.google.com
+- DOMAIN-SUFFIX,kickresume.com
 - DOMAIN-SUFFIX,kiro.dev
 - DOMAIN-SUFFIX,klingai.com
 - DOMAIN-SUFFIX,krea.ai
@@ -294,6 +313,7 @@ payload:
 - DOMAIN-SUFFIX,lh5.googleusercontent.com
 - DOMAIN-SUFFIX,livekit.cloud
 - DOMAIN-SUFFIX,llama.com
+- DOMAIN-SUFFIX,llamameta.net
 - DOMAIN-SUFFIX,lovable.dev
 - DOMAIN-SUFFIX,lovart.ai
 - DOMAIN-SUFFIX,ls.apple.com
@@ -303,6 +323,7 @@ payload:
 - DOMAIN-SUFFIX,mask.icloud.com
 - DOMAIN-SUFFIX,mem.ai
 - DOMAIN-SUFFIX,meta.ai
+- DOMAIN-SUFFIX,meta.com
 - DOMAIN-SUFFIX,microsoftcloudsummit.com
 - DOMAIN-SUFFIX,midjourney.com
 - DOMAIN-SUFFIX,mistral.ai
@@ -326,6 +347,7 @@ payload:
 - DOMAIN-SUFFIX,opal.google
 - DOMAIN-SUFFIX,opal.google.com
 - DOMAIN-SUFFIX,opal.withgoogle.com
+- DOMAIN-SUFFIX,open-vsx.org
 - DOMAIN-SUFFIX,openai.com
 - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
 - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
@@ -338,6 +360,7 @@ payload:
 - DOMAIN-SUFFIX,perplexity.com
 - DOMAIN-SUFFIX,phind.com
 - DOMAIN-SUFFIX,pika.art
+- DOMAIN-SUFFIX,playwright.azureedge.net
 - DOMAIN-SUFFIX,poe.com
 - DOMAIN-SUFFIX,poecdn.net
 - DOMAIN-SUFFIX,pplx.ai
@@ -356,6 +379,8 @@ payload:
 - DOMAIN-SUFFIX,senseicore.adobe.io
 - DOMAIN-SUFFIX,shortwave.app
 - DOMAIN-SUFFIX,shortwave.com
+- DOMAIN-SUFFIX,slidesgo.com
+- DOMAIN-SUFFIX,smartmockups.com
 - DOMAIN-SUFFIX,smoot.apple.com
 - DOMAIN-SUFFIX,sora.com
 - DOMAIN-SUFFIX,speech.googleapis.com
@@ -382,31 +407,39 @@ payload:
 - DOMAIN-SUFFIX,usemotion.com
 - DOMAIN-SUFFIX,userlocations.googleapis.com
 - DOMAIN-SUFFIX,v0.dev
+- DOMAIN-SUFFIX,vercel.com
+- DOMAIN-SUFFIX,vercel.sh
 - DOMAIN-SUFFIX,voyageai.com
 - DOMAIN-SUFFIX,waa-pa.clients6.google.com
 - DOMAIN-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com
 - DOMAIN-SUFFIX,windsurf.com
 - DOMAIN-SUFFIX,withgoogle.com
+- DOMAIN-SUFFIX,wondershare.com
 - DOMAIN-SUFFIX,wordtune.com
 - DOMAIN-SUFFIX,workos.com
+- DOMAIN-SUFFIX,wp.com
 - DOMAIN-SUFFIX,writer.com
 - DOMAIN-SUFFIX,www.googleapis.com
 - DOMAIN-SUFFIX,x.ai
 - DOMAIN-SUFFIX,xai.chronosphere.io
 - DOMAIN-SUFFIX,yhgfb-static.com
 - DOMAIN-SUFFIX,you.com
+- DOMAIN-SUFFIX,zapier.com
+- DOMAIN-SUFFIX,zed.dev
+- DOMAIN-SUFFIX,zeetings.com
 - DOMAIN-WILDCARD,*-pa.clients*.google.com
 - DOMAIN-WILDCARD,*-pa.googleapis.com
 - DOMAIN-WILDCARD,antigravity*.us-central*.run.app
-- DOMAIN-WILDCARD,chatgpt-api-*.*.azurefd.net
+- DOMAIN-WILDCARD,chatgpt*.azurefd.net
 - DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com
 - DOMAIN-WILDCARD,copilot*.githubusercontent.com
 - DOMAIN-WILDCARD,encrypted-tbn*.gstatic.com
 - DOMAIN-WILDCARD,lcontent-*.googleapis.com
 - DOMAIN-WILDCARD,lh*.google.com
 - DOMAIN-WILDCARD,lh*.googleusercontent.com
+- DOMAIN-WILDCARD,openaiapi*.azurefd.net
+- DOMAIN-WILDCARD,openaicom*.*.windows.net
 - DOMAIN-WILDCARD,openaicom*.azurefd.net
-- DOMAIN-WILDCARD,openaicom-api-*.*.windows.net
 - IP-ASN,399358
 - IP-CIDR,102.37.57.54/32,no-resolve
 - IP-CIDR,108.59.2.24/32,no-resolve
