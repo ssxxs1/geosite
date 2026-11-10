@@ -17,6 +17,11 @@ import requests
 import yaml
 
 from script.convert_to_mrs import convert_yaml_to_mrs, fetch_release_file
+from script.rule_filter import (
+    is_blocked_ai_rule,
+    is_valid_domain_or_suffix,
+    is_ai_ruleset,
+)
 
 
 SING_BOX_MAP = {
@@ -150,12 +155,20 @@ def parse_rule_entry(entry: str) -> tuple[str, str, tuple[str, ...]] | None:
             ]
     if len(fields) == 1:
         kind, value = infer_bare_rule(fields[0])
-        return kind, normalize_value(kind, value), ()
+        val = normalize_value(kind, value)
+        if not is_valid_domain_or_suffix(kind, val):
+            print(f"[跳过] 单标签无效域名规则: {val}", file=sys.stderr)
+            return None
+        return kind, val, ()
 
     kind = normalize_type(fields[0])
     if kind is None:
         raise ConversionError(f"unsupported input type: {fields[0]}")
-    return kind, normalize_value(kind, fields[1]), tuple(part for part in fields[2:] if part)
+    val = normalize_value(kind, fields[1])
+    if not is_valid_domain_or_suffix(kind, val):
+        print(f"[跳过] 单标签无效域名规则: {val}", file=sys.stderr)
+        return None
+    return kind, val, tuple(part for part in fields[2:] if part)
 
 
 def fetch_text(source: str, session: requests.Session) -> str:
@@ -443,7 +456,21 @@ def convert_source(
     compile_mrs: bool = True,
     repo: str = "ssxxs1/geosite",
 ) -> Path:
-    rules = deduplicate_rules(parse_source(source, session))
+    raw_rules = parse_source(source, session)
+    base_name = Path(urlparse(source).path).stem.replace(".", "_").replace("-", "_")
+
+    if is_ai_ruleset(base_name):
+        cleaned_rules = []
+        for r in raw_rules:
+            reason = is_blocked_ai_rule(r[0], r[1])
+            if reason:
+                print(f"[清洗] {base_name}: 拦截 AI 污染规则 ({reason}) -> {r[0]},{r[1]}")
+            else:
+                cleaned_rules.append(r)
+        rules = deduplicate_rules(cleaned_rules)
+    else:
+        rules = deduplicate_rules(raw_rules)
+
     sing_box_rules, sing_box_stats = convert_for_target(rules, "sing-box")
     mihomo_rules, mihomo_stats = convert_for_target(rules, "mihomo")
 

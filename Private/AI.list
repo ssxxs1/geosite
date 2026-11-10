@@ -1,19 +1,20 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-29 09:23:23
-# HOST: 102
-# HOST-SUFFIX: 270
+# UPDATED: 2026-11-10 09:58:40
+# HOST: 114
+# HOST-SUFFIX: 290
 # HOST-KEYWORD: 11
-# HOST-WILDCARD: 12
+# HOST-WILDCARD: 13
 # IP-CIDR: 34
 # IP6-CIDR: 4
 # IP-ASN: 1
-# TOTAL: 434
+# TOTAL: 467
 
 HOST,account.diabrowser.engineering
 HOST,account.jetbrains.com
 HOST,accounts.spacex.ai
+HOST,accounts.x.ai
 HOST,ai-service.diabrowser.engineering
 HOST,aiplatform.eu.rep.googleapis.com
 HOST,aiplatform.mtls.googleapis.com
@@ -31,6 +32,10 @@ HOST,api.msn.com
 HOST,api.x.ai
 HOST,appcatalyst.pa.googleapis.com
 HOST,assets.msn.com
+HOST,auth.grok.com
+HOST,auth.grokipedia.com
+HOST,auth.grokusercontent.com
+HOST,auth.x.ai
 HOST,businessaicode.eu.rep.googleapis.com
 HOST,businessaicode.googleapis.com
 HOST,businessaicode.mtls.googleapis.com
@@ -40,6 +45,7 @@ HOST,cdn.workos.com
 HOST,chat.mistral.ai
 HOST,chat.openai.com.cdn.cloudflare.net
 HOST,clio-assets.adobe.com
+HOST,connect.facebook.net
 HOST,console.mistral.ai
 HOST,copilot-proxy.githubusercontent.com
 HOST,copilot-reports.github.com
@@ -70,6 +76,7 @@ HOST,inference.codeium.com
 HOST,jules.googleapis.com
 HOST,location.microsoft.com
 HOST,login.live.com
+HOST,login.microsoftonline.com
 HOST,m365copilot.com
 HOST,mask-api.fe.apple-dns.net
 HOST,mask-api.icloud.com
@@ -78,6 +85,8 @@ HOST,mask.apple-dns.net
 HOST,mcs-sg.coze.com
 HOST,mcs-va.coze.com
 HOST,mds-cdn.infra.adobesensei.io
+HOST,meta-ohttp-config-prod.fastly-edge.com
+HOST,meta-ohttp-relay-prod.fastly-edge.com
 HOST,mssdk-i18n-sg.coze.com
 HOST,mssdk-i18n-va.coze.com
 HOST,oauth.account.jetbrains.com
@@ -88,6 +97,7 @@ HOST,openaicomproductionae4b.blob.core.windows.net
 HOST,opt-i18n.coze.com
 HOST,origin-tracker.githubusercontent.com
 HOST,perplexity-ai.cloudflareaccess.com
+HOST,pics.new
 HOST,play.google.com
 HOST,portal.customtranslator.azure.us
 HOST,ppl-ai-file-upload.s3.amazonaws.com
@@ -95,6 +105,7 @@ HOST,pplx-res.cloudinary.com
 HOST,pre-signed-firefly-prod.s3-accelerate.amazonaws.com
 HOST,pre-signed-firefly-prod.s3.amazonaws.com
 HOST,production-openaicom-storage.azureedge.net
+HOST,production.museai.com
 HOST,q.eu-central-1.amazonaws.com
 HOST,q.us-east-1.amazonaws.com
 HOST,r.bing.com
@@ -103,6 +114,7 @@ HOST,senseimds.adobe.io
 HOST,servd-anthropic-website.b-cdn.net
 HOST,server.codeium.com
 HOST,server.self-serve.windsurf.com
+HOST,services.bingapis.com
 HOST,setup.workos.com
 HOST,sf-coze-web-cdn.coze.com
 HOST,survey.coze.com
@@ -136,15 +148,15 @@ HOST-SUFFIX,api-siri-prod.apple.com
 HOST-SUFFIX,api.cognitive.azure.cn
 HOST-SUFFIX,api.cognitive.microsoft.us
 HOST-SUFFIX,api.microsoftapp.net
-HOST-SUFFIX,apple-dns.net
 HOST-SUFFIX,apple-relay.akamaized.net
 HOST-SUFFIX,apple-relay.apple.com
 HOST-SUFFIX,apple-relay.cloudflare.com
 HOST-SUFFIX,apple-relay.fastly-edge.com
 HOST-SUFFIX,apple-relay.mask.apple-dns.net
-HOST-SUFFIX,apps.mzstatic.com
 HOST-SUFFIX,arc.net
 HOST-SUFFIX,arkoselabs.com
+HOST-SUFFIX,asana.biz
+HOST-SUFFIX,atmeta.com
 HOST-SUFFIX,augment.com
 HOST-SUFFIX,augmentcode.com
 HOST-SUFFIX,autodraw.com
@@ -154,8 +166,11 @@ HOST-SUFFIX,bard.google.com
 HOST-SUFFIX,beautiful.ai
 HOST-SUFFIX,beedone.co
 HOST-SUFFIX,bing-shopping.microsoft-falcon.io
+HOST-SUFFIX,bingapis.com
 HOST-SUFFIX,blackforestlabs.ai
 HOST-SUFFIX,bolt.new
+HOST-SUFFIX,buffer.com
+HOST-SUFFIX,bufferapp.com
 HOST-SUFFIX,cerebras.ai
 HOST-SUFFIX,character.ai
 HOST-SUFFIX,characterai.io
@@ -221,9 +236,12 @@ HOST-SUFFIX,encrypted-tbn0.gstatic.com
 HOST-SUFFIX,encrypted-tbn1.gstatic.com
 HOST-SUFFIX,encrypted-tbn2.gstatic.com
 HOST-SUFFIX,encrypted-tbn3.gstatic.com
+HOST-SUFFIX,enhancv.com
 HOST-SUFFIX,ethyca.com
+HOST-SUFFIX,facebook.com
 HOST-SUFFIX,factory.ai
 HOST-SUFFIX,fal.ai
+HOST-SUFFIX,fbcdn.net
 HOST-SUFFIX,featureassets.org
 HOST-SUFFIX,featuregates.org
 HOST-SUFFIX,feedhive.com
@@ -270,6 +288,7 @@ HOST-SUFFIX,jina.ai
 HOST-SUFFIX,jnn-pa.googleapis.com
 HOST-SUFFIX,jules.google
 HOST-SUFFIX,jules.google.com
+HOST-SUFFIX,kickresume.com
 HOST-SUFFIX,kiro.dev
 HOST-SUFFIX,klingai.com
 HOST-SUFFIX,krea.ai
@@ -282,6 +301,7 @@ HOST-SUFFIX,lh3.googleusercontent.com
 HOST-SUFFIX,lh5.googleusercontent.com
 HOST-SUFFIX,livekit.cloud
 HOST-SUFFIX,llama.com
+HOST-SUFFIX,llamameta.net
 HOST-SUFFIX,lovable.dev
 HOST-SUFFIX,lovart.ai
 HOST-SUFFIX,ls.apple.com
@@ -291,6 +311,7 @@ HOST-SUFFIX,mask-h2.icloud.com
 HOST-SUFFIX,mask.icloud.com
 HOST-SUFFIX,mem.ai
 HOST-SUFFIX,meta.ai
+HOST-SUFFIX,meta.com
 HOST-SUFFIX,microsoftcloudsummit.com
 HOST-SUFFIX,midjourney.com
 HOST-SUFFIX,mistral.ai
@@ -314,6 +335,7 @@ HOST-SUFFIX,opal.goog
 HOST-SUFFIX,opal.google
 HOST-SUFFIX,opal.google.com
 HOST-SUFFIX,opal.withgoogle.com
+HOST-SUFFIX,open-vsx.org
 HOST-SUFFIX,openai.com
 HOST-SUFFIX,openai.com.cdn.cloudflare.net
 HOST-SUFFIX,openaiapi-site.azureedge.net
@@ -326,6 +348,7 @@ HOST-SUFFIX,perplexity.ai
 HOST-SUFFIX,perplexity.com
 HOST-SUFFIX,phind.com
 HOST-SUFFIX,pika.art
+HOST-SUFFIX,playwright.azureedge.net
 HOST-SUFFIX,poe.com
 HOST-SUFFIX,poecdn.net
 HOST-SUFFIX,pplx.ai
@@ -344,6 +367,8 @@ HOST-SUFFIX,sensei.adobe.io
 HOST-SUFFIX,senseicore.adobe.io
 HOST-SUFFIX,shortwave.app
 HOST-SUFFIX,shortwave.com
+HOST-SUFFIX,slidesgo.com
+HOST-SUFFIX,smartmockups.com
 HOST-SUFFIX,smoot.apple.com
 HOST-SUFFIX,sora.com
 HOST-SUFFIX,speech.googleapis.com
@@ -370,19 +395,26 @@ HOST-SUFFIX,udio.com
 HOST-SUFFIX,usemotion.com
 HOST-SUFFIX,userlocations.googleapis.com
 HOST-SUFFIX,v0.dev
+HOST-SUFFIX,vercel.com
+HOST-SUFFIX,vercel.sh
 HOST-SUFFIX,voyageai.com
 HOST-SUFFIX,waa-pa.clients6.google.com
 HOST-SUFFIX,webchannel-alkalimakersuite-pa.clients6.google.com
 HOST-SUFFIX,windsurf.com
 HOST-SUFFIX,withgoogle.com
+HOST-SUFFIX,wondershare.com
 HOST-SUFFIX,wordtune.com
 HOST-SUFFIX,workos.com
+HOST-SUFFIX,wp.com
 HOST-SUFFIX,writer.com
 HOST-SUFFIX,www.googleapis.com
 HOST-SUFFIX,x.ai
 HOST-SUFFIX,xai.chronosphere.io
 HOST-SUFFIX,yhgfb-static.com
 HOST-SUFFIX,you.com
+HOST-SUFFIX,zapier.com
+HOST-SUFFIX,zed.dev
+HOST-SUFFIX,zeetings.com
 HOST-KEYWORD,alkalimakersuite-pa.clients6.google.com
 HOST-KEYWORD,colab
 HOST-KEYWORD,developerprofiles
@@ -397,15 +429,16 @@ HOST-KEYWORD,siri
 HOST-WILDCARD,*-pa.clients*.google.com
 HOST-WILDCARD,*-pa.googleapis.com
 HOST-WILDCARD,antigravity*.us-central*.run.app
-HOST-WILDCARD,chatgpt-api-*.*.azurefd.net
+HOST-WILDCARD,chatgpt*.azurefd.net
 HOST-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com
 HOST-WILDCARD,copilot*.githubusercontent.com
 HOST-WILDCARD,encrypted-tbn*.gstatic.com
 HOST-WILDCARD,lcontent-*.googleapis.com
 HOST-WILDCARD,lh*.google.com
 HOST-WILDCARD,lh*.googleusercontent.com
+HOST-WILDCARD,openaiapi*.azurefd.net
+HOST-WILDCARD,openaicom*.*.windows.net
 HOST-WILDCARD,openaicom*.azurefd.net
-HOST-WILDCARD,openaicom-api-*.*.windows.net
 IP-CIDR,102.37.57.54/32,no-resolve
 IP-CIDR,108.59.2.24/32,no-resolve
 IP-CIDR,116.203.151.74/32,no-resolve

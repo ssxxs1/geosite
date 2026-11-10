@@ -39,19 +39,27 @@ jobs:
 
       - name: Install sing-box
         run: |
-          VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | jq -r .tag_name | sed 's/v//')
-          curl -Lo sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/download/v${VERSION}/sing-box-${VERSION}-linux-amd64.tar.gz
+          SING_BOX_VERSION="1.14.4"
+          SING_BOX_SHA256="699a1b510aa4396b2176d32d1181920399ebf1e267835da6f3b598d0f7c24968"
+          curl -sSL --retry 3 --retry-delay 2 -o sing-box.tar.gz "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz"
+          echo "${SING_BOX_SHA256}  sing-box.tar.gz" | sha256sum -c -
           tar -xzf sing-box.tar.gz
-          sudo mv sing-box-${VERSION}-linux-amd64/sing-box /usr/local/bin/
-          rm -rf sing-box-${VERSION}-linux-amd64 sing-box.tar.gz
+          sudo mv "sing-box-${SING_BOX_VERSION}-linux-amd64/sing-box" /usr/local/bin/
+          rm -rf "sing-box-${SING_BOX_VERSION}-linux-amd64" sing-box.tar.gz
 
       - name: Install mihomo
         run: |
-          VERSION=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | jq -r .tag_name)
-          curl -Lo mihomo.gz https://github.com/MetaCubeX/mihomo/releases/download/${VERSION}/mihomo-linux-amd64-${VERSION}.gz
+          MIHOMO_VERSION="v1.19.33"
+          MIHOMO_SHA256="132f6f3edf9a65e62f04853aed3358472e0b2b7666daa8419edfa2ddf5bb6323"
+          curl -sSL --retry 3 --retry-delay 2 -o mihomo.gz "https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_VERSION}/mihomo-linux-amd64-${MIHOMO_VERSION}.gz"
+          echo "${MIHOMO_SHA256}  mihomo.gz" | sha256sum -c -
           gzip -d mihomo.gz
           chmod +x mihomo
           sudo mv mihomo /usr/local/bin/mihomo
+
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -s tests -v
 
       - name: Generate rules
         run: |
