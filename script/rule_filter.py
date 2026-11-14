@@ -124,6 +124,14 @@ BLOCKED_TELEMETRY_KEYWORDS: tuple[str, ...] = (
     "segmentify",
     "usefathom",
     "sendgrid",
+    # 常用非 AI 通用平台、开发者工具、支付与监控关键主词
+    "sentry",
+    "stripe",
+    "auth0",
+    "algolia",
+    "canva",
+    "atlassian",
+    "linear",
 )
 
 # 明确的公共 NTP / 授时服务权威域名后缀

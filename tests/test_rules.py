@@ -145,6 +145,9 @@ class TestRuleFilter(unittest.TestCase):
             self.assertEqual(is_blocked_ai_rule(kind, "appsflyer"), "blocked-telemetry-keyword")
             self.assertEqual(is_blocked_ai_rule(kind, "google-analytics"), "blocked-telemetry-keyword")
             self.assertEqual(is_blocked_ai_rule(kind, "bytedapm"), "blocked-telemetry-keyword")
+            self.assertEqual(is_blocked_ai_rule(kind, "sentry"), "blocked-telemetry-keyword")
+            self.assertEqual(is_blocked_ai_rule(kind, "stripe"), "blocked-telemetry-keyword")
+            self.assertEqual(is_blocked_ai_rule(kind, "auth0"), "blocked-telemetry-keyword")
             # Legitimate AI keywords must not be blocked
             self.assertIsNone(is_blocked_ai_rule(kind, "openai"))
             self.assertIsNone(is_blocked_ai_rule(kind, "claude"))
@@ -159,8 +162,11 @@ class TestRuleFilter(unittest.TestCase):
 
         aggregate = {}
         stats = Counter()
-        add_rule(aggregate, Rule("host", "api.openai.com", options=("force-remote-dns",), sources={"s1"}), stats)
+        # Same-level, same-key merge preserves options
+        add_rule(aggregate, Rule("host-suffix", "openai.com", options=("custom-opt",), sources={"s1"}), stats)
         add_rule(aggregate, Rule("host-suffix", "openai.com", options=(), sources={"s2"}), stats)
+        # Subdomain rules with specific options must NOT pollute parent host-suffix
+        add_rule(aggregate, Rule("host", "api.openai.com", options=("force-remote-dns",), sources={"s1"}), stats)
         add_rule(aggregate, Rule("host-suffix", "chat.openai.com", options=("no-resolve",), sources={"s3"}), stats)
         # Same key merge preserves options
         add_rule(aggregate, Rule("ip-cidr", "1.1.1.0/24", options=(), sources={"s1"}), stats)
@@ -170,7 +176,8 @@ class TestRuleFilter(unittest.TestCase):
         self.assertIn(("host-suffix", "openai.com"), aggregate)
         self.assertNotIn(("host", "api.openai.com"), aggregate)
         self.assertNotIn(("host-suffix", "chat.openai.com"), aggregate)
-        self.assertEqual(aggregate[("host-suffix", "openai.com")].options, ("force-remote-dns", "no-resolve"))
+        # Parent rule preserves its own options, cleanly isolated from child subdomains
+        self.assertEqual(aggregate[("host-suffix", "openai.com")].options, ("custom-opt",))
         self.assertEqual(aggregate[("ip-cidr", "1.1.1.0/24")].options, ("no-resolve",))
 
 

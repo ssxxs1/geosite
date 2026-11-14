@@ -444,7 +444,7 @@ def fold_covered_rules(aggregate: dict[tuple[str, str], Rule], stats: Counter) -
             if parent_rule is not None and parent_rule is not rule:
                 parent_rule.sources.update(rule.sources)
                 parent_rule.providers.update(rule.providers)
-                parent_rule.options = _merge_options(parent_rule.options, rule.options)
+                # 子域规则被父级 host-suffix 折叠时，父级严禁继承子域特定 options (如 extended-matching / force-remote-dns)
                 parent_rule.authoritative = parent_rule.authoritative or rule.authoritative
                 to_remove.append(key)
                 stats["folded-subdomains"] += 1
