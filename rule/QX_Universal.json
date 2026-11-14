@@ -252,6 +252,7 @@
         "adsystem",
         "adwords",
         "applovin",
+        "appsflyer",
         "domob",
         "dtscout",
         "guanggao",
@@ -261,7 +262,8 @@
         "openx",
         "pangolin-sdk-toutiao",
         "pglstatp-toutiao",
-        "supersonicads"
+        "supersonicads",
+        "umeng"
       ]
     },
     {

@@ -1,13 +1,13 @@
 # NAME: QX_Universal
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-14 06:01:47
+# UPDATED: 2026-11-14 09:07:40
 # DOMAIN: 235
-# DOMAIN-KEYWORD: 21
+# DOMAIN-KEYWORD: 23
 # DOMAIN-SUFFIX: 3458
 # IP-CIDR: 218
 # IP-CIDR6: 4
-# TOTAL: 3936
+# TOTAL: 3938
 
 payload:
 - DOMAIN,ad-server.co.za
@@ -256,6 +256,7 @@ payload:
 - DOMAIN-KEYWORD,adsystem
 - DOMAIN-KEYWORD,adwords
 - DOMAIN-KEYWORD,applovin
+- DOMAIN-KEYWORD,appsflyer
 - DOMAIN-KEYWORD,domob
 - DOMAIN-KEYWORD,dtscout
 - DOMAIN-KEYWORD,guanggao
@@ -266,6 +267,7 @@ payload:
 - DOMAIN-KEYWORD,pangolin-sdk-toutiao
 - DOMAIN-KEYWORD,pglstatp-toutiao
 - DOMAIN-KEYWORD,supersonicads
+- DOMAIN-KEYWORD,umeng
 - DOMAIN-SUFFIX,a8cv.cpi.ad.jp
 - DOMAIN-SUFFIX,a8cv.secure.sakura.ad.jp
 - DOMAIN-SUFFIX,ad-api.cnblogs.com
