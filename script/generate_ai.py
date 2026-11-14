@@ -136,6 +136,7 @@ SUPPLEMENTAL_AI_DOMAINS = [
     "replicate.com",
     "replicate.delivery",
     "gamma.app",
+    "manus.im",
     # Coding & Fullstack Agentic Builders
     "bolt.new",
     "lovable.dev",
@@ -381,6 +382,14 @@ def domain_is_blocked(rule: Rule) -> str | None:
     return is_blocked_ai_rule(rule.kind, rule.value)
 
 
+def _merge_options(first: tuple[str, ...], second: tuple[str, ...]) -> tuple[str, ...]:
+    if not second:
+        return first
+    if not first:
+        return second
+    return tuple(dict.fromkeys((*first, *second)))
+
+
 def add_rule(aggregate: dict[tuple[str, str], Rule], rule: Rule, stats: Counter) -> None:
     if rule.kind in {"host", "host-suffix"}:
         exact_key = ("host", rule.value)
@@ -389,12 +398,14 @@ def add_rule(aggregate: dict[tuple[str, str], Rule], rule: Rule, stats: Counter)
             existing = aggregate.pop(exact_key)
             rule.sources.update(existing.sources)
             rule.providers.update(existing.providers)
+            rule.options = _merge_options(existing.options, rule.options)
             rule.authoritative = rule.authoritative or existing.authoritative
             stats["covered-exact"] += 1
         elif rule.kind == "host" and suffix_key in aggregate:
             existing = aggregate[suffix_key]
             existing.sources.update(rule.sources)
             existing.providers.update(rule.providers)
+            existing.options = _merge_options(existing.options, rule.options)
             existing.authoritative = existing.authoritative or rule.authoritative
             stats["covered-exact"] += 1
             return
@@ -403,11 +414,44 @@ def add_rule(aggregate: dict[tuple[str, str], Rule], rule: Rule, stats: Counter)
     if existing:
         existing.sources.update(rule.sources)
         existing.providers.update(rule.providers)
+        existing.options = _merge_options(existing.options, rule.options)
         existing.authoritative = existing.authoritative or rule.authoritative
         stats["duplicates"] += 1
         return
     aggregate[rule.key] = rule
     stats["unique"] += 1
+
+
+def fold_covered_rules(aggregate: dict[tuple[str, str], Rule], stats: Counter) -> None:
+    """Fold child host/host-suffix rules covered by a parent host-suffix rule."""
+    suffix_rules = {
+        value: rule
+        for (kind, value), rule in aggregate.items()
+        if kind == "host-suffix"
+    }
+    if not suffix_rules:
+        return
+
+    to_remove: list[tuple[str, str]] = []
+    for key, rule in aggregate.items():
+        if rule.kind not in {"host", "host-suffix"}:
+            continue
+        parts = rule.value.split(".")
+        start = 1 if rule.kind == "host-suffix" else 0
+        for idx in range(start, len(parts) - 1):
+            parent_domain = ".".join(parts[idx:])
+            parent_rule = suffix_rules.get(parent_domain)
+            if parent_rule is not None and parent_rule is not rule:
+                parent_rule.sources.update(rule.sources)
+                parent_rule.providers.update(rule.providers)
+                parent_rule.options = _merge_options(parent_rule.options, rule.options)
+                parent_rule.authoritative = parent_rule.authoritative or rule.authoritative
+                to_remove.append(key)
+                stats["folded-subdomains"] += 1
+                break
+
+    for key in to_remove:
+        aggregate.pop(key, None)
 
 
 def render_qx_body(rules: Iterable[Rule]) -> str:
@@ -574,8 +618,11 @@ def generate(
         rule, reason = parse_rule_text(f"DOMAIN-SUFFIX,{domain}", supplemental_source)
         if not rule or reason:
             raise GenerationError(f"invalid supplemental rule: {domain}")
+        if domain_is_blocked(rule):
+            continue
         add_rule(aggregate, rule, aggregate_stats)
 
+    fold_covered_rules(aggregate, aggregate_stats)
     rules = list(aggregate.values())
     validate_candidate(rules, read_existing_rule_count(output_path), allow_large_shrink)
     body = render_qx_body(rules)

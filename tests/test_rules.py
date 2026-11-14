@@ -135,6 +135,44 @@ class TestRuleFilter(unittest.TestCase):
         self.assertFalse(is_ai_ruleset("Tailscale"))
         self.assertFalse(is_ai_ruleset("Email"))
 
+    def test_cross_client_dialects_blocked_in_ai(self):
+        # QX (host-regex / host-keyword), Clash/Mihomo (domain-regex / domain-keyword), Sing-box (domain_regex / domain_keyword)
+        for kind in ("host-regex", "domain-regex", "domain_regex"):
+            self.assertEqual(is_blocked_ai_rule(kind, r"^.*\.datadoghq\.com$"), "blocked-telemetry-keyword")
+            self.assertEqual(is_blocked_ai_rule(kind, r"^ntp[0-9]*\."), "time-or-ntp")
+
+        for kind in ("host-keyword", "domain-keyword", "domain_keyword"):
+            self.assertEqual(is_blocked_ai_rule(kind, "appsflyer"), "blocked-telemetry-keyword")
+            self.assertEqual(is_blocked_ai_rule(kind, "google-analytics"), "blocked-telemetry-keyword")
+            self.assertEqual(is_blocked_ai_rule(kind, "bytedapm"), "blocked-telemetry-keyword")
+            # Legitimate AI keywords must not be blocked
+            self.assertIsNone(is_blocked_ai_rule(kind, "openai"))
+            self.assertIsNone(is_blocked_ai_rule(kind, "claude"))
+
+        # Sing-box domain_suffix single-label check
+        self.assertFalse(is_valid_domain_or_suffix("domain_suffix", "azure"))
+        self.assertTrue(is_valid_domain_or_suffix("domain_suffix", "cn"))
+
+    def test_generate_ai_options_merge_and_subdomain_folding(self):
+        from collections import Counter
+        from script.generate_ai import Rule, add_rule, fold_covered_rules
+
+        aggregate = {}
+        stats = Counter()
+        add_rule(aggregate, Rule("host", "api.openai.com", options=("force-remote-dns",), sources={"s1"}), stats)
+        add_rule(aggregate, Rule("host-suffix", "openai.com", options=(), sources={"s2"}), stats)
+        add_rule(aggregate, Rule("host-suffix", "chat.openai.com", options=("no-resolve",), sources={"s3"}), stats)
+        # Same key merge preserves options
+        add_rule(aggregate, Rule("ip-cidr", "1.1.1.0/24", options=(), sources={"s1"}), stats)
+        add_rule(aggregate, Rule("ip-cidr", "1.1.1.0/24", options=("no-resolve",), sources={"s2"}), stats)
+
+        fold_covered_rules(aggregate, stats)
+        self.assertIn(("host-suffix", "openai.com"), aggregate)
+        self.assertNotIn(("host", "api.openai.com"), aggregate)
+        self.assertNotIn(("host-suffix", "chat.openai.com"), aggregate)
+        self.assertEqual(aggregate[("host-suffix", "openai.com")].options, ("force-remote-dns", "no-resolve"))
+        self.assertEqual(aggregate[("ip-cidr", "1.1.1.0/24")].options, ("no-resolve",))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -106,6 +106,26 @@ BLOCKED_VPS_ASNS: set[str] = {
     "20473",  # Vultr / The Constant Company
 }
 
+# 明确的遥测/广告/非 AI 追踪关键词黑名单 (用于 KEYWORD 类规则防污染，避免误杀短词)
+BLOCKED_TELEMETRY_KEYWORDS: tuple[str, ...] = (
+    "datadog",
+    "appsflyer",
+    "google-analytics",
+    "googletagmanager",
+    "doubleclick",
+    "statsig",
+    "launchdarkly",
+    "bytedapm",
+    "byteoversea",
+    "itobsnssdk",
+    "pipopay",
+    "observeit",
+    "intercomcdn",
+    "segmentify",
+    "usefathom",
+    "sendgrid",
+)
+
 # 明确的公共 NTP / 授时服务权威域名后缀
 NTP_OFFICIAL_SUFFIXES: tuple[str, ...] = (
     ".nist.gov",
@@ -156,12 +176,12 @@ def is_time_or_ntp(domain: str) -> bool:
 
 def is_valid_domain_or_suffix(kind: str, value: str) -> bool:
     """
-    Validate domain and domain-suffix rules.
+    Validate domain and domain-suffix rules across QX, Clash/Mihomo, Surge, and Sing-box spellings.
     If a domain or domain-suffix rule has no dot (single label like 'ms', 'azure'),
     it is rejected unless explicitly whitelisted in ALLOWED_SINGLE_LABELS.
     """
     kind_lower = kind.lower().strip()
-    if kind_lower in {"domain-suffix", "host-suffix", "domain", "host"}:
+    if kind_lower in {"domain-suffix", "host-suffix", "domain_suffix", "domain", "host"}:
         val = value.strip().lstrip(".").rstrip(".").lower()
         if "." not in val:
             return val in ALLOWED_SINGLE_LABELS
@@ -175,8 +195,10 @@ is_valid_single_label_suffix = is_valid_domain_or_suffix
 def is_blocked_ai_rule(kind: str, value: str) -> str | None:
     """
     Check if a rule is blocked from AI rulesets.
-    Supports kind strings from both main.py (domain, domain-suffix, ip-asn, etc.)
-    and generate_ai.py (host, host-suffix, ip-asn, etc.).
+    Supports rule type spellings across:
+    - QX: host, host-suffix, host-keyword, host-wildcard, host-regex, ip-asn, user-agent
+    - Clash/Mihomo/Surge: domain, domain-suffix, domain-keyword, domain-wildcard, domain-regex, ip-asn, user-agent
+    - Sing-box: domain, domain_suffix, domain_keyword, domain_regex
     Returns reason string if blocked, None if allowed.
     """
     kind_lower = kind.lower().strip()
@@ -195,17 +217,26 @@ def is_blocked_ai_rule(kind: str, value: str) -> str | None:
             return "blocked-vps-asn"
         return None
 
-    # 3. Block telemetry wildcards & keywords
-    if kind_lower in {"host-keyword", "host-wildcard", "domain-keyword", "domain-wildcard", "domain-regex"}:
-        if "datadog" in val or val == "sift":
+    # 3. Block telemetry wildcards, regexes & keywords across all client dialects
+    if kind_lower in {
+        "host-keyword", "domain-keyword", "domain_keyword",
+        "host-wildcard", "domain-wildcard",
+        "host-regex", "domain-regex", "domain_regex",
+    }:
+        if any(kw in val for kw in BLOCKED_TELEMETRY_KEYWORDS) or val == "sift":
             return "blocked-telemetry-keyword"
         if "ntp" in val or val.startswith(("time*", "time-", "timeserver")):
             return "time-or-ntp"
-        if kind_lower in {"host-keyword", "domain-keyword"}:
+        if kind_lower in {"host-keyword", "domain-keyword", "domain_keyword"}:
+            if val in BLOCKED_EXACT_DOMAINS or any(val == s or val.endswith("." + s) for s in BLOCKED_DOMAIN_SUFFIXES):
+                return "blocked-suffix"
             return None
 
-    # 4. Check domain & domain-suffix & wildcards
-    if kind_lower not in {"host", "host-suffix", "domain", "domain-suffix", "host-wildcard", "domain-wildcard"}:
+    # 4. Check domain & domain-suffix & wildcards (and regexes that contain exact blocked domains/suffixes)
+    if kind_lower not in {
+        "host", "host-suffix", "domain", "domain-suffix", "domain_suffix",
+        "host-wildcard", "domain-wildcard",
+    }:
         return None
 
     if val in BLOCKED_EXACT_DOMAINS:
