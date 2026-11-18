@@ -1,0 +1,17 @@
+# NAME: AppleIntelligence
+# AUTHOR: ssxxs1/geosite
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 09:44:14 UTC
+# HOST-SUFFIX: 10
+# TOTAL: 10
+
+HOST-SUFFIX,api-siri-prod.apple.com
+HOST-SUFFIX,apple-relay.akamaized.net
+HOST-SUFFIX,apple-relay.apple.com
+HOST-SUFFIX,apple-relay.cloudflare.com
+HOST-SUFFIX,apple-relay.fastly-edge.com
+HOST-SUFFIX,apple-relay.mask.apple-dns.net
+HOST-SUFFIX,gateway.icloud.com
+HOST-SUFFIX,gspe1-ssl.ls.apple.com
+HOST-SUFFIX,guzzoni.apple.com
+HOST-SUFFIX,smoot.apple.com

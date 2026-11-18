@@ -1,0 +1,15 @@
+# NAME: PlayStation
+# AUTHOR: ssxxs1/geosite
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 09:20:26 UTC
+# HOST: 3
+# HOST-SUFFIX: 4
+# TOTAL: 7
+
+HOST,playstation.com
+HOST,playstation.net
+HOST,playstationnetwork.com
+HOST-SUFFIX,playstation.com
+HOST-SUFFIX,playstation.net
+HOST-SUFFIX,playstationnetwork.com
+HOST-SUFFIX,sonyentertainmentnetwork.com

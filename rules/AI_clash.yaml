@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 03:17:10
-# DOMAIN: 88
-# DOMAIN-KEYWORD: 7
-# DOMAIN-SUFFIX: 286
+# UPDATED: 2026-11-18 09:21:02
+# DOMAIN: 87
+# DOMAIN-KEYWORD: 10
+# DOMAIN-SUFFIX: 293
 # DOMAIN-WILDCARD: 14
-# IP-ASN: 1
-# IP-CIDR: 34
-# IP-CIDR6: 4
-# TOTAL: 434
+# IP-ASN: 2
+# IP-CIDR: 35
+# IP-CIDR6: 5
+# TOTAL: 446
 
 payload:
 - DOMAIN,account.jetbrains.com
@@ -52,6 +52,7 @@ payload:
 - DOMAIN,firefly.adobe.com
 - DOMAIN,gateway.bingviz.microsoft.net
 - DOMAIN,gateway.bingviz.microsoftapp.net
+- DOMAIN,http-intake.logs.us5.datadoghq.com
 - DOMAIN,humb.apple.com
 - DOMAIN,images.workoscdn.com
 - DOMAIN,in.appcenter.ms
@@ -70,10 +71,8 @@ payload:
 - DOMAIN,oauth.account.jetbrains.com
 - DOMAIN,odc.officeapps.live.com
 - DOMAIN,openai.qualtrics.com
-- DOMAIN,openaiapi-site.azureedge.net
 - DOMAIN,openaiassets.blob.core.windows.net
 - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
-- DOMAIN,openaicom.imgix.net
 - DOMAIN,openaicomproductionae4b.blob.core.windows.net
 - DOMAIN,origin-tracker.githubusercontent.com
 - DOMAIN,perplexity-ai.cloudflareaccess.com
@@ -101,6 +100,9 @@ payload:
 - DOMAIN,workos.imgix.net
 - DOMAIN,wps.apple.com
 - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
+- DOMAIN-KEYWORD,chatgpt
+- DOMAIN-KEYWORD,chatgpt-async-webps-prod
+- DOMAIN-KEYWORD,codex
 - DOMAIN-KEYWORD,labs.google
 - DOMAIN-KEYWORD,notebooklm.google
 - DOMAIN-KEYWORD,openai
@@ -141,6 +143,7 @@ payload:
 - DOMAIN-SUFFIX,atmeta.com
 - DOMAIN-SUFFIX,augment.com
 - DOMAIN-SUFFIX,augmentcode.com
+- DOMAIN-SUFFIX,auth0.com
 - DOMAIN-SUFFIX,autodraw.com
 - DOMAIN-SUFFIX,avoma.com
 - DOMAIN-SUFFIX,azureml.ms
@@ -151,6 +154,7 @@ payload:
 - DOMAIN-SUFFIX,bingapis.com
 - DOMAIN-SUFFIX,blackforestlabs.ai
 - DOMAIN-SUFFIX,bolt.new
+- DOMAIN-SUFFIX,browser-intake-datadoghq.com
 - DOMAIN-SUFFIX,buffer.com
 - DOMAIN-SUFFIX,bufferapp.com
 - DOMAIN-SUFFIX,cerebras.ai
@@ -323,7 +327,9 @@ payload:
 - DOMAIN-SUFFIX,openai.com
 - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
 - DOMAIN-SUFFIX,openai.org
+- DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 - DOMAIN-SUFFIX,openaiapi.com
+- DOMAIN-SUFFIX,openaicom.imgix.net
 - DOMAIN-SUFFIX,openart.ai
 - DOMAIN-SUFFIX,openrouter.ai
 - DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
@@ -357,6 +363,9 @@ payload:
 - DOMAIN-SUFFIX,speech.googleapis.com
 - DOMAIN-SUFFIX,strawberrybrowserapi.xyz
 - DOMAIN-SUFFIX,strawberrybucket.xyz
+- DOMAIN-SUFFIX,stripe.com
+- DOMAIN-SUFFIX,stripe.network
+- DOMAIN-SUFFIX,stripecdn.com
 - DOMAIN-SUFFIX,stt.speech.azure.cn
 - DOMAIN-SUFFIX,stt.speech.azure.us
 - DOMAIN-SUFFIX,studio.firebase.google.com
@@ -408,6 +417,7 @@ payload:
 - DOMAIN-WILDCARD,openaicom*.azurefd.net
 - DOMAIN-WILDCARD,scontent-*.xx.fbcdn.net
 - IP-ASN,399358
+- IP-ASN,401518
 - IP-CIDR,102.37.57.54/32,no-resolve
 - IP-CIDR,108.59.2.24/32,no-resolve
 - IP-CIDR,116.203.151.74/32,no-resolve
@@ -421,6 +431,7 @@ payload:
 - IP-CIDR,172.214.226.198/32,no-resolve
 - IP-CIDR,191.233.251.27/32,no-resolve
 - IP-CIDR,193.182.111.0/24,no-resolve
+- IP-CIDR,199.47.142.0/23,no-resolve
 - IP-CIDR,20.162.96.163/32,no-resolve
 - IP-CIDR,20.168.48.117/32,no-resolve
 - IP-CIDR,20.184.36.134/32,no-resolve
@@ -443,6 +454,7 @@ payload:
 - IP-CIDR,81.168.83.93/32,no-resolve
 - IP-CIDR,95.111.202.5/32,no-resolve
 - IP-CIDR6,2001:67c:21bc:1e::123/128,no-resolve
+- IP-CIDR6,2604:f20::/32,no-resolve
 - IP-CIDR6,2606:4700:f1::123/128,no-resolve
 - IP-CIDR6,2607:6bc0::/32,no-resolve
 - IP-CIDR6,2a03:8600::cc/128,no-resolve

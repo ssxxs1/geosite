@@ -1,0 +1,35 @@
+# NAME: Claude
+# AUTHOR: ssxxs1/geosite
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 09:20:25 UTC
+# HOST: 4
+# HOST-SUFFIX: 23
+# TOTAL: 27
+
+HOST,anthropic-com.ghost.io
+HOST,anthropic.com.cdn.cloudflare.net
+HOST,http-intake.logs.us5.datadoghq.com
+HOST,servd-anthropic-website.b-cdn.net
+HOST-SUFFIX,ant.dev
+HOST-SUFFIX,anthropic.com
+HOST-SUFFIX,anthropic.team
+HOST-SUFFIX,antspace.dev
+HOST-SUFFIX,auth0.com
+HOST-SUFFIX,browser-intake-datadoghq.com
+HOST-SUFFIX,chatbotclaude.com
+HOST-SUFFIX,clau.de
+HOST-SUFFIX,claude.ai
+HOST-SUFFIX,claude.app
+HOST-SUFFIX,claude.com
+HOST-SUFFIX,claude.dev
+HOST-SUFFIX,claude.new
+HOST-SUFFIX,claude.site
+HOST-SUFFIX,claudeacademy.com
+HOST-SUFFIX,claudemcpclient.com
+HOST-SUFFIX,claudemcpcontent.com
+HOST-SUFFIX,claudepages.dev
+HOST-SUFFIX,claudestudio.com
+HOST-SUFFIX,claudeusercontent.com
+HOST-SUFFIX,stripe.com
+HOST-SUFFIX,stripe.network
+HOST-SUFFIX,stripecdn.com

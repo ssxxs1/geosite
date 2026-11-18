@@ -13,6 +13,13 @@ import re
 ALLOWED_SINGLE_LABELS: set[str] = {"cn", "aws", "localhost"}
 ALLOWED_SINGLE_LABEL_SUFFIXES: set[str] = ALLOWED_SINGLE_LABELS  # 兼容向后引用
 
+# 明确放行的 AI 关键基础设施与日志端点（豁免黑名单审查，确保走代理而非直连）
+# 例如 Claude 网页版与客户端严重依赖的 Datadog 日志端点，直连超时会导致页面卡死
+AI_ALLOWED_INFRA_DOMAINS: set[str] = {
+    "http-intake.logs.us5.datadoghq.com",
+    "browser-intake-datadoghq.com",
+}
+
 # 2. AI 规则集黑名单：精确域名
 BLOCKED_EXACT_DOMAINS: set[str] = {
     # 通用分析与遥测 (Analytics & Telemetry) - 避免将全网统计上报归入 AI 策略组
@@ -51,7 +58,6 @@ BLOCKED_DOMAIN_SUFFIXES: set[str] = {
     # 移动广告归因、埋点与 APM 监控 (Ads, Tracking & Telemetry)
     "appsflyer.com",
     "appsflyersdk.com",
-    "browser-intake-datadoghq.com",
     "cdn.usefathom.com",
     "datadoghq.com",
     "doubleclick.net",
@@ -63,9 +69,6 @@ BLOCKED_DOMAIN_SUFFIXES: set[str] = {
     "segment.io",
     "segment.com",
     "segmentify.com",
-    "stripe.com",
-    "stripecdn.com",
-    "stripe.network",
     "statsig.com",
     "statsigapi.net",
     "launchdarkly.com",
@@ -73,7 +76,6 @@ BLOCKED_DOMAIN_SUFFIXES: set[str] = {
     "honeycomb.io",
     "ct.sendgrid.net",
     "algolia.net",
-    "auth0.com",
     # 字节跳动与 TikTok 支付与监控
     "pipopay.com",
     "bytedapm.com",
@@ -126,8 +128,6 @@ BLOCKED_TELEMETRY_KEYWORDS: tuple[str, ...] = (
     "sendgrid",
     # 常用非 AI 通用平台、开发者工具、支付与监控关键主词
     "sentry",
-    "stripe",
-    "auth0",
     "algolia",
     "canva",
     "atlassian",
@@ -211,6 +211,10 @@ def is_blocked_ai_rule(kind: str, value: str) -> str | None:
     """
     kind_lower = kind.lower().strip()
     val = value.strip().rstrip(".").lower()
+
+    # 0. 明确豁免的 AI 关键基础设施与日志端点（直连会被墙阻断导致前端卡死）
+    if val in AI_ALLOWED_INFRA_DOMAINS:
+        return None
 
     # 1. Block unwanted non-AI Apple media user agents
     if kind_lower in {"user-agent"}:

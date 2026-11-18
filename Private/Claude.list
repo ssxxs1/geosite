@@ -1,12 +1,14 @@
 # NAME: Claude
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 10:15:00
-# TOTAL: 21
+# UPDATED: 2026-11-18 17:05:00
+# TOTAL: 27
 
 HOST,servd-anthropic-website.b-cdn.net
 HOST,anthropic-com.ghost.io
 HOST,anthropic.com.cdn.cloudflare.net
+# Claude 日志与 APM 监控端点 (直连超时会导致页面卡顿或控制台报错)
+HOST,http-intake.logs.us5.datadoghq.com
 
 HOST-SUFFIX,ant.dev
 HOST-SUFFIX,anthropic.com
@@ -26,3 +28,12 @@ HOST-SUFFIX,claudemcpcontent.com
 HOST-SUFFIX,claudepages.dev
 HOST-SUFFIX,claudestudio.com
 HOST-SUFFIX,claudeusercontent.com
+
+# 遥测监控与客户端埋点
+HOST-SUFFIX,browser-intake-datadoghq.com
+
+# 认证与结算基础设施 (走代理保证可用性)
+HOST-SUFFIX,auth0.com
+HOST-SUFFIX,stripe.com
+HOST-SUFFIX,stripecdn.com
+HOST-SUFFIX,stripe.network

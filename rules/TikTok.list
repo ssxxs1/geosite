@@ -1,0 +1,43 @@
+# NAME: TikTok
+# AUTHOR: ssxxs1/geosite
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 09:44:08 UTC
+# HOST: 4
+# HOST-KEYWORD: 2
+# HOST-SUFFIX: 28
+# TOTAL: 34
+
+HOST,lf16-effectcdn.byteeffecttos-g.com
+HOST,lf16-pkgcdn.pitaya-clientai.com
+HOST,p16-tiktokcdn-com.akamaized.net
+HOST,trae-api-sg.mchost.guru
+HOST-KEYWORD,musical.ly
+HOST-KEYWORD,tiktok
+HOST-SUFFIX,bytedapm.com
+HOST-SUFFIX,bytegecko-i18n.com
+HOST-SUFFIX,byteintlapi.com
+HOST-SUFFIX,byteoversea.com
+HOST-SUFFIX,capcut.com
+HOST-SUFFIX,capcutapi.com
+HOST-SUFFIX,capcutapi.us
+HOST-SUFFIX,capcutstatic.com
+HOST-SUFFIX,ibytedtos.com
+HOST-SUFFIX,ibyteimg.com
+HOST-SUFFIX,ipstatp.com
+HOST-SUFFIX,isnssdk.com
+HOST-SUFFIX,marscode.com
+HOST-SUFFIX,muscdn.com
+HOST-SUFFIX,musical.ly
+HOST-SUFFIX,sgpstatp.com
+HOST-SUFFIX,snssdk.com
+HOST-SUFFIX,tik-tokapi.com
+HOST-SUFFIX,tiktok.com
+HOST-SUFFIX,tiktokcdn-us.com
+HOST-SUFFIX,tiktokcdn.com
+HOST-SUFFIX,tiktokd.net
+HOST-SUFFIX,tiktokd.org
+HOST-SUFFIX,tiktokmusic.app
+HOST-SUFFIX,tiktokv.com
+HOST-SUFFIX,tiktokv.us
+HOST-SUFFIX,trae.ai
+HOST-SUFFIX,ttwebview.com

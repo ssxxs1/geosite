@@ -1,0 +1,42 @@
+# NAME: OpenAI
+# AUTHOR: ssxxs1
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 16:30:00
+
+HOST,openai-api.arkoselabs.com
+HOST,openai.qualtrics.com
+HOST,openaiassets.blob.core.windows.net
+HOST,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+HOST,openaicomproductionae4b.blob.core.windows.net
+HOST,production-openaicom-storage.azureedge.net
+
+HOST-KEYWORD,chatgpt
+HOST-KEYWORD,chatgpt-async-webps-prod
+HOST-KEYWORD,codex
+HOST-KEYWORD,openai
+
+HOST-SUFFIX,ai.com
+HOST-SUFFIX,chat.com
+HOST-SUFFIX,chatgpt.com
+HOST-SUFFIX,chatgpt.livekit.cloud
+HOST-SUFFIX,chatgpt.site
+HOST-SUFFIX,client-api.arkoselabs.com
+HOST-SUFFIX,crixet.com
+HOST-SUFFIX,featuregates.org
+HOST-SUFFIX,host.livekit.cloud
+HOST-SUFFIX,oaistatic.com
+HOST-SUFFIX,oaistatsig.com
+HOST-SUFFIX,oaiusercontent.com
+HOST-SUFFIX,openai.com
+HOST-SUFFIX,openai.com.cdn.cloudflare.net
+HOST-SUFFIX,openai.org
+HOST-SUFFIX,openaiapi-site.azureedge.net
+HOST-SUFFIX,openaicom.imgix.net
+HOST-SUFFIX,sora.com
+HOST-SUFFIX,turn.livekit.cloud
+
+IP-ASN,401518
+IP-CIDR,199.47.142.0/23,no-resolve
+IP-CIDR,24.199.123.28/32,no-resolve
+IP-CIDR,64.23.132.171/32,no-resolve
+IP6-CIDR,2604:f20::/32,no-resolve

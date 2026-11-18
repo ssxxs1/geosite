@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas requests pyyaml urllib3
+          pip install requests pyyaml urllib3 python-dateutil
 
       - name: Install sing-box
         run: |
@@ -68,18 +68,18 @@ jobs:
             FLAGS="--allow-large-shrink"
           fi
           python script/generate_ai.py $FLAGS
-          python main.py
+          python main.py --skip-mrs
           python script/convert_to_mrs.py
           test -s Private/AI.list
-          test -s rule/AI.json
-          test -s rule/AI.srs
-          test -s rule/AI_domain.mrs
-          test -s rule/AI_ip.mrs
-          test -s rule/AI_clash.yaml
+          test -s rules/AI.json
+          test -s rules/AI.srs
+          test -s rules/AI_domain.mrs
+          test -s rules/AI_ip.mrs
+          test -s rules/AI_clash.yaml
 
       - name: Remove empty files
         run: |
-          find rule -type f -size 0 -delete
+          find rules -type f -size 0 -delete
           find Private -type f -size 0 -delete
 
       - name: Commit and push
@@ -88,10 +88,7 @@ jobs:
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
-          git add rule/*.json 2>/dev/null || echo "No json files"
-          git add rule/*.srs 2>/dev/null || echo "No srs files"
-          git add rule/*.mrs 2>/dev/null || echo "No mrs files"
-          git add rule/*_clash.yaml 2>/dev/null || echo "No clash yaml files"
+          git add -A rules/ 2>/dev/null || echo "No rules files"
           git add Private/*.list 2>/dev/null || echo "No private list files"
           git add Private/*.snippet 2>/dev/null || echo "No private snippet files"
 
@@ -118,10 +115,11 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            rule/*.json
-            rule/*.srs
-            rule/*.mrs
-            rule/*_clash.yaml
+            rules/*.json
+            rules/*.srs
+            rules/*.mrs
+            rules/*_clash.yaml
+            rules/*.list
             Private/*.list
             Private/*.snippet
           generate_release_notes: true

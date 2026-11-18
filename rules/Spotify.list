@@ -1,0 +1,50 @@
+# NAME: Spotify
+# AUTHOR: ssxxs1/geosite
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 09:21:02 UTC
+# HOST: 10
+# HOST-KEYWORD: 4
+# HOST-SUFFIX: 23
+# IP-CIDR: 1
+# USER-AGENT: 1
+# TOTAL: 39
+
+HOST,adeventtracker.spotify.com
+HOST,adstudio-assets.scdn.co
+HOST,audio-ak-spotify-com.akamaized.net
+HOST,audio4-ak-spotify-com.akamaized.net
+HOST,bloodhound.spotify.com
+HOST,cdn-spotify-experiments.conductrics.com
+HOST,heads-ak-spotify-com.akamaized.net
+HOST,heads4-ak-spotify-com.akamaized.net
+HOST,spotify.map.fastly.net
+HOST,spotify.map.fastlylb.net
+HOST-KEYWORD,-spotify-
+HOST-KEYWORD,-spotify-com
+HOST-KEYWORD,spotify
+HOST-KEYWORD,spotify.com
+HOST-SUFFIX,audio-ak-spotify-com.akamaized.net
+HOST-SUFFIX,byspotify.com
+HOST-SUFFIX,heads4-ak-spotify-com.akamaized.net
+HOST-SUFFIX,lifeatspotify.com
+HOST-SUFFIX,pscdn.co
+HOST-SUFFIX,scdn.co
+HOST-SUFFIX,spoti.fi
+HOST-SUFFIX,spotify-com.akamaized.net
+HOST-SUFFIX,spotify-everywhere.com
+HOST-SUFFIX,spotify.app.link
+HOST-SUFFIX,spotify.com
+HOST-SUFFIX,spotify.com.edgesuite.net
+HOST-SUFFIX,spotify.design
+HOST-SUFFIX,spotify.link
+HOST-SUFFIX,spotifycdn.com
+HOST-SUFFIX,spotifycdn.net
+HOST-SUFFIX,spotifycharts.com
+HOST-SUFFIX,spotifycodes.com
+HOST-SUFFIX,spotifyforbrands.com
+HOST-SUFFIX,spotifyforvendors.com
+HOST-SUFFIX,spotifyjobs.com
+HOST-SUFFIX,spotilocal.com
+HOST-SUFFIX,tospotify.com
+IP-CIDR,35.186.224.47/32,no-resolve
+USER-AGENT,Spotify*,Spotify

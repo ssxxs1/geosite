@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
 from urllib.parse import urlparse
@@ -17,11 +18,21 @@ import requests
 import yaml
 
 from script.convert_to_mrs import convert_yaml_to_mrs, fetch_release_file
+from script.magicrule_resolver import MagicRuleResolver
 from script.rule_filter import (
     is_blocked_ai_rule,
     is_valid_domain_or_suffix,
     is_ai_ruleset,
 )
+
+_MAGICRULE_RESOLVER: MagicRuleResolver | None = None
+
+
+def get_magicrule_resolver(session: requests.Session) -> MagicRuleResolver:
+    global _MAGICRULE_RESOLVER
+    if _MAGICRULE_RESOLVER is None:
+        _MAGICRULE_RESOLVER = MagicRuleResolver(session=session)
+    return _MAGICRULE_RESOLVER
 
 
 SING_BOX_MAP = {
@@ -106,6 +117,8 @@ def resolve_base_name(source: str) -> str:
     parsed = urlparse(source)
     if parsed.fragment:
         return parsed.fragment.strip()
+    if parsed.scheme == "magicrule":
+        return parsed.netloc or parsed.path.strip("/")
     raw_stem = Path(parsed.path).stem.replace(".", "_").replace("-", "_")
     return CANONICAL_RULESET_NAMES.get(raw_stem.lower(), raw_stem)
 
@@ -224,6 +237,14 @@ def parse_rule_entry(entry: object) -> tuple[str, str, tuple[str, ...]] | None:
 
 def fetch_text(source: str, session: requests.Session) -> str:
     clean_source = source.split("#")[0]
+    if clean_source.startswith("magicrule://"):
+        rule_name = clean_source[len("magicrule://") :].strip("/").strip()
+        resolver = get_magicrule_resolver(session)
+        text = resolver.fetch_supplementary_rules(rule_name)
+        if text:
+            return text
+        raise ConversionError(f"failed to fetch magicrule for {rule_name}")
+
     path = Path(clean_source)
     if not path.is_absolute() and not path.exists():
         candidate = Path(__file__).resolve().parent / path
@@ -346,6 +367,7 @@ def write_temp_text(destination: Path, content: str) -> Path:
         handle.write(content)
         handle.flush()
         os.fsync(handle.fileno())
+    os.chmod(name, 0o644)
     return Path(name)
 
 
@@ -405,8 +427,6 @@ def build_sing_box_json(converted: Iterable[tuple[str, str]]) -> str:
     return json.dumps(sort_dict(result), ensure_ascii=False, indent=2)
 
 
-from datetime import datetime, timezone
-
 def build_mihomo_yaml(
     converted: Iterable[tuple[str, str]],
     base_name: str = "",
@@ -458,6 +478,90 @@ def build_mihomo_yaml(
     return header + yaml_content
 
 
+def build_quantumult_x_list(
+    rules: Iterable[tuple[str, str, tuple[str, ...]]],
+    base_name: str = "",
+    updated_at: str = "",
+    existing_path: Path | None = None,
+) -> str:
+    """
+    生成 Quantumult X 原生 .list 分流规则文件
+    支持 HOST, HOST-SUFFIX, HOST-KEYWORD, HOST-WILDCARD, HOST-REGEX, IP-CIDR, IP6-CIDR, IP-ASN, USER-AGENT
+    """
+    qx_type_map = {
+        "domain": "HOST",
+        "host": "HOST",
+        "domain-suffix": "HOST-SUFFIX",
+        "host-suffix": "HOST-SUFFIX",
+        "domain-keyword": "HOST-KEYWORD",
+        "host-keyword": "HOST-KEYWORD",
+        "domain-wildcard": "HOST-WILDCARD",
+        "host-wildcard": "HOST-WILDCARD",
+        "domain-regex": "HOST-REGEX",
+        "host-regex": "HOST-REGEX",
+        "ip-cidr": "IP-CIDR",
+        "ip-cidr6": "IP6-CIDR",
+        "ip-asn": "IP-ASN",
+        "asn": "IP-ASN",
+        "user-agent": "USER-AGENT",
+    }
+    entries = []
+    for kind, val, options in rules:
+        k = kind.lower().strip()
+        qx_kind = qx_type_map.get(k)
+        if not qx_kind:
+            continue
+
+        line = f"{qx_kind},{val}"
+        lower_opts = {opt.lower() for opt in options}
+        if qx_kind in {"IP-CIDR", "IP6-CIDR"}:
+            line += ",no-resolve"
+        elif qx_kind == "IP-ASN" and "no-resolve" in lower_opts:
+            line += ",no-resolve"
+        elif qx_kind in {"HOST", "HOST-SUFFIX"}:
+            for flag in ("extended-matching", "force-remote-dns"):
+                if flag in lower_opts:
+                    line += f",{flag}"
+        entries.append(line)
+
+    unique_entries = sorted(set(entries))
+
+    # 若未显式传入 updated_at，且已有文件规则体与新生成的内容完全一致，沿用旧时间戳保证幂等
+    if not updated_at and existing_path and existing_path.exists():
+        try:
+            content = existing_path.read_text(encoding="utf-8")
+            match = re.search(r"^# UPDATED: (.*)$", content, re.MULTILINE)
+            if match:
+                old_entries = [
+                    ln.strip()
+                    for ln in content.splitlines()
+                    if ln.strip() and not ln.lstrip().startswith("#")
+                ]
+                if old_entries == unique_entries:
+                    updated_at = match.group(1).strip()
+        except Exception:
+            pass
+
+    if not updated_at:
+        updated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+    header = ""
+    if base_name:
+        type_counts = Counter(entry.split(",")[0] for entry in unique_entries)
+        header_lines = [
+            f"# NAME: {base_name}",
+            "# AUTHOR: ssxxs1/geosite",
+            "# REPO: https://github.com/ssxxs1/geosite",
+            f"# UPDATED: {updated_at}",
+        ]
+        for kind, count in sorted(type_counts.items()):
+            header_lines.append(f"# {kind}: {count}")
+        header_lines.append(f"# TOTAL: {len(unique_entries)}")
+        header = "\n".join(header_lines) + "\n\n"
+
+    return header + "\n".join(unique_entries) + "\n"
+
+
 def fallback_recover_source(
     base_name: str,
     output_directory: Path,
@@ -476,6 +580,7 @@ def fallback_recover_source(
     clash_path = output_directory / f"{base_name}_clash.yaml"
     json_path = output_directory / f"{base_name}.json"
     srs_path = output_directory / f"{base_name}.srs"
+    qx_path = output_directory / f"{base_name}.list"
 
     print(f"[Release兜底] 源规则不可用，正在从 GitHub Release ({repo}) 拉取 {base_name} 上次发布的规则备份...")
 
@@ -484,6 +589,7 @@ def fallback_recover_source(
         (f"{base_name}_clash.yaml", clash_path),
         (f"{base_name}.json", json_path),
         (f"{base_name}.srs", srs_path),
+        (f"{base_name}.list", qx_path),
     ]:
         if fetch_release_file(fname, fpath, session=session, repo=repo):
             recovered = True
@@ -528,6 +634,49 @@ def convert_source(
     raw_rules = parse_source(source, session)
     base_name = resolve_base_name(source)
 
+    # 仅针对 MetaCubeX 官方纯域名源合并同名 GeoIP 伴侣（超阈值跳过以防误代理）与 MagicRule 互补规则
+    MAX_GEOIP_CIDR = 2000
+    clean_src = source.split("#")[0]
+    clean_src_lower = clean_src.lower()
+    if "meta-rules-dat/meta/geo/geosite/" in clean_src_lower:
+        geoip_src = clean_src.replace("/geo/geosite/", "/geo/geoip/").replace("/geo/GEOSITE/", "/geo/geoip/")
+        try:
+            geoip_rules = parse_source(geoip_src, session)
+            if geoip_rules:
+                geoip_ips = sum(1 for r in geoip_rules if r[0] in {"ip-cidr", "ip-cidr6"})
+                if geoip_ips > MAX_GEOIP_CIDR:
+                    print(
+                        f"[GeoIP伴侣·跳过] {base_name}: geoip 过大 ({geoip_ips} 条 > 阈值 {MAX_GEOIP_CIDR})，"
+                        f"跳过自动融合（建议手动决策或依赖 DNS 缓存）"
+                    )
+                else:
+                    before_count = len(raw_rules)
+                    raw_rules = list(dict.fromkeys(raw_rules + geoip_rules))
+                    print(f"[GeoIP伴侣] {base_name}: 自动融合 MetaCubeX 官方 GeoIP 规则 (总条目: {before_count} -> {len(raw_rules)}, 补充 IP: {geoip_ips})")
+        except Exception:
+            pass
+
+    if "metacubex" in clean_src_lower:
+        resolver = get_magicrule_resolver(session)
+        supp_text = resolver.fetch_supplementary_rules(base_name)
+        if supp_text:
+            supp_rules = []
+            for line in supp_text.splitlines():
+                entry = line.strip()
+                if not entry or entry.startswith(("#", ";", "//")):
+                    continue
+                try:
+                    parsed = parse_rule_entry(entry)
+                    if parsed:
+                        supp_rules.append(parsed)
+                except ConversionError:
+                    continue
+            if supp_rules:
+                before_count = len(raw_rules)
+                raw_rules = list(dict.fromkeys(raw_rules + supp_rules))
+                supp_ips = sum(1 for r in supp_rules if r[0] in {"ip-cidr", "ip-cidr6"})
+                print(f"[多源融合] {base_name}: 成功吸收 MagicRule 补充规则 (总条目: {before_count} -> {len(raw_rules)}, 补充 IP: {supp_ips})")
+
     if is_ai_ruleset(base_name):
         cleaned_rules = []
         for r in raw_rules:
@@ -546,9 +695,11 @@ def convert_source(
     json_path = output_directory / f"{base_name}.json"
     srs_path = output_directory / f"{base_name}.srs"
     clash_path = output_directory / f"{base_name}_clash.yaml"
+    qx_path = output_directory / f"{base_name}.list"
 
     json_temp = write_temp_text(json_path, build_sing_box_json(sing_box_rules))
     clash_temp = write_temp_text(clash_path, build_mihomo_yaml(mihomo_rules, base_name, existing_path=clash_path))
+    qx_temp = write_temp_text(qx_path, build_quantumult_x_list(rules, base_name, existing_path=qx_path))
     srs_temp = srs_path.with_name(f".{srs_path.name}.{os.getpid()}.tmp")
 
     srs_compiled = False
@@ -567,7 +718,7 @@ def convert_source(
         except Exception as exc:
             print(f"[警告] sing-box 编译 .srs 失败 ({exc})，不阻断 Clash 与 MRS 生成", file=sys.stderr)
 
-    staged = [(json_temp, json_path), (clash_temp, clash_path)]
+    staged = [(json_temp, json_path), (clash_temp, clash_path), (qx_temp, qx_path)]
     if srs_compiled:
         staged.append((srs_temp, srs_path))
     elif not srs_path.exists():
@@ -577,7 +728,7 @@ def convert_source(
     try:
         publish_outputs(staged)
     except Exception:
-        for temporary in (json_temp, clash_temp, srs_temp):
+        for temporary in (json_temp, clash_temp, qx_temp, srs_temp):
             try:
                 temporary.unlink()
             except FileNotFoundError:
@@ -602,6 +753,7 @@ def convert_source(
         print(f"[跳过] sing-box SRS  : {srs_path}（--skip-srs 或编译失败）")
 
     print(f"[生成] Clash YAML    : {clash_path}")
+    print(f"[生成] QuantumultX   : {qx_path}")
 
     if compile_mrs:
         try:
@@ -627,6 +779,26 @@ def convert_source(
     return json_path
 
 
+def cleanup_orphaned_outputs(output_dir: Path, active_names: set[str]) -> list[str]:
+    """清理已从 links.txt 下线但仍残留在输出目录中的孤立规则文件"""
+    known_suffixes = ("_clash.yaml", "_domain.mrs", "_ip.mrs", ".json", ".srs", ".mrs", ".list")
+    removed: list[str] = []
+    if not output_dir.exists():
+        return removed
+    for path in sorted(output_dir.iterdir()):
+        if not path.is_file():
+            continue
+        name = path.name
+        for suffix in known_suffixes:
+            if name.endswith(suffix):
+                stem = name[: -len(suffix)]
+                if stem not in active_names:
+                    path.unlink(missing_ok=True)
+                    removed.append(name)
+                break
+    return removed
+
+
 def load_links(path: Path) -> list[str]:
     return [
         line.strip()
@@ -638,7 +810,7 @@ def load_links(path: Path) -> list[str]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Convert geosite sources for sing-box and Mihomo")
     parser.add_argument("--links", default="links.txt")
-    parser.add_argument("--output", default="rule")
+    parser.add_argument("--output", default="rules")
     parser.add_argument("--sing-box", default="sing-box")
     parser.add_argument("--mihomo", default="mihomo")
     parser.add_argument(
@@ -711,6 +883,11 @@ def main(argv: list[str] | None = None) -> int:
     if failed_sources:
         print(f"  完全失败且无保底 : {len(failed_sources)} ({', '.join(failed_sources)})", file=sys.stderr)
         return 1
+
+    active_names = {resolve_base_name(source) for source in sources}
+    removed_orphans = cleanup_orphaned_outputs(output_dir, active_names)
+    if removed_orphans:
+        print(f"  清理已下线孤立产物: {len(removed_orphans)} 个 ({', '.join(removed_orphans)})")
 
     print("所有规则集均已就绪（含正常更新与冗余保底）！")
     return 0

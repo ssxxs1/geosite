@@ -8,14 +8,11 @@ and GitHub Release fallback redundancy.
 from __future__ import annotations
 
 import argparse
-import glob
 import ipaddress
 import os
-import shutil
 import subprocess
 import sys
 import tempfile
-from collections import Counter
 from pathlib import Path
 
 import requests
@@ -95,7 +92,6 @@ def parse_clash_yaml(yaml_path: Path) -> tuple[list[str], list[str], list[str]]:
         else:
             other_rules.append(entry)
 
-    # Deduplicate preserving order
     unique_domains = list(dict.fromkeys(domain_rules))
     unique_ips = list(dict.fromkeys(ip_rules))
     unique_others = list(dict.fromkeys(other_rules))
@@ -139,7 +135,6 @@ def compile_and_verify_domain_mrs(
     rec_txt = txt_path.with_name(f".{txt_path.name}.rec.txt")
 
     try:
-        # Compile to MRS
         subprocess.run(
             [mihomo_cmd, "convert-ruleset", "domain", "text", str(txt_path), str(temp_mrs)],
             capture_output=True,
@@ -147,7 +142,6 @@ def compile_and_verify_domain_mrs(
             check=True,
         )
 
-        # Verify by decompiling back
         if verify:
             subprocess.run(
                 [mihomo_cmd, "convert-ruleset", "domain", "mrs", str(temp_mrs), str(rec_txt)],
@@ -155,14 +149,25 @@ def compile_and_verify_domain_mrs(
                 text=True,
                 check=True,
             )
-            decompiled_count = len(
-                [l for l in rec_txt.read_text(encoding="utf-8").splitlines() if l.strip()]
-            )
+            decompiled_lines = [l.strip() for l in rec_txt.read_text(encoding="utf-8").splitlines() if l.strip()]
+            decompiled_count = len(decompiled_lines)
             if decompiled_count != len(domain_rules):
-                raise ValueError(
-                    f"Domain rule count mismatch for {output_path.name}: "
-                    f"decompiled {decompiled_count} != expected {len(domain_rules)}"
-                )
+                # 校验是否属于正常的 Trie 树子域折叠 (例如存在 +.domain.com 时 sub.domain.com 被折叠)
+                in_set = set(d.strip().lower() for d in domain_rules)
+                out_set = set(d.lower() for d in decompiled_lines)
+                missing = in_set - out_set
+                suffixes = set(d[2:] for d in out_set if d.startswith("+."))
+                
+                # 检查所有被折叠的 missing 项是否均被有效后缀覆盖
+                for item in missing:
+                    val = item.removeprefix("+.")
+                    labels = val.split(".")
+                    is_covered = val in suffixes or any(".".join(labels[i:]) in suffixes for i in range(1, len(labels)))
+                    if not is_covered:
+                        raise ValueError(
+                            f"Domain rule count mismatch for {output_path.name}: "
+                            f"decompiled {decompiled_count} != expected {len(domain_rules)} (uncovered rule: {item})"
+                        )
 
         if output_path.exists():
             try:
@@ -171,6 +176,7 @@ def compile_and_verify_domain_mrs(
             except Exception:
                 pass
 
+        os.chmod(temp_mrs, 0o644)
         os.replace(temp_mrs, output_path)
         return len(domain_rules)
     finally:
@@ -198,7 +204,6 @@ def compile_and_verify_ip_mrs(
     rec_txt = txt_path.with_name(f".{txt_path.name}.rec.txt")
 
     try:
-        # Compile to MRS
         subprocess.run(
             [mihomo_cmd, "convert-ruleset", "ipcidr", "text", str(txt_path), str(temp_mrs)],
             capture_output=True,
@@ -206,7 +211,6 @@ def compile_and_verify_ip_mrs(
             check=True,
         )
 
-        # Verify by decompiling back
         if verify:
             subprocess.run(
                 [mihomo_cmd, "convert-ruleset", "ipcidr", "mrs", str(temp_mrs), str(rec_txt)],
@@ -230,6 +234,7 @@ def compile_and_verify_ip_mrs(
             except Exception:
                 pass
 
+        os.chmod(temp_mrs, 0o644)
         os.replace(temp_mrs, output_path)
         return len(ip_rules), expected_collapsed
     finally:
@@ -291,12 +296,8 @@ def convert_yaml_to_mrs(
             out_mrs = output_dir / f"{base_name}.mrs"
             compile_and_verify_domain_mrs(domain_rules, out_mrs, mihomo_cmd, verify)
             generated_files.append(out_mrs.name)
-
-            # 向下兼容历史订阅：若存在历史遗留的 {base_name}_domain.mrs，同步更新为其副本
-            legacy_domain_mrs = output_dir / f"{base_name}_domain.mrs"
-            if legacy_domain_mrs.exists():
-                shutil.copy2(out_mrs, legacy_domain_mrs)
-                generated_files.append(legacy_domain_mrs.name)
+            for stale_name in (f"{base_name}_domain.mrs", f"{base_name}_ip.mrs"):
+                (output_dir / stale_name).unlink(missing_ok=True)
 
         elif has_ips and not has_domains:
             # Pure IP ruleset -> {base_name}.mrs
@@ -304,6 +305,8 @@ def convert_yaml_to_mrs(
             _, collapsed = compile_and_verify_ip_mrs(ip_rules, out_mrs, mihomo_cmd, verify)
             stats["ips_collapsed"] = collapsed
             generated_files.append(out_mrs.name)
+            for stale_name in (f"{base_name}_domain.mrs", f"{base_name}_ip.mrs"):
+                (output_dir / stale_name).unlink(missing_ok=True)
 
         elif has_domains and has_ips:
             # Mixed ruleset:
@@ -317,6 +320,8 @@ def convert_yaml_to_mrs(
             _, collapsed = compile_and_verify_ip_mrs(ip_rules, ip_mrs, mihomo_cmd, verify)
             stats["ips_collapsed"] = collapsed
             generated_files.append(ip_mrs.name)
+
+            (output_dir / f"{base_name}.mrs").unlink(missing_ok=True)
 
     except Exception as exc:
         print(f"[警告] {base_name} 编译 MRS 失败 ({exc})，尝试从 Release 兜底恢复...", file=sys.stderr)
@@ -337,7 +342,7 @@ def convert_yaml_to_mrs(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Convert Clash YAML rules to Mihomo MRS format")
-    parser.add_argument("--dir", default="rule", help="Directory containing _clash.yaml files")
+    parser.add_argument("--dir", default="rules", help="Directory containing _clash.yaml files")
     parser.add_argument("--file", default=None, help="Process a single _clash.yaml file")
     parser.add_argument("--mihomo", default="mihomo", help="Path to mihomo binary")
     parser.add_argument("--no-verify", action="store_true", help="Skip decompilation verification")

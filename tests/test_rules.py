@@ -1,18 +1,23 @@
 from __future__ import annotations
 
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from script.rule_filter import (
-    ALLOWED_SINGLE_LABELS,
-    ALLOWED_SINGLE_LABEL_SUFFIXES,
-    BLOCKED_VPS_ASNS,
     is_ai_ruleset,
     is_blocked_ai_rule,
     is_time_or_ntp,
     is_valid_domain_or_suffix,
 )
-from main import parse_rule_entry, resolve_base_name
+from main import (
+    build_quantumult_x_list,
+    cleanup_orphaned_outputs,
+    convert_source,
+    parse_rule_entry,
+    resolve_base_name,
+)
 
 
 class TestRuleFilter(unittest.TestCase):
@@ -58,14 +63,19 @@ class TestRuleFilter(unittest.TestCase):
         self.assertEqual(is_blocked_ai_rule("domain", "www.google-analytics.com"), "exact-domain")
         self.assertEqual(is_blocked_ai_rule("domain-suffix", "doubleclick.net"), "blocked-suffix")
         self.assertEqual(is_blocked_ai_rule("domain-suffix", "sentry.io"), "blocked-suffix")
-        self.assertEqual(is_blocked_ai_rule("domain-suffix", "stripe.com"), "blocked-suffix")
-        self.assertEqual(is_blocked_ai_rule("domain-suffix", "auth0.com"), "blocked-suffix")
+        self.assertEqual(is_blocked_ai_rule("domain-suffix", "datadoghq.com"), "blocked-suffix")
 
-        # Legitimate AI domains must pass
+        # Legitimate AI domains and critical infrastructure (auth/payment/Claude logging) must pass
         self.assertIsNone(is_blocked_ai_rule("domain-suffix", "openai.com"))
         self.assertIsNone(is_blocked_ai_rule("domain-suffix", "anthropic.com"))
         self.assertIsNone(is_blocked_ai_rule("domain", "chatgpt.com"))
         self.assertIsNone(is_blocked_ai_rule("domain-suffix", "claude.ai"))
+        # auth0 / stripe 必须走代理，不能被阻断为直连
+        self.assertIsNone(is_blocked_ai_rule("domain-suffix", "stripe.com"))
+        self.assertIsNone(is_blocked_ai_rule("domain-suffix", "auth0.com"))
+        # Claude Datadog 日志端点与埋点必须放行走代理
+        self.assertIsNone(is_blocked_ai_rule("domain", "http-intake.logs.us5.datadoghq.com"))
+        self.assertIsNone(is_blocked_ai_rule("domain-suffix", "browser-intake-datadoghq.com"))
 
     def test_time_and_ntp_no_false_positives(self):
         # Genuine NTP / time servers must be matched
@@ -159,11 +169,11 @@ class TestRuleFilter(unittest.TestCase):
             self.assertEqual(is_blocked_ai_rule(kind, "google-analytics"), "blocked-telemetry-keyword")
             self.assertEqual(is_blocked_ai_rule(kind, "bytedapm"), "blocked-telemetry-keyword")
             self.assertEqual(is_blocked_ai_rule(kind, "sentry"), "blocked-telemetry-keyword")
-            self.assertEqual(is_blocked_ai_rule(kind, "stripe"), "blocked-telemetry-keyword")
-            self.assertEqual(is_blocked_ai_rule(kind, "auth0"), "blocked-telemetry-keyword")
-            # Legitimate AI keywords must not be blocked
+            # Legitimate AI keywords and critical auth/payment infra must not be blocked
             self.assertIsNone(is_blocked_ai_rule(kind, "openai"))
             self.assertIsNone(is_blocked_ai_rule(kind, "claude"))
+            self.assertIsNone(is_blocked_ai_rule(kind, "stripe"))
+            self.assertIsNone(is_blocked_ai_rule(kind, "auth0"))
 
         # Sing-box domain_suffix single-label check
         self.assertFalse(is_valid_domain_or_suffix("domain_suffix", "azure"))
@@ -208,11 +218,62 @@ class TestRuleFilter(unittest.TestCase):
         self.assertEqual(resolve_base_name("https://example.com/whatsapp.yaml"), "Whatsapp")
         self.assertEqual(resolve_base_name("https://example.com/httpdns.yaml"), "BlockHttpDNS")
         
-        # Local paths
+        # Local paths & magicrule://
         self.assertEqual(resolve_base_name("Private/Gemini.list"), "Gemini")
         self.assertEqual(resolve_base_name("Private/Copilot.list"), "Copilot")
         self.assertEqual(resolve_base_name("Private/SystemOTA.list"), "SystemOTA")
         self.assertEqual(resolve_base_name("Private/ChinaMedia.list"), "ChinaMedia")
+        self.assertEqual(resolve_base_name("magicrule://Direct#Direct"), "Direct")
+        self.assertEqual(resolve_base_name("magicrule://Direct"), "Direct")
+
+    def test_build_quantumult_x_list_preserves_no_resolve_wildcards_and_timestamp(self):
+        rules = [
+            ("domain", "example.com", ("DIRECT",)),
+            ("domain-suffix", "cici.com", ("extended-matching",)),
+            ("domain-wildcard", "chatgpt*.azurefd.net", ()),
+            ("domain-regex", r"^api-\d+\.example\.com$", ()),
+            ("ip-cidr", "199.47.142.0/23", ("no-resolve",)),
+            ("ip-cidr", "1.1.1.0/24", ()),
+            ("ip-cidr6", "2604:f20::/32", ("no-resolve",)),
+            ("ip-asn", "401518", ()),
+            ("ip-asn", "399358", ("no-resolve",)),
+        ]
+        rendered = build_quantumult_x_list(rules, base_name="TestSet", updated_at="2026-11-18 10:00:00 UTC")
+        self.assertIn("HOST,example.com\n", rendered)
+        self.assertNotIn("DIRECT", rendered)
+        self.assertIn("HOST-SUFFIX,cici.com,extended-matching\n", rendered)
+        self.assertIn("HOST-WILDCARD,chatgpt*.azurefd.net\n", rendered)
+        self.assertIn(r"HOST-REGEX,^api-\d+\.example\.com$" + "\n", rendered)
+        self.assertIn("IP-CIDR,199.47.142.0/23,no-resolve\n", rendered)
+        self.assertIn("IP-CIDR,1.1.1.0/24,no-resolve\n", rendered)
+        self.assertIn("IP6-CIDR,2604:f20::/32,no-resolve\n", rendered)
+        self.assertIn("IP-ASN,401518\n", rendered)
+        self.assertIn("IP-ASN,399358,no-resolve\n", rendered)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            qx_path = Path(tmp) / "TestSet.list"
+            qx_path.write_text(rendered, encoding="utf-8")
+            rerendered = build_quantumult_x_list(rules, base_name="TestSet", existing_path=qx_path)
+            self.assertEqual(rerendered, rendered)
+
+    def test_private_source_does_not_pull_magicrule_and_orphan_cleanup(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_dir = Path(tmp)
+            src = tmp_dir / "Claude.list"
+            src.write_text("HOST-SUFFIX,claude.ai\nHOST,claude.com\n", encoding="utf-8")
+            out_dir = tmp_dir / "rules"
+            out_dir.mkdir()
+            (out_dir / "AdvertisingLite.json").write_text("{}", encoding="utf-8")
+            (out_dir / "Claude.mrs").write_text("old", encoding="utf-8")
+
+            with mock.patch("main.get_magicrule_resolver") as mock_resolver:
+                convert_source(str(src), out_dir, mock.MagicMock(), compile_srs=False, compile_mrs=False)
+                mock_resolver.assert_not_called()
+
+            removed = cleanup_orphaned_outputs(out_dir, {"Claude"})
+            self.assertEqual(removed, ["AdvertisingLite.json"])
+            self.assertFalse((out_dir / "AdvertisingLite.json").exists())
+            self.assertTrue((out_dir / "Claude.json").exists())
 
 
 if __name__ == "__main__":

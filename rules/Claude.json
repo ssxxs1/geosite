@@ -4,6 +4,7 @@
       "domain": [
         "anthropic-com.ghost.io",
         "anthropic.com.cdn.cloudflare.net",
+        "http-intake.logs.us5.datadoghq.com",
         "servd-anthropic-website.b-cdn.net"
       ]
     },
@@ -13,6 +14,8 @@
         "anthropic.com",
         "anthropic.team",
         "antspace.dev",
+        "auth0.com",
+        "browser-intake-datadoghq.com",
         "chatbotclaude.com",
         "clau.de",
         "claude.ai",
@@ -26,7 +29,10 @@
         "claudemcpcontent.com",
         "claudepages.dev",
         "claudestudio.com",
-        "claudeusercontent.com"
+        "claudeusercontent.com",
+        "stripe.com",
+        "stripe.network",
+        "stripecdn.com"
       ]
     }
   ],

@@ -1,0 +1,93 @@
+# NAME: BankHK
+# AUTHOR: ssxxs1/geosite
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 09:21:04 UTC
+# HOST: 2
+# HOST-KEYWORD: 3
+# HOST-SUFFIX: 79
+# TOTAL: 84
+
+HOST,c-hsbc.lytics.io
+HOST,hsbc.edge.sdk.awswaf.com
+HOST-KEYWORD,bochk
+HOST-KEYWORD,hsbchk
+HOST-KEYWORD,standchartbank
+HOST-SUFFIX,airstarbank.com
+HOST-SUFFIX,antbank.hk
+HOST-SUFFIX,asia.ccb.com
+HOST-SUFFIX,bankcomm.com.hk
+HOST-SUFFIX,bea-union.com
+HOST-SUFFIX,boccc.com.hk
+HOST-SUFFIX,bochk.com
+HOST-SUFFIX,bochk.com.hk
+HOST-SUFFIX,boclife.com.hk
+HOST-SUFFIX,bocservices.com.hk
+HOST-SUFFIX,ccb.com.hk
+HOST-SUFFIX,ccbasia.com
+HOST-SUFFIX,cdnhsbcrhostorage.azureedge.net
+HOST-SUFFIX,chbank.com
+HOST-SUFFIX,citibank.com.hk
+HOST-SUFFIX,cmbwinglungbank.com
+HOST-SUFFIX,cncbinternational.com
+HOST-SUFFIX,dahsing.com
+HOST-SUFFIX,dbs.com
+HOST-SUFFIX,dbs.com.hk
+HOST-SUFFIX,elebank.com
+HOST-SUFFIX,etnet.com.hk
+HOST-SUFFIX,eum-appdynamics.com
+HOST-SUFFIX,fusionbank.com
+HOST-SUFFIX,hangseng.com
+HOST-SUFFIX,hangseng.com.hk
+HOST-SUFFIX,hk.cmbchina.com
+HOST-SUFFIX,hkbea-invest.com
+HOST-SUFFIX,hkbea.com
+HOST-SUFFIX,hsbc.com
+HOST-SUFFIX,hsbc.com.hk
+HOST-SUFFIX,hsbcnet.com
+HOST-SUFFIX,icbcasia.com
+HOST-SUFFIX,liveperson.net
+HOST-SUFFIX,livibank.com
+HOST-SUFFIX,lpsnmedia.com
+HOST-SUFFIX,lpsnmedia.net
+HOST-SUFFIX,mds1a.trkd-hs.com
+HOST-SUFFIX,mox.com
+HOST-SUFFIX,moxbank.com
+HOST-SUFFIX,ncb.com.hk
+HOST-SUFFIX,ocbc.com.hk
+HOST-SUFFIX,ocbcwhhk.com
+HOST-SUFFIX,octopus-cards.com
+HOST-SUFFIX,octopus.com.hk
+HOST-SUFFIX,octopuscards.com
+HOST-SUFFIX,omtrdc.net
+HOST-SUFFIX,online-metrix.net
+HOST-SUFFIX,optimizely.com
+HOST-SUFFIX,paob.com.hk
+HOST-SUFFIX,payme.hsbc
+HOST-SUFFIX,sc.com
+HOST-SUFFIX,sc.com.hk
+HOST-SUFFIX,siteintercept.qualtrics.com
+HOST-SUFFIX,standardchartered.com
+HOST-SUFFIX,standardchartered.com.hk
+HOST-SUFFIX,systemweb.com.hk
+HOST-SUFFIX,tealiumiq.com
+HOST-SUFFIX,threatmetrix.com
+HOST-SUFFIX,tiqcdn.com
+HOST-SUFFIX,transferwise.cloud
+HOST-SUFFIX,transferwise.com
+HOST-SUFFIX,tw-assets.com
+HOST-SUFFIX,vam-hk.cloud1.vv1865.com
+HOST-SUFFIX,we-stats.com
+HOST-SUFFIX,welab.bank
+HOST-SUFFIX,welab.co
+HOST-SUFFIX,winglungbank.com
+HOST-SUFFIX,wise.com
+HOST-SUFFIX,wiseassets.com
+HOST-SUFFIX,yvn1g4-cdn-settings.appsflyersdk.com
+HOST-SUFFIX,yvn1g4-launches.appsflyersdk.com
+HOST-SUFFIX,za.group
+HOST-SUFFIX,zafinsvc.com
+HOST-SUFFIX,zainvest.group
+HOST-SUFFIX,zajourney.com
+HOST-SUFFIX,zatech.com
+HOST-SUFFIX,zaticdn.com
+HOST-SUFFIX,zhongan.io

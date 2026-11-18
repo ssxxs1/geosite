@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 03:16:13
-# HOST: 88
-# HOST-SUFFIX: 286
-# HOST-KEYWORD: 7
+# UPDATED: 2026-11-18 09:19:25
+# HOST: 87
+# HOST-SUFFIX: 293
+# HOST-KEYWORD: 10
 # HOST-WILDCARD: 14
-# IP-CIDR: 34
-# IP6-CIDR: 4
-# IP-ASN: 1
-# TOTAL: 434
+# IP-CIDR: 35
+# IP6-CIDR: 5
+# IP-ASN: 2
+# TOTAL: 446
 
 HOST,account.jetbrains.com
 HOST,accounts.spacex.ai
@@ -51,6 +51,7 @@ HOST,firefly-ps.adobe.io
 HOST,firefly.adobe.com
 HOST,gateway.bingviz.microsoft.net
 HOST,gateway.bingviz.microsoftapp.net
+HOST,http-intake.logs.us5.datadoghq.com
 HOST,humb.apple.com
 HOST,images.workoscdn.com
 HOST,in.appcenter.ms
@@ -69,10 +70,8 @@ HOST,meta-ohttp-relay-prod.fastly-edge.com
 HOST,oauth.account.jetbrains.com
 HOST,odc.officeapps.live.com
 HOST,openai.qualtrics.com
-HOST,openaiapi-site.azureedge.net
 HOST,openaiassets.blob.core.windows.net
 HOST,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
-HOST,openaicom.imgix.net
 HOST,openaicomproductionae4b.blob.core.windows.net
 HOST,origin-tracker.githubusercontent.com
 HOST,perplexity-ai.cloudflareaccess.com
@@ -133,6 +132,7 @@ HOST-SUFFIX,asana.biz
 HOST-SUFFIX,atmeta.com
 HOST-SUFFIX,augment.com
 HOST-SUFFIX,augmentcode.com
+HOST-SUFFIX,auth0.com
 HOST-SUFFIX,autodraw.com
 HOST-SUFFIX,avoma.com
 HOST-SUFFIX,azureml.ms
@@ -143,6 +143,7 @@ HOST-SUFFIX,bing-shopping.microsoft-falcon.io
 HOST-SUFFIX,bingapis.com
 HOST-SUFFIX,blackforestlabs.ai
 HOST-SUFFIX,bolt.new
+HOST-SUFFIX,browser-intake-datadoghq.com
 HOST-SUFFIX,buffer.com
 HOST-SUFFIX,bufferapp.com
 HOST-SUFFIX,cerebras.ai
@@ -315,7 +316,9 @@ HOST-SUFFIX,open-vsx.org
 HOST-SUFFIX,openai.com
 HOST-SUFFIX,openai.com.cdn.cloudflare.net
 HOST-SUFFIX,openai.org
+HOST-SUFFIX,openaiapi-site.azureedge.net
 HOST-SUFFIX,openaiapi.com
+HOST-SUFFIX,openaicom.imgix.net
 HOST-SUFFIX,openart.ai
 HOST-SUFFIX,openrouter.ai
 HOST-SUFFIX,optimizationguide-pa.googleapis.com
@@ -349,6 +352,9 @@ HOST-SUFFIX,sora.com
 HOST-SUFFIX,speech.googleapis.com
 HOST-SUFFIX,strawberrybrowserapi.xyz
 HOST-SUFFIX,strawberrybucket.xyz
+HOST-SUFFIX,stripe.com
+HOST-SUFFIX,stripe.network
+HOST-SUFFIX,stripecdn.com
 HOST-SUFFIX,stt.speech.azure.cn
 HOST-SUFFIX,stt.speech.azure.us
 HOST-SUFFIX,studio.firebase.google.com
@@ -386,6 +392,9 @@ HOST-SUFFIX,zapier.com
 HOST-SUFFIX,zed.dev
 HOST-SUFFIX,zeetings.com
 HOST-KEYWORD,alkalimakersuite-pa.clients6.google.com
+HOST-KEYWORD,chatgpt
+HOST-KEYWORD,chatgpt-async-webps-prod
+HOST-KEYWORD,codex
 HOST-KEYWORD,labs.google
 HOST-KEYWORD,notebooklm.google
 HOST-KEYWORD,openai
@@ -419,6 +428,7 @@ IP-CIDR,172.207.173.200/32,no-resolve
 IP-CIDR,172.214.226.198/32,no-resolve
 IP-CIDR,191.233.251.27/32,no-resolve
 IP-CIDR,193.182.111.0/24,no-resolve
+IP-CIDR,199.47.142.0/23,no-resolve
 IP-CIDR,20.162.96.163/32,no-resolve
 IP-CIDR,20.168.48.117/32,no-resolve
 IP-CIDR,20.184.36.134/32,no-resolve
@@ -441,7 +451,9 @@ IP-CIDR,74.248.148.7/32,no-resolve
 IP-CIDR,81.168.83.93/32,no-resolve
 IP-CIDR,95.111.202.5/32,no-resolve
 IP6-CIDR,2001:67c:21bc:1e::123/128,no-resolve
+IP6-CIDR,2604:f20::/32,no-resolve
 IP6-CIDR,2606:4700:f1::123/128,no-resolve
 IP6-CIDR,2607:6bc0::/32,no-resolve
 IP6-CIDR,2a03:8600::cc/128,no-resolve
 IP-ASN,399358,no-resolve
+IP-ASN,401518

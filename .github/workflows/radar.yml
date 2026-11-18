@@ -1,0 +1,121 @@
+name: Rule Radar Sentinel
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: geosite-radar-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  schedule:
+    # 每周一上午 10:00 自动巡检
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "强制手动执行雷达巡检"
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  radar-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pyyaml urllib3 python-dateutil
+
+      - name: Run Rule Radar & CT Logs Sentinel
+        id: radar
+        run: |
+          python script/diff_radar.py --output radar_report.md --save-json radar_candidates.json
+
+      - name: Check Stale Rules (>180 Days)
+        id: stale
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python script/check_stale_rules.py --append-to radar_report.md
+          cat radar_report.md >> $GITHUB_STEP_SUMMARY
+
+      - name: Create Draft PR and Notify
+        if: steps.radar.outputs.has_new_domains == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE_TAG=$(date +'%Y%m%d')
+          BRANCH_NAME="radar/discovery-${DATE_TAG}"
+
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action Radar"
+
+          # 切换并推送专用巡检分支
+          git checkout -B "$BRANCH_NAME"
+
+          # 将发现的有效候选追加至本地列表，生成直观的文件 diff（复用上一步扫描结果，避免重复探测）
+          python script/diff_radar.py --apply-json radar_candidates.json --quiet
+          git add Private/*.list
+
+          if git diff --staged --quiet; then
+            echo "无实际文件变更，跳过 PR 创建"
+            exit 0
+          fi
+
+          git commit -m "chore(radar): 发现规则集新域名候选 (${DATE_TAG})"
+          git push origin "$BRANCH_NAME" --force
+
+          # 检查是否已有相同分支的开放 PR，避免重复提单
+          EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --json number -q '.[0].number' 2>/dev/null || echo "")
+          if [ -n "$EXISTING_PR" ]; then
+            echo "已有开放的 PR #${EXISTING_PR}，更新说明..."
+            gh pr edit "$EXISTING_PR" --body-file radar_report.md || echo "::warning::PR 更新失败"
+          else
+            echo "创建全新 Draft PR..."
+            # 优先尝试带 --assignee 创建，若权限受限则自动降级为无 --assignee 创建
+            gh pr create \
+              --draft \
+              --title "chore(radar): 发现规则集新域名候选 (${DATE_TAG})" \
+              --body-file radar_report.md \
+              --head "$BRANCH_NAME" \
+              --base main \
+              --assignee "${{ github.repository_owner }}" 2>/dev/null || \
+            gh pr create \
+              --draft \
+              --title "chore(radar): 发现规则集新域名候选 (${DATE_TAG})" \
+              --body-file radar_report.md \
+              --head "$BRANCH_NAME" \
+              --base main 2>/dev/null || \
+            echo "::warning::PR 创建受限（提示：若需要自动提 PR，请在仓库 Settings -> Actions -> General 中勾选 'Allow GitHub Actions to create and approve pull requests'）"
+          fi
+
+      - name: Send Custom SMTP Email (Optional)
+        if: always() && (steps.radar.outputs.has_new_domains == 'true' || steps.stale.outputs.has_stale_rules == 'true') && env.SMTP_SERVER != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT || 465 }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "📡 [Geosite 巡检战报] 发现新规则集候选域名 / 上游活跃度告警"
+          body: file://radar_report.md
+          to: ${{ secrets.NOTIFICATION_EMAIL || secrets.SMTP_USERNAME }}
+          from: "Geosite Radar Sentinel <${{ secrets.SMTP_USERNAME }}>"

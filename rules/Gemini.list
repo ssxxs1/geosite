@@ -1,0 +1,19 @@
+# NAME: Gemini
+# AUTHOR: ssxxs1/geosite
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 09:43:48 UTC
+# HOST: 4
+# HOST-SUFFIX: 7
+# TOTAL: 11
+
+HOST,ai.google.dev
+HOST,aistudio.google.com
+HOST,alkalimakersuite-pa.clients6.google.com
+HOST,makersuite.google.com
+HOST-SUFFIX,bard.google.com
+HOST-SUFFIX,deepmind.com
+HOST-SUFFIX,deepmind.google
+HOST-SUFFIX,gemini.google
+HOST-SUFFIX,gemini.google.com
+HOST-SUFFIX,generativeai.google
+HOST-SUFFIX,proactivebackend-pa.googleapis.com

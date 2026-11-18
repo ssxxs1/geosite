@@ -19,20 +19,14 @@ from urllib3.util.retry import Retry
 
 try:
     from script.rule_filter import (
-        BLOCKED_DOMAIN_SUFFIXES,
-        BLOCKED_EXACT_DOMAINS,
         is_blocked_ai_rule,
-        is_time_or_ntp,
         is_valid_domain_or_suffix,
     )
 except ImportError:
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
     from script.rule_filter import (
-        BLOCKED_DOMAIN_SUFFIXES,
-        BLOCKED_EXACT_DOMAINS,
         is_blocked_ai_rule,
-        is_time_or_ntp,
         is_valid_domain_or_suffix,
     )
 
@@ -67,10 +61,11 @@ class Rule:
 
 
 SOURCES = [
+    # OpenAI 上游：使用 Private/OpenAI.list（本地维护 + 雷达探针持续更新）
+    # 注意：不再引用 MetaCubeX openai.yaml，以本地列表为权威唯一来源
     Source(
-        "meta-openai",
-        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.yaml",
-        format="yaml-payload",
+        "openai-local",
+        "Private/OpenAI.list",
         provider="openai",
         required=True,
         authoritative=True,
@@ -174,6 +169,11 @@ SUPPLEMENTAL_AI_DOMAINS = [
     "krea.ai",
     "blackforestlabs.ai",
     "civitai.com",
+    # AI 认证与支付结算基础设施 (确保走代理而非直连)
+    "auth0.com",
+    "stripe.com",
+    "stripecdn.com",
+    "stripe.network",
 ]
 
 PROVIDER_ANCHORS = {
@@ -239,8 +239,6 @@ HEADER_TYPE_NAMES = {
 }
 
 UPDATED_PATTERN = re.compile(r"^# UPDATED: (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})$")
-
-# 注意：BLOCKED_EXACT_DOMAINS 与 BLOCKED_DOMAIN_SUFFIXES 已统一收敛至 script/rule_filter.py
 
 class GenerationError(RuntimeError):
     pass
@@ -596,6 +594,7 @@ def atomic_write(path: Path, content: str) -> None:
             handle.write(content)
             handle.flush()
             os.fsync(handle.fileno())
+        os.chmod(temp_name, 0o644)
         os.replace(temp_name, path)
     except Exception:
         try:

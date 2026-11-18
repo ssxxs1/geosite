@@ -1,25 +1,28 @@
 # NAME: GameDownloadCN
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-16 17:44:38
-# DOMAIN: 15
-# DOMAIN-SUFFIX: 1
-# TOTAL: 16
+# UPDATED: 2026-11-18 08:33:52
+# DOMAIN: 3
+# DOMAIN-SUFFIX: 16
+# TOTAL: 19
 
 payload:
-- DOMAIN,assets1.xboxlive.cn
-- DOMAIN,assets2.xboxlive.cn
-- DOMAIN,cdn-ali.content.steamchina.com
-- DOMAIN,cdn-qc.content.steamchina.com
-- DOMAIN,cdn-ws.content.steamchina.com
-- DOMAIN,dl.delivery.mp.microsoft.com
-- DOMAIN,dl.steam.clngaa.com
-- DOMAIN,epicgames-download1-1251447533.file.myqcloud.com
-- DOMAIN,st.dl.bscstorage.net
-- DOMAIN,st.dl.eccdnx.com
-- DOMAIN,steampipe.steamcontent.tnkjmec.com
-- DOMAIN,tlu.dl.delivery.mp.microsoft.com
-- DOMAIN,trts.baishancdnx.cn
-- DOMAIN,uplaypc-s-ubisoft.cdn.ubionline.com.cn
+- DOMAIN,alibaba.cdn.steampipe.steamcontent.com
+- DOMAIN,lv.queniujq.cn
 - DOMAIN,xz.pphimalayanrt.com
-- DOMAIN-SUFFIX,pdl.wow.battlenet.com.cn
+- DOMAIN-SUFFIX,client-update.queniuqe.com
+- DOMAIN-SUFFIX,csgo.com.cn
+- DOMAIN-SUFFIX,csgo.wmsj.cn
+- DOMAIN-SUFFIX,dl.steam.clngaa.com
+- DOMAIN-SUFFIX,dota2.com.cn
+- DOMAIN-SUFFIX,dota2.wmsj.cn
+- DOMAIN-SUFFIX,gstore.val.manlaxy.com
+- DOMAIN-SUFFIX,st.dl.bscstorage.net
+- DOMAIN-SUFFIX,st.dl.eccdnx.com
+- DOMAIN-SUFFIX,st.dl.pinyuncloud.com
+- DOMAIN-SUFFIX,steamchina.com
+- DOMAIN-SUFFIX,steampowered.com.8686c.com
+- DOMAIN-SUFFIX,steamserver.net
+- DOMAIN-SUFFIX,steamstatic.com.8686c.com
+- DOMAIN-SUFFIX,steamusercontent.com
+- DOMAIN-SUFFIX,wmsjsteam.com

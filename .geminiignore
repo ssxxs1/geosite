@@ -1,5 +1,5 @@
 # 输出的规则集文件（自动生成）
-rule/
+rules/
 
 # Python 缓存
 __pycache__/

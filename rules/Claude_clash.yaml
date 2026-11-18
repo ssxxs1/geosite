@@ -1,19 +1,22 @@
 # NAME: Claude
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 02:25:39
-# DOMAIN: 3
-# DOMAIN-SUFFIX: 18
-# TOTAL: 21
+# UPDATED: 2026-11-18 09:20:25
+# DOMAIN: 4
+# DOMAIN-SUFFIX: 23
+# TOTAL: 27
 
 payload:
 - DOMAIN,anthropic-com.ghost.io
 - DOMAIN,anthropic.com.cdn.cloudflare.net
+- DOMAIN,http-intake.logs.us5.datadoghq.com
 - DOMAIN,servd-anthropic-website.b-cdn.net
 - DOMAIN-SUFFIX,ant.dev
 - DOMAIN-SUFFIX,anthropic.com
 - DOMAIN-SUFFIX,anthropic.team
 - DOMAIN-SUFFIX,antspace.dev
+- DOMAIN-SUFFIX,auth0.com
+- DOMAIN-SUFFIX,browser-intake-datadoghq.com
 - DOMAIN-SUFFIX,chatbotclaude.com
 - DOMAIN-SUFFIX,clau.de
 - DOMAIN-SUFFIX,claude.ai
@@ -28,3 +31,6 @@ payload:
 - DOMAIN-SUFFIX,claudepages.dev
 - DOMAIN-SUFFIX,claudestudio.com
 - DOMAIN-SUFFIX,claudeusercontent.com
+- DOMAIN-SUFFIX,stripe.com
+- DOMAIN-SUFFIX,stripe.network
+- DOMAIN-SUFFIX,stripecdn.com
