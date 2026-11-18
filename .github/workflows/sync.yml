@@ -120,7 +120,6 @@ jobs:
             rules/*.mrs
             rules/*_clash.yaml
             rules/*.list
-            Private/*.list
             Private/*.snippet
           generate_release_notes: true
         env:
