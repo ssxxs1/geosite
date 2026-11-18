@@ -1,7 +1,7 @@
 # NAME: Copilot
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 11:00:00
+# UPDATED: 2026-11-18 09:59:24
 
 HOST,copilot.microsoft.com
 HOST,sydney.bing.com
@@ -17,3 +17,9 @@ HOST,production-copilot-host-westus.webpubsub.azure.com
 HOST,copilotprodattachments.blob.core.windows.net
 
 HOST-SUFFIX,githubcopilot.com
+
+# --- 规则雷达自动发现 (2026-11-18) ---
+HOST,s.copilot.microsoft.com
+HOST,partner.copilot.microsoft.com
+HOST,ms-sso.copilot.microsoft.com
+HOST,auth.copilot.microsoft.com

@@ -1,7 +1,7 @@
 # NAME: AppleProxy
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 11:00:00
+# UPDATED: 2026-11-18 09:59:24
 
 HOST,LookupViewService
 HOST,api-glb-sea.smoot.apple.com
@@ -43,3 +43,12 @@ HOST-SUFFIX,hls-amt.itunes.apple.com
 HOST-SUFFIX,hls.itunes.apple.com
 HOST-SUFFIX,ocsp.apple.com
 HOST-SUFFIX,tv.apple.com
+
+# --- 规则雷达自动发现 (2026-11-18) ---
+HOST,certs.apple.com
+HOST,crl.apple.com
+HOST,valid.origin-apple.com.akadns.net
+HOST,crl-lb.apple.com.akadns.net
+HOST,ocsp2.apple.com
+HOST,valid.apple.com
+HOST,certs-lb.apple.com.akadns.net
