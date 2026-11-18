@@ -145,7 +145,6 @@ class TestRuleFilter(unittest.TestCase):
         self.assertTrue(is_ai_ruleset("Perplexity"))
         self.assertTrue(is_ai_ruleset("Grok"))
         self.assertTrue(is_ai_ruleset("Sora"))
-        self.assertTrue(is_ai_ruleset("DeepSeek"))
         self.assertTrue(is_ai_ruleset("Anthropic"))
         self.assertTrue(is_ai_ruleset("AI_Suite"))
         self.assertTrue(is_ai_ruleset("My_AI"))
@@ -207,7 +206,7 @@ class TestRuleFilter(unittest.TestCase):
         # Fragment anchor overrides
         self.assertEqual(resolve_base_name("https://example.com/openai.yaml#OpenAI"), "OpenAI")
         self.assertEqual(resolve_base_name("https://example.com/httpdns.yaml#BlockHttpDNS"), "BlockHttpDNS")
-        
+
         # Canonical mappings fallback
         self.assertEqual(resolve_base_name("https://example.com/openai.yaml"), "OpenAI")
         self.assertEqual(resolve_base_name("https://example.com/facebook.yaml"), "Facebook")
@@ -217,7 +216,7 @@ class TestRuleFilter(unittest.TestCase):
         self.assertEqual(resolve_base_name("https://example.com/cloudflare.yaml"), "Cloudflare")
         self.assertEqual(resolve_base_name("https://example.com/whatsapp.yaml"), "Whatsapp")
         self.assertEqual(resolve_base_name("https://example.com/httpdns.yaml"), "BlockHttpDNS")
-        
+
         # Local paths & magicrule://
         self.assertEqual(resolve_base_name("Private/Gemini.list"), "Gemini")
         self.assertEqual(resolve_base_name("Private/Copilot.list"), "Copilot")

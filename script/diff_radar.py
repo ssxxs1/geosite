@@ -143,11 +143,10 @@ RADAR_TARGETS: dict[str, dict[str, Any]] = {
     "AI": {
         "local": "Private/AI.list",
         "community_sources": [
-            "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/deepseek.yaml",
             "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/xai.yaml",
             "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/perplexity.yaml",
         ],
-        "ct_roots": ["x.ai", "grok.com", "deepseek.com", "perplexity.ai", "mistral.ai", "cursor.com"],
+        "ct_roots": ["x.ai", "grok.com", "perplexity.ai", "mistral.ai", "cursor.com"],
         "category": "ai",
         "auto_apply": False,
     },

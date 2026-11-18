@@ -156,7 +156,6 @@ AI_KEYWORDS: tuple[str, ...] = (
     "perplexity",
     "grok",
     "sora",
-    "deepseek",
     "anthropic",
 )
 

@@ -27,7 +27,7 @@ AI 规则总表由 `script/generate_ai.py` 聚合生成至 `Private/AI.list`，�
 
 - **双核监控**：
   - **社区源差分**：持续监控 MetaCubeX 等活跃社区规则集最新变动；
-  - **超前方案·证书透明度 (CT Logs)**：针对 Anthropic / OpenAI / xAI / DeepSeek 等顶级资产，实时查询全球公开 SSL/TLS 证书签发日志，提前 1-2 周捕获官方活体业务子域。
+  - **超前方案·证书透明度 (CT Logs)**：针对 Anthropic / OpenAI / xAI 等顶级资产，实时查询全球公开 SSL/TLS 证书签发日志，提前 1-2 周捕获官方活体业务子域。
 - **两道漏斗与智能子域吸收 (Subsumption Check)**：
   - **子域覆盖过滤**：若新发现的子域已被现有规则后缀包含（例如已有 `DOMAIN-SUFFIX,claude.com`，则新发现的 `downloads.claude.com` 会在第一步被**静默剔除**），零噪音打扰；仅报告全新根域或独立资产。
   - **红队级安全校验**：彻底防御 CRLF 换行注入、纯 IP 污染与 multi-SAN 证书跨域泄露。
