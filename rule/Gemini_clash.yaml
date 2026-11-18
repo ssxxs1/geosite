@@ -1,22 +1,20 @@
 # NAME: Gemini
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-10 10:07:26
-# DOMAIN: 3
-# DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 6
-# TOTAL: 12
+# UPDATED: 2026-11-18 03:16:48
+# DOMAIN: 4
+# DOMAIN-SUFFIX: 7
+# TOTAL: 11
 
 payload:
 - DOMAIN,ai.google.dev
+- DOMAIN,aistudio.google.com
 - DOMAIN,alkalimakersuite-pa.clients6.google.com
 - DOMAIN,makersuite.google.com
-- DOMAIN-KEYWORD,colab
-- DOMAIN-KEYWORD,developerprofiles
-- DOMAIN-KEYWORD,generativelanguage
 - DOMAIN-SUFFIX,bard.google.com
 - DOMAIN-SUFFIX,deepmind.com
 - DOMAIN-SUFFIX,deepmind.google
+- DOMAIN-SUFFIX,gemini.google
 - DOMAIN-SUFFIX,gemini.google.com
 - DOMAIN-SUFFIX,generativeai.google
 - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com

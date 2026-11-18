@@ -1,31 +1,30 @@
 # NAME: OpenAI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-10 10:07:27
-# DOMAIN: 5
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 12
-# IP-CIDR: 2
-# TOTAL: 20
+# UPDATED: 2026-11-18 03:16:48
+# DOMAIN: 7
+# DOMAIN-SUFFIX: 14
+# TOTAL: 21
 
 payload:
-- DOMAIN,chat.openai.com.cdn.cloudflare.net
-- DOMAIN,openai-api.arkoselabs.com
+- DOMAIN,openai.qualtrics.com
+- DOMAIN,openaiapi-site.azureedge.net
+- DOMAIN,openaiassets.blob.core.windows.net
 - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+- DOMAIN,openaicom.imgix.net
 - DOMAIN,openaicomproductionae4b.blob.core.windows.net
 - DOMAIN,production-openaicom-storage.azureedge.net
-- DOMAIN-KEYWORD,openai
-- DOMAIN-SUFFIX,ai.com
+- DOMAIN-SUFFIX,chat.com
 - DOMAIN-SUFFIX,chatgpt.com
 - DOMAIN-SUFFIX,chatgpt.livekit.cloud
-- DOMAIN-SUFFIX,client-api.arkoselabs.com
-- DOMAIN-SUFFIX,featuregates.org
+- DOMAIN-SUFFIX,chatgpt.site
+- DOMAIN-SUFFIX,crixet.com
 - DOMAIN-SUFFIX,host.livekit.cloud
 - DOMAIN-SUFFIX,oaistatic.com
+- DOMAIN-SUFFIX,oaistatsig.com
 - DOMAIN-SUFFIX,oaiusercontent.com
 - DOMAIN-SUFFIX,openai.com
-- DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-- DOMAIN-SUFFIX,openaicom.imgix.net
+- DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
+- DOMAIN-SUFFIX,openai.org
+- DOMAIN-SUFFIX,sora.com
 - DOMAIN-SUFFIX,turn.livekit.cloud
-- IP-CIDR,24.199.123.28/32,no-resolve
-- IP-CIDR,64.23.132.171/32,no-resolve

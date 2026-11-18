@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-14 06:01:33
-# HOST: 82
-# HOST-SUFFIX: 275
-# HOST-KEYWORD: 11
-# HOST-WILDCARD: 13
+# UPDATED: 2026-11-18 03:16:13
+# HOST: 88
+# HOST-SUFFIX: 286
+# HOST-KEYWORD: 7
+# HOST-WILDCARD: 14
 # IP-CIDR: 34
 # IP6-CIDR: 4
 # IP-ASN: 1
-# TOTAL: 420
+# TOTAL: 434
 
 HOST,account.jetbrains.com
 HOST,accounts.spacex.ai
@@ -21,9 +21,7 @@ HOST,anthropic.com.cdn.cloudflare.net
 HOST,anysphere-binaries.s3.us-east-1.amazonaws.com
 HOST,api.hyperbolic.xyz
 HOST,api.jetbrains.cloud
-HOST,api.msn.com
 HOST,appcatalyst.pa.googleapis.com
-HOST,assets.msn.com
 HOST,businessaicode.eu.rep.googleapis.com
 HOST,businessaicode.googleapis.com
 HOST,businessaicode.mtls.googleapis.com
@@ -33,7 +31,10 @@ HOST,clio-assets.adobe.com
 HOST,connect.facebook.net
 HOST,copilot-proxy.githubusercontent.com
 HOST,copilot-reports.github.com
+HOST,copilot-telemetry-service.githubusercontent.com
 HOST,copilot-telemetry.githubusercontent.com
+HOST,copilot-workspace.githubnext.com
+HOST,copilotprodattachments.blob.core.windows.net
 HOST,copilotstudio.microsoft.com
 HOST,daily-cloudcode-pa.googleapis.com
 HOST,dc-genai-access-provisioning-api.adobe.io
@@ -67,7 +68,11 @@ HOST,meta-ohttp-config-prod.fastly-edge.com
 HOST,meta-ohttp-relay-prod.fastly-edge.com
 HOST,oauth.account.jetbrains.com
 HOST,odc.officeapps.live.com
+HOST,openai.qualtrics.com
+HOST,openaiapi-site.azureedge.net
+HOST,openaiassets.blob.core.windows.net
 HOST,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+HOST,openaicom.imgix.net
 HOST,openaicomproductionae4b.blob.core.windows.net
 HOST,origin-tracker.githubusercontent.com
 HOST,perplexity-ai.cloudflareaccess.com
@@ -78,6 +83,7 @@ HOST,ppl-ai-file-upload.s3.amazonaws.com
 HOST,pplx-res.cloudinary.com
 HOST,pre-signed-firefly-prod.s3-accelerate.amazonaws.com
 HOST,pre-signed-firefly-prod.s3.amazonaws.com
+HOST,production-copilot-host-westus.webpubsub.azure.com
 HOST,production-openaicom-storage.azureedge.net
 HOST,production.museai.com
 HOST,q.eu-central-1.amazonaws.com
@@ -102,11 +108,14 @@ HOST-SUFFIX,aiplatform.googleapis.com
 HOST-SUFFIX,aisandbox-pa.googleapis.com
 HOST-SUFFIX,aistudio.google.com
 HOST-SUFFIX,aiva.ai
+HOST-SUFFIX,ant.dev
 HOST-SUFFIX,anthropic.com
+HOST-SUFFIX,anthropic.team
 HOST-SUFFIX,antigravity-unleash.goog
 HOST-SUFFIX,antigravity.google
 HOST-SUFFIX,antigravity.google.com
 HOST-SUFFIX,antigravity.googleapis.com
+HOST-SUFFIX,antspace.dev
 HOST-SUFFIX,any.do
 HOST-SUFFIX,anyword.com
 HOST-SUFFIX,api-siri-prod.apple.com
@@ -140,6 +149,7 @@ HOST-SUFFIX,cerebras.ai
 HOST-SUFFIX,character.ai
 HOST-SUFFIX,characterai.io
 HOST-SUFFIX,chat.com
+HOST-SUFFIX,chatbotclaude.com
 HOST-SUFFIX,chatgpt.com
 HOST-SUFFIX,chatgpt.site
 HOST-SUFFIX,chorus.sh
@@ -150,9 +160,16 @@ HOST-SUFFIX,ciciaicdn.com
 HOST-SUFFIX,civitai.com
 HOST-SUFFIX,clau.de
 HOST-SUFFIX,claude.ai
+HOST-SUFFIX,claude.app
 HOST-SUFFIX,claude.com
+HOST-SUFFIX,claude.dev
+HOST-SUFFIX,claude.new
+HOST-SUFFIX,claude.site
+HOST-SUFFIX,claudeacademy.com
 HOST-SUFFIX,claudemcpclient.com
 HOST-SUFFIX,claudemcpcontent.com
+HOST-SUFFIX,claudepages.dev
+HOST-SUFFIX,claudestudio.com
 HOST-SUFFIX,claudeusercontent.com
 HOST-SUFFIX,clients4.google.com
 HOST-SUFFIX,clients6.google.com
@@ -176,6 +193,7 @@ HOST-SUFFIX,copilot.com
 HOST-SUFFIX,copilot.microsoft.com
 HOST-SUFFIX,cortana.ai
 HOST-SUFFIX,coze.com
+HOST-SUFFIX,crixet.com
 HOST-SUFFIX,cursor-cdn.com
 HOST-SUFFIX,cursor.com
 HOST-SUFFIX,cursor.sh
@@ -296,9 +314,8 @@ HOST-SUFFIX,opal.google.com
 HOST-SUFFIX,open-vsx.org
 HOST-SUFFIX,openai.com
 HOST-SUFFIX,openai.com.cdn.cloudflare.net
-HOST-SUFFIX,openaiapi-site.azureedge.net
+HOST-SUFFIX,openai.org
 HOST-SUFFIX,openaiapi.com
-HOST-SUFFIX,openaicom.imgix.net
 HOST-SUFFIX,openart.ai
 HOST-SUFFIX,openrouter.ai
 HOST-SUFFIX,optimizationguide-pa.googleapis.com
@@ -369,15 +386,11 @@ HOST-SUFFIX,zapier.com
 HOST-SUFFIX,zed.dev
 HOST-SUFFIX,zeetings.com
 HOST-KEYWORD,alkalimakersuite-pa.clients6.google.com
-HOST-KEYWORD,colab
-HOST-KEYWORD,developerprofiles
-HOST-KEYWORD,generativelanguage
 HOST-KEYWORD,labs.google
 HOST-KEYWORD,notebooklm.google
 HOST-KEYWORD,openai
 HOST-KEYWORD,openaiapi
 HOST-KEYWORD,openaicom
-HOST-KEYWORD,openaicom-api
 HOST-KEYWORD,siri
 HOST-WILDCARD,*-pa.clients*.google.com
 HOST-WILDCARD,*-pa.googleapis.com
@@ -392,6 +405,7 @@ HOST-WILDCARD,lh*.googleusercontent.com
 HOST-WILDCARD,openaiapi*.azurefd.net
 HOST-WILDCARD,openaicom*.*.windows.net
 HOST-WILDCARD,openaicom*.azurefd.net
+HOST-WILDCARD,scontent-*.xx.fbcdn.net
 IP-CIDR,102.37.57.54/32,no-resolve
 IP-CIDR,108.59.2.24/32,no-resolve
 IP-CIDR,116.203.151.74/32,no-resolve

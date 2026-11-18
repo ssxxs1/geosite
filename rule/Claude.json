@@ -1,9 +1,32 @@
 {
   "rules": [
     {
+      "domain": [
+        "anthropic-com.ghost.io",
+        "anthropic.com.cdn.cloudflare.net",
+        "servd-anthropic-website.b-cdn.net"
+      ]
+    },
+    {
       "domain_suffix": [
+        "ant.dev",
         "anthropic.com",
-        "claude.ai"
+        "anthropic.team",
+        "antspace.dev",
+        "chatbotclaude.com",
+        "clau.de",
+        "claude.ai",
+        "claude.app",
+        "claude.com",
+        "claude.dev",
+        "claude.new",
+        "claude.site",
+        "claudeacademy.com",
+        "claudemcpclient.com",
+        "claudemcpcontent.com",
+        "claudepages.dev",
+        "claudestudio.com",
+        "claudeusercontent.com"
       ]
     }
   ],

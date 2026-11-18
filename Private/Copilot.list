@@ -1,0 +1,19 @@
+# NAME: Copilot
+# AUTHOR: ssxxs1
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 11:00:00
+
+HOST,copilot.microsoft.com
+HOST,sydney.bing.com
+HOST,edgeservices.bing.com
+HOST,gateway.bingviz.microsoft.net
+HOST,gateway.bingviz.microsoftapp.net
+
+HOST,copilot-proxy.githubusercontent.com
+HOST,copilot-workspace.githubnext.com
+HOST,copilot-telemetry.githubusercontent.com
+HOST,copilot-telemetry-service.githubusercontent.com
+HOST,production-copilot-host-westus.webpubsub.azure.com
+HOST,copilotprodattachments.blob.core.windows.net
+
+HOST-SUFFIX,githubcopilot.com

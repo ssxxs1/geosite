@@ -1,0 +1,62 @@
+# NAME: ChinaMedia
+# AUTHOR: ssxxs1
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 11:00:00
+
+# Bilibili
+HOST-SUFFIX,acg.tv
+HOST-SUFFIX,acgvideo.com
+HOST-SUFFIX,b23.tv
+HOST-SUFFIX,bigfun.cn
+HOST-SUFFIX,bigfunapp.cn
+HOST-SUFFIX,biliapi.com
+HOST-SUFFIX,biliapi.net
+HOST-SUFFIX,bilibili.com
+HOST-SUFFIX,bilibili.co
+HOST-SUFFIX,biliintl.com
+HOST-SUFFIX,bilivideo.com
+HOST-SUFFIX,bilivideo.cn
+HOST-SUFFIX,hdslb.com
+HOST-SUFFIX,im9.com
+HOST-SUFFIX,minwt.com
+HOST-SUFFIX,smtcdns.net
+
+# iQIYI
+HOST-SUFFIX,71.am
+HOST-SUFFIX,71edge.com
+HOST-SUFFIX,iqiyi.com
+HOST-SUFFIX,iqiyipic.com
+HOST-SUFFIX,ppsimg.com
+HOST-SUFFIX,qiyi.cn
+HOST-SUFFIX,qy.net
+
+# Tencent Video
+HOST-SUFFIX,v.qq.com
+HOST-SUFFIX,video.qq.com
+HOST-SUFFIX,vv.video.qq.com
+HOST-SUFFIX,film.qq.com
+HOST-SUFFIX,tc.qq.com
+HOST-SUFFIX,voddottccp.tc.qq.com
+HOST-SUFFIX,cvideo.video.qq.com
+HOST-SUFFIX,tvideo.video.qq.com
+HOST-SUFFIX,wetv.vip
+HOST-SUFFIX,wetvinfo.com
+
+# Youku
+HOST-SUFFIX,youku.com
+HOST-SUFFIX,ykimg.com
+HOST-SUFFIX,soku.com
+HOST-SUFFIX,kumiao.com
+
+# MGTV
+HOST-SUFFIX,mgtv.com
+HOST-SUFFIX,hunantv.com
+HOST-SUFFIX,hitv.com
+HOST-SUFFIX,mgtv.org
+
+# Migu & ByteDance
+HOST-SUFFIX,cmvideo.cn
+HOST-SUFFIX,miguvideo.com
+HOST-SUFFIX,ixigua.com
+HOST-SUFFIX,pstatp.com
+HOST-SUFFIX,snssdk.com

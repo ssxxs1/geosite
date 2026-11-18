@@ -12,7 +12,7 @@ from script.rule_filter import (
     is_time_or_ntp,
     is_valid_domain_or_suffix,
 )
-from main import parse_rule_entry
+from main import parse_rule_entry, resolve_base_name
 
 
 class TestRuleFilter(unittest.TestCase):
@@ -108,6 +108,19 @@ class TestRuleFilter(unittest.TestCase):
         self.assertIsNone(parse_rule_entry("azure"))
         self.assertIsNone(parse_rule_entry("ms"))
 
+        # YAML & v2fly geosite syntax compatibility
+        self.assertEqual(parse_rule_entry("+.chatgpt.com"), ("domain-suffix", "chatgpt.com", ()))
+        self.assertEqual(parse_rule_entry(".openai.com"), ("domain-suffix", "openai.com", ()))
+        self.assertEqual(parse_rule_entry("full:api.openai.com"), ("domain", "api.openai.com", ()))
+        self.assertEqual(parse_rule_entry("domain:oaistatic.com"), ("domain-suffix", "oaistatic.com", ()))
+        self.assertEqual(parse_rule_entry("keyword:openai"), ("domain-keyword", "openai", ()))
+        self.assertEqual(parse_rule_entry("regexp:^.*\\.openai\\.com$"), ("domain-regex", "^.*\\.openai\\.com$", ()))
+        self.assertEqual(parse_rule_entry("AS13335"), ("ip-asn", "13335", ()))
+        self.assertEqual(parse_rule_entry("bilibili.com:@cn"), ("domain", "bilibili.com", ()))
+        self.assertEqual(parse_rule_entry("example.com # official"), ("domain", "example.com", ()))
+        self.assertIsNone(parse_rule_entry(True))
+        self.assertIsNone(parse_rule_entry(12345))
+
     def test_is_ai_ruleset(self):
         # Canonical AI rulesets
         self.assertTrue(is_ai_ruleset("OpenAI"))
@@ -179,6 +192,27 @@ class TestRuleFilter(unittest.TestCase):
         # Parent rule preserves its own options, cleanly isolated from child subdomains
         self.assertEqual(aggregate[("host-suffix", "openai.com")].options, ("custom-opt",))
         self.assertEqual(aggregate[("ip-cidr", "1.1.1.0/24")].options, ("no-resolve",))
+
+    def test_resolve_base_name(self):
+        # Fragment anchor overrides
+        self.assertEqual(resolve_base_name("https://example.com/openai.yaml#OpenAI"), "OpenAI")
+        self.assertEqual(resolve_base_name("https://example.com/httpdns.yaml#BlockHttpDNS"), "BlockHttpDNS")
+        
+        # Canonical mappings fallback
+        self.assertEqual(resolve_base_name("https://example.com/openai.yaml"), "OpenAI")
+        self.assertEqual(resolve_base_name("https://example.com/facebook.yaml"), "Facebook")
+        self.assertEqual(resolve_base_name("https://example.com/binance.yaml"), "Binance")
+        self.assertEqual(resolve_base_name("https://example.com/playstation.yaml"), "PlayStation")
+        self.assertEqual(resolve_base_name("https://example.com/ea.yaml"), "EA")
+        self.assertEqual(resolve_base_name("https://example.com/cloudflare.yaml"), "Cloudflare")
+        self.assertEqual(resolve_base_name("https://example.com/whatsapp.yaml"), "Whatsapp")
+        self.assertEqual(resolve_base_name("https://example.com/httpdns.yaml"), "BlockHttpDNS")
+        
+        # Local paths
+        self.assertEqual(resolve_base_name("Private/Gemini.list"), "Gemini")
+        self.assertEqual(resolve_base_name("Private/Copilot.list"), "Copilot")
+        self.assertEqual(resolve_base_name("Private/SystemOTA.list"), "SystemOTA")
+        self.assertEqual(resolve_base_name("Private/ChinaMedia.list"), "ChinaMedia")
 
 
 if __name__ == "__main__":

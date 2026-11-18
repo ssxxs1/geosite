@@ -292,6 +292,12 @@ def convert_yaml_to_mrs(
             compile_and_verify_domain_mrs(domain_rules, out_mrs, mihomo_cmd, verify)
             generated_files.append(out_mrs.name)
 
+            # 向下兼容历史订阅：若存在历史遗留的 {base_name}_domain.mrs，同步更新为其副本
+            legacy_domain_mrs = output_dir / f"{base_name}_domain.mrs"
+            if legacy_domain_mrs.exists():
+                shutil.copy2(out_mrs, legacy_domain_mrs)
+                generated_files.append(legacy_domain_mrs.name)
+
         elif has_ips and not has_domains:
             # Pure IP ruleset -> {base_name}.mrs
             out_mrs = output_dir / f"{base_name}.mrs"

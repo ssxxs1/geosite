@@ -1,15 +1,15 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-14 06:01:48
-# DOMAIN: 82
-# DOMAIN-KEYWORD: 11
-# DOMAIN-SUFFIX: 275
-# DOMAIN-WILDCARD: 13
+# UPDATED: 2026-11-18 03:17:10
+# DOMAIN: 88
+# DOMAIN-KEYWORD: 7
+# DOMAIN-SUFFIX: 286
+# DOMAIN-WILDCARD: 14
 # IP-ASN: 1
 # IP-CIDR: 34
 # IP-CIDR6: 4
-# TOTAL: 420
+# TOTAL: 434
 
 payload:
 - DOMAIN,account.jetbrains.com
@@ -22,9 +22,7 @@ payload:
 - DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
 - DOMAIN,api.hyperbolic.xyz
 - DOMAIN,api.jetbrains.cloud
-- DOMAIN,api.msn.com
 - DOMAIN,appcatalyst.pa.googleapis.com
-- DOMAIN,assets.msn.com
 - DOMAIN,businessaicode.eu.rep.googleapis.com
 - DOMAIN,businessaicode.googleapis.com
 - DOMAIN,businessaicode.mtls.googleapis.com
@@ -34,7 +32,10 @@ payload:
 - DOMAIN,connect.facebook.net
 - DOMAIN,copilot-proxy.githubusercontent.com
 - DOMAIN,copilot-reports.github.com
+- DOMAIN,copilot-telemetry-service.githubusercontent.com
 - DOMAIN,copilot-telemetry.githubusercontent.com
+- DOMAIN,copilot-workspace.githubnext.com
+- DOMAIN,copilotprodattachments.blob.core.windows.net
 - DOMAIN,copilotstudio.microsoft.com
 - DOMAIN,daily-cloudcode-pa.googleapis.com
 - DOMAIN,dc-genai-access-provisioning-api.adobe.io
@@ -68,7 +69,11 @@ payload:
 - DOMAIN,meta-ohttp-relay-prod.fastly-edge.com
 - DOMAIN,oauth.account.jetbrains.com
 - DOMAIN,odc.officeapps.live.com
+- DOMAIN,openai.qualtrics.com
+- DOMAIN,openaiapi-site.azureedge.net
+- DOMAIN,openaiassets.blob.core.windows.net
 - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+- DOMAIN,openaicom.imgix.net
 - DOMAIN,openaicomproductionae4b.blob.core.windows.net
 - DOMAIN,origin-tracker.githubusercontent.com
 - DOMAIN,perplexity-ai.cloudflareaccess.com
@@ -79,6 +84,7 @@ payload:
 - DOMAIN,pplx-res.cloudinary.com
 - DOMAIN,pre-signed-firefly-prod.s3-accelerate.amazonaws.com
 - DOMAIN,pre-signed-firefly-prod.s3.amazonaws.com
+- DOMAIN,production-copilot-host-westus.webpubsub.azure.com
 - DOMAIN,production-openaicom-storage.azureedge.net
 - DOMAIN,production.museai.com
 - DOMAIN,q.eu-central-1.amazonaws.com
@@ -95,15 +101,11 @@ payload:
 - DOMAIN,workos.imgix.net
 - DOMAIN,wps.apple.com
 - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
-- DOMAIN-KEYWORD,colab
-- DOMAIN-KEYWORD,developerprofiles
-- DOMAIN-KEYWORD,generativelanguage
 - DOMAIN-KEYWORD,labs.google
 - DOMAIN-KEYWORD,notebooklm.google
 - DOMAIN-KEYWORD,openai
 - DOMAIN-KEYWORD,openaiapi
 - DOMAIN-KEYWORD,openaicom
-- DOMAIN-KEYWORD,openaicom-api
 - DOMAIN-KEYWORD,siri
 - DOMAIN-SUFFIX,ai.com
 - DOMAIN-SUFFIX,ai.google
@@ -114,11 +116,14 @@ payload:
 - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
 - DOMAIN-SUFFIX,aistudio.google.com
 - DOMAIN-SUFFIX,aiva.ai
+- DOMAIN-SUFFIX,ant.dev
 - DOMAIN-SUFFIX,anthropic.com
+- DOMAIN-SUFFIX,anthropic.team
 - DOMAIN-SUFFIX,antigravity-unleash.goog
 - DOMAIN-SUFFIX,antigravity.google
 - DOMAIN-SUFFIX,antigravity.google.com
 - DOMAIN-SUFFIX,antigravity.googleapis.com
+- DOMAIN-SUFFIX,antspace.dev
 - DOMAIN-SUFFIX,any.do
 - DOMAIN-SUFFIX,anyword.com
 - DOMAIN-SUFFIX,api-siri-prod.apple.com
@@ -152,6 +157,7 @@ payload:
 - DOMAIN-SUFFIX,character.ai
 - DOMAIN-SUFFIX,characterai.io
 - DOMAIN-SUFFIX,chat.com
+- DOMAIN-SUFFIX,chatbotclaude.com
 - DOMAIN-SUFFIX,chatgpt.com
 - DOMAIN-SUFFIX,chatgpt.site
 - DOMAIN-SUFFIX,chorus.sh
@@ -162,9 +168,16 @@ payload:
 - DOMAIN-SUFFIX,civitai.com
 - DOMAIN-SUFFIX,clau.de
 - DOMAIN-SUFFIX,claude.ai
+- DOMAIN-SUFFIX,claude.app
 - DOMAIN-SUFFIX,claude.com
+- DOMAIN-SUFFIX,claude.dev
+- DOMAIN-SUFFIX,claude.new
+- DOMAIN-SUFFIX,claude.site
+- DOMAIN-SUFFIX,claudeacademy.com
 - DOMAIN-SUFFIX,claudemcpclient.com
 - DOMAIN-SUFFIX,claudemcpcontent.com
+- DOMAIN-SUFFIX,claudepages.dev
+- DOMAIN-SUFFIX,claudestudio.com
 - DOMAIN-SUFFIX,claudeusercontent.com
 - DOMAIN-SUFFIX,clients4.google.com
 - DOMAIN-SUFFIX,clients6.google.com
@@ -188,6 +201,7 @@ payload:
 - DOMAIN-SUFFIX,copilot.microsoft.com
 - DOMAIN-SUFFIX,cortana.ai
 - DOMAIN-SUFFIX,coze.com
+- DOMAIN-SUFFIX,crixet.com
 - DOMAIN-SUFFIX,cursor-cdn.com
 - DOMAIN-SUFFIX,cursor.com
 - DOMAIN-SUFFIX,cursor.sh
@@ -308,9 +322,8 @@ payload:
 - DOMAIN-SUFFIX,open-vsx.org
 - DOMAIN-SUFFIX,openai.com
 - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
-- DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+- DOMAIN-SUFFIX,openai.org
 - DOMAIN-SUFFIX,openaiapi.com
-- DOMAIN-SUFFIX,openaicom.imgix.net
 - DOMAIN-SUFFIX,openart.ai
 - DOMAIN-SUFFIX,openrouter.ai
 - DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com
@@ -393,6 +406,7 @@ payload:
 - DOMAIN-WILDCARD,openaiapi*.azurefd.net
 - DOMAIN-WILDCARD,openaicom*.*.windows.net
 - DOMAIN-WILDCARD,openaicom*.azurefd.net
+- DOMAIN-WILDCARD,scontent-*.xx.fbcdn.net
 - IP-ASN,399358
 - IP-CIDR,102.37.57.54/32,no-resolve
 - IP-CIDR,108.59.2.24/32,no-resolve

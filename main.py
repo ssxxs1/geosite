@@ -90,6 +90,25 @@ TARGET_EXCEPTIONS = {
 # Backwards-compatible public name used by older callers.
 MAP_DICT = SING_BOX_MAP
 
+CANONICAL_RULESET_NAMES = {
+    "openai": "OpenAI",
+    "facebook": "Facebook",
+    "binance": "Binance",
+    "playstation": "PlayStation",
+    "ea": "EA",
+    "cloudflare": "Cloudflare",
+    "whatsapp": "Whatsapp",
+    "httpdns": "BlockHttpDNS",
+}
+
+
+def resolve_base_name(source: str) -> str:
+    parsed = urlparse(source)
+    if parsed.fragment:
+        return parsed.fragment.strip()
+    raw_stem = Path(parsed.path).stem.replace(".", "_").replace("-", "_")
+    return CANONICAL_RULESET_NAMES.get(raw_stem.lower(), raw_stem)
+
 
 class ConversionError(RuntimeError):
     pass
@@ -101,12 +120,38 @@ def normalize_type(raw_type: str) -> str | None:
 
 def infer_bare_rule(value: str) -> tuple[str, str]:
     candidate = value.strip().strip("'\"")
+    # 剥离行内注释 (#, ;, //)
+    for comment_char in ("#", ";", "//"):
+        if comment_char in candidate:
+            candidate = candidate.split(comment_char)[0].strip()
+
+    # 剥离 v2fly / geosite 的 @ 属性标签 (如 :@cn 或 @ads)
+    if "@" in candidate:
+        candidate = candidate.split("@")[0].rstrip(":")
+
+    # 识别 v2fly / MetaCubeX geosite 显式前缀
+    if candidate.startswith("full:"):
+        return "domain", candidate[5:].strip()
+    if candidate.startswith("domain:"):
+        return "domain-suffix", candidate[7:].strip()
+    if candidate.startswith("keyword:"):
+        return "domain-keyword", candidate[8:].strip()
+    if candidate.startswith("regexp:"):
+        return "domain-regex", candidate[7:].strip()
+
+    # 识别 ASN (如 AS13335)
+    upper_val = candidate.upper()
+    if upper_val.startswith("AS") and upper_val[2:].isdigit():
+        return "ip-asn", upper_val[2:]
+
+    # 识别 IP CIDR / IP 单地址
     try:
         network = ipaddress.ip_network(candidate, strict=False)
         return ("ip-cidr" if network.version == 4 else "ip-cidr6"), str(network)
     except ValueError:
         pass
 
+    # 识别 +. 或 . 开头的域名后缀
     if candidate.startswith(("+.", ".")):
         return "domain-suffix", candidate.removeprefix("+.").lstrip(".")
     return "domain", candidate
@@ -118,6 +163,8 @@ def normalize_value(kind: str, value: str) -> str:
         raise ConversionError("empty rule value")
     if kind in {"domain", "domain-suffix"}:
         normalized = normalized.removeprefix("+.").lstrip(".").rstrip(".").lower()
+    elif kind in {"domain-keyword"}:
+        normalized = normalized.lower()
     elif kind in {"ip-cidr", "ip-cidr6", "src-ip-cidr"}:
         network = ipaddress.ip_network(normalized, strict=False)
         if kind == "ip-cidr" and network.version != 4:
@@ -134,13 +181,17 @@ def normalize_value(kind: str, value: str) -> str:
     return normalized
 
 
-def parse_rule_entry(entry: str) -> tuple[str, str, tuple[str, ...]] | None:
-    line = entry.strip().lstrip("﻿")
+def parse_rule_entry(entry: object) -> tuple[str, str, tuple[str, ...]] | None:
+    if entry is None:
+        return None
+    line = str(entry).strip().lstrip("﻿")
     if not line or line.startswith(("#", ";", "//")) or line == "payload:":
         return None
     if line.startswith("-"):
         line = line[1:].strip()
     line = line.strip("'\"")
+    if not line:
+        return None
 
     raw_type, separator, remainder = line.partition(",")
     if not separator:
@@ -172,17 +223,23 @@ def parse_rule_entry(entry: str) -> tuple[str, str, tuple[str, ...]] | None:
 
 
 def fetch_text(source: str, session: requests.Session) -> str:
-    path = Path(source)
+    clean_source = source.split("#")[0]
+    path = Path(clean_source)
+    if not path.is_absolute() and not path.exists():
+        candidate = Path(__file__).resolve().parent / path
+        if candidate.exists():
+            path = candidate
     if path.exists():
         return path.read_text(encoding="utf-8")
-    response = session.get(source, timeout=(10, 60))
+    response = session.get(clean_source, timeout=(10, 60))
     response.raise_for_status()
     return response.text
 
 
 def parse_source(source: str, session: requests.Session) -> list[tuple[str, str, tuple[str, ...]]]:
     text = fetch_text(source, session)
-    path = urlparse(source).path.lower()
+    clean_source = source.split("#")[0]
+    path = urlparse(clean_source).path.lower()
     entries: Iterable[object]
 
     if path.endswith((".yaml", ".yml")):
@@ -190,8 +247,15 @@ def parse_source(source: str, session: requests.Session) -> list[tuple[str, str,
             document = yaml.safe_load(text)
         except yaml.YAMLError:
             document = None
-        if isinstance(document, dict) and isinstance(document.get("payload"), list):
-            entries = document["payload"]
+        if isinstance(document, dict):
+            if isinstance(document.get("payload"), list):
+                entries = document["payload"]
+            elif isinstance(document.get("rules"), list):
+                entries = document["rules"]
+            else:
+                entries = text.splitlines()
+        elif isinstance(document, list):
+            entries = document
         else:
             entries = text.splitlines()
     else:
@@ -199,8 +263,13 @@ def parse_source(source: str, session: requests.Session) -> list[tuple[str, str,
 
     rules = []
     for entry in entries:
+        if entry is None:
+            continue
         if not isinstance(entry, str):
-            raise ConversionError(f"non-string rule in {source}: {entry!r}")
+            if isinstance(entry, (int, float, bool)):
+                entry = str(entry)
+            else:
+                continue
         parsed = parse_rule_entry(entry)
         if parsed:
             rules.append(parsed)
@@ -457,7 +526,7 @@ def convert_source(
     repo: str = "ssxxs1/geosite",
 ) -> Path:
     raw_rules = parse_source(source, session)
-    base_name = Path(urlparse(source).path).stem.replace(".", "_").replace("-", "_")
+    base_name = resolve_base_name(source)
 
     if is_ai_ruleset(base_name):
         cleaned_rules = []
@@ -474,7 +543,6 @@ def convert_source(
     sing_box_rules, sing_box_stats = convert_for_target(rules, "sing-box")
     mihomo_rules, mihomo_stats = convert_for_target(rules, "mihomo")
 
-    base_name = Path(urlparse(source).path).stem.replace(".", "_").replace("-", "_")
     json_path = output_directory / f"{base_name}.json"
     srs_path = output_directory / f"{base_name}.srs"
     clash_path = output_directory / f"{base_name}_clash.yaml"
@@ -608,7 +676,7 @@ def main(argv: list[str] | None = None) -> int:
     failed_sources = []
 
     for source in sources:
-        base_name = Path(urlparse(source).path).stem.replace(".", "_").replace("-", "_")
+        base_name = resolve_base_name(source)
         try:
             convert_source(
                 source,

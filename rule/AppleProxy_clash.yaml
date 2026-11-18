@@ -1,11 +1,10 @@
 # NAME: AppleProxy
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-16 17:44:37
+# UPDATED: 2026-11-18 03:16:46
 # DOMAIN: 27
 # DOMAIN-SUFFIX: 12
-# PROCESS-NAME: 1
-# TOTAL: 40
+# TOTAL: 39
 
 payload:
 - DOMAIN,api-glb-sea.smoot.apple.com
@@ -47,4 +46,3 @@ payload:
 - DOMAIN-SUFFIX,hls.itunes.apple.com
 - DOMAIN-SUFFIX,ocsp.apple.com
 - DOMAIN-SUFFIX,tv.apple.com
-- PROCESS-NAME,LookupViewService

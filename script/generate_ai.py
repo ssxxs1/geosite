@@ -68,29 +68,30 @@ class Rule:
 
 SOURCES = [
     Source(
-        "bm7-openai",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.list",
+        "meta-openai",
+        "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.yaml",
+        format="yaml-payload",
         provider="openai",
         required=True,
         authoritative=True,
     ),
     Source(
-        "bm7-gemini",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.list",
+        "gemini",
+        "Private/Gemini.list",
         provider="gemini",
         required=True,
         authoritative=True,
     ),
     Source(
-        "bm7-claude",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.list",
+        "claude",
+        "Private/Claude.list",
         provider="claude",
         required=True,
         authoritative=True,
     ),
     Source(
-        "bm7-copilot",
-        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.list",
+        "copilot",
+        "Private/Copilot.list",
         provider="copilot",
         required=True,
         authoritative=True,
@@ -129,6 +130,25 @@ SOURCES = [
 ]
 
 SUPPLEMENTAL_AI_DOMAINS = [
+    # Anthropic & Claude Ecosystem
+    "ant.dev",
+    "anthropic.com",
+    "anthropic.team",
+    "antspace.dev",
+    "chatbotclaude.com",
+    "clau.de",
+    "claude.ai",
+    "claude.app",
+    "claude.com",
+    "claude.dev",
+    "claude.new",
+    "claude.site",
+    "claudeacademy.com",
+    "claudemcpclient.com",
+    "claudemcpcontent.com",
+    "claudepages.dev",
+    "claudestudio.com",
+    "claudeusercontent.com",
     # Top AI Chat, Search & LLM APIs
     "phind.com",
     "cohere.com",
@@ -159,7 +179,7 @@ SUPPLEMENTAL_AI_DOMAINS = [
 PROVIDER_ANCHORS = {
     "openai": {"openai.com", "chatgpt.com"},
     "gemini": {"gemini.google.com"},
-    "claude": {"anthropic.com", "claude.ai"},
+    "claude": {"anthropic.com", "claude.ai", "claude.com", "claudeusercontent.com"},
     "copilot": {"copilot.microsoft.com"},
 }
 
@@ -316,12 +336,26 @@ def parse_rule_text(text: str, source: Source) -> tuple[Rule | None, str | None]
             ]
     if len(fields) == 1:
         value = fields[0]
-        try:
-            network = ipaddress.ip_network(value, strict=False)
-            raw_kind = "IP-CIDR" if network.version == 4 else "IP-CIDR6"
-        except ValueError:
-            raw_kind = "DOMAIN-SUFFIX" if value.startswith(("+.", ".")) else "DOMAIN"
-        fields = [raw_kind, value]
+        for comment_char in ("#", ";", "//"):
+            if comment_char in value:
+                value = value.split(comment_char)[0].strip()
+        if "@" in value:
+            value = value.split("@")[0].rstrip(":")
+        if value.startswith("full:"):
+            fields = ["DOMAIN", value[5:].strip()]
+        elif value.startswith("domain:"):
+            fields = ["DOMAIN-SUFFIX", value[7:].strip()]
+        elif value.startswith("keyword:"):
+            fields = ["DOMAIN-KEYWORD", value[8:].strip()]
+        elif value.startswith("regexp:"):
+            fields = ["DOMAIN-REGEX", value[7:].strip()]
+        else:
+            try:
+                network = ipaddress.ip_network(value, strict=False)
+                raw_kind = "IP-CIDR" if network.version == 4 else "IP-CIDR6"
+            except ValueError:
+                raw_kind = "DOMAIN-SUFFIX" if value.startswith(("+.", ".")) else "DOMAIN"
+            fields = [raw_kind, value]
 
     if len(fields) < 2:
         return None, "malformed"
@@ -357,17 +391,25 @@ def parse_source_text(text: str, source: Source) -> tuple[list[Rule], Counter]:
             document = yaml.safe_load(text)
         except yaml.YAMLError as exc:
             raise GenerationError(f"{source.name}: invalid YAML: {exc}") from exc
-        if not isinstance(document, dict) or not isinstance(document.get("payload"), list):
+        if isinstance(document, dict) and isinstance(document.get("payload"), list):
+            entries = document["payload"]
+        elif isinstance(document, list):
+            entries = document
+        else:
             raise GenerationError(f"{source.name}: YAML must contain a list-valued payload")
-        entries: Iterable[object] = document["payload"]
     else:
         entries = text.splitlines()
 
     rules = []
     for entry in entries:
-        if not isinstance(entry, str):
-            stats["malformed"] += 1
+        if entry is None:
             continue
+        if not isinstance(entry, str):
+            if isinstance(entry, (int, float, bool)):
+                entry = str(entry)
+            else:
+                stats["malformed"] += 1
+                continue
         rule, reason = parse_rule_text(entry, source)
         if rule:
             rules.append(rule)
@@ -573,11 +615,22 @@ def generate(
     aggregate_stats = Counter()
     required_success = set()
 
+    repo_root = Path(__file__).resolve().parent.parent
     for source in SOURCES:
         try:
-            response = session.get(source.url, timeout=(10, 30))
-            response.raise_for_status()
-            rules, stats = parse_source_text(response.text, source)
+            source_path = Path(source.url)
+            if not source_path.is_absolute() and not source_path.exists():
+                candidate = repo_root / source_path
+                if candidate.exists():
+                    source_path = candidate
+
+            if source_path.exists():
+                text = source_path.read_text(encoding="utf-8")
+            else:
+                response = session.get(source.url, timeout=(10, 30))
+                response.raise_for_status()
+                text = response.text
+            rules, stats = parse_source_text(text, source)
             if not rules:
                 raise GenerationError("zero valid rules parsed")
             if source.required:

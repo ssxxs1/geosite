@@ -1,44 +1,21 @@
 # NAME: Copilot
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-10 10:07:27
-# DOMAIN: 16
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 14
-# IP-CIDR: 2
-# TOTAL: 33
+# UPDATED: 2026-11-18 03:16:48
+# DOMAIN: 11
+# DOMAIN-SUFFIX: 1
+# TOTAL: 12
 
 payload:
-- DOMAIN,api.msn.com
-- DOMAIN,assets.msn.com
-- DOMAIN,chat.openai.com.cdn.cloudflare.net
+- DOMAIN,copilot-proxy.githubusercontent.com
+- DOMAIN,copilot-telemetry-service.githubusercontent.com
+- DOMAIN,copilot-telemetry.githubusercontent.com
+- DOMAIN,copilot-workspace.githubnext.com
 - DOMAIN,copilot.microsoft.com
+- DOMAIN,copilotprodattachments.blob.core.windows.net
+- DOMAIN,edgeservices.bing.com
 - DOMAIN,gateway.bingviz.microsoft.net
 - DOMAIN,gateway.bingviz.microsoftapp.net
-- DOMAIN,in.appcenter.ms
-- DOMAIN,location.microsoft.com
-- DOMAIN,odc.officeapps.live.com
-- DOMAIN,openai-api.arkoselabs.com
-- DOMAIN,openaicomproductionae4b.blob.core.windows.net
-- DOMAIN,production-openaicom-storage.azureedge.net
-- DOMAIN,r.bing.com
-- DOMAIN,self.events.data.microsoft.com
-- DOMAIN,services.bingapis.com
+- DOMAIN,production-copilot-host-westus.webpubsub.azure.com
 - DOMAIN,sydney.bing.com
-- DOMAIN-KEYWORD,openaicom-api
-- DOMAIN-SUFFIX,api.microsoftapp.net
-- DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
-- DOMAIN-SUFFIX,chatgpt.com
-- DOMAIN-SUFFIX,chatgpt.livekit.cloud
-- DOMAIN-SUFFIX,client-api.arkoselabs.com
-- DOMAIN-SUFFIX,edgeservices.bing.com
-- DOMAIN-SUFFIX,featuregates.org
-- DOMAIN-SUFFIX,host.livekit.cloud
-- DOMAIN-SUFFIX,oaistatic.com
-- DOMAIN-SUFFIX,oaiusercontent.com
-- DOMAIN-SUFFIX,openai.com
-- DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-- DOMAIN-SUFFIX,openaicom.imgix.net
-- DOMAIN-SUFFIX,turn.livekit.cloud
-- IP-CIDR,24.199.123.28/32,no-resolve
-- IP-CIDR,64.23.132.171/32,no-resolve
+- DOMAIN-SUFFIX,githubcopilot.com

@@ -1,14 +1,18 @@
 # NAME: EA
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-10-16 17:44:38
-# DOMAIN: 2
-# DOMAIN-SUFFIX: 163
+# UPDATED: 2026-11-18 03:16:49
+# DOMAIN: 6
+# DOMAIN-SUFFIX: 159
 # TOTAL: 165
 
 payload:
-- DOMAIN,eaasserts-a.akamaihd.net
-- DOMAIN,originasserts.akamaized.net
+- DOMAIN,cloudsync-prod.s3.amazonaws.com
+- DOMAIN,ea.tt.omtrdc.net
+- DOMAIN,eaassets-a.akamaihd.net
+- DOMAIN,origin-a.akamaihd.net
+- DOMAIN,rtm.tnt-ea.com
+- DOMAIN,ssl-lvlt.cdn.ea.com
 - DOMAIN-SUFFIX,anthemgame.com
 - DOMAIN-SUFFIX,anthemthegame.com
 - DOMAIN-SUFFIX,apexlegends.com
@@ -34,7 +38,6 @@ payload:
 - DOMAIN-SUFFIX,camelotherald.net
 - DOMAIN-SUFFIX,capitalgames.com
 - DOMAIN-SUFFIX,chillingo.com
-- DOMAIN-SUFFIX,cloudsync-prod.s3.amazonaws.com
 - DOMAIN-SUFFIX,cncrivals.com
 - DOMAIN-SUFFIX,commandandconquer.com
 - DOMAIN-SUFFIX,conquerwithcharacter.com
@@ -56,9 +59,7 @@ payload:
 - DOMAIN-SUFFIX,dungeonkeeper.com.cn
 - DOMAIN-SUFFIX,ea-anz-press.com
 - DOMAIN-SUFFIX,ea.com
-- DOMAIN-SUFFIX,ea.tt.omtrdc.net
 - DOMAIN-SUFFIX,eaaccess.com
-- DOMAIN-SUFFIX,eaassets-a.akamaihd.net
 - DOMAIN-SUFFIX,eablackbox.com
 - DOMAIN-SUFFIX,eacashcard.com
 - DOMAIN-SUFFIX,eacodigos.com
@@ -124,7 +125,6 @@ payload:
 - DOMAIN-SUFFIX,needforspeedtimeattack.com
 - DOMAIN-SUFFIX,needforspeedundergroundeast.com
 - DOMAIN-SUFFIX,nfsworld.com
-- DOMAIN-SUFFIX,origin-a.akamaihd.net
 - DOMAIN-SUFFIX,origin.com
 - DOMAIN-SUFFIX,origin.tv
 - DOMAIN-SUFFIX,plantsvszombies2.com

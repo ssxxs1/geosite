@@ -1,0 +1,21 @@
+# NAME: GameDownloadCN
+# AUTHOR: ssxxs1
+# REPO: https://github.com/ssxxs1/geosite
+# UPDATED: 2026-11-18 11:00:00
+
+HOST,assets1.xboxlive.cn
+HOST,assets2.xboxlive.cn
+HOST,cdn-ali.content.steamchina.com
+HOST,cdn-qc.content.steamchina.com
+HOST,cdn-ws.content.steamchina.com
+HOST,dl.delivery.mp.microsoft.com
+HOST,dl.steam.clngaa.com
+HOST,epicgames-download1-1251447533.file.myqcloud.com
+HOST,st.dl.bscstorage.net
+HOST,st.dl.eccdnx.com
+HOST,steampipe.steamcontent.tnkjmec.com
+HOST,tlu.dl.delivery.mp.microsoft.com
+HOST,trts.baishancdnx.cn
+HOST,uplaypc-s-ubisoft.cdn.ubionline.com.cn
+HOST,xz.pphimalayanrt.com
+HOST-SUFFIX,pdl.wow.battlenet.com.cn
