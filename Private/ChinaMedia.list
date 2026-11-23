@@ -1,7 +1,7 @@
 # NAME: ChinaMedia
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 11:00:00
+# UPDATED: 2026-11-23 10:04:11
 
 # Bilibili
 HOST-SUFFIX,acg.tv
@@ -60,3 +60,57 @@ HOST-SUFFIX,miguvideo.com
 HOST-SUFFIX,ixigua.com
 HOST-SUFFIX,pstatp.com
 HOST-SUFFIX,snssdk.com
+
+# --- 规则雷达自动发现 (2026-11-23) ---
+HOST-SUFFIX,bilibili.net
+HOST-SUFFIX,updream.cn
+HOST-SUFFIX,hdslb.org
+HOST-SUFFIX,bili23.cn
+HOST-SUFFIX,bilicdn3.com
+HOST-SUFFIX,biligame.net
+HOST-SUFFIX,bilibiligame.net
+HOST-SUFFIX,yo9.com
+HOST-SUFFIX,anitama.net
+HOST-SUFFIX,bilibili.tv
+HOST-SUFFIX,maoer.com
+HOST-SUFFIX,bilibiligame.co
+HOST-SUFFIX,bilicdn2.com
+HOST-SUFFIX,bilibilipay.cn
+HOST-SUFFIX,bilibiligame.cn
+HOST-SUFFIX,bilibili.cn
+HOST-SUFFIX,bilicdn5.com
+HOST-SUFFIX,animetamashi.cn
+HOST-SUFFIX,biligame.co
+HOST-SUFFIX,bili22.cn
+HOST,upos-hz-mirrorakam.akamaized.net
+HOST-SUFFIX,bilicomics.com
+HOST-SUFFIX,biliimg.com
+HOST-SUFFIX,bili33.cn
+HOST-SUFFIX,missevan.com
+HOST-SUFFIX,huasheng.cn
+HOST-SUFFIX,mincdn.com
+HOST-SUFFIX,animetamashi.com
+HOST-SUFFIX,bilibilipay.com
+HOST-SUFFIX,bilivideo.net
+HOST-SUFFIX,maoercdn.com
+HOST-SUFFIX,bilibili.cc
+HOST-SUFFIX,biligo.com
+HOST-SUFFIX,dreamcast.hk
+HOST-SUFFIX,bilicdn1.com
+HOST-SUFFIX,anitama.cn
+HOST-SUFFIX,bili2233.cn
+HOST-SUFFIX,biligame.com
+HOST-SUFFIX,bilicdn4.com
+HOST-SUFFIX,bilicomic.com
+HOST-SUFFIX,iq.com
+HOST-SUFFIX,pps.tv
+HOST-SUFFIX,qiyipic.com
+HOST,msg2.video.qiyi.com
+HOST,msg.video.qiyi.com
+HOST-SUFFIX,qiyi.com
+HOST-SUFFIX,tudou.com
+HOST-SUFFIX,youkuplay.com
+HOST,ykimg.alicdn.com
+HOST-SUFFIX,youkuhonor.com
+HOST-SUFFIX,9xsecndns.cn
+HOST-SUFFIX,youku.tv
