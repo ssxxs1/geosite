@@ -3,19 +3,57 @@
     {
       "domain": [
         "ai.google.dev",
+        "aicode.googleapis.com",
+        "aida.googleapis.com",
+        "aisandbox-pa.googleapis.com",
         "aistudio.google.com",
+        "alkalicore-pa.clients6.google.com",
         "alkalimakersuite-pa.clients6.google.com",
-        "makersuite.google.com"
+        "antigravity-pa.googleapis.com",
+        "antigravity.googleapis.com",
+        "appsgenaiserver-pa.clients.google.com",
+        "appsgenaiserver-pa.clients6.google.com",
+        "appsgenaiserver-pa.googleapis.com",
+        "cloudaicompanion.googleapis.com",
+        "cloudcode-pa.googleapis.com",
+        "daily-cloudcode-pa.googleapis.com",
+        "flow.google.com",
+        "geller-pa.googleapis.com",
+        "gemini.gstatic.com",
+        "geminiweb-pa.clients.google.com",
+        "geminiweb-pa.clients6.google.com",
+        "generativelanguage.googleapis.com",
+        "jules.google.com",
+        "labs.google.com",
+        "labstailwind.pa.googleapis.com",
+        "makersuite.google.com",
+        "notebook.google.com",
+        "notebooklm-pa.googleapis.com",
+        "notebooklm.google.com",
+        "notebooklm.googleapis.com",
+        "opal.google.com",
+        "robinfrontend-pa.googleapis.com",
+        "stitch.withgoogle.com",
+        "webchannel-alkalimakersuite-pa.clients6.google.com"
       ]
     },
     {
       "domain_suffix": [
+        "ai.studio",
+        "antigravity-unleash.goog",
+        "antigravity.google",
         "bard.google.com",
         "deepmind.com",
         "deepmind.google",
+        "flow.google",
         "gemini.google",
         "gemini.google.com",
         "generativeai.google",
+        "jules.google",
+        "labs.google",
+        "notebook.google",
+        "notebooklm.google",
+        "opal.google",
         "proactivebackend-pa.googleapis.com"
       ]
     }

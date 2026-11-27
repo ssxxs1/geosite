@@ -192,6 +192,42 @@ class TestDiffRadar(unittest.TestCase):
         self.assertFalse(is_safe_magicrule_url(""))
         self.assertFalse(is_safe_magicrule_url(None))
 
+    def test_radar_game_download_include_regex_filters_non_cdn(self):
+        from script.diff_radar import RADAR_TARGETS
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "Private").mkdir()
+            (root / "Private" / "GameDownload.list").write_text(
+                "HOST-SUFFIX,steamcontent.com\n", encoding="utf-8"
+            )
+            targets = {
+                "GameDownload": {
+                    **RADAR_TARGETS["GameDownload"],
+                    "community_sources": ["https://example.com/steam.yaml"],
+                }
+            }
+            sample_domains = {
+                "steamcommunity.com",
+                "dota2.com",
+                "thesims4.com",
+                "dl.steam.clngaa.com",
+                "epicgamescdn.com",
+                "steamcloudsweden.blob.core.windows.net",
+            }
+            with mock.patch("script.diff_radar.fetch_community_domains", return_value=sample_domains):
+                res = run_radar_scan(targets=targets, project_root=root, verbose=False)
+
+            found = sorted(c.domain for c in res["GameDownload"])
+            self.assertEqual(
+                found,
+                [
+                    "dl.steam.clngaa.com",
+                    "epicgamescdn.com",
+                    "steamcloudsweden.blob.core.windows.net",
+                ],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

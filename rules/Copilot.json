@@ -2,6 +2,7 @@
   "rules": [
     {
       "domain": [
+        "auth.copilot.microsoft.com",
         "copilot-proxy.githubusercontent.com",
         "copilot-telemetry-service.githubusercontent.com",
         "copilot-telemetry.githubusercontent.com",
@@ -11,7 +12,10 @@
         "edgeservices.bing.com",
         "gateway.bingviz.microsoft.net",
         "gateway.bingviz.microsoftapp.net",
+        "ms-sso.copilot.microsoft.com",
+        "partner.copilot.microsoft.com",
         "production-copilot-host-westus.webpubsub.azure.com",
+        "s.copilot.microsoft.com",
         "sydney.bing.com"
       ]
     },

@@ -1,7 +1,7 @@
 # NAME: ChinaMedia
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 11:00:00
+# UPDATED: 2026-11-27 09:40:00
 
 # Bilibili
 HOST-SUFFIX,acg.tv
@@ -12,23 +12,45 @@ HOST-SUFFIX,bigfunapp.cn
 HOST-SUFFIX,biliapi.com
 HOST-SUFFIX,biliapi.net
 HOST-SUFFIX,bilibili.com
+HOST-SUFFIX,bilibili.cn
 HOST-SUFFIX,bilibili.co
+HOST-SUFFIX,bilibili.net
+HOST-SUFFIX,bilibili.tv
+HOST-SUFFIX,bilicdn1.com
+HOST-SUFFIX,bilicdn2.com
+HOST-SUFFIX,bilicdn3.com
+HOST-SUFFIX,bilicdn4.com
+HOST-SUFFIX,bilicdn5.com
+HOST-SUFFIX,biliimg.com
 HOST-SUFFIX,biliintl.com
 HOST-SUFFIX,bilivideo.com
 HOST-SUFFIX,bilivideo.cn
+HOST-SUFFIX,bilivideo.net
 HOST-SUFFIX,hdslb.com
+HOST-SUFFIX,hdslb.org
 HOST-SUFFIX,im9.com
+HOST-SUFFIX,maoer.com
+HOST-SUFFIX,maoercdn.com
+HOST-SUFFIX,mincdn.com
 HOST-SUFFIX,minwt.com
+HOST-SUFFIX,missevan.com
 HOST-SUFFIX,smtcdns.net
+HOST,upos-hz-mirrorakam.akamaized.net
 
 # iQIYI
 HOST-SUFFIX,71.am
 HOST-SUFFIX,71edge.com
+HOST-SUFFIX,iq.com
 HOST-SUFFIX,iqiyi.com
 HOST-SUFFIX,iqiyipic.com
+HOST-SUFFIX,pps.tv
 HOST-SUFFIX,ppsimg.com
 HOST-SUFFIX,qiyi.cn
+HOST-SUFFIX,qiyi.com
+HOST-SUFFIX,qiyipic.com
 HOST-SUFFIX,qy.net
+HOST,msg.video.qiyi.com
+HOST,msg2.video.qiyi.com
 
 # Tencent Video
 HOST-SUFFIX,v.qq.com
@@ -44,9 +66,14 @@ HOST-SUFFIX,wetvinfo.com
 
 # Youku
 HOST-SUFFIX,youku.com
+HOST-SUFFIX,youku.tv
+HOST-SUFFIX,youkuhonor.com
+HOST-SUFFIX,youkuplay.com
 HOST-SUFFIX,ykimg.com
 HOST-SUFFIX,soku.com
+HOST-SUFFIX,tudou.com
 HOST-SUFFIX,kumiao.com
+HOST,ykimg.alicdn.com
 
 # MGTV
 HOST-SUFFIX,mgtv.com

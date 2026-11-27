@@ -1,10 +1,15 @@
 # NAME: ChinaMedia
 # AUTHOR: ssxxs1/geosite
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 09:43:45 UTC
-# HOST-SUFFIX: 46
-# TOTAL: 46
+# UPDATED: 2026-11-27 01:42:10 UTC
+# HOST: 4
+# HOST-SUFFIX: 69
+# TOTAL: 73
 
+HOST,msg.video.qiyi.com
+HOST,msg2.video.qiyi.com
+HOST,upos-hz-mirrorakam.akamaized.net
+HOST,ykimg.alicdn.com
 HOST-SUFFIX,71.am
 HOST-SUFFIX,71edge.com
 HOST-SUFFIX,acg.tv
@@ -14,34 +19,54 @@ HOST-SUFFIX,bigfun.cn
 HOST-SUFFIX,bigfunapp.cn
 HOST-SUFFIX,biliapi.com
 HOST-SUFFIX,biliapi.net
+HOST-SUFFIX,bilibili.cn
 HOST-SUFFIX,bilibili.co
 HOST-SUFFIX,bilibili.com
+HOST-SUFFIX,bilibili.net
+HOST-SUFFIX,bilibili.tv
+HOST-SUFFIX,bilicdn1.com
+HOST-SUFFIX,bilicdn2.com
+HOST-SUFFIX,bilicdn3.com
+HOST-SUFFIX,bilicdn4.com
+HOST-SUFFIX,bilicdn5.com
+HOST-SUFFIX,biliimg.com
 HOST-SUFFIX,biliintl.com
 HOST-SUFFIX,bilivideo.cn
 HOST-SUFFIX,bilivideo.com
+HOST-SUFFIX,bilivideo.net
 HOST-SUFFIX,cmvideo.cn
 HOST-SUFFIX,cvideo.video.qq.com
 HOST-SUFFIX,film.qq.com
 HOST-SUFFIX,hdslb.com
+HOST-SUFFIX,hdslb.org
 HOST-SUFFIX,hitv.com
 HOST-SUFFIX,hunantv.com
 HOST-SUFFIX,im9.com
+HOST-SUFFIX,iq.com
 HOST-SUFFIX,iqiyi.com
 HOST-SUFFIX,iqiyipic.com
 HOST-SUFFIX,ixigua.com
 HOST-SUFFIX,kumiao.com
+HOST-SUFFIX,maoer.com
+HOST-SUFFIX,maoercdn.com
 HOST-SUFFIX,mgtv.com
 HOST-SUFFIX,mgtv.org
 HOST-SUFFIX,miguvideo.com
+HOST-SUFFIX,mincdn.com
 HOST-SUFFIX,minwt.com
+HOST-SUFFIX,missevan.com
+HOST-SUFFIX,pps.tv
 HOST-SUFFIX,ppsimg.com
 HOST-SUFFIX,pstatp.com
 HOST-SUFFIX,qiyi.cn
+HOST-SUFFIX,qiyi.com
+HOST-SUFFIX,qiyipic.com
 HOST-SUFFIX,qy.net
 HOST-SUFFIX,smtcdns.net
 HOST-SUFFIX,snssdk.com
 HOST-SUFFIX,soku.com
 HOST-SUFFIX,tc.qq.com
+HOST-SUFFIX,tudou.com
 HOST-SUFFIX,tvideo.video.qq.com
 HOST-SUFFIX,v.qq.com
 HOST-SUFFIX,video.qq.com
@@ -51,3 +76,6 @@ HOST-SUFFIX,wetv.vip
 HOST-SUFFIX,wetvinfo.com
 HOST-SUFFIX,ykimg.com
 HOST-SUFFIX,youku.com
+HOST-SUFFIX,youku.tv
+HOST-SUFFIX,youkuhonor.com
+HOST-SUFFIX,youkuplay.com

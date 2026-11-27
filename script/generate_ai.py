@@ -169,6 +169,9 @@ SUPPLEMENTAL_AI_DOMAINS = [
     "krea.ai",
     "blackforestlabs.ai",
     "civitai.com",
+    # xAI / Grok 补充入口
+    "grok.x.com",
+    "grokbot.com",
     # AI 认证与支付结算基础设施 (确保走代理而非直连)
     "auth0.com",
     "stripe.com",

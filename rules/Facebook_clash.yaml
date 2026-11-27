@@ -1,7 +1,7 @@
 # NAME: Facebook
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 08:36:39
+# UPDATED: 2026-11-27 01:42:20
 # DOMAIN: 1
 # DOMAIN-KEYWORD: 2
 # DOMAIN-SUFFIX: 552
@@ -674,7 +674,8 @@ payload:
 - IP-CIDR6,2a03:2880::/32,no-resolve
 - IP-CIDR6,2a03:2887:ff00::/48,no-resolve
 - IP-CIDR6,2a03:2887:ff03::/48,no-resolve
-- IP-CIDR6,2a03:2887:ff04::/46,no-resolve
+- IP-CIDR6,2a03:2887:ff05::/48,no-resolve
+- IP-CIDR6,2a03:2887:ff06::/47,no-resolve
 - IP-CIDR6,2a03:2887:ff09::/48,no-resolve
 - IP-CIDR6,2a03:2887:ff0a::/48,no-resolve
 - IP-CIDR6,2a03:2887:ff1b::/48,no-resolve
@@ -684,7 +685,6 @@ payload:
 - IP-CIDR6,2a03:2887:ff27::/48,no-resolve
 - IP-CIDR6,2a03:2887:ff28::/46,no-resolve
 - IP-CIDR6,2a03:2887:ff2e::/47,no-resolve
-- IP-CIDR6,2a03:2887:ff30::/48,no-resolve
 - IP-CIDR6,2a03:2887:ff33::/48,no-resolve
 - IP-CIDR6,2a03:2887:ff37::/48,no-resolve
 - IP-CIDR6,2a03:2887:ff38::/46,no-resolve

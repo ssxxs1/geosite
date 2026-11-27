@@ -1,14 +1,23 @@
 # NAME: IPTVMainland
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 11:00:00
+# UPDATED: 2026-11-27 09:40:00
 
 # CCTV & State Media
+HOST-SUFFIX,cctv.cn
 HOST-SUFFIX,cctv.com
 HOST-SUFFIX,cctvpic.com
 HOST-SUFFIX,cctvlib.net
+HOST-SUFFIX,chinaepg.cn
+HOST-SUFFIX,chinaott.com
 HOST-SUFFIX,cntv.cn
+HOST-SUFFIX,cntv.com.cn
+HOST-SUFFIX,cri.cn
+HOST-SUFFIX,icntvcdn.com
+HOST-SUFFIX,ipanda.com
+HOST-SUFFIX,livechina.cn
 HOST-SUFFIX,livechina.com
+HOST-SUFFIX,ottcn.com
 HOST-SUFFIX,yangshipin.cn
 HOST-SUFFIX,news.cn
 HOST-SUFFIX,xinhuanet.com

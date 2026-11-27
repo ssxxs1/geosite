@@ -1,20 +1,58 @@
 # NAME: Gemini
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 09:43:48
-# DOMAIN: 4
-# DOMAIN-SUFFIX: 7
-# TOTAL: 11
+# UPDATED: 2026-11-27 01:42:13
+# DOMAIN: 33
+# DOMAIN-SUFFIX: 16
+# TOTAL: 49
 
 payload:
 - DOMAIN,ai.google.dev
+- DOMAIN,aicode.googleapis.com
+- DOMAIN,aida.googleapis.com
+- DOMAIN,aisandbox-pa.googleapis.com
 - DOMAIN,aistudio.google.com
+- DOMAIN,alkalicore-pa.clients6.google.com
 - DOMAIN,alkalimakersuite-pa.clients6.google.com
+- DOMAIN,antigravity-pa.googleapis.com
+- DOMAIN,antigravity.googleapis.com
+- DOMAIN,appsgenaiserver-pa.clients.google.com
+- DOMAIN,appsgenaiserver-pa.clients6.google.com
+- DOMAIN,appsgenaiserver-pa.googleapis.com
+- DOMAIN,cloudaicompanion.googleapis.com
+- DOMAIN,cloudcode-pa.googleapis.com
+- DOMAIN,daily-cloudcode-pa.googleapis.com
+- DOMAIN,flow.google.com
+- DOMAIN,geller-pa.googleapis.com
+- DOMAIN,gemini.gstatic.com
+- DOMAIN,geminiweb-pa.clients.google.com
+- DOMAIN,geminiweb-pa.clients6.google.com
+- DOMAIN,generativelanguage.googleapis.com
+- DOMAIN,jules.google.com
+- DOMAIN,labs.google.com
+- DOMAIN,labstailwind.pa.googleapis.com
 - DOMAIN,makersuite.google.com
+- DOMAIN,notebook.google.com
+- DOMAIN,notebooklm-pa.googleapis.com
+- DOMAIN,notebooklm.google.com
+- DOMAIN,notebooklm.googleapis.com
+- DOMAIN,opal.google.com
+- DOMAIN,robinfrontend-pa.googleapis.com
+- DOMAIN,stitch.withgoogle.com
+- DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
+- DOMAIN-SUFFIX,ai.studio
+- DOMAIN-SUFFIX,antigravity-unleash.goog
+- DOMAIN-SUFFIX,antigravity.google
 - DOMAIN-SUFFIX,bard.google.com
 - DOMAIN-SUFFIX,deepmind.com
 - DOMAIN-SUFFIX,deepmind.google
+- DOMAIN-SUFFIX,flow.google
 - DOMAIN-SUFFIX,gemini.google
 - DOMAIN-SUFFIX,gemini.google.com
 - DOMAIN-SUFFIX,generativeai.google
+- DOMAIN-SUFFIX,jules.google
+- DOMAIN-SUFFIX,labs.google
+- DOMAIN-SUFFIX,notebook.google
+- DOMAIN-SUFFIX,notebooklm.google
+- DOMAIN-SUFFIX,opal.google
 - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com

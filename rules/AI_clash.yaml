@@ -1,32 +1,28 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 09:21:02
-# DOMAIN: 87
+# UPDATED: 2026-11-27 01:42:45
+# DOMAIN: 81
 # DOMAIN-KEYWORD: 10
-# DOMAIN-SUFFIX: 293
+# DOMAIN-SUFFIX: 311
 # DOMAIN-WILDCARD: 14
 # IP-ASN: 2
 # IP-CIDR: 35
 # IP-CIDR6: 5
-# TOTAL: 446
+# TOTAL: 458
 
 payload:
 - DOMAIN,account.jetbrains.com
 - DOMAIN,accounts.spacex.ai
-- DOMAIN,aiplatform.eu.rep.googleapis.com
-- DOMAIN,aiplatform.mtls.googleapis.com
-- DOMAIN,aiplatform.us.rep.googleapis.com
 - DOMAIN,anthropic-com.ghost.io
 - DOMAIN,anthropic.com.cdn.cloudflare.net
+- DOMAIN,antigravity-pa.googleapis.com
 - DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
 - DOMAIN,api.hyperbolic.xyz
 - DOMAIN,api.jetbrains.cloud
 - DOMAIN,appcatalyst.pa.googleapis.com
-- DOMAIN,businessaicode.eu.rep.googleapis.com
-- DOMAIN,businessaicode.googleapis.com
-- DOMAIN,businessaicode.mtls.googleapis.com
-- DOMAIN,businessaicode.us.rep.googleapis.com
+- DOMAIN,appsgenaiserver-pa.clients.google.com
+- DOMAIN,appsgenaiserver-pa.googleapis.com
 - DOMAIN,cdn.openaimerge.com
 - DOMAIN,clio-assets.adobe.com
 - DOMAIN,connect.facebook.net
@@ -37,26 +33,25 @@ payload:
 - DOMAIN,copilot-workspace.githubnext.com
 - DOMAIN,copilotprodattachments.blob.core.windows.net
 - DOMAIN,copilotstudio.microsoft.com
-- DOMAIN,daily-cloudcode-pa.googleapis.com
 - DOMAIN,dc-genai-access-provisioning-api.adobe.io
 - DOMAIN,dc-genai-content-platform.adobe.io
 - DOMAIN,dc-genai-persistence.adobe.io
 - DOMAIN,devv.featurebase.app
-- DOMAIN,discoveryengine.googleapis.com
-- DOMAIN,discoveryengine.mtls.googleapis.com
-- DOMAIN,eu-discoveryengine.googleapis.com
-- DOMAIN,eu-discoveryengine.mtls.googleapis.com
 - DOMAIN,firefly-ai.adobe.io
 - DOMAIN,firefly-cliov2.adobe.com
 - DOMAIN,firefly-ps.adobe.io
 - DOMAIN,firefly.adobe.com
+- DOMAIN,flow.google.com
 - DOMAIN,gateway.bingviz.microsoft.net
 - DOMAIN,gateway.bingviz.microsoftapp.net
+- DOMAIN,geminiweb-pa.clients.google.com
+- DOMAIN,generativelanguage.mtls.googleapis.com
 - DOMAIN,http-intake.logs.us5.datadoghq.com
 - DOMAIN,humb.apple.com
 - DOMAIN,images.workoscdn.com
 - DOMAIN,in.appcenter.ms
 - DOMAIN,jules.googleapis.com
+- DOMAIN,labstailwind.pa.googleapis.com
 - DOMAIN,location.microsoft.com
 - DOMAIN,login.live.com
 - DOMAIN,login.microsoftonline.com
@@ -68,6 +63,7 @@ payload:
 - DOMAIN,mds-cdn.infra.adobesensei.io
 - DOMAIN,meta-ohttp-config-prod.fastly-edge.com
 - DOMAIN,meta-ohttp-relay-prod.fastly-edge.com
+- DOMAIN,notebooklm-pa.googleapis.com
 - DOMAIN,oauth.account.jetbrains.com
 - DOMAIN,odc.officeapps.live.com
 - DOMAIN,openai.qualtrics.com
@@ -95,8 +91,6 @@ payload:
 - DOMAIN,sydney.bing.com
 - DOMAIN,trae-api-sg.mchost.guru
 - DOMAIN,trae-api-us.mchost.guru
-- DOMAIN,us-discoveryengine.googleapis.com
-- DOMAIN,us-discoveryengine.mtls.googleapis.com
 - DOMAIN,workos.imgix.net
 - DOMAIN,wps.apple.com
 - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
@@ -112,9 +106,13 @@ payload:
 - DOMAIN-SUFFIX,ai.com
 - DOMAIN-SUFFIX,ai.google
 - DOMAIN-SUFFIX,ai.google.dev
+- DOMAIN-SUFFIX,ai.studio
 - DOMAIN-SUFFIX,aicode.googleapis.com
 - DOMAIN-SUFFIX,aida.googleapis.com
+- DOMAIN-SUFFIX,aiplatform.eu.rep.googleapis.com
 - DOMAIN-SUFFIX,aiplatform.googleapis.com
+- DOMAIN-SUFFIX,aiplatform.mtls.googleapis.com
+- DOMAIN-SUFFIX,aiplatform.us.rep.googleapis.com
 - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
 - DOMAIN-SUFFIX,aistudio.google.com
 - DOMAIN-SUFFIX,aiva.ai
@@ -157,6 +155,10 @@ payload:
 - DOMAIN-SUFFIX,browser-intake-datadoghq.com
 - DOMAIN-SUFFIX,buffer.com
 - DOMAIN-SUFFIX,bufferapp.com
+- DOMAIN-SUFFIX,businessaicode.eu.rep.googleapis.com
+- DOMAIN-SUFFIX,businessaicode.googleapis.com
+- DOMAIN-SUFFIX,businessaicode.mtls.googleapis.com
+- DOMAIN-SUFFIX,businessaicode.us.rep.googleapis.com
 - DOMAIN-SUFFIX,cerebras.ai
 - DOMAIN-SUFFIX,character.ai
 - DOMAIN-SUFFIX,characterai.io
@@ -211,6 +213,7 @@ payload:
 - DOMAIN-SUFFIX,cursor.sh
 - DOMAIN-SUFFIX,cursorapi.com
 - DOMAIN-SUFFIX,cursorvm.com
+- DOMAIN-SUFFIX,daily-cloudcode-pa.googleapis.com
 - DOMAIN-SUFFIX,daily-cloudcode-pa.sandbox.googleapis.com
 - DOMAIN-SUFFIX,deepmind.com
 - DOMAIN-SUFFIX,deepmind.google
@@ -221,6 +224,8 @@ payload:
 - DOMAIN-SUFFIX,diabrowser.com
 - DOMAIN-SUFFIX,diabrowser.engineering
 - DOMAIN-SUFFIX,dify.ai
+- DOMAIN-SUFFIX,discoveryengine.googleapis.com
+- DOMAIN-SUFFIX,discoveryengine.mtls.googleapis.com
 - DOMAIN-SUFFIX,dola.com
 - DOMAIN-SUFFIX,edgeservices.bing.com
 - DOMAIN-SUFFIX,elevenlabs.io
@@ -230,6 +235,8 @@ payload:
 - DOMAIN-SUFFIX,encrypted-tbn3.gstatic.com
 - DOMAIN-SUFFIX,enhancv.com
 - DOMAIN-SUFFIX,ethyca.com
+- DOMAIN-SUFFIX,eu-discoveryengine.googleapis.com
+- DOMAIN-SUFFIX,eu-discoveryengine.mtls.googleapis.com
 - DOMAIN-SUFFIX,facebook.com
 - DOMAIN-SUFFIX,factory.ai
 - DOMAIN-SUFFIX,fal.ai
@@ -241,6 +248,7 @@ payload:
 - DOMAIN-SUFFIX,firebase.studio
 - DOMAIN-SUFFIX,fireflies.ai
 - DOMAIN-SUFFIX,fireworks.ai
+- DOMAIN-SUFFIX,flow.google
 - DOMAIN-SUFFIX,g.ai
 - DOMAIN-SUFFIX,gamma.app
 - DOMAIN-SUFFIX,gateway.ai.cloudflare.com
@@ -260,6 +268,8 @@ payload:
 - DOMAIN-SUFFIX,grazie.ai
 - DOMAIN-SUFFIX,grazie.aws.intellij.net
 - DOMAIN-SUFFIX,grok.com
+- DOMAIN-SUFFIX,grok.x.com
+- DOMAIN-SUFFIX,grokbot.com
 - DOMAIN-SUFFIX,grokipedia.com
 - DOMAIN-SUFFIX,grokusercontent.com
 - DOMAIN-SUFFIX,groq.com
@@ -381,6 +391,8 @@ payload:
 - DOMAIN-SUFFIX,traeapi.us
 - DOMAIN-SUFFIX,udify.app
 - DOMAIN-SUFFIX,udio.com
+- DOMAIN-SUFFIX,us-discoveryengine.googleapis.com
+- DOMAIN-SUFFIX,us-discoveryengine.mtls.googleapis.com
 - DOMAIN-SUFFIX,usemotion.com
 - DOMAIN-SUFFIX,userlocations.googleapis.com
 - DOMAIN-SUFFIX,v0.dev

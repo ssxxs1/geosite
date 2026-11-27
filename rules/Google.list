@@ -1,12 +1,12 @@
 # NAME: Google
 # AUTHOR: ssxxs1/geosite
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 09:20:41 UTC
+# UPDATED: 2026-11-27 01:42:26 UTC
 # HOST: 243
 # HOST-KEYWORD: 6
-# HOST-SUFFIX: 1066
+# HOST-SUFFIX: 1067
 # IP-CIDR: 2
-# TOTAL: 1317
+# TOTAL: 1318
 
 HOST,2mdn-cn.net
 HOST,2mdn.net
@@ -533,6 +533,7 @@ HOST-SUFFIX,geller-pa.googleapis.com
 HOST-SUFFIX,gemini.google
 HOST-SUFFIX,gemini.google.com
 HOST-SUFFIX,gemini.gstatic.com
+HOST-SUFFIX,gemma.ai
 HOST-SUFFIX,generativeai.google
 HOST-SUFFIX,generativelanguage.googleapis.com
 HOST-SUFFIX,gerritcodereview.com

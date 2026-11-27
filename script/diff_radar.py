@@ -131,6 +131,15 @@ RADAR_TARGETS: dict[str, dict[str, Any]] = {
         ],
         "ct_roots": [],
         "category": "game",
+        # 仅关注游戏下载、分发与静态资源 CDN，过滤官网/商店/社区类域名
+        "include_regex": (
+            r"(?:^|[.-])dl(?:[.-]|$)|"
+            r"(?:cdn|download|steampipe|steamcontent|steamstatic|steamcdn|"
+            r"steamuserimages|steamusercontent|steamvideo|steambroadcast|steamcloud|steamugc|"
+            r"storage|pinyuncloud|eccdnx|bscstorage|clngaa|hwcdn|edgesuite|akamaihd|"
+            r"akamaized|fastly-edge|assets|eac-cdn)|"
+            r"(?:blob\.core\.windows\.net|s3\.amazonaws\.com)$"
+        ),
     },
     "IPTVMainland": {
         "local": "Private/IPTVMainland.list",
@@ -388,12 +397,19 @@ def run_radar_scan(
         covered_count = 0
         blocked_count = 0
 
+        include_regex = config.get("include_regex")
+        include_pattern = re.compile(include_regex, re.IGNORECASE) if include_regex else None
+
         for domain, (src_type, src_name) in candidates.items():
             if is_subsumed(domain, rule_set.suffix_domains, rule_set.exact_domains, rule_set.wildcards):
                 covered_count += 1
                 continue
 
             if not is_valid_domain_or_suffix("domain", domain):
+                blocked_count += 1
+                continue
+
+            if include_pattern and not include_pattern.search(domain):
                 blocked_count += 1
                 continue
 

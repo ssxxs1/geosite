@@ -1,31 +1,27 @@
 # NAME: AI
 # AUTHOR: ssxxs1
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 09:19:25
-# HOST: 87
-# HOST-SUFFIX: 293
+# UPDATED: 2026-11-27 01:42:06
+# HOST: 81
+# HOST-SUFFIX: 311
 # HOST-KEYWORD: 10
 # HOST-WILDCARD: 14
 # IP-CIDR: 35
 # IP6-CIDR: 5
 # IP-ASN: 2
-# TOTAL: 446
+# TOTAL: 458
 
 HOST,account.jetbrains.com
 HOST,accounts.spacex.ai
-HOST,aiplatform.eu.rep.googleapis.com
-HOST,aiplatform.mtls.googleapis.com
-HOST,aiplatform.us.rep.googleapis.com
 HOST,anthropic-com.ghost.io
 HOST,anthropic.com.cdn.cloudflare.net
+HOST,antigravity-pa.googleapis.com
 HOST,anysphere-binaries.s3.us-east-1.amazonaws.com
 HOST,api.hyperbolic.xyz
 HOST,api.jetbrains.cloud
 HOST,appcatalyst.pa.googleapis.com
-HOST,businessaicode.eu.rep.googleapis.com
-HOST,businessaicode.googleapis.com
-HOST,businessaicode.mtls.googleapis.com
-HOST,businessaicode.us.rep.googleapis.com
+HOST,appsgenaiserver-pa.clients.google.com
+HOST,appsgenaiserver-pa.googleapis.com
 HOST,cdn.openaimerge.com
 HOST,clio-assets.adobe.com
 HOST,connect.facebook.net
@@ -36,26 +32,25 @@ HOST,copilot-telemetry.githubusercontent.com
 HOST,copilot-workspace.githubnext.com
 HOST,copilotprodattachments.blob.core.windows.net
 HOST,copilotstudio.microsoft.com
-HOST,daily-cloudcode-pa.googleapis.com
 HOST,dc-genai-access-provisioning-api.adobe.io
 HOST,dc-genai-content-platform.adobe.io
 HOST,dc-genai-persistence.adobe.io
 HOST,devv.featurebase.app
-HOST,discoveryengine.googleapis.com
-HOST,discoveryengine.mtls.googleapis.com
-HOST,eu-discoveryengine.googleapis.com
-HOST,eu-discoveryengine.mtls.googleapis.com
 HOST,firefly-ai.adobe.io
 HOST,firefly-cliov2.adobe.com
 HOST,firefly-ps.adobe.io
 HOST,firefly.adobe.com
+HOST,flow.google.com
 HOST,gateway.bingviz.microsoft.net
 HOST,gateway.bingviz.microsoftapp.net
+HOST,geminiweb-pa.clients.google.com
+HOST,generativelanguage.mtls.googleapis.com
 HOST,http-intake.logs.us5.datadoghq.com
 HOST,humb.apple.com
 HOST,images.workoscdn.com
 HOST,in.appcenter.ms
 HOST,jules.googleapis.com
+HOST,labstailwind.pa.googleapis.com
 HOST,location.microsoft.com
 HOST,login.live.com
 HOST,login.microsoftonline.com
@@ -67,6 +62,7 @@ HOST,mask.apple-dns.net
 HOST,mds-cdn.infra.adobesensei.io
 HOST,meta-ohttp-config-prod.fastly-edge.com
 HOST,meta-ohttp-relay-prod.fastly-edge.com
+HOST,notebooklm-pa.googleapis.com
 HOST,oauth.account.jetbrains.com
 HOST,odc.officeapps.live.com
 HOST,openai.qualtrics.com
@@ -94,16 +90,18 @@ HOST,servd-anthropic-website.b-cdn.net
 HOST,sydney.bing.com
 HOST,trae-api-sg.mchost.guru
 HOST,trae-api-us.mchost.guru
-HOST,us-discoveryengine.googleapis.com
-HOST,us-discoveryengine.mtls.googleapis.com
 HOST,workos.imgix.net
 HOST,wps.apple.com
 HOST-SUFFIX,ai.com
 HOST-SUFFIX,ai.google
 HOST-SUFFIX,ai.google.dev
+HOST-SUFFIX,ai.studio
 HOST-SUFFIX,aicode.googleapis.com
 HOST-SUFFIX,aida.googleapis.com
+HOST-SUFFIX,aiplatform.eu.rep.googleapis.com
 HOST-SUFFIX,aiplatform.googleapis.com
+HOST-SUFFIX,aiplatform.mtls.googleapis.com
+HOST-SUFFIX,aiplatform.us.rep.googleapis.com
 HOST-SUFFIX,aisandbox-pa.googleapis.com
 HOST-SUFFIX,aistudio.google.com
 HOST-SUFFIX,aiva.ai
@@ -146,6 +144,10 @@ HOST-SUFFIX,bolt.new
 HOST-SUFFIX,browser-intake-datadoghq.com
 HOST-SUFFIX,buffer.com
 HOST-SUFFIX,bufferapp.com
+HOST-SUFFIX,businessaicode.eu.rep.googleapis.com
+HOST-SUFFIX,businessaicode.googleapis.com
+HOST-SUFFIX,businessaicode.mtls.googleapis.com
+HOST-SUFFIX,businessaicode.us.rep.googleapis.com
 HOST-SUFFIX,cerebras.ai
 HOST-SUFFIX,character.ai
 HOST-SUFFIX,characterai.io
@@ -200,6 +202,7 @@ HOST-SUFFIX,cursor.com
 HOST-SUFFIX,cursor.sh
 HOST-SUFFIX,cursorapi.com
 HOST-SUFFIX,cursorvm.com
+HOST-SUFFIX,daily-cloudcode-pa.googleapis.com
 HOST-SUFFIX,daily-cloudcode-pa.sandbox.googleapis.com
 HOST-SUFFIX,deepmind.com
 HOST-SUFFIX,deepmind.google
@@ -210,6 +213,8 @@ HOST-SUFFIX,devv.ai
 HOST-SUFFIX,diabrowser.com
 HOST-SUFFIX,diabrowser.engineering
 HOST-SUFFIX,dify.ai
+HOST-SUFFIX,discoveryengine.googleapis.com
+HOST-SUFFIX,discoveryengine.mtls.googleapis.com
 HOST-SUFFIX,dola.com,extended-matching
 HOST-SUFFIX,edgeservices.bing.com
 HOST-SUFFIX,elevenlabs.io
@@ -219,6 +224,8 @@ HOST-SUFFIX,encrypted-tbn2.gstatic.com
 HOST-SUFFIX,encrypted-tbn3.gstatic.com
 HOST-SUFFIX,enhancv.com
 HOST-SUFFIX,ethyca.com
+HOST-SUFFIX,eu-discoveryengine.googleapis.com
+HOST-SUFFIX,eu-discoveryengine.mtls.googleapis.com
 HOST-SUFFIX,facebook.com
 HOST-SUFFIX,factory.ai
 HOST-SUFFIX,fal.ai
@@ -230,6 +237,7 @@ HOST-SUFFIX,feedhive.io
 HOST-SUFFIX,firebase.studio
 HOST-SUFFIX,fireflies.ai
 HOST-SUFFIX,fireworks.ai
+HOST-SUFFIX,flow.google
 HOST-SUFFIX,g.ai
 HOST-SUFFIX,gamma.app
 HOST-SUFFIX,gateway.ai.cloudflare.com
@@ -249,6 +257,8 @@ HOST-SUFFIX,grammarly.com
 HOST-SUFFIX,grazie.ai
 HOST-SUFFIX,grazie.aws.intellij.net
 HOST-SUFFIX,grok.com
+HOST-SUFFIX,grok.x.com
+HOST-SUFFIX,grokbot.com
 HOST-SUFFIX,grokipedia.com
 HOST-SUFFIX,grokusercontent.com
 HOST-SUFFIX,groq.com
@@ -370,6 +380,8 @@ HOST-SUFFIX,trae.ai
 HOST-SUFFIX,traeapi.us
 HOST-SUFFIX,udify.app
 HOST-SUFFIX,udio.com
+HOST-SUFFIX,us-discoveryengine.googleapis.com
+HOST-SUFFIX,us-discoveryengine.mtls.googleapis.com
 HOST-SUFFIX,usemotion.com
 HOST-SUFFIX,userlocations.googleapis.com
 HOST-SUFFIX,v0.dev

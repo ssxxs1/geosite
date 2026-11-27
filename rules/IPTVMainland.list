@@ -1,26 +1,35 @@
 # NAME: IPTVMainland
 # AUTHOR: ssxxs1/geosite
 # REPO: https://github.com/ssxxs1/geosite
-# UPDATED: 2026-11-18 09:44:09 UTC
-# HOST-SUFFIX: 25
-# TOTAL: 25
+# UPDATED: 2026-11-27 01:42:32 UTC
+# HOST-SUFFIX: 34
+# TOTAL: 34
 
 HOST-SUFFIX,alicdn.com.cn
 HOST-SUFFIX,aodianyun.com
 HOST-SUFFIX,bestv.com.cn
+HOST-SUFFIX,cctv.cn
 HOST-SUFFIX,cctv.com
 HOST-SUFFIX,cctvlib.net
 HOST-SUFFIX,cctvpic.com
+HOST-SUFFIX,chinaepg.cn
 HOST-SUFFIX,chinamcache.com
+HOST-SUFFIX,chinaott.com
 HOST-SUFFIX,cntv.cn
+HOST-SUFFIX,cntv.com.cn
+HOST-SUFFIX,cri.cn
 HOST-SUFFIX,cztv.com
 HOST-SUFFIX,dragontv.cn
 HOST-SUFFIX,gdtv.cn
 HOST-SUFFIX,gitv.tv
 HOST-SUFFIX,hbtv.com.cn
+HOST-SUFFIX,icntvcdn.com
+HOST-SUFFIX,ipanda.com
 HOST-SUFFIX,jstv.com
+HOST-SUFFIX,livechina.cn
 HOST-SUFFIX,livechina.com
 HOST-SUFFIX,news.cn
+HOST-SUFFIX,ottcn.com
 HOST-SUFFIX,people.com.cn
 HOST-SUFFIX,sctv.com
 HOST-SUFFIX,smg.cn
